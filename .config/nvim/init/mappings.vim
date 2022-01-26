@@ -29,6 +29,18 @@ endfunction
 " Toggle line wrapping (shortcut)
 nnoremap <silent> <A-w> :call ToggleWrap() <cr>
 
+" Toggle spell checking (function)
+function! ToggleSpell()
+  if (&spell)
+    set nospell
+  else
+    set spell
+  endif
+endfunction
+
+" Toggle spell checking (shortcut)
+nnoremap <silent> <A-s> :call ToggleSpell() <cr>
+
 " Code navigation
 nnoremap <silent> h <cmd>lua vim.lsp.buf.hover() <cr>
 nnoremap <silent> s <cmd>lua vim.lsp.buf.signature_help() <cr>

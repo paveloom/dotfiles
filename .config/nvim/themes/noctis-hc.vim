@@ -174,12 +174,12 @@ call s:highlight('TSVariable', '', g:Color3, '')
 call s:highlight('TSVariableBuiltin', '', g:Color15, 'italic')
 
 " Text
-highlight TSEmphasis guifg=#FF00FF
-highlight TSLiteral guifg=#FF00FF
-highlight TSStrong guifg=#FF00FF
+call s:highlight('TSEmphasis', '', g:Color15, 'italic')
+call s:highlight('TSLiteral', '', g:Color5, 'italic')
+call s:highlight('TSStrong', '', g:Color15, 'italic,bold')
 highlight TSText guifg=#FF00FF
-highlight TSTitle guifg=#FF00FF
-highlight TSURI guifg=#FF00FF
+call s:highlight('TSTitle', '', g:Color2, 'bold')
+call s:highlight('TSURI', '', g:Color1, 'underline')
 highlight TSUnderline guifg=#FF00FF
 
 " Tags
