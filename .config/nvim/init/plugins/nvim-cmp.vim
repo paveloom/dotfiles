@@ -1,10 +1,3 @@
-" Set completion options
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing extra messages when using completion
-set shortmess+=c
-
-" Setup completion
 lua <<EOF
 local nvim_lsp = require('lspconfig')
 local cmp = require('cmp')

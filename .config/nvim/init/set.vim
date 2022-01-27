@@ -50,3 +50,9 @@ set termguicolors
 
 " Enable spell checking
 set spell
+
+" Set completion options
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing extra messages when using completion
+set shortmess+=c

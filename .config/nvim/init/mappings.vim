@@ -55,9 +55,9 @@ nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev() <cr>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next() <cr>
 
 " Telescope
-nnoremap f :Telescope find_files<cr>
-nnoremap l :Telescope live_grep<cr>
-nnoremap b :Telescope buffers<cr>
+nnoremap <silent> f :Telescope find_files<cr>
+nnoremap <silent> l :Telescope live_grep<cr>
+nnoremap <silent> b :Telescope buffers<cr>
 
 " Buffer history navigation
 nnoremap <silent> <C-[> :BufSurfBack<cr>
