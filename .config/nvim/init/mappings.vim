@@ -55,10 +55,13 @@ nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev() <cr>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next() <cr>
 
 " Telescope
-nnoremap <silent> f :Telescope find_files<cr>
-nnoremap <silent> l :Telescope live_grep<cr>
-nnoremap <silent> b :Telescope buffers<cr>
+nnoremap <silent> f :Telescope find_files <cr>
+nnoremap <silent> l :Telescope live_grep <cr>
+nnoremap <silent> b :Telescope buffers <cr>
 
 " Buffer history navigation
-nnoremap <silent> <C-[> :BufSurfBack<cr>
-nnoremap <silent> <C-]> :BufSurfForward<cr>
+nnoremap <silent> <C-[> :BufSurfBack <cr>
+nnoremap <silent> <C-]> :BufSurfForward <cr>
+
+" Close all buffers but this one
+nnoremap <silent> <C-/> :%bd\|:e#\|:bd# <cr>
