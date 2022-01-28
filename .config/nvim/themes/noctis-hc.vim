@@ -150,9 +150,9 @@ call s:highlight('TSFuncMacro', '', g:Color7, '')
 call s:highlight('TSFunction', '', g:Color7, '')
 call s:highlight('TSMethod', '', g:Color7, '')
 call s:highlight('TSParameter', '', g:Color3, '')
+call s:highlight('TSProperty', '', g:Color3, '')
 highlight TSConstructor guifg=#4EC9B0
 highlight TSParameterReference guifg=#9CDCFE
-highlight TSProperty guifg=#9CDCFE
 
 " Keywords
 call s:highlight('TSConditional', '', g:Color2, 'bold')
