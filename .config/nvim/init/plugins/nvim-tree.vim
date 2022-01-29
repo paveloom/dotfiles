@@ -24,6 +24,10 @@ require'nvim-tree'.setup {
     enable = true,
     show_on_dirs = true,
   },
+  git = {
+    ignore = false,
+    timeout = 1000,
+  },
   update_focused_file = {
     enable      = true,
     update_cwd  = true,
