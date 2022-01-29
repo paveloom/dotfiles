@@ -120,6 +120,26 @@ call s:highlight('GitSignsAdd', g:Color10, g:Color11, '')
 call s:highlight('GitSignsChange', g:Color10, g:Color4, '')
 call s:highlight('GitSignsDelete', g:Color10, g:Color12, '')
 
+" # Crates
+
+" General
+call s:highlight('CratesNvimError', '', g:Color12, '')
+call s:highlight('CratesNvimLoading', '', g:Color7, '')
+call s:highlight('CratesNvimNoMatch', '', g:Color3, '')
+call s:highlight('CratesNvimPreRelease', '', g:Color15, '')
+call s:highlight('CratesNvimUpgrade', '', g:Color4, '')
+call s:highlight('CratesNvimVersion', '', g:Color7, '')
+call s:highlight('CratesNvimYanked', '', g:Color12, '')
+
+" Popup
+call s:highlight('CratesNvimPopupEnabled', '', g:Color11, '')
+call s:highlight('CratesNvimPopupFeature', '', g:Color7, '')
+call s:highlight('CratesNvimPopupPreRelease', '', g:Color15, '')
+call s:highlight('CratesNvimPopupTitle', '', g:Color2, 'bold')
+call s:highlight('CratesNvimPopupTransitive', '', g:Color8, '')
+call s:highlight('CratesNvimPopupVersion', '', g:Color7, '')
+call s:highlight('CratesNvimPopupYanked', '', g:Color12, '')
+
 " # TreeSitter
 
 " Misc

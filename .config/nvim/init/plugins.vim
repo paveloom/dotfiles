@@ -82,10 +82,14 @@ Plug 'hrsh7th/cmp-cmdline'
 " Tools for better development in Rust using NeoVim's builtin LSP
 Plug 'simrat39/rust-tools.nvim'
 
+" A NeoVim plugin that helps managing crates.io dependencies
+Plug 'saecki/crates.nvim'
+
 " Initialize plugin system
 call plug#end()
 
 " Plugins' configuration
+source $VIM_PLUGINS/crates.vim
 source $VIM_PLUGINS/feline.vim
 source $VIM_PLUGINS/gitsigns.vim
 source $VIM_PLUGINS/nvim-cmp.vim
