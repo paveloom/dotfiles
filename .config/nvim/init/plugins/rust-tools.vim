@@ -9,7 +9,7 @@ require('rust-tools').setup {
 
     hover_actions = {
       border = "none",
-      auto_focus = true,
+      auto_focus = false,
     },
   },
 
