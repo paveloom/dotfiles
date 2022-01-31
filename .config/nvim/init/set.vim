@@ -56,3 +56,6 @@ set completeopt=menuone,noinsert,noselect
 
 " Avoid showing extra messages when using completion
 set shortmess+=c
+
+" Set a delay for CursorHold events
+set updatetime=300
