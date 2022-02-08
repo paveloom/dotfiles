@@ -14,9 +14,6 @@ bind \e\[3\;5~ kill-word
 
 # Variables
 
-## Switch to UTF-8 encoding
-set -gx LC_ALL C.UTF-8
-
 ## Make `less` not open a window if text takes up less space
 set -gx LESS -FXRI
 
