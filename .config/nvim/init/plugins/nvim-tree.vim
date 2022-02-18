@@ -4,6 +4,9 @@ let g:nvim_tree_git_hl = 1
 " Highlight opened files/directories
 let g:nvim_tree_highlight_opened_files = 1
 
+" Show only the tail of the current working directory path
+let g:nvim_tree_root_folder_modifier = ":t"
+
 " Compact folders that only contain a single
 " folder into one node in the file tree
 let g:nvim_tree_group_empty = 1
