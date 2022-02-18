@@ -12,12 +12,14 @@ require('rust-tools').setup {
       auto_focus = false,
     },
   },
-
   server = {
     standalone = false,
-    ["rust-analyzer"] = {
-      checkOnSave = {
-          command = "clippy"
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy",
+          extraArgs = { "--", "-W", "clippy::cargo", "-W", "clippy::pedantic" },
+        },
       },
     }
   },
