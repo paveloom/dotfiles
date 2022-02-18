@@ -85,6 +85,9 @@ Plug 'simrat39/rust-tools.nvim'
 " A NeoVim plugin that helps managing crates.io dependencies
 Plug 'saecki/crates.nvim'
 
+" Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -92,6 +95,7 @@ call plug#end()
 source $VIM_PLUGINS/crates.vim
 source $VIM_PLUGINS/feline.vim
 source $VIM_PLUGINS/gitsigns.vim
+source $VIM_PLUGINS/null-ls.vim
 source $VIM_PLUGINS/nvim-cmp.vim
 source $VIM_PLUGINS/nvim-tree.vim
 source $VIM_PLUGINS/rust-tools.vim
