@@ -67,6 +67,9 @@ Plug 'onsails/lspkind-nvim'
 " A completion framework
 Plug 'hrsh7th/nvim-cmp'
 
+" Snippet plugin for Vim/Nvim that supports LSP/VSCode's snippet format
+Plug 'hrsh7th/vim-vsnip'
+
 " An `nvim-cmp` source for neovim builtin LSP client
 Plug 'hrsh7th/cmp-nvim-lsp'
 
@@ -78,6 +81,9 @@ Plug 'hrsh7th/cmp-path'
 
 " An `nvim-cmp` source for Vim's cmdline
 Plug 'hrsh7th/cmp-cmdline'
+
+" `nvim-cmp` source for `vim-vsnip`
+Plug 'hrsh7th/cmp-vsnip'
 
 " Tools for better development in Rust using NeoVim's builtin LSP
 Plug 'simrat39/rust-tools.nvim'

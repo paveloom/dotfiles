@@ -3,6 +3,11 @@ local nvim_lsp = require('lspconfig')
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end,
+  },
   mapping = {
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
