@@ -8,7 +8,6 @@ function s:highlight(group, bg, fg, style)
 endfunction
 
 " Color palette
-
 let g:Color0 = '#888888'
 let g:Color1 = '#ddd3cc'
 let g:Color2 = '#ff669c'
@@ -70,7 +69,6 @@ call s:highlight('WildMenu', g:Color10, g:Color4, '')
 " # NvimTree
 
 " Tree
-
 call s:highlight('NvimTreeEmptyFolderName', '', g:Color5, '')
 call s:highlight('NvimTreeExecFile', '', g:Color7, '')
 call s:highlight('NvimTreeFolderIcon', '', g:Color5, '')
@@ -83,14 +81,12 @@ call s:highlight('NvimTreeSpecialFile', '', g:Color2, 'bold')
 call s:highlight('NvimTreeSymlink', '', g:Color2, 'bold')
 
 " Diagnostics
-
 call s:highlight('LspDiagnosticsError', '', g:Color9, '')
 call s:highlight('LspDiagnosticsHint', '', g:Color7, '')
 call s:highlight('LspDiagnosticsInformation', '', g:Color5, '')
 call s:highlight('LspDiagnosticsWarning', '', g:Color3, '')
 
 " Git
-
 call s:highlight('NvimTreeGitDeleted', '', g:Color12, '')
 call s:highlight('NvimTreeGitDirty', '', g:Color4, '')
 call s:highlight('NvimTreeGitMerge', '', g:Color2, '')
