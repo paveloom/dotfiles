@@ -20,6 +20,12 @@ require('rust-tools').setup {
           command = "clippy",
           extraArgs = { "--", "-W", "clippy::cargo", "-W", "clippy::pedantic" },
         },
+        -- Until `https://github.com/rust-analyzer/rust-analyzer/issues/8654` is fixed
+        diagnostics = {
+          disabled = {
+            "mismatched-arg-count"
+          }
+        }
       },
     }
   },
