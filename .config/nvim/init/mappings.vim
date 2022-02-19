@@ -15,6 +15,8 @@ inoremap <silent> <C-s> <Esc><C-s>
 nnoremap <silent> <C-q> :q <cr>
 
 " Change indentation using Tab
+nnoremap <silent> <Tab> >>
+nnoremap <silent> <S-Tab> <<
 vnoremap <silent> <Tab> >gv
 vnoremap <silent> <S-Tab> <gv
 
