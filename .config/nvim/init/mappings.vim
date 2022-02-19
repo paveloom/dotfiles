@@ -9,6 +9,7 @@ nnoremap <silent> <C-v> :vsplit <cr>
 
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>
+inoremap <silent> <C-s> <Esc><C-s>
 
 " Close the current buffer
 nnoremap <silent> <C-q> :q <cr>
