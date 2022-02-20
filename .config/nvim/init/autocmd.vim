@@ -48,3 +48,6 @@ autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
 
 " Highlight a yanked region
 autocmd TextYankPost * lua vim.highlight.on_yank { higroup="Visual", on_visual=false }
+
+" Compile TeX files on save
+autocmd BufWritePost *.tex VimtexCompile

@@ -91,6 +91,9 @@ Plug 'simrat39/rust-tools.nvim'
 " A NeoVim plugin that helps managing crates.io dependencies
 Plug 'saecki/crates.nvim'
 
+" A modern Vim and neovim filetype plugin for LaTeX files
+Plug 'lervag/vimtex'
+
 " Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
@@ -110,3 +113,4 @@ source $VIM_PLUGINS/telescope.vim
 source $VIM_PLUGINS/treesitter.vim
 source $VIM_PLUGINS/vim-hexokinase.vim
 source $VIM_PLUGINS/vim-rooter.vim
+source $VIM_PLUGINS/vimtex.vim
