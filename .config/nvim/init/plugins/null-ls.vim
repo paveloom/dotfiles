@@ -7,7 +7,7 @@ require("null-ls").setup({
   sources = {
     diagnostics.shellcheck,
     code_actions.shellcheck,
-    formatting.prettierd,
+    formatting.prettier,
   },
 })
 EOF
