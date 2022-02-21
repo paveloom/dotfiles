@@ -37,14 +37,13 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :%s/\($\n\s*\)\+\%$//e
 
 " Set `shiftwidth' per file type
-autocmd FileType vim setlocal shiftwidth=2
-autocmd FileType markdown setlocal shiftwidth=2
+autocmd FileType vim,markdown,tex setlocal shiftwidth=2
 
 " Show a diagnostic pop-up on CursorHold
 autocmd CursorHold *.rs lua vim.diagnostic.open_float(nil, { focusable = false })
 
 " Format on save
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.rs,*.html lua vim.lsp.buf.formatting_sync(nil, 2000)
 
 " Highlight a yanked region
 autocmd TextYankPost * lua vim.highlight.on_yank { higroup="Visual", on_visual=false }
