@@ -9,7 +9,7 @@ require('telescope').setup {
   },
   pickers = {
     find_files = {
-      file_ignore_patterns = { "^.git/" },
+      file_ignore_patterns = { "^.git/", "target/" },
       hidden = true,
     },
     buffers = {
