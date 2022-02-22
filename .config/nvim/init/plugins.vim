@@ -97,6 +97,9 @@ Plug 'lervag/vimtex'
 " Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
+" Vim support for Julia
+Plug 'JuliaEditorSupport/julia-vim'
+
 " Initialize plugin system
 call plug#end()
 
