@@ -38,7 +38,7 @@ autocmd BufWritePre * :%s/\($\n\s*\)\+\%$//e
 
 " Set `shiftwidth' per file type
 autocmd FileType vim,markdown,tex setlocal shiftwidth=2
-autocmd FileType julia setlocal shiftwidth=4
+autocmd FileType sh,julia setlocal shiftwidth=4
 
 " Show a diagnostic pop-up on CursorHold
 autocmd CursorHold *.rs lua vim.diagnostic.open_float(nil, { focusable = false })

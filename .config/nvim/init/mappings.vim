@@ -60,16 +60,17 @@ endfunction
 nnoremap <silent> h :call <SID>HoverAction()<cr>
 
 " Code navigation
-nnoremap <silent> s <cmd>lua vim.lsp.buf.signature_help() <cr>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation() <cr>
-nnoremap <silent> gt <cmd>lua vim.lsp.buf.type_definition() <cr>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references() <cr>
-nnoremap <silent> gs <cmd>lua vim.lsp.buf.document_symbol() <cr>
-nnoremap <silent> gw <cmd>lua vim.lsp.buf.workspace_symbol() <cr>
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition() <cr>
-nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action() <cr>
 nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev() <cr>
 nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next() <cr>
+nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action() <cr>
+nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition() <cr>
+nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation() <cr>
+nnoremap <silent> gr <cmd>lua vim.lsp.buf.references() <cr>
+nnoremap <silent> gs <cmd>lua vim.lsp.buf.document_symbol() <cr>
+nnoremap <silent> gt <cmd>lua vim.lsp.buf.type_definition() <cr>
+nnoremap <silent> gw <cmd>lua vim.lsp.buf.workspace_symbol() <cr>
+nnoremap <silent> r <cmd>lua vim.lsp.buf.rename() <cr>
+nnoremap <silent> s <cmd>lua vim.lsp.buf.signature_help() <cr>
 
 " Telescope
 nnoremap <silent> f :Telescope find_files <cr>
