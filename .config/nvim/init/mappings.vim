@@ -78,8 +78,8 @@ nnoremap <silent> l :Telescope live_grep <cr>
 nnoremap <silent> b :Telescope buffers <cr>
 
 " Buffer history navigation
-nnoremap <silent> <C-[> :BufSurfBack <cr>
-nnoremap <silent> <C-]> :BufSurfForward <cr>
+nnoremap <silent> <A-Left> :BufSurfBack <cr>
+nnoremap <silent> <A-Right> :BufSurfForward <cr>
 
 " Close all buffers but this one
 nnoremap <silent> <C-/> :%bd\|:e#\|:bd# <cr>

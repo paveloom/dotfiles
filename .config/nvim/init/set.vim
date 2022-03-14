@@ -50,6 +50,7 @@ set termguicolors
 
 " Enable spell checking
 set spell
+set spelllang=en,ru
 
 " Set completion options
 set completeopt=menuone,noinsert,noselect
