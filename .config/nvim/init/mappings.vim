@@ -20,6 +20,10 @@ nnoremap <silent> <S-Tab> <<
 vnoremap <silent> <Tab> >gv
 vnoremap <silent> <S-Tab> <gv
 
+" Jump through the jump list
+nnoremap <C-j> <C-o>
+nnoremap <C-k> <C-i>
+
 " Toggle line wrapping (function)
 function! ToggleWrap()
   if (&wrap)
