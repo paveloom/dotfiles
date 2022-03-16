@@ -60,8 +60,8 @@ endfunction
 nnoremap <silent> h :call <SID>HoverAction()<cr>
 
 " Code navigation
-nnoremap <silent> g[ <cmd>lua vim.diagnostic.goto_prev() <cr>
-nnoremap <silent> g] <cmd>lua vim.diagnostic.goto_next() <cr>
+nnoremap <silent> g, <cmd>lua vim.diagnostic.goto_prev() <cr>
+nnoremap <silent> g. <cmd>lua vim.diagnostic.goto_next() <cr>
 nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action() <cr>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition() <cr>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation() <cr>
@@ -78,8 +78,8 @@ nnoremap <silent> l :Telescope live_grep <cr>
 nnoremap <silent> b :Telescope buffers <cr>
 
 " Buffer history navigation
-nnoremap <silent> <A-Left> :BufSurfBack <cr>
-nnoremap <silent> <A-Right> :BufSurfForward <cr>
+nnoremap <silent> <S-A> :BufSurfBack <cr>
+nnoremap <silent> <S-D> :BufSurfForward <cr>
 
 " Close all buffers but this one
-nnoremap <silent> <C-/> :%bd\|:e#\|:bd# <cr>
+nnoremap <silent> <A-/> :%bd\|:e#\|:bd# <cr>
