@@ -1,12 +1,6 @@
 " Open the `init.vim` file
 nnoremap <silent> <C-p> :e $MYVIMRC <cr>
 
-" Duplicate the current buffer in a new horizontal split
-nnoremap <silent> <C-h> :split <cr>
-
-" Duplicate the current buffer in a new vertical split
-nnoremap <silent> <C-v> :vsplit <cr>
-
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>
 inoremap <silent> <C-s> <Esc><C-s>
@@ -46,7 +40,7 @@ function! s:HoverAction()
 endfunction
 
 " General hover action
-nnoremap <silent> h :call <SID>HoverAction()<cr>
+nnoremap <silent> <C-h> :call <SID>HoverAction()<cr>
 
 " Code navigation
 nnoremap <silent> g, <cmd>lua vim.diagnostic.goto_prev() <cr>
