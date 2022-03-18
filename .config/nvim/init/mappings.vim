@@ -24,29 +24,11 @@ vnoremap <silent> <S-Tab> <gv
 nnoremap <C-j> <C-o>
 nnoremap <C-k> <C-i>
 
-" Toggle line wrapping (function)
-function! ToggleWrap()
-  if (&wrap)
-    set nowrap
-  else
-    set wrap
-  endif
-endfunction
+" Toggle line wrapping
+nnoremap <silent> <A-w> :set invwrap <cr>
 
-" Toggle line wrapping (shortcut)
-nnoremap <silent> <A-w> :call ToggleWrap() <cr>
-
-" Toggle spell checking (function)
-function! ToggleSpell()
-  if (&spell)
-    set nospell
-  else
-    set spell
-  endif
-endfunction
-
-" Toggle spell checking (shortcut)
-nnoremap <silent> <A-s> :call ToggleSpell() <cr>
+" Toggle spell checking
+nnoremap <silent> <A-s> :set invspell <cr>
 
 function! s:HoverAction()
     if (index(['vim','help'], &filetype) >= 0)
