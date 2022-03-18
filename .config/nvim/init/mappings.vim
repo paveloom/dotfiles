@@ -77,9 +77,9 @@ nnoremap <silent> r <cmd>lua vim.lsp.buf.rename() <cr>
 nnoremap <silent> s <cmd>lua vim.lsp.buf.signature_help() <cr>
 
 " Telescope
-nnoremap <silent> f :Telescope find_files <cr>
-nnoremap <silent> l :Telescope live_grep <cr>
-nnoremap <silent> b :Telescope buffers <cr>
+nnoremap <silent> <C-f> :Telescope find_files <cr>
+nnoremap <silent> <C-g> :Telescope live_grep <cr>
+nnoremap <silent> <C-b> :Telescope buffers <cr>
 
 " Buffer history navigation
 nnoremap <silent> <C-A> :BufSurfBack <cr>
