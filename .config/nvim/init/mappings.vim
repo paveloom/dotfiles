@@ -15,8 +15,8 @@ vnoremap <silent> <Tab> >gv
 vnoremap <silent> <S-Tab> <gv
 
 " Jump through the jump list
-nnoremap <C-j> <C-o>
-nnoremap <C-k> <C-i>
+nnoremap <leader>q <C-o>
+nnoremap <leader>e <C-i>
 
 " Toggle line numbering
 nnoremap <silent> <A-n> :set invrelativenumber <cr>
@@ -56,13 +56,13 @@ nnoremap <silent> gR <cmd>lua vim.lsp.buf.rename() <cr>
 nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help() <cr>
 
 " Telescope
-nnoremap <silent> <C-f> :Telescope find_files <cr>
-nnoremap <silent> <C-g> :Telescope live_grep <cr>
-nnoremap <silent> <C-b> :Telescope buffers <cr>
+nnoremap <silent> <leader>f :Telescope find_files <cr>
+nnoremap <silent> <leader>g :Telescope live_grep <cr>
+nnoremap <silent> <leader>b :Telescope buffers <cr>
 
 " Buffer history navigation
-nnoremap <silent> <C-A> :BufSurfBack <cr>
-nnoremap <silent> <C-D> :BufSurfForward <cr>
+nnoremap <silent> <leader>a :BufSurfBack <cr>
+nnoremap <silent> <leader>d :BufSurfForward <cr>
 
 " Close all buffers but this one
 nnoremap <silent> <A-/> :%bd\|:e#\|:bd# <cr>
