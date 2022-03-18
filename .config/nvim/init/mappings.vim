@@ -1,5 +1,5 @@
 " Open the `init.vim` file
-nnoremap <silent> <C-p> :e $MYVIMRC <cr>
+nnoremap <silent> <leader>p :e $MYVIMRC <cr>
 
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>

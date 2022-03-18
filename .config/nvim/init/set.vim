@@ -63,7 +63,7 @@ set spelllang=en,ru
 
 " Set an alternative keyboard mapping to Russian
 set keymap=russian-jcukenwin
-:set iminsert=0 imsearch=-1
+set iminsert=0 imsearch=-1
 
 " Set completion options
 set completeopt=menuone,noinsert,noselect
