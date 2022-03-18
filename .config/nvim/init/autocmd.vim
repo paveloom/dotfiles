@@ -17,7 +17,6 @@ endfunction
 function! RestoreSession()
   if filereadable($VIM_SESSION)
     source $VIM_SESSION
-    NvimTreeFindFile
   endif
 endfunction
 
