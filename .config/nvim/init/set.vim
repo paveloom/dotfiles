@@ -7,6 +7,10 @@ set relativenumber
 set cursorline
 set cursorlineopt=number
 
+" Don't time out on key codes (leader, specifically)
+set notimeout
+set nottimeout
+
 " Create folds automatically based on indentation
 set foldmethod=indent
 set foldlevel=99
