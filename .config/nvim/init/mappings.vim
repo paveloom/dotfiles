@@ -27,6 +27,7 @@ nnoremap <silent> <A-w> :set invwrap <cr>
 " Toggle spell checking
 nnoremap <silent> <A-s> :set invspell <cr>
 
+" General hover action (function)
 function! s:HoverAction()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -39,7 +40,7 @@ function! s:HoverAction()
     endif
 endfunction
 
-" General hover action
+" General hover action (shortcut)
 nnoremap <silent> <C-h> :call <SID>HoverAction()<cr>
 
 " Code navigation

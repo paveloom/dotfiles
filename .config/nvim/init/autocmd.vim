@@ -36,7 +36,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufWritePre * :%s/\($\n\s*\)\+\%$//e
 
 " Set `shiftwidth' per file type
-autocmd FileType vim,markdown,tex setlocal shiftwidth=2
+autocmd FileType vim,markdown,tex,html setlocal shiftwidth=2
 autocmd FileType sh,julia setlocal shiftwidth=4
 
 " Show a diagnostic pop-up on CursorHold

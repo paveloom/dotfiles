@@ -7,6 +7,11 @@ set relativenumber
 set cursorline
 set cursorlineopt=number
 
+" Create folds automatically based on indentation
+set foldmethod=indent
+set foldlevel=99
+set fillchars+=fold:\ ,
+
 " Set the font
 set guifont=FiraCode\ Nerd\ Font:h13
 
