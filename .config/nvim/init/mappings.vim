@@ -24,6 +24,9 @@ vnoremap <silent> <S-Tab> <gv
 nnoremap <C-j> <C-o>
 nnoremap <C-k> <C-i>
 
+" Toggle line numbering
+nnoremap <silent> <A-n> :set invrelativenumber <cr>
+
 " Toggle line wrapping
 nnoremap <silent> <A-w> :set invwrap <cr>
 

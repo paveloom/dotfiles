@@ -3,6 +3,10 @@
 set number
 set relativenumber
 
+" Highlight the number of the current line
+set cursorline
+set cursorlineopt=number
+
 " Set the font
 set guifont=FiraCode\ Nerd\ Font:h13
 
