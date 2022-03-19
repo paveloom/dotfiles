@@ -13,9 +13,6 @@ local feedkey = function(key, mode)
 end
 
 cmp.setup({
-  completion = {
-    autocomplete = false,
-  },
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
