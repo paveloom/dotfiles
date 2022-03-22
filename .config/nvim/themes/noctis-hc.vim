@@ -1,5 +1,7 @@
 highlight clear
 
+" A hint: use `:highlight` to see currently applied highlights!
+
 function s:highlight(group, bg, fg, style)
   let gui = a:style == '' ? '' : 'gui=' . a:style
   let fg = a:fg == '' ? '' : 'guifg=' . a:fg
@@ -33,11 +35,14 @@ call s:highlight('Conditional', '', g:Color2, 'bold')
 call s:highlight('Constant', '', g:Color4, '')
 call s:highlight('Cursor', g:Color1, g:Color10, '')
 call s:highlight('CursorLineNr', '', g:Color14, '')
-call s:highlight('DiffAdd', g:Color11, '', '')
-call s:highlight('DiffDelete', g:Color12, '', '')
+call s:highlight('DiffAdd', g:Color10, '', '')
+call s:highlight('DiffChange', g:Color10, '', '')
+call s:highlight('DiffDelete', g:Color12, g:Color10, '')
+call s:highlight('DiffText', g:Color4, '', '')
 call s:highlight('EndOfBuffer', '', g:Color10, '')
 call s:highlight('Error', '', g:Color9, '')
 call s:highlight('Folded', g:Color10, g:Color0, 'italic')
+call s:highlight('FoldColumn', g:Color10, g:Color5, '')
 call s:highlight('Function', '', g:Color7, '')
 call s:highlight('Identifier', '', g:Color3, '')
 call s:highlight('Keyword', '', g:Color2, 'bold')
@@ -115,8 +120,12 @@ call s:highlight('TelescopePromptPrefix', '', g:Color1, '')
 " # GitSigns
 
 call s:highlight('GitSignsAdd', g:Color10, g:Color11, '')
+call s:highlight('GitSignsAddInline', g:Color11, g:Color10, '')
+call s:highlight('GitSignsAddLn', g:Color10, g:Color1, '')
 call s:highlight('GitSignsChange', g:Color10, g:Color4, '')
+call s:highlight('GitSignsChangeInline', g:Color4, g:Color10, '')
 call s:highlight('GitSignsDelete', g:Color10, g:Color12, '')
+call s:highlight('GitSignsDeleteInline', g:Color12, g:Color10, '')
 
 " # Crates
 

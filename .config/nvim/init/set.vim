@@ -14,7 +14,7 @@ set nottimeout
 " Create folds automatically based on indentation
 set foldmethod=indent
 set foldlevel=99
-set fillchars+=fold:\ ,
+set fillchars+=fold:\ ,foldopen:▼,foldsep:│,foldclose:▸
 
 " Set the font
 set guifont=FiraCode\ Nerd\ Font:h13

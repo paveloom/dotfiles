@@ -7,6 +7,7 @@ require("null-ls").setup({
   sources = {
     diagnostics.shellcheck,
     code_actions.shellcheck,
+    code_actions.gitsigns,
     formatting.prettier,
   },
 })
