@@ -46,12 +46,14 @@ nnoremap <silent> <C-h> :call <SID>HoverAction()<cr>
 " Code actions and navigation
 nnoremap <silent> g, <cmd>lua vim.diagnostic.goto_prev() <cr>
 nnoremap <silent> g. <cmd>lua vim.diagnostic.goto_next() <cr>
+nnoremap <silent> gD <cmd>Gitsigns diffthis <cr>
 nnoremap <silent> gR <cmd>lua vim.lsp.buf.rename() <cr>
 nnoremap <silent> gS <cmd>lua vim.lsp.buf.document_symbol() <cr>
 nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action() <cr>
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition() <cr>
-nnoremap <silent> gD <cmd>Gitsigns diffthis <cr>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation() <cr>
+nnoremap <silent> gk <cmd>Gitsigns prev_hunk <cr>
+nnoremap <silent> gl <cmd>Gitsigns next_hunk <cr>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references() <cr>
 nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help() <cr>
 nnoremap <silent> gt <cmd>lua vim.lsp.buf.type_definition() <cr>
