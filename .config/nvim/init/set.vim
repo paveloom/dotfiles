@@ -72,8 +72,8 @@ set iminsert=0 imsearch=-1
 " Set completion options
 set completeopt=menuone,noinsert,noselect
 
-" Avoid showing extra messages when using completion
-set shortmess+=c
+" Use more abbreviations in the command-line and truncate when necessary
+set shortmess=acTF
 
 " Set a delay for CursorHold events
 set updatetime=300
