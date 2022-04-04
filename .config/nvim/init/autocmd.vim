@@ -1,30 +1,23 @@
-" Save the session when entering a buffer (function)
-function! BufEnterSaveSession()
-  " Don't save the session until Vim finished entering
-  if v:vim_did_enter
-    mksession! $VIM_SESSION
-  endif
-endfunction
-
 " Save the session when leaving Vim (function)
-function! VimLeaveSaveSession()
+function! SaveSession()
   " Find and close the file explorer
   execute 'bdelete! ' . bufnr('NvimTree')
-  mksession! $VIM_SESSION
+  " Stop recording the session
+  silent Obsession $VIM_SESSION
 endfunction
 
-" Restore the session when entering Vim (function)
+" Restore the session and start recording when entering Vim (function)
 function! RestoreSession()
+  " Restore the session if there is a file
   if filereadable($VIM_SESSION)
     source $VIM_SESSION
   endif
+  " Start recording the session
+  silent Obsession $VIM_SESSION
 endfunction
 
-" Save the session when entering a buffer (autocmd)
-autocmd BufEnter * call BufEnterSaveSession()
-
 " Save the session when leaving Vim (autocmd)
-autocmd VimLeavePre * call VimLeaveSaveSession()
+autocmd VimLeavePre * call SaveSession()
 
 " Restore the session when entering Vim (autocmd)
 autocmd VimEnter * ++nested call RestoreSession()
