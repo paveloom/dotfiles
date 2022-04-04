@@ -42,7 +42,7 @@ set mouse=a
 set clipboard+=unnamedplus
 
 " Set what to save in a session
-set sessionoptions=blank,buffers,curdir,folds,
+set sessionoptions=blank,buffers,folds,
                   \help,tabpages,winsize,winpos,terminal
 
 " Don't wrap the lines by default

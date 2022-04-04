@@ -1,26 +1,15 @@
-" Save the session when leaving Vim (function)
-function! SaveSession()
-  " Find and close the file explorer
-  execute 'bdelete! ' . bufnr('NvimTree')
-  " Stop recording the session
-  silent Obsession $VIM_SESSION
-endfunction
-
-" Restore the session and start recording when entering Vim (function)
+" Restore the session when entering Vim (function)
 function! RestoreSession()
-  " Restore the session if there is a file
+  " Restore the session
   if filereadable($VIM_SESSION)
     source $VIM_SESSION
   endif
   " Start recording the session
-  silent Obsession $VIM_SESSION
+  Obsession $VIM_SESSION
 endfunction
 
-" Save the session when leaving Vim (autocmd)
-autocmd VimLeavePre * call SaveSession()
-
 " Restore the session when entering Vim (autocmd)
-autocmd VimEnter * ++nested call RestoreSession()
+autocmd VimEnter * ++nested silent call RestoreSession()
 
 " Remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
