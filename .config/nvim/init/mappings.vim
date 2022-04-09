@@ -18,6 +18,13 @@ vnoremap <silent> <S-Tab> <gv
 nnoremap <leader>q <C-o>
 nnoremap <leader>e <C-i>
 
+" Always cut, yank and paste from the clipboard
+nnoremap y "+y
+nnoremap p "+p
+vnoremap y "+y
+vnoremap p "+p
+vnoremap x "+x
+
 " Toggle line numbering
 nnoremap <silent> <A-n> :set invrelativenumber <cr>
 

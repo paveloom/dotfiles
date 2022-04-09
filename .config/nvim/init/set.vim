@@ -36,11 +36,6 @@ set smartindent
 " Allow the mouse usage
 set mouse=a
 
-" Use the clipboard register '+' instead of
-" register '*' for all yank, delete, change
-" and put operations
-set clipboard+=unnamedplus
-
 " Set what to save in a session
 set sessionoptions=blank,buffers,folds,
                   \help,tabpages,winsize,winpos,terminal
