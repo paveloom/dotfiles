@@ -1,0 +1,90 @@
+attribute = "lilac"
+keyword = { fg = "french_pink", modifiers = ["bold"] }
+"keyword.directive" = "orange_crayola" # -- preprocessor comments (#if in C)
+namespace = "mellow_apricot"
+punctuation = "timberwolf"
+"punctuation.delimiter" = "french_pink"
+operator = { fg = "french_pink", modifiers = ["bold"] }
+special = "timberwolf"
+variable.other.member = "blue_jeans"
+variable = "mellow_apricot"
+# variable = "almond" # TODO: metavariables only
+"variable.parameter" = "mellow_apricot"
+"variable.builtin" = { fg = "orange_crayola", modifierd = ["italic"] }
+type = "blue_jeans"
+"type.builtin" = "blue_jeans" # TODO: distinguish?
+constructor = "pacific_blue"
+function = "pacific_blue"
+"function.macro" = "pacific_blue"
+"function.builtin" = "pacific_blue"
+tag = "timberwolf"
+comment = "battleship_grey"
+constant = "pacific_blue"
+"constant.builtin" = "blue_jeans"
+string = "aquamarine"
+"constant.numeric" = "vivid_violet"
+"constant.character.escape" = "blue_jeans"
+# used for lifetimes
+label = "blue_jeans"
+
+"markup.heading" = "blue_jeans"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "timberwolf", modifiers = ["underlined"] }
+"markup.link.text" = "pacific_blue"
+"markup.raw" = "pacific_blue"
+
+"diff.plus" = "erin"
+"diff.minus" = "tart_orange"
+"diff.delta" = "mellow_apricot"
+
+# TODO: diferentiate doc comment
+# concat (ERROR) @error.syntax and "MISSING ;" selectors for errors
+
+"ui.background" = { bg = "black" }
+"ui.linenr" = "battleship_grey"
+"ui.linenr.selected" = "white"
+"ui.statusline" = { fg = "timberwolf", bg = "black" }
+"ui.statusline.inactive" = { fg = "battleship_grey", bg = "black" }
+"ui.popup" = { bg = "black" }
+"ui.window" = { fg = "white" }
+"ui.help" = { fg = "timberwolf", bg = "black" }
+
+"ui.text" = { fg = "timberwolf" }
+"ui.text.focus" = { fg = "white" }
+
+"ui.selection" = { bg = "davys_grey" }
+"ui.selection.primary" = { bg = "davys_grey" }
+# TODO: namespace ui.cursor as ui.selection.cursor?
+"ui.cursor.select" = { bg = "davys_grey" }
+"ui.cursor.insert" = { bg = "davys_grey" }
+"ui.cursor.match" = { fg = "black", bg = "davys_grey" }
+"ui.cursor" = { modifiers = ["reversed"] }
+"ui.highlight" = { bg = "davys_grey" }
+
+"ui.menu.selected" = { fg = "white", bg = "goldenrod" }
+
+diagnostic = { modifiers = ["underlined"] }
+
+bwarning = "mellow_apricot"
+error = "red_ryb"
+info = "aquamarine"
+hint = "pacific_blue"
+
+[palette]
+battleship_grey = "#888888"
+timberwolf = "#ddd3cc"
+french_pink = "#ff669c"
+mellow_apricot = "#ffb966"
+goldenrod = "#e6ac00"
+aquamarine = "#66ffbf"
+vivid_violet = "#a000ff"
+pacific_blue = "#00b4cc"
+blue_jeans = "#00a0ff"
+red_ryb = "#ff2020"
+black = "#1e1e1e"
+erin = "#44ff44"
+tart_orange = "#ff4444"
+davys_grey = "#595959"
+white = "#ffffff"
+orange_crayola = "#ff7039"

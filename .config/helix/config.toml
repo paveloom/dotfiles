@@ -1,0 +1,12 @@
+theme = "noctis-hq"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+C-s = ":w"
+C-p = ":open ~/.config/helix/config.toml"
