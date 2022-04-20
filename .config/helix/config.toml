@@ -22,3 +22,23 @@ C-s = [
 ]
 # C-s = ":w"
 C-p = ":open ~/.config/helix/config.toml"
+S-left = "extend_char_left"
+S-right = "extend_char_right"
+S-up = "extend_line_up"
+S-down = "extend_line_down"
+C-left = ["move_prev_word_start", "move_char_left", "move_char_right"]
+C-right = ["move_next_word_start", "move_char_left", "move_char_right"]
+C-up = "move_line_up"
+C-down = "move_line_down"
+C-S-left = ["select_mode", "move_prev_word_start"]
+C-S-right = ["select_mode", "move_next_word_end"]
+
+[keys.select]
+C-S-left = "move_prev_word_start"
+C-S-right = "move_next_word_end"
+
+[keys.insert]
+C-left = ["move_prev_word_start", "move_char_left", "move_char_right"]
+C-right = ["move_next_word_start", "move_char_left", "move_char_right"]
+C-up = "move_line_up"
+C-down = "move_line_down"
