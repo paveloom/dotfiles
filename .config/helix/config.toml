@@ -14,7 +14,7 @@ C-s = [
     # Delete trailing whitespace from end of each line
     ":pipe sed 's/[ \t]*$//'",
     # Delete trailing blank lines (including whitespace) at end of the buffer
-    ":pipe awk '/^\\s*$/ {b=b $0 \"\\n\"; next;} {printf \"\\%s\",b; b=\"\"; print;}'",
+    ":pipe awk '/^\\s*$/ {b=b $0 \"\\n\"; next;} {printf \"%s\",b; b=\"\"; print;}'",
     "collapse_selection",
     "jump_backward",
     # It writes but introduces a phantom change at the moment
