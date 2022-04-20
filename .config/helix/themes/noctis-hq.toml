@@ -1,4 +1,4 @@
-attribute = "lilac"
+attribute = "french_pink"
 keyword = { fg = "french_pink", modifiers = ["bold"] }
 "keyword.directive" = "orange_crayola" # -- preprocessor comments (#if in C)
 namespace = "mellow_apricot"
@@ -10,7 +10,7 @@ variable.other.member = "blue_jeans"
 variable = "mellow_apricot"
 # variable = "almond" # TODO: metavariables only
 "variable.parameter" = "mellow_apricot"
-"variable.builtin" = { fg = "orange_crayola", modifierd = ["italic"] }
+"variable.builtin" = { fg = "orange_crayola", modifiers = ["italic"] }
 type = "blue_jeans"
 "type.builtin" = "blue_jeans" # TODO: distinguish?
 constructor = "pacific_blue"

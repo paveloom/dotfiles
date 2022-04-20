@@ -3,3 +3,31 @@ name = "rust"
 
 [language.config]
 checkOnSave = { command = "clippy", extraArgs = ["--", "-W", "clippy::cargo", "-W", "clippy::pedantic"] }
+
+[[language]]
+name = "julia"
+language-server = { command = "julia", args = [
+        "--startup-file=no",
+        "--history-file=no",
+        "--quiet",
+        "--eval",
+        """
+                using LanguageServer;
+                popfirst!(LOAD_PATH);
+                depot_path = get(ENV, "JULIA_DEPOT_PATH", "");
+                project_path = let
+                    dirname(something(
+                        Base.load_path_expand((
+                            p = get(ENV, "JULIA_PROJECT", nothing);
+                            p === nothing ? nothing : isempty(p) ? nothing : p
+                        )),
+                        Base.current_project(),
+                        get(Base.load_path(), 1, nothing),
+                        Base.load_path_expand("@v#.#"),
+                    ))
+                end;
+                server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path);
+                server.runlinter = true;
+                run(server);
+        """,
+        ] }
