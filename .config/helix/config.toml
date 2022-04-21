@@ -30,12 +30,16 @@ C-left = ["move_prev_word_start", "move_char_left", "move_char_right"]
 C-right = ["move_next_word_start", "move_char_left", "move_char_right"]
 C-up = "move_line_up"
 C-down = "move_line_down"
-C-S-left = ["select_mode", "move_prev_word_start"]
-C-S-right = ["select_mode", "move_next_word_end"]
+C-S-left = ["select_mode", "extend_prev_word_start"]
+C-S-right = ["select_mode", "extend_next_word_end"]
+C-S-up = ["select_mode", "extend_line_up"]
+C-S-down = ["select_mode", "extend_line_down"]
 
 [keys.select]
-C-S-left = "move_prev_word_start"
-C-S-right = "move_next_word_end"
+C-S-left = "extend_prev_word_start"
+C-S-right = "extend_next_word_end"
+C-S-up = "extend_line_up"
+C-S-down = "extend_line_down"
 
 [keys.insert]
 C-left = ["move_prev_word_start", "move_char_left", "move_char_right"]
