@@ -8,6 +8,10 @@ normal = "block"
 hidden = false
 
 [keys.normal]
+p = "paste_before"
+P = "paste_after"
+"space" = { "p" = "paste_clipboard_before" }
+"space" = { "P" = "paste_clipboard_after" }
 C-s = [
     "save_selection",
     "select_all",
