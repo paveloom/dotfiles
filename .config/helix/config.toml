@@ -10,8 +10,6 @@ hidden = false
 [keys.normal]
 p = "paste_before"
 P = "paste_after"
-"space" = { "p" = "paste_clipboard_before" }
-"space" = { "P" = "paste_clipboard_after" }
 C-s = [
     "save_selection",
     "select_all",
@@ -39,7 +37,18 @@ C-S-right = ["select_mode", "extend_next_word_end"]
 C-S-up = ["select_mode", "extend_line_up"]
 C-S-down = ["select_mode", "extend_line_down"]
 
+[keys.normal."space"]
+a = "jump_backward"
+d = "jump_forward"
+p = "paste_clipboard_before"
+P = "paste_clipboard_after"
+q = "code_action"
+
 [keys.select]
+C-left = "extend_prev_word_start"
+C-right = "extend_next_word_start"
+C-up = "extend_line_up"
+C-down = "extend_line_down"
 C-S-left = "extend_prev_word_start"
 C-S-right = "extend_next_word_end"
 C-S-up = "extend_line_up"
