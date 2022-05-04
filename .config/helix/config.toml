@@ -19,10 +19,9 @@ C-s = [
     ":pipe awk '/^\\s*$/ {b=b $0 \"\\n\"; next;} {printf \"%s\",b; b=\"\"; print;}'",
     "collapse_selection",
     "jump_backward",
-    # It writes but introduces a phantom change at the moment
+    "commit_undo_checkpoint",
     ":write",
 ]
-# C-s = ":w"
 C-p = ":open ~/.config/helix/config.toml"
 S-left = "extend_char_left"
 S-right = "extend_char_right"
