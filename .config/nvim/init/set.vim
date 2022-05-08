@@ -43,6 +43,9 @@ set sessionoptions=blank,buffers,folds,
 " Don't wrap the lines by default
 set nowrap
 
+" Wrap at a word boundary
+set linebreak
+
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
   let &undodir = expand($VIM_DATA . '/.undodir')
