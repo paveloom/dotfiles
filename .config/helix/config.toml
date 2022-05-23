@@ -8,6 +8,7 @@ normal = "block"
 hidden = false
 
 [keys.normal]
+V = "extend_line"
 p = "paste_before"
 P = "paste_after"
 C-s = [
@@ -29,8 +30,8 @@ S-up = "extend_line_up"
 S-down = "extend_line_down"
 C-left = ["move_prev_word_start", "move_char_left", "move_char_right"]
 C-right = ["move_next_word_start", "move_char_left", "move_char_right"]
-C-up = "move_line_up"
-C-down = "move_line_down"
+C-up = ["move_line_up", "move_line_up", "move_line_up", "move_line_up", "move_line_up"]
+C-down = ["move_line_down", "move_line_down", "move_line_down", "move_line_down", "move_line_down"]
 C-S-left = ["select_mode", "extend_prev_word_start"]
 C-S-right = ["select_mode", "extend_next_word_end"]
 C-S-up = ["select_mode", "extend_line_up"]
