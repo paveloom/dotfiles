@@ -33,3 +33,13 @@ language-server = { command = "julia", args = [
   run(server);
   """,
 ] }
+
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+
+[[language]]
+name = "latex"
+
+[language.config.texlab]
+build = { executable = "tectonic", args = ["-X", "compile", "%f"], onSave = true }
