@@ -1,3 +1,9 @@
+" Jump by 4 lines when holding Ctrl and pressing Up/Down arrows
+nnoremap <silent> <C-Up> 5k
+nnoremap <silent> <C-Down> 5j
+inoremap <silent> <C-Up> <C-o>5k
+inoremap <silent> <C-Down> <C-o>5j
+
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>
 inoremap <silent> <C-s> <Esc><C-s>
@@ -40,7 +46,7 @@ function! s:HoverAction()
     elseif (expand('%:t') == 'Cargo.toml')
         lua require('crates').show_popup()
     else
-        lua vim.lsp.buf.hover()
+        lua vim lsp.buf.hover()
     endif
 endfunction
 
@@ -48,26 +54,26 @@ endfunction
 nnoremap <silent> <C-h> :call <SID>HoverAction()<cr>
 
 " Code actions and navigation
-nnoremap <silent> g, <cmd>lua vim.diagnostic.goto_prev() <cr>
-nnoremap <silent> g. <cmd>lua vim.diagnostic.goto_next() <cr>
-nnoremap <silent> gD <cmd>Gitsigns diffthis <cr>
-nnoremap <silent> gR <cmd>lua vim.lsp.buf.rename() <cr>
-nnoremap <silent> gS <cmd>lua vim.lsp.buf.document_symbol() <cr>
-nnoremap <silent> ga <cmd>lua vim.lsp.buf.code_action() <cr>
-nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition() <cr>
-nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation() <cr>
-nnoremap <silent> gk <cmd>Gitsigns prev_hunk <cr>
-nnoremap <silent> gl <cmd>Gitsigns next_hunk <cr>
-nnoremap <silent> gr <cmd>lua vim.lsp.buf.references() <cr>
-nnoremap <silent> gs <cmd>lua vim.lsp.buf.signature_help() <cr>
-nnoremap <silent> gt <cmd>lua vim.lsp.buf.type_definition() <cr>
-nnoremap <silent> gw <cmd>lua vim.lsp.buf.workspace_symbol() <cr>
+nnoremap <silent> g, :lua vim.diagnostic.goto_prev() <cr>
+nnoremap <silent> g. :lua vim.diagnostic.goto_next() <cr>
+nnoremap <silent> gD :Gitsigns diffthis <cr>
+nnoremap <silent> gR :lua vim.lsp.buf.rename() <cr>
+nnoremap <silent> gS :lua vim.lsp.buf.document_symbol() <cr>
+nnoremap <silent> ga :lua vim.lsp.buf.code_action() <cr>
+nnoremap <silent> gd :lua vim.lsp.buf.definition() <cr>
+nnoremap <silent> gi :lua vim.lsp.buf.implementation() <cr>
+nnoremap <silent> gk :Gitsigns prev_hunk <cr>
+nnoremap <silent> gl :Gitsigns next_hunk <cr>
+nnoremap <silent> gr :lua vim.lsp.buf.references() <cr>
+nnoremap <silent> gs :lua vim.lsp.buf.signature_help() <cr>
+nnoremap <silent> gt :lua vim.lsp.buf.type_definition() <cr>
+nnoremap <silent> gw :lua vim.lsp.buf.workspace_symbol() <cr>
 
 " Telescope
 nnoremap <silent> <leader>f :Telescope find_files <cr>
 nnoremap <silent> <leader>g :Telescope live_grep <cr>
 nnoremap <silent> <leader>b :Telescope buffers <cr>
-nnoremap <silent> <leader>p <cmd>lua require('telescope').extensions.project.project{ display_type = 'full' } <cr>
+nnoremap <silent> <leader>p :lua require('telescope').extensions.project.project{ display_type = 'full' } <cr>
 nnoremap <silent> <leader>n :Telescope file_browser <cr>
 
 " Buffer history navigation
