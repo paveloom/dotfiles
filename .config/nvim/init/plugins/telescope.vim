@@ -1,5 +1,6 @@
 lua <<EOF
-require('telescope').setup {
+telescope = require('telescope')
+telescope.setup {
   defaults = require('telescope.themes').get_ivy {
     mappings = {
       i = {
@@ -19,6 +20,18 @@ require('telescope').setup {
         }
       }
     }
+  },
+  extensions = {
+    project = {
+      hidden_files = true,
+    },
+    file_browser = {
+      select_buffer = true,
+      dir_icon = '',
+      hijack_netrw = true,
+    }
   }
 }
+telescope.load_extension('project')
+telescope.load_extension('file_browser')
 EOF

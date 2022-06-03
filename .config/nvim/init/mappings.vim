@@ -1,6 +1,3 @@
-" Open the `init.vim` file
-nnoremap <silent> <leader>p :e $MYVIMRC <cr>
-
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>
 inoremap <silent> <C-s> <Esc><C-s>
@@ -70,6 +67,8 @@ nnoremap <silent> gw <cmd>lua vim.lsp.buf.workspace_symbol() <cr>
 nnoremap <silent> <leader>f :Telescope find_files <cr>
 nnoremap <silent> <leader>g :Telescope live_grep <cr>
 nnoremap <silent> <leader>b :Telescope buffers <cr>
+nnoremap <silent> <leader>p <cmd>lua require('telescope').extensions.project.project{ display_type = 'full' } <cr>
+nnoremap <silent> <leader>n :Telescope file_browser <cr>
 
 " Buffer history navigation
 nnoremap <silent> <leader>a :BufSurfBack <cr>

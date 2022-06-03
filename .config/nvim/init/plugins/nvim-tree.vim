@@ -20,7 +20,8 @@ let g:nvim_tree_special_files = {
 nnoremap <silent> t :NvimTreeToggle <cr> :NvimTreeRefresh <cr>
 
 lua <<EOF
-require'nvim-tree'.setup {
+require('nvim-tree').setup {
+  hijack_netrw = false,
   hijack_cursor = true,
   update_cwd = true,
   diagnostics = {
@@ -32,8 +33,8 @@ require'nvim-tree'.setup {
     timeout = 1000,
   },
   update_focused_file = {
-    enable      = true,
-    update_cwd  = true,
+    enable = true,
+    update_cwd = true,
   },
   view = {
     mappings = {

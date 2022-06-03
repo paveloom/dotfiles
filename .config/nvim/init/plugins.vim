@@ -1,11 +1,7 @@
 call plug#begin()
 
-" Behind the scenes
-
 " Auxiliary Lua modules
 Plug 'nvim-lua/plenary.nvim'
-
-" Behavior
 
 " Continuously updated session files
 Plug 'tpope/vim-obsession'
@@ -22,8 +18,6 @@ Plug 'airblade/vim-rooter'
 " Vim plugin that enables surfing through
 " buffers based on viewing history per window
 Plug 'ton/vim-bufsurf'
-
-" # GUI
 
 " Nvim Treesitter configurations and abstraction layer
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -47,24 +41,28 @@ Plug 'itchyny/vim-gitbranch'
 " A highly extendable fuzzy finder over lists
 Plug 'nvim-telescope/telescope.nvim'
 
+" Projects Management extension for Telescope
+Plug 'nvim-telescope/telescope-project.nvim'
+
+" File Browser extension for Telescope
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+
 " Asynchronously display the colours from colours codes
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
-" Lua fork of `vim-web-devicons` for NeoVim
+" Lua fork of `vim-web-devicons` for Neovim
 Plug 'kyazdani42/nvim-web-devicons'
 
-" A file explorer tree for NeoVim written in Lua
+" A file explorer tree for Neovim written in Lua
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Git integration for buffers
 Plug 'lewis6991/gitsigns.nvim'
 
-" # LSP
-
 " A collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
 
-" VSCode-like pictograms for NeoVim LSP completion items
+" VSCode-like pictograms for Neovim LSP completion items
 Plug 'onsails/lspkind-nvim'
 
 " A completion framework
@@ -73,7 +71,7 @@ Plug 'hrsh7th/nvim-cmp'
 " Snippet plugin for Vim/Nvim that supports LSP/VSCode's snippet format
 Plug 'hrsh7th/vim-vsnip'
 
-" An `nvim-cmp` source for neovim builtin LSP client
+" An `nvim-cmp` source for Neovim builtin LSP client
 Plug 'hrsh7th/cmp-nvim-lsp'
 
 " An `nvim-cmp` source for buffer words
@@ -88,20 +86,20 @@ Plug 'hrsh7th/cmp-cmdline'
 " `nvim-cmp` source for `vim-vsnip`
 Plug 'hrsh7th/cmp-vsnip'
 
-" Tools for better development in Rust using NeoVim's builtin LSP
+" Tools for better development in Rust using Neovim's builtin LSP
 Plug 'simrat39/rust-tools.nvim'
 
-" A NeoVim plugin that helps managing crates.io dependencies
+" Vim support for Julia
+Plug 'JuliaEditorSupport/julia-vim'
+
+" A Neovim plugin that helps managing crates.io dependencies
 Plug 'saecki/crates.nvim'
 
-" A modern Vim and neovim filetype plugin for LaTeX files
+" A modern Vim and Neovim filetype plugin for LaTeX files
 Plug 'lervag/vimtex'
 
 " Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 Plug 'jose-elias-alvarez/null-ls.nvim'
-
-" Vim support for Julia
-Plug 'JuliaEditorSupport/julia-vim'
 
 " Initialize plugin system
 call plug#end()
