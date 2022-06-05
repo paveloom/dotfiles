@@ -1,6 +1,8 @@
 " Jump by 4 lines when holding Ctrl and pressing Up/Down arrows
 nnoremap <silent> <C-Up> 5k
 nnoremap <silent> <C-Down> 5j
+vnoremap <silent> <C-Up> 5k
+vnoremap <silent> <C-Down> 5j
 inoremap <silent> <C-Up> <C-o>5k
 inoremap <silent> <C-Down> <C-o>5j
 
