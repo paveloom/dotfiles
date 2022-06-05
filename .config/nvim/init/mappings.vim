@@ -63,6 +63,7 @@ nnoremap <silent> gR :lua vim.lsp.buf.rename() <cr>
 nnoremap <silent> gS :lua vim.lsp.buf.document_symbol() <cr>
 nnoremap <silent> ga :lua vim.lsp.buf.code_action() <cr>
 nnoremap <silent> gd :lua vim.lsp.buf.definition() <cr>
+nnoremap <silent> ge :Trouble workspace_diagnostics <cr>
 nnoremap <silent> gi :Trouble lsp_implementations <cr>
 nnoremap <silent> gk :Gitsigns prev_hunk <cr>
 nnoremap <silent> gl :Gitsigns next_hunk <cr>

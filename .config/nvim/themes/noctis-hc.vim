@@ -147,6 +147,17 @@ call s:highlight('CratesNvimPopupTransitive', '', g:Color8, '')
 call s:highlight('CratesNvimPopupVersion', '', g:Color7, '')
 call s:highlight('CratesNvimPopupYanked', '', g:Color12, '')
 
+" # Trouble
+
+call s:highlight('TroubleCount', '', g:Color3, 'bold')
+call s:highlight('TroubleError', '', g:Color9, '')
+call s:highlight('TroubleSignError', '', g:Color9, '')
+call s:highlight('TroubleSignWarning', '', g:Color3, '')
+call s:highlight('TroubleSignHint', '', g:Color7, '')
+call s:highlight('TroubleSignInformation', '', g:Color5, '')
+call s:highlight('TroubleSignOther', '', g:Color5, '')
+call s:highlight('TroubleFile', '', g:Color3, 'bold')
+
 " # TreeSitter
 
 " Misc
