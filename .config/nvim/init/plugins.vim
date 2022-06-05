@@ -44,6 +44,11 @@ Plug 'nvim-telescope/telescope.nvim'
 " Projects Management extension for Telescope
 Plug 'nvim-telescope/telescope-project.nvim'
 
+" A pretty diagnostics, references, telescope
+" results, quickfix and location list to help
+" you solve all the trouble your code is causing
+Plug 'folke/trouble.nvim'
+
 " File Browser extension for Telescope
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
@@ -115,6 +120,7 @@ source $VIM_PLUGINS/rust-tools.vim
 source $VIM_PLUGINS/spellsitter.vim
 source $VIM_PLUGINS/telescope.vim
 source $VIM_PLUGINS/treesitter.vim
+source $VIM_PLUGINS/trouble.vim
 source $VIM_PLUGINS/vim-hexokinase.vim
 source $VIM_PLUGINS/vim-rooter.vim
 source $VIM_PLUGINS/vimtex.vim
