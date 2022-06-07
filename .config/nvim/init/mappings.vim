@@ -6,6 +6,13 @@ vnoremap <silent> <C-Down> 5j
 inoremap <silent> <C-Up> <C-o>5k
 inoremap <silent> <C-Down> <C-o>5j
 
+" Delete the previous word
+inoremap <silent> <C-h> <C-w>
+cnoremap <silent> <C-h> <C-w><C-l>
+
+" Insert from the system clipboard
+inoremap <silent> <C-v> <C-r><C-p>+
+
 " Write the current buffer
 nnoremap <silent> <C-s> :silent write <cr>
 inoremap <silent> <C-s> <Esc><C-s>
@@ -53,7 +60,7 @@ function! s:HoverAction()
 endfunction
 
 " General hover action (shortcut)
-nnoremap <silent> <C-h> :call <SID>HoverAction()<cr>
+nnoremap <silent> <C-f> :call <SID>HoverAction()<cr>
 
 " Code actions and navigation
 nnoremap <silent> g, :lua vim.diagnostic.goto_prev() <cr>
