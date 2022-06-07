@@ -113,6 +113,7 @@ call plug#end()
 source $VIM_PLUGINS/crates.vim
 source $VIM_PLUGINS/feline.vim
 source $VIM_PLUGINS/gitsigns.vim
+source $VIM_PLUGINS/ltex-ls.vim
 source $VIM_PLUGINS/null-ls.vim
 source $VIM_PLUGINS/nvim-cmp.vim
 source $VIM_PLUGINS/nvim-tree.vim

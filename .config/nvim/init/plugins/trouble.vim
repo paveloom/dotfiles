@@ -1,5 +1,5 @@
 lua << EOF
-require("trouble").setup{
+require('trouble').setup{
   action_keys = {
     close = {"q", "<esc>"},
     cancel = {},
