@@ -8,8 +8,8 @@ require('rust-tools').setup {
     },
 
     hover_actions = {
-      border = "none",
-      auto_focus = false,
+      border = "solid",
+      auto_focus = true,
     },
   },
   server = {
