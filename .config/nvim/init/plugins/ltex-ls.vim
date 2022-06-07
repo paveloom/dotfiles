@@ -1,6 +1,6 @@
 lua <<EOF
 filetypes = { "html", "latex", "markdown", "rust", "julia" }
-require('lspconfig').ltex.setup{
+require('lspconfig').ltex.setup {
   filetypes = filetypes,
   settings = {
     ltex = {

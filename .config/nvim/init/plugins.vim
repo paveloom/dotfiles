@@ -9,8 +9,9 @@ Plug 'tpope/vim-obsession'
 " Delete/change/add parentheses/quotes/XML-tags/much more with ease
 Plug 'tpope/vim-surround'
 
-" Comment stuff out
-Plug 'tpope/vim-commentary'
+" Smart and powerful comment plugin for Neovim. Supports treesitter,
+" dot repeat, left-right/up-down motions, hooks, and more
+Plug 'numToStr/Comment.nvim'
 
 " Changes Vim working directory to project root
 Plug 'airblade/vim-rooter'
@@ -110,6 +111,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 call plug#end()
 
 " Plugins' configuration
+source $VIM_PLUGINS/comment.vim
 source $VIM_PLUGINS/crates.vim
 source $VIM_PLUGINS/feline.vim
 source $VIM_PLUGINS/gitsigns.vim

@@ -2,6 +2,9 @@
 set noshowmode
 
 lua <<EOF
+local feline = require('feline')
+local vi_mode = require('feline.providers.vi_mode')
+
 local vi_mode_colors = {
   NORMAL = vim.g.Color13,
   OP = vim.g.Color13,
@@ -24,8 +27,6 @@ local components = {
   active = {},
   inactive = {},
 }
-
-local vi_mode = require('feline.providers.vi_mode')
 
 components.active[1] = {
   {
@@ -109,12 +110,12 @@ local force_inactive = {
   bufnames = {}
 }
 
-require('feline').setup({
+feline.setup {
   theme = { bg = vim.g.Color10, fg = vim.g.Color0 },
   default_bg = bg,
   default_fg = fg,
   vi_mode_colors = vi_mode_colors,
   components = components,
   force_inactive = force_inactive,
-})
+}
 EOF
