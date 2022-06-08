@@ -22,16 +22,20 @@ telescope.setup {
     }
   },
   extensions = {
-    project = {
-      hidden_files = true,
+    frecency = {
+      default_workspace = 'CWD',
     },
     file_browser = {
       select_buffer = true,
       dir_icon = '',
       hijack_netrw = true,
+    },
+    project = {
+      hidden_files = true,
     }
   }
 }
-telescope.load_extension('project')
+telescope.load_extension("frecency")
 telescope.load_extension('file_browser')
+telescope.load_extension('project')
 EOF

@@ -3,6 +3,9 @@ call plug#begin()
 " Auxiliary Lua modules
 Plug 'nvim-lua/plenary.nvim'
 
+" SQLite/LuaJIT binding for Lua and Neovim
+Plug 'tami5/sqlite.lua'
+
 " Continuously updated session files
 Plug 'tpope/vim-obsession'
 
@@ -45,13 +48,17 @@ Plug 'nvim-telescope/telescope.nvim'
 " Projects Management extension for Telescope
 Plug 'nvim-telescope/telescope-project.nvim'
 
+" File Browser extension for Telescope
+Plug 'nvim-telescope/telescope-file-browser.nvim'
+
+" Intelligent prioritization when selecting
+" files from your editing history for Telescope
+Plug 'nvim-telescope/telescope-frecency.nvim'
+
 " A pretty diagnostics, references, telescope
 " results, quickfix and location list to help
 " you solve all the trouble your code is causing
 Plug 'folke/trouble.nvim'
-
-" File Browser extension for Telescope
-Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Asynchronously display the colours from colours codes
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }

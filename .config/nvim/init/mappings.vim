@@ -80,11 +80,12 @@ nnoremap <silent> gt :Trouble lsp_type_definitions <cr>
 nnoremap <silent> gw :lua vim.lsp.buf.workspace_symbol() <cr>
 
 " Telescope
+nnoremap <silent> <leader>b :Telescope buffers <cr>
 nnoremap <silent> <leader>f :Telescope find_files <cr>
 nnoremap <silent> <leader>g :Telescope live_grep <cr>
-nnoremap <silent> <leader>b :Telescope buffers <cr>
-nnoremap <silent> <leader>p :lua require('telescope').extensions.project.project{ display_type = 'full' } <cr>
 nnoremap <silent> <leader>n :Telescope file_browser <cr>
+nnoremap <silent> <leader>p :lua require('telescope').extensions.project.project{ display_type = 'full' } <cr>
+nnoremap <silent> <leader>r :Telescope frecency <cr>
 nnoremap <silent> <leader>t :TroubleToggle <cr>
 
 " Buffer history navigation

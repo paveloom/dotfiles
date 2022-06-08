@@ -6,9 +6,9 @@ local diagnostics = builtins.diagnostics
 local formatting = builtins.formatting
 null_ls.setup {
   sources = {
-    diagnostics.shellcheck,
-    code_actions.shellcheck,
     code_actions.gitsigns,
+    code_actions.shellcheck,
+    diagnostics.shellcheck,
     formatting.prettier,
   },
 }
