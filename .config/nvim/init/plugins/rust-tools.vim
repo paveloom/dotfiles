@@ -25,6 +25,8 @@ require('rust-tools').setup {
             "-D",
             "clippy::complexity",
             "-D",
+            "clippy::correctness",
+            "-D",
             "clippy::pedantic",
             "-D",
             "clippy::perf",
