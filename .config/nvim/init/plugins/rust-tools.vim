@@ -17,29 +17,10 @@ require('rust-tools').setup {
     settings = {
       ["rust-analyzer"] = {
         checkOnSave = {
-          command = "clippy",
-          extraArgs = {
-            "--",
-            "-D",
-            "clippy::cargo",
-            "-D",
-            "clippy::complexity",
-            "-D",
-            "clippy::correctness",
-            "-D",
-            "clippy::pedantic",
-            "-D",
-            "clippy::perf",
-            "-D",
-            "clippy::restriction",
-            "-D",
-            "clippy::style",
-            "-D",
-            "clippy::suspicious",
-          },
+          overrideCommand = { "cargo", "lint" },
         },
         procMacro = {
-            enable = true
+            enable = true,
         },
       },
     }
