@@ -12,6 +12,9 @@ Plug 'tpope/vim-obsession'
 " Delete/change/add parentheses/quotes/XML-tags/much more with ease
 Plug 'tpope/vim-surround'
 
+" Enable repeating supported plugin maps with "."
+Plug 'tpope/vim-repeat'
+
 " Smart and powerful comment plugin for Neovim. Supports treesitter,
 " dot repeat, left-right/up-down motions, hooks, and more
 Plug 'numToStr/Comment.nvim'
