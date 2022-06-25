@@ -19,6 +19,9 @@ require('rust-tools').setup {
         checkOnSave = {
           overrideCommand = { "cargo", "lint" },
         },
+        files = {
+          excludeDirs = { ".flatpak-builder" }
+        },
         procMacro = {
             enable = true,
         },
