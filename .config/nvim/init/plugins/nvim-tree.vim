@@ -1,24 +1,3 @@
-" Highlight git attributes
-let g:nvim_tree_git_hl = 1
-
-" Highlight opened files/directories
-let g:nvim_tree_highlight_opened_files = 1
-
-" Show only the tail of the current working directory path
-let g:nvim_tree_root_folder_modifier = ":t"
-
-" Compact folders that only contain a single
-" folder into one node in the file tree
-let g:nvim_tree_group_empty = 1
-
-let g:nvim_tree_special_files = {
-  \   'README.md': 1,
-  \   'LICENSE.md': 1,
-  \ }
-
-" Toggle the tree with a keybinding
-nnoremap <silent> t :NvimTreeToggle <cr> :NvimTreeRefresh <cr>
-
 lua <<EOF
 require('nvim-tree').setup {
   hijack_netrw = false,
@@ -35,6 +14,13 @@ require('nvim-tree').setup {
   update_focused_file = {
     enable = true,
     update_cwd = true,
+  },
+  renderer = {
+    highlight_opened_files = "3",
+    root_folder_modifier = ":t",
+    special_files = { "README.md", "LICENSE.md" },
+    group_empty = true,
+    highlight_git = true,
   },
   view = {
     mappings = {

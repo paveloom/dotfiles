@@ -62,6 +62,9 @@ endfunction
 " General hover action (shortcut)
 nnoremap <silent> <C-f> :call <SID>HoverAction()<cr>
 
+" Toggle the NvimTree
+nnoremap <silent> t :NvimTreeToggle <cr> :NvimTreeRefresh <cr>
+
 " Code actions and navigation
 nnoremap <silent> g, :lua vim.diagnostic.goto_prev() <cr>
 nnoremap <silent> g. :lua vim.diagnostic.goto_next() <cr>
