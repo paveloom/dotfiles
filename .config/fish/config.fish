@@ -1,6 +1,3 @@
-# Go home
-# cd $HOME
-
 # Disable greeting
 set fish_greeting
 
@@ -26,6 +23,3 @@ set -x GPG_TTY (tty)
 # Aliases
 alias ls=exa
 alias cfg="nano ~/.config/fish/config.fish"
-
-# Keychain
-# eval (keychain -q --eval id_rsa) >/dev/null
