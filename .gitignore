@@ -1,2 +1,5 @@
 # Vim spell files
 .config/nvim/spell
+
+# Helix's runtime
+.config/helix/runtime
