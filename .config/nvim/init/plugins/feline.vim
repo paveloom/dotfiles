@@ -30,7 +30,12 @@ local components = {
 
 components.active[1] = {
   {
-    provider = 'file_info',
+    provider = {
+      name = 'file_info',
+      opts = {
+        type = "relative",
+      },
+    },
     hl = { style = 'bold' },
     left_sep = ' ',
   },
