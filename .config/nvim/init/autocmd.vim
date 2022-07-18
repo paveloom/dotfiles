@@ -1,9 +1,19 @@
 " Restore the session when entering Vim (function)
 function! RestoreSession()
+  " Save the arguments (full paths expected)
+  let l:args = argv()
+  " Disable the Rooter plugin temporarily
+  :RooterToggle
   " Restore the session
   if filereadable($VIM_SESSION)
     source $VIM_SESSION
   endif
+  " Open the arguments
+  for l:file in l:args
+      execute 'edit' l:file
+  endfor
+  " Enable the Rooter plugin
+  :RooterToggle
   " Start recording the session
   Obsession $VIM_SESSION
 endfunction
