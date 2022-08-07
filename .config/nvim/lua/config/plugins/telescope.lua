@@ -11,6 +11,7 @@ if utils.known({ "rg", "fd" }) then
       "nvim-treesitter/nvim-treesitter",
       "kyazdani42/nvim-web-devicons",
     },
+    after = "lush.nvim",
     config = function()
       local builtin = require("telescope.builtin")
       local telescope = require("telescope")
@@ -37,6 +38,17 @@ if utils.known({ "rg", "fd" }) then
             }
           }
         },
+        extensions = {
+          file_browser = {
+            dir_icon = "",
+            display_stat = false,
+            hijack_netrw = true,
+            select_buffer = true,
+          },
+          project = {
+            hidden_files = true,
+          }
+        }
       })
       -- Map a keybinding in the normal mode
       local function nmap(k, e)
@@ -44,27 +56,13 @@ if utils.known({ "rg", "fd" }) then
       end
 
       -- Setup keybindings
-      nmap("<leader>b", function() builtin.buffers() end)
-      nmap("<leader>f", function() builtin.find_files() end)
-      nmap("<leader>g", function() builtin.live_grep() end)
-      nmap("<leader>h", function() builtin.help_tags() end)
-      nmap("<leader>o", function() builtin.oldfiles() end)
+      nmap("<leader>b", builtin.buffers)
+      nmap("<leader>f", builtin.find_files)
+      nmap("<leader>g", builtin.live_grep)
+      nmap("<leader>h", builtin.help_tags)
+      nmap("<leader>o", builtin.oldfiles)
     end,
   })
-
-  if utils.known({ "make" }) then
-    -- FZF sorter for Telescope written in C
-    packer.use({
-      "nvim-telescope/telescope-fzf-native.nvim",
-      requires = { "nvim-telescope/telescope.nvim" },
-      after = "telescope.nvim",
-      run = "make",
-      config = function()
-        -- Load the extension
-        require("telescope").load_extension("fzf")
-      end,
-    })
-  end
 
   -- File Browser extension for Telescope
   packer.use({
@@ -73,17 +71,6 @@ if utils.known({ "rg", "fd" }) then
     after = "telescope.nvim",
     config = function()
       local telescope = require("telescope")
-      -- Setup the extension
-      telescope.setup({
-        extensions = {
-          file_browser = {
-            dir_icon = "",
-            display_stat = false,
-            hijack_netrw = true,
-            select_buffer = true,
-          },
-        }
-      })
       -- Load the extension
       telescope.load_extension("file_browser")
       -- Map a keybinding in the normal mode
@@ -108,14 +95,6 @@ if utils.known({ "rg", "fd" }) then
     after = "telescope-file-browser.nvim",
     config = function()
       local telescope = require("telescope")
-      -- Setup the extension
-      telescope.setup({
-        extensions = {
-          project = {
-            hidden_files = true,
-          }
-        }
-      })
       -- Load the extension
       telescope.load_extension("project")
       -- Map a keybinding in the normal mode
@@ -129,4 +108,18 @@ if utils.known({ "rg", "fd" }) then
       end)
     end,
   })
+
+  if utils.known({ "make" }) then
+    -- FZF sorter for Telescope written in C
+    packer.use({
+      "nvim-telescope/telescope-fzf-native.nvim",
+      requires = { "nvim-telescope/telescope.nvim" },
+      after = "telescope-project.nvim",
+      run = "make",
+      config = function()
+        -- Load the extension
+        require("telescope").load_extension("fzf")
+      end,
+    })
+  end
 end

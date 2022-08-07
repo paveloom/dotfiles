@@ -21,13 +21,6 @@ require("packer").use({
       end,
     }
   },
-  ft = {
-    "julia",
-    "latex",
-    "lua",
-    "markdown",
-    "rust",
-  },
   after = "cmp-nvim-lsp",
   config = function()
     local name = "lspconfig"
@@ -55,20 +48,20 @@ require("packer").use({
       end
 
       -- Setup keybindings
-      nmap("<leader>t", function() trouble.toggle() end)
-      nmap("g,", function() vim.diagnostic.goto_prev() end)
-      nmap("g.", function() vim.diagnostic.goto_next() end)
-      nmap("gR", function() vim.lsp.buf.rename() end)
-      nmap("gS", function() vim.lsp.buf.document_symbol() end)
-      nmap("ga", function() vim.lsp.buf.code_action() end)
-      nmap("gd", function() vim.lsp.buf.definition() end)
+      nmap("<leader>t", trouble.toggle)
+      nmap("g,", vim.diagnostic.goto_prev)
+      nmap("g.", vim.diagnostic.goto_next)
+      nmap("gR", vim.lsp.buf.rename)
+      nmap("gS", vim.lsp.buf.document_symbol)
+      nmap("ga", vim.lsp.buf.code_action)
+      nmap("gd", vim.lsp.buf.definition)
       nmap("ge", function() trouble.toggle("workspace_diagnostics") end)
       nmap("gi", function() trouble.toggle("lsp_implementations") end)
-      nmap("gh", function() vim.lsp.buf.hover() end)
+      nmap("gh", vim.lsp.buf.hover)
       nmap("gr", function() trouble.toggle("lsp_references") end)
-      nmap("gs", function() vim.lsp.buf.signature_help() end)
+      nmap("gs", vim.lsp.buf.signature_help)
       nmap("gt", function() trouble.toggle("lsp_type_definitions") end)
-      nmap("gw", function() vim.lsp.buf.workspace_symbol() end)
+      nmap("gw", vim.lsp.buf.workspace_symbol)
     end
 
     -- Setup Lua language server

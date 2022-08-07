@@ -7,6 +7,7 @@ packer.use({
     "dcampos/nvim-snippy",
     "onsails/lspkind.nvim",
   },
+  after = "lush.nvim",
   config = function()
     local cmp = require("cmp")
     local snippy = require("snippy")

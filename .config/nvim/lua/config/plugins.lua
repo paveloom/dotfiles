@@ -50,6 +50,9 @@ packer.init({
 })
 packer.reset()
 
+-- Setup `impatient`
+require("config.plugins.impatient")
+
 -- Setup plugins
 packer.use("wbthomason/packer.nvim")
 require("config.plugins.bufjump")
@@ -62,9 +65,10 @@ require("config.plugins.gitsigns")
 require("config.plugins.indent-o-matic")
 require("config.plugins.lush")
 require("config.plugins.neo-tree")
-require("config.plugins.nvim-autopairs")
+require("config.plugins.null-ls")
 require("config.plugins.nvim-cmp")
 require("config.plugins.nvim-lspconfig")
+require("config.plugins.nvim-notify")
 require("config.plugins.nvim-rooter")
 require("config.plugins.nvim-surround")
 require("config.plugins.nvim-treesitter")

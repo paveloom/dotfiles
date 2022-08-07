@@ -1,6 +1,7 @@
 -- A Neovim plugin that jump to previous and next buffer of the jumplist
 require("packer").use({
   "kwkarlwang/bufjump.nvim",
+  after = "lush.nvim",
   config = function()
     -- Setup the plugin
     require("bufjump").setup({

@@ -2,6 +2,7 @@
 require("packer").use({
   "rktjmp/lush.nvim",
   requires = { "nvim-treesitter/nvim-treesitter" },
+  after = "impatient.nvim",
   config = function()
     -- Add the specified theme to the `package.path`
     package.path = package.path

@@ -2,7 +2,7 @@
 -- and empty lines at end of file on every save
 require("packer").use({
   "mcauley-penney/tidy.nvim",
-  event = "BufWritePre",
+  after = "lush.nvim",
   config = function()
     require("tidy").setup()
   end

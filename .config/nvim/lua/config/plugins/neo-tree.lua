@@ -28,12 +28,13 @@ require("packer").use {
       end,
     },
   },
+  after = "lush.nvim",
   config = function()
-    local neotree = require("neo-tree")
+    local neo_tree = require("neo-tree")
     -- Remove the deprecated commands from v1.x
     vim.g.neo_tree_remove_legacy_commands = 1
     -- Setup the plugin
-    neotree.setup({
+    neo_tree.setup({
       use_default_mappings = false,
       close_if_last_window = true,
       default_component_configs = {
@@ -46,7 +47,7 @@ require("packer").use {
           event = "file_opened",
           handler = function(_)
             -- Auto close
-            neotree.close_all()
+            neo_tree.close_all()
           end
         },
       },

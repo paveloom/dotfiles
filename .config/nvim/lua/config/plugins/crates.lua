@@ -5,8 +5,7 @@ require("packer").use({
     "hrsh7th/nvim-cmp",
     "nvim-lua/plenary.nvim",
   },
-  event = { "BufRead Cargo.toml" },
-  after = "cmp-nvim-lsp",
+  after = "nvim-cmp",
   config = function()
     local name = "crates"
     local cmp = require("cmp")
