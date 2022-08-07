@@ -1,5 +1,5 @@
-# Vim spell files
-.config/nvim/spell
+# Neovim compiled plugins
+.config/nvim/plugin
 
 # Helix's runtime
 .config/helix/runtime
