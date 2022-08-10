@@ -3,8 +3,8 @@ require("packer").use({
   "neovim/nvim-lspconfig",
   requires = {
     "hrsh7th/cmp-nvim-lsp",
-    "simrat39/rust-tools.nvim",
     "mfussenegger/nvim-dap",
+    "simrat39/rust-tools.nvim",
     {
       -- A pretty diagnostics, references, telescope results, quickfix and
       -- location list to help you solve all the trouble your code is causing
