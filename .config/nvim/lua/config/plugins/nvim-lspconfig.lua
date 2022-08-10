@@ -4,6 +4,7 @@ require("packer").use({
   requires = {
     "hrsh7th/cmp-nvim-lsp",
     "mfussenegger/nvim-dap",
+    "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
     {
       -- A pretty diagnostics, references, telescope results, quickfix and
@@ -47,6 +48,17 @@ require("packer").use({
         })
       end
 
+      -- Enhance the signature help
+      local signature_config = {
+        fix_pos = true,
+        floating_window = false,
+        floating_window_above_cur_line = true,
+        hint_enable = false,
+        select_signature_key = "<A-s>",
+        toggle_key = "<A-x>",
+      }
+      require("lsp_signature").on_attach(signature_config, bufnr)
+
       -- Setup keybindings
       nmap("<leader>t", trouble.toggle)
       nmap("g,", vim.diagnostic.goto_prev)
@@ -82,9 +94,6 @@ require("packer").use({
             },
             telemetry = {
               enable = false,
-            },
-            completion = {
-              callSnippet = "Replace",
             },
             format = {
               defaultConfig = {
