@@ -61,8 +61,6 @@ require("packer").use({
 
       -- Setup keybindings
       nmap("<leader>t", trouble.toggle)
-      nmap("g,", vim.diagnostic.goto_prev)
-      nmap("g.", vim.diagnostic.goto_next)
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
