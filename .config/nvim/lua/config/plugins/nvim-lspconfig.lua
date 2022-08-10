@@ -79,6 +79,7 @@ require("packer").use({
     -- Setup Lua language server
     if require("config.utils").known({ "lua-language-server" }) then
       lspconfig.sumneko_lua.setup({
+        single_file_support = false,
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
