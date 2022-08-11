@@ -22,6 +22,7 @@ set -x GPG_TTY (tty)
 
 # Aliases
 alias ls=exa
+alias cat=bat
 alias cfg="nano ~/.config/fish/config.fish"
 
 # Redefine the Neovim command to make it work as a server

@@ -62,7 +62,6 @@ require("config.plugins.crates")
 require("config.plugins.dressing")
 require("config.plugins.feline")
 require("config.plugins.fidget")
-require("config.plugins.gitsigns")
 require("config.plugins.glow")
 require("config.plugins.harpoon")
 require("config.plugins.indent-o-matic")
@@ -80,6 +79,7 @@ require("config.plugins.sessions")
 require("config.plugins.spellsitter")
 require("config.plugins.telescope")
 require("config.plugins.tidy")
+require("config.plugins.vgit")
 
 -- Do a sync after bootstrapping `packer`
 if packer_bootstrapped then
