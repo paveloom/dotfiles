@@ -1,6 +1,7 @@
 -- Renders diagnostics using virtual lines on top of the real line of code
 require("packer").use({
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  after = "lush.nvim",
   config = function()
     -- Setup the plugin
     require("lsp_lines").setup()
