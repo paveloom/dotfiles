@@ -30,7 +30,7 @@ local colors = {
 ---@diagnostic disable: undefined-global
 local spec = lush(function()
   return {
-    SpecialKey { bg = colors.purple },
+    SpecialKey { fg = colors.purple },
     TermCursor { gui = "reverse", },
     TermCursorNC { TermCursor },
     NonText { fg = colors.gray_dark, },
