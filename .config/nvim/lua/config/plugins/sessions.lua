@@ -18,9 +18,14 @@ require("packer").use({
       nested = true,
       callback = function()
         -- Close the tree
-        require("neo-tree.command").execute({ action = "close" })
-        -- Close the LSP information floating window
-        require("fidget").close()
+        require("neo-tree").close_all()
+        -- Close all floating windows
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          local config = vim.api.nvim_win_get_config(win)
+          if config.relative ~= "" then
+            vim.api.nvim_win_close(win, false)
+          end
+        end
         -- Save the session
         sessions.save(nil, { autosave = false, silent = true })
       end,

@@ -392,7 +392,7 @@ local spec = lush(function()
     GitSignsChangeInline { fg = GitGutterChange.bg, bg = GitGutterChange.fg },
     GitSignsDelete { GitGutterDelete },
     GitSignsDeleteLn { gui = "nocombine" },
-    GitSignsDeleteInline { fg = GitGutterDelete.bg, bg = GitGutterChange.fg },
+    GitSignsDeleteInline { fg = GitGutterDelete.bg, bg = GitGutterDelete.fg },
     GitWordAdd { DiffAdd },
     GitWordDelete { DiffDelete },
     TelescopeMatching { Special },
