@@ -19,6 +19,8 @@ require("packer").use({
       callback = function()
         -- Close the tree
         require("neo-tree.command").execute({ action = "close" })
+        -- Close the LSP information floating window
+        require("fidget").close()
         -- Save the session
         sessions.save(nil, { autosave = false, silent = true })
       end,
