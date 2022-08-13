@@ -46,6 +46,7 @@ nmap("c", '"_c')
 nmap("C", '"_C')
 nmap("d", '"_d')
 nmap("D", '"_D')
+xmap("d", '"_d')
 xmap("p", "pgvy")
 
 -- Toggle line wrapping
