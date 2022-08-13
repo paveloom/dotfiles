@@ -124,7 +124,7 @@ require("packer").use({
           settings = {
             ["rust-analyzer"] = {
               checkOnSave = {
-                overrideCommand = { "cargo", "lint" },
+                command = "clippy",
               },
               files = {
                 excludeDirs = { ".flatpak-builder" }
