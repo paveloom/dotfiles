@@ -448,12 +448,12 @@ local spec = lush(function()
     NeoTreeGitAdded({ GitSignsAdd }),
     NeoTreeGitConflict({ fg = Error.fg }),
     NeoTreeGitDeleted({ GitSignsDelete }),
-    NeoTreeGitIgnored({ Comment }),
+    NeoTreeGitIgnored({ fg = Comment.fg }),
     NeoTreeGitModified({ GitSignsChange }),
     NeoTreeGitUnstaged({ fg = colors.purple }),
     NeoTreeGitUntracked({ GitSignsAdd }),
     NeoTreeGitStaged({ GitSignsAdd }),
-    NeoTreeHiddenByName({ Comment }),
+    NeoTreeHiddenByName({ fg = Comment.fg }),
     NeoTreeIndentMarker({ Normal }),
     NeoTreeExpander({ NeoTreeDirectoryIcon }),
     NeoTreeNormal({ Normal }),
@@ -466,7 +466,7 @@ local spec = lush(function()
     NeoTreeEndOfBuffer({ EndOfBuffer }),
     NeoTreeRootName({ fg = colors.fluoric, gui = "italic bold" }),
     NeoTreeSymbolicLinkTarget({ Normal }),
-    NeoTreeWindowsHidden({ Comment }),
+    NeoTreeWindowsHidden({ fg = Comment.fg }),
   }
 end)
 
