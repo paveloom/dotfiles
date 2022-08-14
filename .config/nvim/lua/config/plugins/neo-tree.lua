@@ -102,6 +102,18 @@ require("packer").use({
         },
       },
       filesystem = {
+        components = {
+          name = function(config, node, state)
+            -- First call the default name component
+            local cc = require("neo-tree.sources.common.components")
+            local result = cc.name(config, node, state)
+            -- If it is root, use only the last part of the path
+            if node:get_depth() == 1 then
+              result.text = vim.fn.fnamemodify(state.path, ":t")
+            end
+            return result
+          end,
+        },
         filtered_items = {
           visible = true,
           hide_dotfiles = true,
