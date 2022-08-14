@@ -17,10 +17,10 @@ require("packer").use({
           action_keys = {
             close = { "q", "<esc>" },
             cancel = {},
-          }
+          },
         })
       end,
-    }
+    },
   },
   after = "cmp-nvim-lsp",
   config = function()
@@ -29,14 +29,9 @@ require("packer").use({
     local trouble = require("trouble")
     local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
     -- Change the border
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover,
-      { border = "rounded" }
-    )
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help,
-      { border = "rounded" }
-    )
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+    vim.lsp.handlers["textDocument/signatureHelp"] =
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Setup the LSP server
     local function on_attach(_, bufnr)
       -- Map a keybinding in the normal mode
@@ -65,12 +60,20 @@ require("packer").use({
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
       nmap("gd", vim.lsp.buf.definition)
-      nmap("ge", function() trouble.toggle("workspace_diagnostics") end)
-      nmap("gi", function() trouble.toggle("lsp_implementations") end)
+      nmap("ge", function()
+        trouble.toggle("workspace_diagnostics")
+      end)
+      nmap("gi", function()
+        trouble.toggle("lsp_implementations")
+      end)
       nmap("gh", vim.lsp.buf.hover)
-      nmap("gr", function() trouble.toggle("lsp_references") end)
+      nmap("gr", function()
+        trouble.toggle("lsp_references")
+      end)
       nmap("gs", vim.lsp.buf.signature_help)
-      nmap("gt", function() trouble.toggle("lsp_type_definitions") end)
+      nmap("gt", function()
+        trouble.toggle("lsp_type_definitions")
+      end)
       nmap("gw", vim.lsp.buf.workspace_symbol)
     end
 
@@ -79,7 +82,12 @@ require("packer").use({
       lspconfig.sumneko_lua.setup({
         single_file_support = false,
         capabilities = capabilities,
-        on_attach = on_attach,
+        on_attach = function(client, bufnr)
+          -- Disable the formatting since `stylua`
+          -- from `null-ls` handles that
+          client.resolved_capabilities.document_formatting = false
+          on_attach(client, bufnr)
+        end,
         settings = {
           Lua = {
             runtime = {
@@ -94,11 +102,6 @@ require("packer").use({
             telemetry = {
               enable = false,
             },
-            format = {
-              defaultConfig = {
-                quote_style = "double",
-              }
-            }
           },
         },
       })
@@ -127,10 +130,10 @@ require("packer").use({
                 command = "clippy",
               },
               files = {
-                excludeDirs = { ".flatpak-builder" }
+                excludeDirs = { ".flatpak-builder" },
               },
             },
-          }
+          },
         },
       })
     end
@@ -147,7 +150,8 @@ require("packer").use({
           "--sysimage-native-code=yes",
           "--startup-file=no",
           "--history-file=no",
-          "-e", [[
+          "-e",
+          [[
           import Pkg;
           function recurse_project_paths(path::AbstractString)
               isnothing(Base.current_project(path)) && return
@@ -161,7 +165,7 @@ require("packer").use({
               pushfirst!(Base.LOAD_PATH, CUSTOM_LOAD_PATH...)
               return joinpath(CUSTOM_LOAD_PATH[1], "Project.toml")
           end
-          buffer_file_path = "]] .. vim.fn.expand("%:p:h") .. '";' .. [[
+          buffer_file_path = "]] .. vim.fn.expand("%:p:h") .. "\";" .. [[
           project_path = let
           dirname(something(
               # 1. Check if there is an explicitly set project
@@ -189,8 +193,8 @@ require("packer").use({
           @info "LanguageServer has started with buffer $project_path or $(pwd())"
           server = LanguageServer.LanguageServerInstance(stdin, stdout, project_path, depot_path, nothing, symbol_server_path, true);
           server.runlinter = true;
-          run(server); ]]
-        }
+          run(server); ]],
+        },
       })
     end
 
@@ -206,8 +210,8 @@ require("packer").use({
               "rust",
             },
             additionalRules = { enablePickyRules = true },
-          }
-        }
+          },
+        },
       })
     end
 
@@ -220,9 +224,9 @@ require("packer").use({
               executable = "tectonic",
               args = { "-X", "compile", "%f" },
               onSave = true,
-            }
-          }
-        }
+            },
+          },
+        },
       })
     end
 

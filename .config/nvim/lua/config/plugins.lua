@@ -12,14 +12,16 @@ if fn.isdirectory(packer_path) == 0 then
   if fn.system({ "git", "-v" }) then
     -- Try to clone the repository
     print("Cloning the `packer` repository...")
-    if fn.system({
-      "git",
-      "clone",
-      "--depth",
-      "1",
-      "https://github.com/wbthomason/packer.nvim",
-      packer_path
-    }) then
+    if
+      fn.system({
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "https://github.com/wbthomason/packer.nvim",
+        packer_path,
+      })
+    then
       -- Add the package path to the runtime path
       o.runtimepath:prepend(packer_path)
       -- If there is a compiled lazy-loader code
@@ -45,8 +47,8 @@ packer.init({
   display = {
     open_fn = function()
       return require("packer.util").float({ border = "rounded" })
-    end
-  }
+    end,
+  },
 })
 packer.reset()
 

@@ -19,8 +19,12 @@ require("packer").use({
         virtual_text = toggled,
         virtual_lines = not toggled,
       })
-      nmap("g,", function() vim.diagnostic.goto_prev({ float = toggled }) end)
-      nmap("g.", function() vim.diagnostic.goto_next({ float = toggled }) end)
+      nmap("g,", function()
+        vim.diagnostic.goto_prev({ float = toggled })
+      end)
+      nmap("g.", function()
+        vim.diagnostic.goto_next({ float = toggled })
+      end)
     end
 
     -- Set the default configuration

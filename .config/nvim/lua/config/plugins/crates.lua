@@ -18,8 +18,8 @@ require("packer").use({
       callback = function()
         cmp.setup.buffer({
           sources = {
-            { name = name }
-          }
+            { name = name },
+          },
         })
       end,
     })

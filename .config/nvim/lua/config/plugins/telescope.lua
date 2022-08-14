@@ -18,13 +18,13 @@ if utils.known({ "rg", "fd" }) then
       local themes = require("telescope.themes")
       -- Setup the plugin
       telescope.setup({
-        defaults = themes.get_ivy {
+        defaults = themes.get_ivy({
           mappings = {
             i = {
               ["<Esc>"] = "close",
-            }
+            },
           },
-        },
+        }),
         pickers = {
           find_files = {
             file_ignore_patterns = { "^.git/", "target/" },
@@ -34,9 +34,9 @@ if utils.known({ "rg", "fd" }) then
             mappings = {
               i = {
                 ["<C-d>"] = "delete_buffer",
-              }
-            }
-          }
+              },
+            },
+          },
         },
         extensions = {
           file_browser = {
@@ -57,8 +57,11 @@ if utils.known({ "rg", "fd" }) then
                   -- Get the selections
                   local selections = fb_utils.get_selected_files(prompt_bufnr, false)
                   if vim.tbl_isempty(selections) then
-                    fb_utils.notify("actions.trash",
-                      { msg = "No selection to be trashed!", level = "WARN", quiet = finder.quiet })
+                    fb_utils.notify("actions.trash", {
+                      msg = "No selection to be trashed!",
+                      level = "WARN",
+                      quiet = finder.quiet,
+                    })
                     return
                   end
                   -- Trash the selected files
@@ -79,13 +82,13 @@ if utils.known({ "rg", "fd" }) then
                   -- Reset multi selection
                   current_picker:refresh(current_picker.finder, { reset_prompt = true })
                 end,
-              }
-            }
+              },
+            },
           },
           project = {
             hidden_files = true,
-          }
-        }
+          },
+        },
       })
       -- Map a keybinding in the normal mode
       local function nmap(k, e)

@@ -11,5 +11,5 @@ require("packer").use({
         vim.cmd([[execute "normal! g`\"zz"]])
       end,
     })
-  end
+  end,
 })

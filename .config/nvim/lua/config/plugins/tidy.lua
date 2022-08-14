@@ -5,5 +5,5 @@ require("packer").use({
   after = "lush.nvim",
   config = function()
     require("tidy").setup()
-  end
+  end,
 })

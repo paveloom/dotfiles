@@ -13,7 +13,9 @@ require("packer").use({
 
     -- Setup keybindings
     for i = 1, 9 do
-      nmap("<leader>" .. i, function() ui.nav_file(i) end)
+      nmap("<leader>" .. i, function()
+        ui.nav_file(i)
+      end)
     end
     nmap("<leader>x", mark.add_file)
     nmap("<leader>z", ui.nav_prev)

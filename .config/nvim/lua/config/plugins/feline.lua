@@ -121,7 +121,7 @@ require("packer").use({
       },
     }
 
-    feline.setup {
+    feline.setup({
       theme = { bg = s.Normal.bg.hex, fg = s.Normal.fg.hex },
       default_bg = "bg",
       default_fg = "fg",
@@ -131,8 +131,8 @@ require("packer").use({
         filetypes = {
           "^neo%-tree$",
           "^help$",
-        }
+        },
       },
-    }
+    })
   end,
 })

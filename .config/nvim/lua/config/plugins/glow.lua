@@ -8,6 +8,6 @@ if utils.known({ "glow" }) then
       require("glow").setup({
         border = "rounded",
       })
-    end
+    end,
   })
 end

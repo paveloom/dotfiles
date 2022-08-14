@@ -52,7 +52,7 @@ packer.use({
       check_ts = true,
       fast_wrap = {
         map = "<M-e>",
-        chars = { "{", "[", "(", '"', "'" },
+        chars = { "{", "[", "(", "\"", "'" },
         pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
         offset = 0,
         end_key = "$",
@@ -62,5 +62,5 @@ packer.use({
         highlight_grey = "LineNr",
       },
     })
-  end
+  end,
 })

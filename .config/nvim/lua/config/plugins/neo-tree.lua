@@ -1,5 +1,5 @@
 -- Neovim plugin to manage the file system and other tree like structures
-require("packer").use {
+require("packer").use({
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v2.x",
   requires = {
@@ -12,14 +12,19 @@ require("packer").use {
       "s1n7ax/nvim-window-picker",
       tag = "v1.*",
       config = function()
-        require "window-picker".setup({
+        require("window-picker").setup({
           autoselect_one = true,
           include_current = false,
           filter_rules = {
             -- Filter using buffer options
             bo = {
               -- If the file type is one of following, the window will be ignored
-              filetype = { "neo-tree", "neo-tree-popup", "notify", "quickfix" },
+              filetype = {
+                "neo-tree",
+                "neo-tree-popup",
+                "notify",
+                "quickfix",
+              },
               -- If the buffer type is one of following, the window will be ignored
               buftype = { "terminal" },
             },
@@ -48,7 +53,7 @@ require("packer").use {
           handler = function(_)
             -- Auto close
             neo_tree.close_all()
-          end
+          end,
         },
       },
       window = {
@@ -67,14 +72,14 @@ require("packer").use {
           ["a"] = {
             "add",
             config = {
-              show_path = "relative"
-            }
+              show_path = "relative",
+            },
           },
           ["A"] = {
             "add_directory",
             config = {
-              show_path = "relative"
-            }
+              show_path = "relative",
+            },
           },
           ["d"] = "delete",
           ["r"] = "rename",
@@ -84,21 +89,21 @@ require("packer").use {
           ["c"] = {
             "copy",
             config = {
-              show_path = "relative"
-            }
+              show_path = "relative",
+            },
           },
           ["m"] = {
             "move",
             config = {
-              show_path = "relative"
-            }
+              show_path = "relative",
+            },
           },
           ["q"] = "close_window",
           ["R"] = "refresh",
           ["?"] = "show_help",
           ["<"] = "prev_source",
           [">"] = "next_source",
-        }
+        },
       },
       filesystem = {
         filtered_items = {
@@ -122,8 +127,8 @@ require("packer").use {
             ["<c-x>"] = "clear_filter",
             ["[g"] = "prev_git_modified",
             ["]g"] = "next_git_modified",
-          }
-        }
+          },
+        },
       },
       buffers = {
         follow_current_file = true,
@@ -134,22 +139,22 @@ require("packer").use {
             ["bd"] = "buffer_delete",
             ["<bs>"] = "navigate_up",
             ["."] = "set_root",
-          }
+          },
         },
       },
       git_status = {
         window = {
           mappings = {
-            ["A"]  = "git_add_all",
+            ["A"] = "git_add_all",
             ["gu"] = "git_unstage_file",
             ["ga"] = "git_add_file",
             ["gr"] = "git_revert_file",
             ["gc"] = "git_commit",
             ["gp"] = "git_push",
             ["gg"] = "git_commit_and_push",
-          }
-        }
-      }
+          },
+        },
+      },
     })
     -- Map a keybinding in the normal mode
     local function nmap(k, e)
@@ -161,4 +166,4 @@ require("packer").use {
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)
   end,
-}
+})

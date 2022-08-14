@@ -9,7 +9,7 @@ require("packer").use({
     require("Comment").setup({
       -- A hook to trigger the `commentstring` updating logic
       pre_hook = function(ctx)
-        local utils = require "Comment.utils"
+        local utils = require("Comment.utils")
 
         -- Determine whether to use linewise or blockwise commentstring
         local type = ctx.ctype == utils.ctype.line and "__default" or "__multiline"

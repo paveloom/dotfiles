@@ -28,11 +28,11 @@ packer.use({
             -- Remove extra text (i.e., signatures)
             item.menu = nil
             return item
-          end
+          end,
         }),
       },
       view = {
-        entries = { name = "custom", selection_order = "near_cursor" }
+        entries = { name = "custom", selection_order = "near_cursor" },
       },
       window = {
         completion = cmp.config.window.bordered(),
@@ -62,32 +62,32 @@ packer.use({
           else
             fallback()
           end
-        end, { "i", "s" })
+        end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
         { name = "buffer" },
         { name = "latex_symbols" },
         { name = "nvim_lsp" },
-        { name = "snippy" }
+        { name = "snippy" },
       }),
       snippet = {
         expand = function(args)
           require("snippy").expand_snippet(args.body)
         end,
-      }
+      },
     })
     cmp.setup.cmdline("/", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = "buffer" }
-      })
+        { name = "buffer" },
+      }),
     })
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = "cmdline" },
-        { name = "path" }
-      })
+        { name = "path" },
+      }),
     })
   end,
 })

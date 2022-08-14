@@ -42,15 +42,17 @@ nmap("<leader>q", "<C-o>")
 nmap("<leader>e", "<C-i>")
 
 -- Change and delete into the black hole register
-nmap("c", '"_c')
-nmap("C", '"_C')
-nmap("d", '"_d')
-nmap("D", '"_D')
-xmap("d", '"_d')
+nmap("c", "\"_c")
+nmap("C", "\"_C")
+nmap("d", "\"_d")
+nmap("D", "\"_D")
+xmap("d", "\"_d")
 xmap("p", "pgvy")
 
 -- Toggle line wrapping
-nmap("<A-w>", function() vim.o.wrap = not vim.o.wrap end)
+nmap("<A-w>", function()
+  vim.o.wrap = not vim.o.wrap
+end)
 
 -- Close all buffers but this one
 nmap("<A-/>", ":%bd|:e#|:bd# <cr>")

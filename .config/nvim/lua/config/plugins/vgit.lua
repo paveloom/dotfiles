@@ -28,7 +28,7 @@ require("packer").use({
         symbols = {
           void = " ",
         },
-      }
+      },
     })
   end,
 })
