@@ -44,7 +44,25 @@ require("packer").use({
       close_if_last_window = true,
       default_component_configs = {
         modified = {
-          symbol = "● ",
+          symbol = "●",
+        },
+        git_status = {
+          symbols = {
+            -- Change type
+            added = "",
+            deleted = "",
+            modified = "",
+            renamed = "",
+            -- Status type
+            untracked = "",
+            ignored = "",
+            unstaged = "",
+            staged = "",
+            conflict = "",
+          },
+        },
+        indent = {
+          with_expanders = true,
         },
       },
       event_handlers = {
