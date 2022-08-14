@@ -12,13 +12,23 @@ require("packer").use({
       "folke/trouble.nvim",
       requires = { "kyazdani42/nvim-web-devicons" },
       config = function()
+        local trouble = require("trouble")
         -- Setup the plugin
-        require("trouble").setup({
+        trouble.setup({
           action_keys = {
             close = { "q", "<esc>" },
             cancel = {},
           },
         })
+        -- Map a keybinding in the normal mode
+        local function nmap(k, e)
+          vim.keymap.set("n", k, e, {
+            noremap = true,
+            silent = true,
+          })
+        end
+        -- Setup keybindings
+        nmap("<leader>t", trouble.toggle)
       end,
     },
   },
@@ -42,7 +52,6 @@ require("packer").use({
           buffer = bufnr,
         })
       end
-
       -- Enhance the signature help
       local signature_config = {
         fix_pos = true,
@@ -55,7 +64,6 @@ require("packer").use({
       require("lsp_signature").on_attach(signature_config, bufnr)
 
       -- Setup keybindings
-      nmap("<leader>t", trouble.toggle)
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
@@ -76,7 +84,6 @@ require("packer").use({
       end)
       nmap("gw", vim.lsp.buf.workspace_symbol)
     end
-
     -- Setup Lua language server
     if require("config.utils").known({ "lua-language-server" }) then
       lspconfig.sumneko_lua.setup({

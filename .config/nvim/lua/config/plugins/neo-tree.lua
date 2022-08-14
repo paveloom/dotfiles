@@ -58,10 +58,6 @@ require("packer").use({
       },
       window = {
         mappings = {
-          ["<space>"] = {
-            "toggle_node",
-            nowait = true,
-          },
           ["<2-LeftMouse>"] = "open",
           ["<cr>"] = "open",
           ["s"] = "split_with_window_picker",
