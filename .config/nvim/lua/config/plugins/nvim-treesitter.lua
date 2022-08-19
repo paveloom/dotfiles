@@ -5,6 +5,7 @@ packer.use({
   "nvim-treesitter/nvim-treesitter",
   after = "lush.nvim",
   config = function()
+    -- Setup the plugin
     require("nvim-treesitter.configs").setup({
       auto_install = true,
       highlight = {
@@ -23,6 +24,9 @@ packer.use({
         enable = true,
       },
     })
+    -- Use Tree-sitter for folding
+    vim.o.foldmethod = "expr"
+    vim.o.foldexpr = "nvim_treesitter#foldexpr()"
   end,
 })
 

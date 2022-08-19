@@ -13,9 +13,7 @@ o.cursorlineopt = "number"
 o.timeout = false
 o.ttimeout = false
 
--- Create folds automatically based on indentation
-o.foldmethod = "indent"
-o.foldlevel = 99
+-- Define special characters for vertical separators
 o.fillchars:append({ fold = " ", foldopen = "▼", foldsep = "│", foldclose = "▸" })
 
 -- Allow the cursor to move to the upper line when pressing Left
