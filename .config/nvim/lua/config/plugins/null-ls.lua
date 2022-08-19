@@ -14,7 +14,6 @@ if utils.known({ "shellcheck", "stylua" }) then
       local formatting = builtins.formatting
       null_ls.setup({
         sources = {
-          code_actions.gitsigns,
           code_actions.shellcheck,
           completion.spell,
           diagnostics.fish,
