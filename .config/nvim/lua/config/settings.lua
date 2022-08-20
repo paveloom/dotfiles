@@ -16,6 +16,9 @@ o.ttimeout = false
 -- Define special characters for vertical separators
 o.fillchars:append({ fold = " ", foldopen = "▼", foldsep = "│", foldclose = "▸" })
 
+-- Don't close folds by default
+o.foldlevel = 99
+
 -- Allow the cursor to move to the upper line when pressing Left
 o.whichwrap:append({ ["<"] = true, [">"] = true, ["["] = true, ["]"] = true })
 
