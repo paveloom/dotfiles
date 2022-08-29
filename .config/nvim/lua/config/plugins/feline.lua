@@ -1,11 +1,10 @@
 require("packer").use({
   "feline-nvim/feline.nvim",
   after = "lush.nvim",
+  requires = { "lewis6991/gitsigns.nvim" },
   config = function()
     local feline = require("feline")
-
     local vi_mode = require("feline.providers.vi_mode")
-
     local theme = require("lucid")
     local s = theme.spec
     local c = theme.colors
@@ -29,12 +28,12 @@ require("packer").use({
       TERM = c.sap.hex,
       NONE = c.rock_medium.hex,
     }
-
+    -- Prepare the components table
     local components = {
       active = {},
       inactive = {},
     }
-
+    -- Set the active components on the left side of the bar
     components.active[1] = {
       {
         provider = {
@@ -75,7 +74,7 @@ require("packer").use({
         hl = "FelineDiagnosticInfo",
       },
     }
-
+    -- Set the active components on the right side of the bar
     components.active[2] = {
       {
         provider = "git_branch",
@@ -106,7 +105,7 @@ require("packer").use({
         right_sep = " ",
       },
     }
-
+    -- Set the inactive components
     components.inactive[1] = {
       {
         provider = {
@@ -120,7 +119,7 @@ require("packer").use({
         right_sep = " ",
       },
     }
-
+    -- Setup the plugin
     feline.setup({
       theme = { bg = s.Normal.bg.hex, fg = s.Normal.fg.hex },
       default_bg = "bg",

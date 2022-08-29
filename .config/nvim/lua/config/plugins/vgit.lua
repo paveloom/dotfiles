@@ -2,11 +2,10 @@
 require("packer").use({
   "tanvirtin/vgit.nvim",
   requires = { "nvim-lua/plenary.nvim" },
-  after = "lush.nvim",
+  after = "gitsigns.nvim",
   config = function()
-    local vgit = require("vgit")
     -- Setup the plugin
-    vgit.setup({
+    require("vgit").setup({
       keymaps = {
         ["n gk"] = "hunk_up",
         ["n gl"] = "hunk_down",
