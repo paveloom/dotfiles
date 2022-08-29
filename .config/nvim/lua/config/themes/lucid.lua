@@ -375,8 +375,9 @@ local spec = lush(function()
     Module({ fg = colors.pink, gui = "underline" }),
     rubyModule({ Module }),
     Userdef({ fg = colors.sap }),
-    LspSignatureActiveParameter({ fg = colors.fluoric, gui = "italic" }),
     -- Plugins
+    LspSignatureActiveParameter({ fg = colors.fluoric, gui = "italic" }),
+    LspInlayHint({ Comment }),
     FelineDiagnosticErrors({ DiagnosticError }),
     FelineDiagnosticHints({ DiagnosticHint }),
     FelineDiagnosticInfo({ DiagnosticInfo }),

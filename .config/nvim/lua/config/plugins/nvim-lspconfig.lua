@@ -3,6 +3,15 @@ require("packer").use({
   "neovim/nvim-lspconfig",
   requires = {
     "hrsh7th/cmp-nvim-lsp",
+    {
+      "lvimuser/lsp-inlayhints.nvim",
+      config = function()
+        -- Setup the plugin
+        require("lsp-inlayhints").setup()
+        -- Enable the plugin globally
+        require("lsp-inlayhints").toggle()
+      end,
+    },
     "mfussenegger/nvim-dap",
     "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
@@ -62,7 +71,6 @@ require("packer").use({
         toggle_key = "<A-x>",
       }
       require("lsp_signature").on_attach(signature_config, bufnr)
-
       -- Setup keybindings
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
@@ -93,10 +101,17 @@ require("packer").use({
           -- Disable the formatting since `stylua`
           -- from `null-ls` handles that
           client.resolved_capabilities.document_formatting = false
+          -- Attach the server
           on_attach(client, bufnr)
+          -- Enable the inlay hints
+          require("lsp-inlayhints").on_attach(client, bufnr, false)
         end,
         settings = {
           Lua = {
+            hint = {
+              enable = true,
+              setType = true,
+            },
             runtime = {
               version = "LuaJIT",
             },
@@ -113,15 +128,12 @@ require("packer").use({
         },
       })
     end
-
     -- Setup Rust language server
     if require("config.utils").known({ "rust-analyzer" }) then
       require("rust-tools").setup({
         tools = {
           inlay_hints = {
-            show_variable_name = true,
-            parameter_hints_prefix = "<- ",
-            other_hints_prefix = "-> ",
+            auto = false,
           },
           hover_actions = {
             border = "rounded",
@@ -130,7 +142,12 @@ require("packer").use({
         },
         server = {
           capabilities = capabilities,
-          on_attach = on_attach,
+          on_attach = function(client, bufnr)
+            -- Attach the server
+            on_attach(client, bufnr)
+            -- Enable the inlay hints
+            require("lsp-inlayhints").on_attach(client, bufnr, false)
+          end,
           settings = {
             ["rust-analyzer"] = {
               checkOnSave = {
@@ -144,7 +161,6 @@ require("packer").use({
         },
       })
     end
-
     -- Setup Julia language server
     if require("config.utils").known({ "julia" }) then
       lspconfig.julials.setup({
@@ -204,7 +220,6 @@ require("packer").use({
         },
       })
     end
-
     -- Setup LanguageTool language server
     if require("config.utils").known({ "ltex-ls", "ltex-cli" }) then
       lspconfig.ltex.setup({
@@ -221,7 +236,6 @@ require("packer").use({
         },
       })
     end
-
     -- Setup LaTeX language server
     if require("config.utils").known({ "texlab", "tectonic" }) then
       lspconfig.texlab.setup({
@@ -236,9 +250,8 @@ require("packer").use({
         },
       })
     end
-
     -- Setup autocommands
-    local group = vim.api.nvim_create_augroup(name, { clear = true })
+    local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
