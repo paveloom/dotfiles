@@ -161,6 +161,49 @@ require("packer").use({
         },
       })
     end
+    -- Setup TypeScript language server
+    if require("config.utils").known({ "typescript-language-server" }) then
+      lspconfig.tsserver.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          -- Attach the server
+          on_attach(client, bufnr)
+          -- Enable the inlay hints
+          require("lsp-inlayhints").on_attach(client, bufnr, false)
+        end,
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = "all",
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+        },
+      })
+    end
+    -- Setup ESLint language server
+    if require("config.utils").known({ "vscode-eslint-language-server" }) then
+      lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+    end
     -- Setup Julia language server
     if require("config.utils").known({ "julia" }) then
       lspconfig.julials.setup({
