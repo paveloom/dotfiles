@@ -51,6 +51,8 @@ require("packer").use({
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
     vim.lsp.handlers["textDocument/signatureHelp"] =
       vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+    -- Prepare an autocommands group
+    local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
     local function on_attach(_, bufnr)
       -- Map a keybinding in the normal mode
@@ -203,6 +205,19 @@ require("packer").use({
         capabilities = capabilities,
         on_attach = on_attach,
       })
+      -- Fix all errors on write
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = {
+          "*.tsx",
+          "*.ts",
+          "*.jsx",
+          "*.js",
+        },
+        group = group,
+        callback = function()
+          vim.cmd("EslintFixAll")
+        end,
+      })
     end
     -- Setup Julia language server
     if require("config.utils").known({ "julia" }) then
@@ -293,8 +308,6 @@ require("packer").use({
         },
       })
     end
-    -- Setup autocommands
-    local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
