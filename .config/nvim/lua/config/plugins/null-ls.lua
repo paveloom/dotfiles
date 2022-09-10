@@ -6,12 +6,14 @@ if utils.known({ "shellcheck", "stylua" }) then
     "jose-elias-alvarez/null-ls.nvim",
     after = "lush.nvim",
     config = function()
-      local null_ls = require("null-ls")
+      local name = "null-ls"
+      local null_ls = require(name)
       local builtins = null_ls.builtins
       local code_actions = builtins.code_actions
       local completion = builtins.completion
       local diagnostics = builtins.diagnostics
       local formatting = builtins.formatting
+      -- Setup the plugin
       null_ls.setup({
         sources = {
           code_actions.shellcheck,
@@ -20,6 +22,26 @@ if utils.known({ "shellcheck", "stylua" }) then
           diagnostics.shellcheck,
           formatting.stylua,
         },
+      })
+      -- Setup keybindings
+      local group = vim.api.nvim_create_augroup(name, { clear = false })
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = {
+          "*.bash",
+          "*.md",
+          "*.sh",
+        },
+        group = group,
+        callback = function()
+          -- Map a keybinding in the normal mode
+          local function nmap(k, e)
+            vim.keymap.set("n", k, e, {
+              noremap = true,
+              silent = true,
+            })
+          end
+          nmap("ga", vim.lsp.buf.code_action)
+        end,
       })
     end,
   })
