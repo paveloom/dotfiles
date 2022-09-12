@@ -3,3 +3,6 @@
 
 # Helix's runtime
 .config/helix/runtime
+
+# mpv's `watch_later` directory
+.config/mpv/watch_later
