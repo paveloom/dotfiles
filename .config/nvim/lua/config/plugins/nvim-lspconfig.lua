@@ -212,6 +212,7 @@ require("packer").use({
           "*.ts",
           "*.jsx",
           "*.js",
+          "*.cjs",
         },
         group = group,
         callback = function()
