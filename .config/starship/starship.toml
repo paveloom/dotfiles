@@ -1,0 +1,55 @@
+format = """
+$container\
+$character\
+$cmd_duration\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+[\\)](bold purple) \
+"""
+right_format = "$package via $julia$rust"
+add_newline = false
+
+[character]
+success_symbol = "[~>](bold green)"
+error_symbol = "[~>](bold red)"
+
+[cmd_duration]
+format = "[$duration]($style) "
+
+[container]
+symbol = "●"
+style = "bold green"
+format = "[$symbol]($style) "
+
+[git_branch]
+format = '[\($branch(:$remote_branch)]($style)'
+
+[git_commit]
+style = "bold purple"
+format = "[\\($hash$tag]($style)"
+tag_symbol = "-"
+
+[git_state]
+format = '[\($state( $progress_current/$progress_total)\)]($style) '
+
+[git_status]
+format = '([$conflicted$renamed$modified$staged$untracked$deleted$ahead_behind]($style))'
+ahead = "↑$count"
+behind = "↓$count"
+diverged = "↑$ahead_count↓$behind_count"
+untracked = "…$count"
+modified = "+$count"
+staged = "[+$count](bold green)"
+deleted = "-$count"
+
+[julia]
+format = "[$symbol($version )]($style)"
+
+[package]
+format = "[$symbol$version]($style)"
+
+[rust]
+format = "[$symbol($version )]($style)"
