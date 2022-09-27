@@ -49,3 +49,6 @@ function nvim
         end
     end
 end
+
+# Load the completion scripts of Podman
+podman completion fish | source
