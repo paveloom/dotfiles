@@ -3,15 +3,6 @@ require("packer").use({
   "neovim/nvim-lspconfig",
   requires = {
     "hrsh7th/cmp-nvim-lsp",
-    {
-      "lvimuser/lsp-inlayhints.nvim",
-      config = function()
-        -- Setup the plugin
-        require("lsp-inlayhints").setup()
-        -- Enable the plugin globally
-        require("lsp-inlayhints").toggle()
-      end,
-    },
     "mfussenegger/nvim-dap",
     "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
@@ -36,6 +27,7 @@ require("packer").use({
             silent = true,
           })
         end
+
         -- Setup keybindings
         nmap("<leader>t", trouble.toggle)
       end,
@@ -63,6 +55,7 @@ require("packer").use({
           buffer = bufnr,
         })
       end
+
       -- Enhance the signature help
       local signature_config = {
         fix_pos = true,
@@ -94,6 +87,7 @@ require("packer").use({
       end)
       nmap("gw", vim.lsp.buf.workspace_symbol)
     end
+
     -- Setup Lua language server
     if require("config.utils").known({ "lua-language-server" }) then
       lspconfig.sumneko_lua.setup({
@@ -102,7 +96,7 @@ require("packer").use({
         on_attach = function(client, bufnr)
           -- Disable the formatting since `stylua`
           -- from `null-ls` handles that
-          client.resolved_capabilities.document_formatting = false
+          client.server_capabilities.document_formatting = false
           -- Attach the server
           on_attach(client, bufnr)
           -- Enable the inlay hints
@@ -319,7 +313,7 @@ require("packer").use({
       },
       group = group,
       callback = function()
-        vim.lsp.buf.formatting_seq_sync(nil, 2000)
+        vim.lsp.buf.format({ timeout_ms = 2000 })
       end,
     })
   end,
