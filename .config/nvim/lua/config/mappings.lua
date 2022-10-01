@@ -31,6 +31,9 @@ nmap("<C-s>", ":silent write <cr>")
 -- Close the current buffer
 nmap("<C-q>", ":quit <cr>")
 
+-- Search the word under the cursor
+nmap("<C-f>", "*")
+
 -- Change indentation using Tab
 nmap("<S-Tab>", "<<")
 nmap("<Tab>", ">>")
