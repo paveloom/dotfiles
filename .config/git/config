@@ -1,0 +1,15 @@
+[push]
+    default = matching
+[pull]
+    rebase = false
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg
+[core]
+    editor = nano
+[init]
+    defaultBranch = main
+[alias]
+    new = "!f() {\n    if [ ! -z \"${1}\" ]; then\n        git checkout -b ${1}\n        git push -u origin ${1}\n    fi};\nf;\nunset f"
+    done = "!f() {\n    git add -A\n    if git commit -ve; then\n        git push -u origin `git branch --show-current`\n    fi\n};\nf;\nunset f"
