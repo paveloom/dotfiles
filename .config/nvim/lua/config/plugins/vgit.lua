@@ -12,6 +12,10 @@ require("packer").use({
         ["n gD"] = "buffer_diff_preview",
       },
       settings = {
+        git = {
+          fallback_cwd = "",
+          fallback_args = {},
+        },
         live_gutter = {
           edge_navigation = false,
         },
