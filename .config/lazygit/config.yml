@@ -50,6 +50,7 @@ customCommands:
     context: 'global'
     loadingText: 'Pushing...'
     command: "git {{index .PromptResponses 0}}"
+    subprocess: true
     prompts:
       - type: 'menu'
         title: 'How to push?'
