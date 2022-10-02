@@ -14,7 +14,7 @@ require("packer").use({
       hidden = true,
       direction = "float",
       float_opts = {
-        width = vim.o.columns - 5,
+        width = vim.o.columns - 6,
         height = vim.o.lines - 5,
       },
       on_open = function(term)
