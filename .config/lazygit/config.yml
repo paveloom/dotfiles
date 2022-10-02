@@ -28,11 +28,16 @@ keybinding:
   commits:
     push: '<nop>'
 customCommands:
+  - key: 'c'
+    description: 'commit changes'
+    context: 'files'
+    command: "git commit -v"
+    subprocess: true
   - key: 'D'
     description: 'Commit all staged files and push right after'
     context: 'global'
     loadingText: 'Pushing...'
-    command: "git commit && git push -u {{.SelectedRemote.Name}} {{.SelectedLocalBranch.Name}}"
+    command: "git commit -v && git push -u {{.SelectedRemote.Name}} {{.SelectedLocalBranch.Name}}"
     subprocess: true
   - key: 'E'
     description: 'Add an empty commit'
