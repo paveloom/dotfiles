@@ -14,8 +14,8 @@ require("packer").use({
       hidden = true,
       direction = "float",
       float_opts = {
-        width = vim.api.nvim_win_get_width(0) - 5,
-        height = vim.api.nvim_win_get_height(0) - 5,
+        width = vim.o.columns - 5,
+        height = vim.o.lines - 5,
       },
       on_open = function(term)
         vim.keymap.set("t", "<leader>l", "<cmd>close<CR>", {
