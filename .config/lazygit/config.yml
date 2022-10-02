@@ -1,0 +1,23 @@
+gui:
+  scrollHeight: 3
+  scrollPastBottom: false
+  theme:
+    inactiveBorderColor:
+      - white
+      - bold
+    selectedLineBgColor:
+      - default
+    selectedRangeBgColor:
+      - default
+  showFileTree: false
+  showBottomLine: false
+  showCommandLog: false
+  showIcons: true
+git:
+  merging:
+    args: '--no-ff'
+  parseEmoji: true
+promptToReturnFromSubprocess: false
+keybinding:
+  stash:
+    popStash: 'p'

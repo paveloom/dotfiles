@@ -6,3 +6,7 @@
 
 # mpv's `watch_later` directory
 .config/mpv/watch_later
+
+# Lazygit's state files
+.config/lazygit/state.yml
+.config/lazygit/*.tar.gz
