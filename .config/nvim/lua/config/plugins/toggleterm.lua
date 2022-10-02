@@ -17,6 +17,13 @@ require("packer").use({
         width = vim.api.nvim_win_get_width(0) - 5,
         height = vim.api.nvim_win_get_height(0) - 5,
       },
+      on_open = function(term)
+        vim.keymap.set("t", "<leader>l", "<cmd>close<CR>", {
+          noremap = true,
+          silent = true,
+          buffer = term.bufnr,
+        })
+      end,
     })
     -- Toggle the state of the `lazygit` terminal
     local function lazygit_toggle()

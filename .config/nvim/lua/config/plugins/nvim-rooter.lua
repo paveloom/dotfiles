@@ -5,6 +5,7 @@ require("packer").use({
   config = function()
     require("nvim-rooter").setup({
       rooter_patterns = { ".git", "=nvim" },
+      exclude_filetypes = { "toggleterm" },
     })
   end,
 })
