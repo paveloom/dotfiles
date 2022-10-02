@@ -10,13 +10,14 @@ gui:
     selectedRangeBgColor:
       - default
   showFileTree: false
-  showBottomLine: false
+  showBottomLine: true
   showCommandLog: false
   showIcons: true
 git:
   merging:
     args: '--no-ff'
   parseEmoji: true
+notARepository: 'skip'
 promptToReturnFromSubprocess: false
 keybinding:
   stash:
