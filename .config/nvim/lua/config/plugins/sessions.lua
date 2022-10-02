@@ -35,16 +35,8 @@ require("packer").use({
       group = group,
       nested = true,
       callback = function()
-        -- Save the arguments (full paths expected)
-        local args = vim.fn.argv()
         -- Try to restore the last session
-        sessions.load(nil, { autosave = false, silent = true })
-        -- Open the arguments
-        for i = 1, #args do
-          vim.cmd("edit " .. args[i])
-        end
-        -- Save the changes and start recording
-        sessions.save()
+        sessions.load(nil, { autosave = true, silent = true })
       end,
     })
   end,
