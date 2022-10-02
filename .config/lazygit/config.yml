@@ -21,3 +21,38 @@ promptToReturnFromSubprocess: false
 keybinding:
   stash:
     popStash: 'p'
+  files:
+    viewResetOptions: 'R'
+  commits:
+    push: '<nop>'
+customCommands:
+  - key: 'D'
+    description: 'Commit all staged files and push right after'
+    context: 'global'
+    loadingText: 'Pushing...'
+    command: 'bash -c "git commit -m \"{{index .PromptResponses 0}}\" && git push -u {{.SelectedRemote.Name}} {{.SelectedLocalBranch.Name}}"'
+    prompts:
+      - type: 'input'
+        title: 'Commit message'
+        initialValue: ''
+  - key: 'E'
+    description: 'Add an empty commit'
+    context: 'commits'
+    loadingText: 'Committing empty commit...'
+    command: 'git commit --allow-empty -m "{{index .PromptResponses 0}}"'
+    prompts:
+      - type: 'input'
+        title: 'Commit message'
+        initialValue: ''
+  - key: 'P'
+    description: "push"
+    context: 'global'
+    loadingText: 'Pushing...'
+    command: "git {{index .PromptResponses 0}}"
+    prompts:
+      - type: 'menu'
+        title: 'How to push?'
+        options:
+          - value: 'push'
+          - value: 'push --force-with-lease'
+          - value: 'push --force'
