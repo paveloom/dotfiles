@@ -18,7 +18,7 @@ require("packer").use({
         height = vim.o.lines - 5,
       },
       on_open = function(term)
-        vim.keymap.set("t", "<leader>l", "<cmd>close<CR>", {
+        vim.keymap.set("t", "<C-c>", "<cmd>close<CR>", {
           noremap = true,
           silent = true,
           buffer = term.bufnr,
