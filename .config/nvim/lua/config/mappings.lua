@@ -59,3 +59,6 @@ end)
 
 -- Close all buffers but this one
 nmap("<A-/>", ":%bd|:e#|:bd# <cr>")
+
+-- Unmap <C-Leftmouse>
+nmap("<C-LeftMouse>", "<Nop>")
