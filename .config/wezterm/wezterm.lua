@@ -13,7 +13,6 @@ return {
   use_fancy_tab_bar = true,
   enable_scroll_bar = true,
   force_reverse_video_cursor = true,
-  window_close_confirmation = "NeverPrompt",
   window_padding = {
     left = 5,
     right = 5,
@@ -83,12 +82,4 @@ return {
       action = act.Nop,
     },
   },
-  -- Enable local terminal multiplexing with a Unix domain
-  unix_domains = {
-    {
-      name = "unix",
-    },
-  },
-  -- Connect to this domain on start
-  default_gui_startup_args = { "connect", "unix" },
 }
