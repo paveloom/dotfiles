@@ -1,6 +1,21 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 
+-- Change the formatting of the tabs
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+  tabs = tabs
+  panes = panes
+  config = config
+  hover = hover
+  max_width = max_width
+  return {
+    { Attribute = { Italic = true } },
+    { Background = { Color = "#0e0b13" } },
+    { Foreground = { Color = tab.is_active and "#e3dfec" or "#847e91" } },
+    { Text = " " .. tab.active_pane.title .. " " },
+  }
+end)
+
 return {
   check_for_updates = false,
   font_size = 14.0,
@@ -10,8 +25,8 @@ return {
     harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   }),
   hide_tab_bar_if_only_one_tab = true,
-  use_fancy_tab_bar = true,
-  enable_scroll_bar = true,
+  use_fancy_tab_bar = false,
+  tab_max_width = 40,
   force_reverse_video_cursor = true,
   window_padding = {
     left = 5,
@@ -29,8 +44,6 @@ return {
     selection_fg = "#0e0b13",
     -- The background color of selected text
     selection_bg = "#fde9a0",
-    -- The color of the scrollbar "thumb"; the portion that represents the current viewport
-    scrollbar_thumb = "#241f31",
     -- The color of the split lines between panes
     split = "#444444",
     -- ANSI color palette: standard colors
@@ -55,6 +68,17 @@ return {
       "#4fd2fd", -- Bright Cyan
       "#f6f5f4", -- Bright White
     },
+    tab_bar = {
+      background = "#0e0b13",
+    },
+  },
+  tab_bar_style = {
+    new_tab = wezterm.format({
+      { Text = "" },
+    }),
+    new_tab_hover = wezterm.format({
+      { Text = "" },
+    }),
   },
   keys = {
     -- Move the current tab to the left
