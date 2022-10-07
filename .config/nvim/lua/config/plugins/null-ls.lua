@@ -40,6 +40,7 @@ if utils.known({ "shellcheck", "stylua" }) then
               silent = true,
             })
           end
+
           nmap("ga", vim.lsp.buf.code_action)
         end,
       })
