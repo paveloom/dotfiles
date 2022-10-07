@@ -60,5 +60,5 @@ end)
 -- Close all buffers but this one
 nmap("<A-/>", ":%bd|:e#|:bd# <cr>")
 
--- Unmap <C-Leftmouse>
-nmap("<C-LeftMouse>", "<Nop>")
+-- Map <C-Leftmouse> to <LeftMouse>
+nmap("<C-LeftMouse>", "<LeftMouse>")
