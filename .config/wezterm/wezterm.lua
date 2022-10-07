@@ -94,6 +94,9 @@ return {
       action = act.CompleteSelection("PrimarySelection"),
     },
     -- Bind 'Up' event of CTRL-Click to open hyperlinks
+    --
+    -- Note that if an application captures the mouse inputs
+    -- (e.g., Neovim), you should also press Shift
     {
       event = { Up = { streak = 1, button = "Left" } },
       mods = "CTRL",
