@@ -20,6 +20,6 @@ require("packer").use({
       is_insert_mode = true,
     })
     -- Setup keybindings
-    nmap("<leader>S", spectre.open)
+    nmap("<leader>r", spectre.open)
   end,
 })
