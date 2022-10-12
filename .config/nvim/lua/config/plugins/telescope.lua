@@ -37,6 +37,11 @@ if utils.known({ "rg", "fd" }) then
               },
             },
           },
+          live_grep = {
+            additional_args = function(_)
+              return { "--hidden" }
+            end,
+          },
         },
         extensions = {
           file_browser = {
