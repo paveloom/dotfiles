@@ -38,11 +38,11 @@ require("packer").use({
     local name = "lspconfig"
     local lspconfig = require(name)
     local trouble = require("trouble")
-    local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- Change the border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
     vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
