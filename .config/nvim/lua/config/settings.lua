@@ -33,7 +33,7 @@ o.expandtab = true
 o.shiftwidth = 2
 
 -- Enable smart indentation
-o.smartindent = true
+o.cindent = true
 
 -- Allow the mouse usage
 o.mouse = "a"
