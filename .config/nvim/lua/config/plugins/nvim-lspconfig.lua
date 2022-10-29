@@ -42,7 +42,7 @@ require("packer").use({
     -- Change the border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
     vim.lsp.handlers["textDocument/signatureHelp"] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
@@ -251,6 +251,26 @@ require("packer").use({
         },
       })
     end
+    -- Setup Zig language server
+    if require("config.utils").known({ "zig", "zls" }) then
+      lspconfig.zls.setup({
+        capabilities = capabilities,
+        on_attach = function(client, bufnr)
+          -- Attach the server
+          on_attach(client, bufnr)
+          -- Enable the inlay hints
+          require("lsp-inlayhints").on_attach(client, bufnr, false)
+        end,
+        root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+        settings = {
+          zls = {
+            enable_inlay_hints = true,
+            enable_snippets = true,
+            warn_style = true,
+          },
+        },
+      })
+    end
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
@@ -258,6 +278,7 @@ require("packer").use({
         "*.lua",
         "*.rs",
         "*.tex",
+        "*.zig",
       },
       group = group,
       callback = function()
