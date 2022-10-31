@@ -17,6 +17,8 @@ require("packer").use({
           fallback_args = {},
         },
         live_gutter = {
+          -- Will use the `gitsigns` plugin for that
+          enabled = false,
           edge_navigation = false,
         },
         live_blame = {

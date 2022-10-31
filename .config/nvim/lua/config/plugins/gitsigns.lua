@@ -4,8 +4,6 @@ require("packer").use({
   after = "lush.nvim",
   config = function()
     -- Setup the plugin
-    require("gitsigns").setup({
-      signcolumn = false,
-    })
+    require("gitsigns").setup()
   end,
 })
