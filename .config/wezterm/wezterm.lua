@@ -82,9 +82,21 @@ return {
   },
   keys = {
     -- Move the current tab to the left
-    { key = "LeftArrow", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
+    { key = "LeftArrow", mods = "ALT", action = act.MoveTabRelative(-1) },
     -- Move the current tab to the right
-    { key = "RightArrow", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+    { key = "RightArrow", mods = "ALT", action = act.MoveTabRelative(1) },
+    -- Create a vertical split
+    { key = "'", mods = "CTRL", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+    -- Create a horizontal split
+    { key = "\"", mods = "CTRL|SHIFT", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+    -- Adjust the pane size left
+    { key = "LeftArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Left", 1 }) },
+    -- Adjust the pane size right
+    { key = "RightArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Right", 1 }) },
+    -- Adjust the pane size up
+    { key = "UpArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Up", 1 }) },
+    -- Adjust the pane size down
+    { key = "DownArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Down", 1 }) },
   },
   mouse_bindings = {
     -- Only select on Click
