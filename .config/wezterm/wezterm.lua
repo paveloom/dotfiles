@@ -81,6 +81,10 @@ return {
     }),
   },
   keys = {
+    -- Turn off default toggle full screen keybinding
+    { key = "Enter", mods = "ALT", action = act.DisableDefaultAssignment },
+    -- Toggle full screen
+    { key = "f", mods = "ALT", action = act.ToggleFullScreen },
     -- Move the current tab to the left
     { key = "LeftArrow", mods = "ALT", action = act.MoveTabRelative(-1) },
     -- Move the current tab to the right
