@@ -2,38 +2,16 @@
 require("packer").use({
   "neovim/nvim-lspconfig",
   requires = {
+    "folke/trouble.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "mfussenegger/nvim-dap",
     "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
-    {
-      -- A pretty diagnostics, references, telescope results, quickfix and
-      -- location list to help you solve all the trouble your code is causing
-      "folke/trouble.nvim",
-      requires = { "kyazdani42/nvim-web-devicons" },
-      config = function()
-        local trouble = require("trouble")
-        -- Setup the plugin
-        trouble.setup({
-          action_keys = {
-            close = { "q", "<esc>" },
-            cancel = {},
-          },
-        })
-        -- Map a keybinding in the normal mode
-        local function nmap(k, e)
-          vim.keymap.set("n", k, e, {
-            noremap = true,
-            silent = true,
-          })
-        end
-
-        -- Setup keybindings
-        nmap("<leader>t", trouble.toggle)
-      end,
-    },
   },
-  after = "cmp-nvim-lsp",
+  after = {
+    "cmp-nvim-lsp",
+    "trouble.nvim",
+  },
   config = function()
     local name = "lspconfig"
     local lspconfig = require(name)
