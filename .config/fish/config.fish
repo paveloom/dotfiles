@@ -24,6 +24,7 @@ set -x GPG_TTY (tty)
 alias ls=exa
 alias cat=bat
 alias cfg="nano ~/.config/fish/config.fish"
+alias nvim="TERM=wezterm command nvim"
 
 # Load the completion scripts of Podman
 podman completion fish | source
