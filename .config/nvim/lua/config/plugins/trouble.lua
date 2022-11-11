@@ -22,6 +22,6 @@ require("packer").use({
     end
 
     -- Setup keybindings
-    nmap("<leader>e", trouble.toggle)
+    nmap("<leader>t", trouble.toggle)
   end,
 })

@@ -188,7 +188,7 @@ require("packer").use({
     end
 
     -- Setup keybindings
-    nmap("<leader>t", function()
+    nmap("<leader>w", function()
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)
   end,
