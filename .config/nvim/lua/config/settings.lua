@@ -7,7 +7,7 @@ o.number = true
 
 -- Highlight the number of the current line
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = "both"
 
 -- Don't time out on key codes (leader, specifically)
 o.timeout = false
