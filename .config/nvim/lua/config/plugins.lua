@@ -12,15 +12,14 @@ if fn.isdirectory(packer_path) == 0 then
   if fn.system({ "git", "-v" }) then
     -- Try to clone the repository
     print("Cloning the `packer` repository...")
-    if
-      fn.system({
-        "git",
-        "clone",
-        "--depth",
-        "1",
-        "https://github.com/wbthomason/packer.nvim",
-        packer_path,
-      })
+    if fn.system({
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "https://github.com/wbthomason/packer.nvim",
+      packer_path,
+    })
     then
       -- Add the package path to the runtime path
       o.runtimepath:prepend(packer_path)
@@ -67,7 +66,6 @@ require("config.plugins.feline")
 require("config.plugins.fidget")
 require("config.plugins.gitsigns")
 require("config.plugins.glow")
-require("config.plugins.harpoon")
 require("config.plugins.indent-o-matic")
 require("config.plugins.lsp-inlayhints")
 require("config.plugins.lsp_lines")
