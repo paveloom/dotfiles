@@ -57,6 +57,7 @@ require("config.plugins.impatient")
 
 -- Setup plugins
 packer.use("wbthomason/packer.nvim")
+require("config.plugins.bufferline")
 require("config.plugins.bufjump")
 require("config.plugins.bufresize")
 require("config.plugins.comment")
