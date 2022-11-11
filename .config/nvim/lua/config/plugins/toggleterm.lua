@@ -31,6 +31,9 @@ require("packer").use({
     })
     -- Toggle the state of the `lazygit` terminal
     local function lazygit_toggle()
+      -- Sync the current directories of the editor and the terminal
+      lazygit.dir = vim.fn.getcwd()
+      -- Toggle the terminal
       lazygit:toggle()
     end
 
