@@ -1,0 +1,15 @@
+extends: default
+
+rules:
+  comments:
+    level: error
+  comments-indentation:
+    level: error
+  document-start:
+    present: false
+    level: error
+  empty-values: enable
+  quoted-strings:
+    required: only-when-needed
+  truthy:
+    level: error
