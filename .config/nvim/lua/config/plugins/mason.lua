@@ -42,6 +42,8 @@ packer.use({
         "stylua",
         "texlab",
         "typescript-language-server",
+        "yamlfmt",
+        "yamllint",
       },
     })
   end,

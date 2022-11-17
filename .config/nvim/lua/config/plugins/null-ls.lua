@@ -20,11 +20,14 @@ if utils.known({ "shellcheck", "stylua" }) then
           completion.spell,
           diagnostics.fish,
           diagnostics.shellcheck,
+          diagnostics.yamllint,
           formatting.stylua,
+          formatting.yamlfmt,
         },
       })
-      -- Setup keybindings
+      -- Prepare an autocommands group
       local group = vim.api.nvim_create_augroup(name, { clear = false })
+      -- Setup keybindings
       vim.api.nvim_create_autocmd("BufEnter", {
         pattern = {
           "*.bash",
@@ -42,6 +45,17 @@ if utils.known({ "shellcheck", "stylua" }) then
           end
 
           nmap("ga", vim.lsp.buf.code_action)
+        end,
+      })
+      -- Format the code before writing
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = {
+          "*.yaml",
+          "*.yml",
+        },
+        group = group,
+        callback = function()
+          vim.lsp.buf.format({ timeout_ms = 2000 })
         end,
       })
     end,
