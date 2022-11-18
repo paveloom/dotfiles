@@ -20,7 +20,7 @@ require("packer").use({
     -- Change the border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
     vim.lsp.handlers["textDocument/signatureHelp"] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
@@ -176,20 +176,17 @@ require("packer").use({
     if require("config.utils").known({ "vscode-eslint-language-server" }) then
       lspconfig.eslint.setup({
         capabilities = capabilities,
-        on_attach = on_attach,
-      })
-      -- Fix all errors on write
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = {
-          "*.tsx",
-          "*.ts",
-          "*.jsx",
-          "*.js",
-          "*.cjs",
-        },
-        group = group,
-        callback = function()
-          vim.cmd("EslintFixAll")
+        on_attach = function(client, bufnr)
+          -- Attach the server
+          on_attach(client, bufnr)
+          -- Fix all errors on write
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            group = group,
+            callback = function()
+              vim.cmd("EslintFixAll")
+            end,
+          })
         end,
       })
     end
