@@ -20,7 +20,7 @@ require("packer").use({
     -- Change the border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
     vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
@@ -247,13 +247,35 @@ require("packer").use({
         },
       })
     end
+    -- Setup the XML language server
+    lspconfig.lemminx.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        xml = {
+          format = {
+            enforceQuoteStyle = "preferred",
+            joinContentLines = true,
+            splitAttributes = true,
+          },
+          preferences = {
+            quoteStyle = "double",
+          },
+        },
+      },
+    })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
         "*.jl",
         "*.lua",
         "*.rs",
+        "*.svg",
         "*.tex",
+        "*.xml",
+        "*.xsd",
+        "*.xsl",
+        "*.xslt",
         "*.zig",
       },
       group = group,

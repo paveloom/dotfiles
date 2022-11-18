@@ -35,6 +35,7 @@ packer.use({
       ensure_installed = {
         "eslint-lsp",
         "julia-lsp",
+        "lemminx",
         "ltex-ls",
         "lua-language-server",
         "rust-analyzer",
