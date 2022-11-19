@@ -101,6 +101,10 @@ return {
     { key = "UpArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Up", 1 }) },
     -- Adjust the pane size down
     { key = "DownArrow", mods = "ALT|SHIFT", action = act.AdjustPaneSize({ "Down", 1 }) },
+    -- Scroll one page up
+    { key = "PageUp", mods = "CTRL", action = act.ScrollByPage(-1) },
+    -- Scroll one page down
+    { key = "PageDown", mods = "CTRL", action = act.ScrollByPage(1) },
   },
   mouse_bindings = {
     -- Only select on Click
