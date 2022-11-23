@@ -1,7 +1,13 @@
+[user]
+	name = Pavel Sobolev
+	email = paveloom@riseup.net
+	signingkey = 815708F8273B5548
 [push]
     default = matching
 [pull]
     rebase = false
+[submodule]
+    recurse = true
 [commit]
     gpgsign = true
 [gpg]
