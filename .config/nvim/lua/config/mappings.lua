@@ -6,9 +6,6 @@ local nmap = utils.nmap
 local vmap = utils.vmap
 local xmap = utils.xmap
 
--- Set the leader key
-vim.g.mapleader = " "
-
 -- Jump by 4 lines when holding Ctrl and pressing Up/Down arrows
 imap("<C-Down>", "<C-o>5j")
 imap("<C-Up>", "<C-o>5k")

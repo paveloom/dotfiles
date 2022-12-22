@@ -1,8 +1,7 @@
 -- Standalone UI for `nvim-lsp` progress
-require("packer").use({
+return {
   "j-hui/fidget.nvim",
-  after = "lush.nvim",
   config = function()
     require("fidget").setup()
   end,
-})
+}

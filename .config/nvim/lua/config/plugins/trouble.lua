@@ -1,27 +1,35 @@
 -- A pretty diagnostics, references, telescope results, quickfix and
 -- location list to help you solve all the trouble your code is causing
-require("packer").use({
+return {
   "folke/trouble.nvim",
-  requires = { "kyazdani42/nvim-web-devicons" },
-  after = "lush.nvim",
+  dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    local trouble = require("trouble")
     -- Setup the plugin
-    trouble.setup({
+    require("trouble").setup({
       action_keys = {
         close = { "q", "<esc>" },
         cancel = {},
       },
     })
-    -- Map a keybinding in the normal mode
-    local function nmap(k, e)
-      vim.keymap.set("n", k, e, {
-        noremap = true,
-        silent = true,
-      })
-    end
+  end,
+  init = function()
+    local nmap = require("config.utils").nmap
 
     -- Setup keybindings
-    nmap("<leader>t", trouble.toggle)
+    nmap("<leader>t", function()
+      require("trouble").toggle()
+    end)
+    nmap("ge", function()
+      require("trouble").toggle("workspace_diagnostics")
+    end)
+    nmap("gi", function()
+      require("trouble").toggle("lsp_implementations")
+    end)
+    nmap("gr", function()
+      require("trouble").toggle("lsp_references")
+    end)
+    nmap("gt", function()
+      require("trouble").toggle("lsp_type_definitions")
+    end)
   end,
-})
+}

@@ -1,16 +1,10 @@
 -- Visual Git plugin for Neovim
-require("packer").use({
+return {
   "tanvirtin/vgit.nvim",
-  requires = { "nvim-lua/plenary.nvim" },
-  after = "gitsigns.nvim",
+  dependencies = "nvim-lua/plenary.nvim",
   config = function()
     -- Setup the plugin
     require("vgit").setup({
-      keymaps = {
-        ["n gk"] = "hunk_up",
-        ["n gl"] = "hunk_down",
-        ["n gD"] = "buffer_diff_preview",
-      },
       settings = {
         git = {
           fallback_cwd = "",
@@ -36,4 +30,18 @@ require("packer").use({
       },
     })
   end,
-})
+  init = function()
+    local nmap = require("config.utils").nmap
+
+    -- Setup keybindings
+    nmap("gD", function()
+      require("vgit").buffer_diff_preview()
+    end)
+    nmap("gk", function()
+      require("vgit").hunk_up()
+    end)
+    nmap("gl", function()
+      require("vgit").hunk_down()
+    end)
+  end,
+}

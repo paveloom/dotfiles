@@ -1,9 +1,8 @@
 -- Git integration for buffers
-require("packer").use({
+return {
   "lewis6991/gitsigns.nvim",
-  after = "lush.nvim",
   config = function()
     -- Setup the plugin
     require("gitsigns").setup()
   end,
-})
+}

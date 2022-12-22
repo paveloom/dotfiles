@@ -1,7 +1,6 @@
 -- A simple session manager plugin
-require("packer").use({
+return {
   "natecraddock/sessions.nvim",
-  after = "lush.nvim",
   config = function()
     local name = "sessions"
     local sessions = require(name)
@@ -40,4 +39,4 @@ require("packer").use({
       end,
     })
   end,
-})
+}

@@ -1,7 +1,7 @@
 --  A Neovim Lua plugin to help easily manage multiple terminal windows
-require("packer").use({
+return {
   "akinsho/toggleterm.nvim",
-  after = "lush.nvim",
+  keys = "<leader>l",
   config = function()
     -- Setup the plugin
     require("toggleterm").setup({
@@ -37,7 +37,9 @@ require("packer").use({
       lazygit:toggle()
     end
 
+    local nmap = require("config.utils").nmap
+
     -- Setup the keybindings
-    vim.keymap.set("n", "<leader>l", lazygit_toggle, { noremap = true, silent = true })
+    nmap("<leader>l", lazygit_toggle)
   end,
-})
+}

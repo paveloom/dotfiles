@@ -1,51 +1,48 @@
-local packer = require("packer")
-
--- Portable package manager for Neovim
-packer.use({
-  "williamboman/mason.nvim",
-  after = "lush.nvim",
-  config = function()
-    -- Setup the plugin
-    require("mason").setup({
-      ui = {
-        border = "single",
-      },
-    })
-    -- Map a keybinding in the normal mode
-    local function nmap(k, e)
-      vim.keymap.set("n", k, e, {
-        noremap = true,
-        silent = true,
+return {
+  {
+    -- Portable package manager for Neovim
+    "williamboman/mason.nvim",
+    config = function()
+      -- Setup the plugin
+      require("mason").setup({
+        ui = {
+          border = "single",
+        },
       })
-    end
+    end,
+    init = function()
+      local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
-    nmap("<leader>s", require("mason.ui").open)
-  end,
-})
-
--- Install and upgrade third party tools automatically
-packer.use({
-  "WhoIsSethDaniel/mason-tool-installer.nvim",
-  after = "mason.nvim",
-  config = function()
-    -- Setup the plugin
-    require("mason-tool-installer").setup({
-      auto_update = true,
-      ensure_installed = {
-        "eslint-lsp",
-        "julia-lsp",
-        "lemminx",
-        "ltex-ls",
-        "lua-language-server",
-        "rust-analyzer",
-        "shellcheck",
-        "stylua",
-        "texlab",
-        "typescript-language-server",
-        "yamlfmt",
-        "yamllint",
-      },
-    })
-  end,
-})
+      -- Setup keybindings
+      nmap("<leader>s", function()
+        require("mason.ui").open()
+      end)
+    end,
+  },
+  {
+    -- Install and upgrade third party tools automatically
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+    dependencies = "williamboman/mason.nvim",
+    config = function()
+      -- Setup the plugin
+      require("mason-tool-installer").setup({
+        auto_update = true,
+        ensure_installed = {
+          "eslint-lsp",
+          "julia-lsp",
+          "lemminx",
+          "ltex-ls",
+          "lua-language-server",
+          "rust-analyzer",
+          "shellcheck",
+          "stylua",
+          "tectonic",
+          "texlab",
+          "typescript-language-server",
+          "yamlfmt",
+          "yamllint",
+        },
+      })
+    end,
+  }
+}

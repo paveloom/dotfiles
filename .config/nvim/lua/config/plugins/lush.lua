@@ -1,8 +1,7 @@
 -- Create Neovim themes with real-time feedback, export anywhere
-require("packer").use({
+return {
   "rktjmp/lush.nvim",
-  requires = { "nvim-treesitter/nvim-treesitter" },
-  after = "impatient.nvim",
+  dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     -- Add the specified theme to the `package.path`
     package.path = package.path .. ";" .. vim.fn.stdpath("config") .. "/lua/config/themes/?.lua"
@@ -11,4 +10,4 @@ require("packer").use({
     -- Apply the base spec
     require("lush")(spec)
   end,
-})
+}

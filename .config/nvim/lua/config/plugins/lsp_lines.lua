@@ -1,18 +1,10 @@
 -- Renders diagnostics using virtual lines on top of the real line of code
-require("packer").use({
-  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-  after = "lush.nvim",
+return {
+  url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
   config = function()
+    local nmap = require("config.utils").nmap
     -- Setup the plugin
     require("lsp_lines").setup()
-    -- Map a keybinding in the normal mode
-    local function nmap(k, e)
-      vim.keymap.set("n", k, e, {
-        noremap = true,
-        silent = true,
-      })
-    end
-
     -- Switch between display modes based on the current value of `virtual_lines`
     local function configure(toggled)
       vim.diagnostic.config({
@@ -34,4 +26,4 @@ require("packer").use({
       configure(vim.diagnostic.config().virtual_lines)
     end)
   end,
-})
+}

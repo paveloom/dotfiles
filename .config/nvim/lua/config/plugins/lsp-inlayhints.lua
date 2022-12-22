@@ -1,7 +1,7 @@
 -- Partial implementation of LSP inlay hint
-require("packer").use({
+return {
   "lvimuser/lsp-inlayhints.nvim",
-  after = "nvim-lspconfig",
+  lazy = true,
   config = function()
     local name = "lsp-inlayhints"
     local lsp_inlayhints = require(name)
@@ -22,4 +22,4 @@ require("packer").use({
       end,
     })
   end,
-})
+}

@@ -2,6 +2,9 @@ local o = vim.opt
 
 local utils = require("config.utils")
 
+-- Set the leader key
+vim.g.mapleader = " "
+
 -- Show line numbers
 o.number = true
 

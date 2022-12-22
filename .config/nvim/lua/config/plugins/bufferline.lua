@@ -1,11 +1,10 @@
 -- A snazzy bufferline for Neovim
-require("packer").use({
+return {
   "akinsho/bufferline.nvim",
-  requires = { "nvim-tree/nvim-web-devicons" },
+  dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    local bufferline = require("bufferline")
     -- Setup the plugin
-    bufferline.setup({
+    require("bufferline").setup({
       options = {
         mode = "tabs",
         offsets = {
@@ -18,25 +17,23 @@ require("packer").use({
         },
         show_buffer_close_icons = false,
         show_close_icon = false,
-        ---@diagnostic disable-next-line: assign-type-mismatch
         separator_style = { "", "" },
         always_show_bufferline = false,
       },
     })
-    -- Map a keybinding in the normal mode
-    local function nmap(k, e)
-      vim.keymap.set("n", k, e, { silent = true })
-    end
+  end,
+  init = function()
+    local nmap = require("config.utils").nmap
 
     -- Setup keybindings
     nmap("<leader>.", "<cmd>:tabnew<cr>")
     nmap("<leader>k", function()
-      bufferline.cycle(-1)
+      require("bufferline").cycle(-1)
     end)
     nmap("<leader>;", function()
-      bufferline.cycle(1)
+      require("bufferline").cycle(1)
     end)
     nmap("<leader>,", "<cmd>:-tabmove<cr>")
     nmap("<leader>/", "<cmd>:+tabmove<cr>")
   end,
-})
+}

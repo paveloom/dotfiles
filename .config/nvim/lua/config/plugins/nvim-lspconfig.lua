@@ -1,21 +1,25 @@
 -- Quickstart configs for Nvim LSP
-require("packer").use({
+return {
   "neovim/nvim-lspconfig",
-  requires = {
-    "folke/trouble.nvim",
+  dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
     "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
   },
-  after = {
-    "cmp-nvim-lsp",
-    "trouble.nvim",
+  ft = {
+    "javascript",
+    "julia",
+    "lua",
+    "rust",
+    "tex",
+    "typescript",
+    "zig",
   },
   config = function()
     local name = "lspconfig"
     local lspconfig = require(name)
-    local trouble = require("trouble")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- Change the border
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
@@ -49,20 +53,8 @@ require("packer").use({
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
       nmap("gd", vim.lsp.buf.definition)
-      nmap("ge", function()
-        trouble.toggle("workspace_diagnostics")
-      end)
-      nmap("gi", function()
-        trouble.toggle("lsp_implementations")
-      end)
       nmap("gh", vim.lsp.buf.hover)
-      nmap("gr", function()
-        trouble.toggle("lsp_references")
-      end)
       nmap("gs", vim.lsp.buf.signature_help)
-      nmap("gt", function()
-        trouble.toggle("lsp_type_definitions")
-      end)
       nmap("gw", vim.lsp.buf.workspace_symbol)
     end
 
@@ -284,4 +276,4 @@ require("packer").use({
       end,
     })
   end,
-})
+}

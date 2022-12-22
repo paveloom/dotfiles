@@ -1,22 +1,22 @@
 -- A Neovim plugin that helps managing `crates.io` dependencies
-require("packer").use({
+return {
   "Saecki/crates.nvim",
-  requires = {
+  dependencies = {
     "hrsh7th/nvim-cmp",
     "nvim-lua/plenary.nvim",
   },
-  after = "nvim-cmp",
   config = function()
-    local name = "crates"
-    local cmp = require("cmp")
     -- Setup the plugin
-    require(name).setup()
+    require("crates").setup()
+  end,
+  init = function()
+    local name = "crates"
     -- Add to the completion sources
     vim.api.nvim_create_autocmd("BufRead", {
       group = vim.api.nvim_create_augroup(name, { clear = true }),
       pattern = "Cargo.toml",
       callback = function()
-        cmp.setup.buffer({
+        require("cmp").setup.buffer({
           sources = {
             { name = name },
           },
@@ -24,4 +24,4 @@ require("packer").use({
       end,
     })
   end,
-})
+}

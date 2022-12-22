@@ -1,8 +1,7 @@
 -- Neovim plugin to improve the default `vim.ui` interfaces
-require("packer").use({
+return {
   "stevearc/dressing.nvim",
-  requires = { "nvim-telescope/telescope.nvim" },
-  after = "telescope.nvim",
+  dependencies = "nvim-telescope/telescope.nvim",
   config = function()
     require("dressing").setup({
       select = {
@@ -10,4 +9,4 @@ require("packer").use({
       },
     })
   end,
-})
+}

@@ -1,16 +1,14 @@
 -- Neovim plugin to manage the file system and other tree like structures
-require("packer").use({
+return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v2.x",
-  requires = {
+  dependencies = {
     "MunifTanjim/nui.nvim",
-    "kyazdani42/nvim-web-devicons",
     "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
     {
       -- This plugins prompts the user to pick a window
       -- and returns the window id of the picked window
       "s1n7ax/nvim-window-picker",
-      tag = "v1.*",
       config = function()
         require("window-picker").setup({
           autoselect_one = true,
@@ -33,7 +31,6 @@ require("packer").use({
       end,
     },
   },
-  after = "lush.nvim",
   config = function()
     local neo_tree = require("neo-tree")
     -- Remove the deprecated commands from v1.x
@@ -182,14 +179,13 @@ require("packer").use({
         },
       },
     })
-    -- Map a keybinding in the normal mode
-    local function nmap(k, e)
-      vim.keymap.set("n", k, e, { silent = true })
-    end
+  end,
+  init = function()
+    local nmap = require("config.utils").nmap
 
     -- Setup keybindings
     nmap("<leader>w", function()
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)
   end,
-})
+}

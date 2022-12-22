@@ -2,9 +2,8 @@ local utils = require("config.utils")
 
 if utils.known({ "shellcheck", "stylua" }) then
   -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-  require("packer").use({
+  return {
     "jose-elias-alvarez/null-ls.nvim",
-    after = "lush.nvim",
     config = function()
       local name = "null-ls"
       local null_ls = require(name)
@@ -36,14 +35,9 @@ if utils.known({ "shellcheck", "stylua" }) then
         },
         group = group,
         callback = function()
-          -- Map a keybinding in the normal mode
-          local function nmap(k, e)
-            vim.keymap.set("n", k, e, {
-              noremap = true,
-              silent = true,
-            })
-          end
+          local nmap = require("config.utils").nmap
 
+          -- Setup keybindings
           nmap("ga", vim.lsp.buf.code_action)
         end,
       })
@@ -59,5 +53,5 @@ if utils.known({ "shellcheck", "stylua" }) then
         end,
       })
     end,
-  })
+  }
 end

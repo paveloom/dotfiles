@@ -1,8 +1,7 @@
 -- A fancy, configurable, notification manager for NeoVim
-require("packer").use({
+return {
   "rcarriga/nvim-notify",
-  requires = { "nvim-telescope/telescope.nvim" },
-  after = "telescope.nvim",
+  dependencies = { "nvim-telescope/telescope.nvim" },
   config = function()
     local notify = require("notify")
     -- Setup the plugin
@@ -13,4 +12,4 @@ require("packer").use({
     -- Change the default notifications handler
     vim.notify = notify
   end,
-})
+}

@@ -1,19 +1,18 @@
 local utils = require("config.utils")
 
-local packer = require("packer")
-
-if utils.known({ "rg", "fd" }) then
-  -- A highly extendable fuzzy finder over lists
-  packer.use({
+-- A highly extendable fuzzy finder over lists
+if utils.known({ "rg", "fd", "make" }) then
+  return {
     "nvim-telescope/telescope.nvim",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-project.nvim",
+      "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
-      "kyazdani42/nvim-web-devicons",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
-    after = "lush.nvim",
     config = function()
-      local builtin = require("telescope.builtin")
       local telescope = require("telescope")
       local themes = require("telescope.themes")
       -- Setup the plugin
@@ -95,76 +94,38 @@ if utils.known({ "rg", "fd" }) then
           },
         },
       })
-      -- Map a keybinding in the normal mode
-      local function nmap(k, e)
-        vim.keymap.set("n", k, e, { silent = true })
-      end
 
-      -- Setup keybindings
-      nmap("<leader>b", builtin.buffers)
-      nmap("<leader>f", builtin.find_files)
-      nmap("<leader>g", builtin.live_grep)
-      nmap("<leader>h", builtin.help_tags)
-      nmap("<leader>o", builtin.oldfiles)
-    end,
-  })
-
-  -- File Browser extension for Telescope
-  packer.use({
-    "nvim-telescope/telescope-file-browser.nvim",
-    requires = { "nvim-telescope/telescope.nvim" },
-    after = "telescope.nvim",
-    config = function()
-      local telescope = require("telescope")
-      -- Load the extension
+      telescope.load_extension("fzf")
       telescope.load_extension("file_browser")
-      -- Map a keybinding in the normal mode
-      local function nmap(k, e)
-        vim.keymap.set("n", k, e, { silent = true })
-      end
-
-      -- Setup keybindings
-      nmap("<leader>n", function()
-        telescope.extensions.file_browser.file_browser()
-      end)
-    end,
-  })
-
-  -- An extension for Telescope that allows you to switch between projects
-  packer.use({
-    "nvim-telescope/telescope-project.nvim",
-    requires = {
-      "nvim-telescope/telescope-file-browser.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
-    after = "telescope-file-browser.nvim",
-    config = function()
-      local telescope = require("telescope")
-      -- Load the extension
       telescope.load_extension("project")
-      -- Map a keybinding in the normal mode
-      local function nmap(k, e)
-        vim.keymap.set("n", k, e, { silent = true })
-      end
+    end,
+    init = function()
+      local nmap = require("config.utils").nmap
 
       -- Setup keybindings
+      nmap("<leader>b", function()
+        require("telescope.builtin").buffers()
+      end)
+      nmap("<leader>f", function()
+        require("telescope.builtin").find_files()
+      end)
+      nmap("<leader>g", function()
+        require("telescope.builtin").live_grep()
+      end)
+      nmap("<leader>h", function()
+        require("telescope.builtin").help_tags()
+      end)
+      nmap("<leader>o", function()
+        require("telescope.builtin").oldfiles()
+      end)
+      nmap("<leader>n", function()
+        require("telescope").extensions.file_browser.file_browser()
+      end)
       nmap("<leader>p", function()
-        telescope.extensions.project.project({ display_type = "full" })
+        require("telescope").extensions.project.project({ display_type = "full" })
       end)
     end,
-  })
-
-  if utils.known({ "make" }) then
-    -- FZF sorter for Telescope written in C
-    packer.use({
-      "nvim-telescope/telescope-fzf-native.nvim",
-      requires = { "nvim-telescope/telescope.nvim" },
-      after = "telescope-project.nvim",
-      run = "make",
-      config = function()
-        -- Load the extension
-        require("telescope").load_extension("fzf")
-      end,
-    })
-  end
+  }
+else
+  return {}
 end

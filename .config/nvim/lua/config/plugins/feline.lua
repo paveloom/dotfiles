@@ -1,7 +1,10 @@
-require("packer").use({
+-- A minimal, stylish and customizable statusline for Neovim written in Lua
+return {
   "feline-nvim/feline.nvim",
-  after = "lush.nvim",
-  requires = { "lewis6991/gitsigns.nvim" },
+  dependencies = {
+    "lewis6991/gitsigns.nvim",
+    "rktjmp/lush.nvim",
+  },
   config = function()
     local feline = require("feline")
     local vi_mode = require("feline.providers.vi_mode")
@@ -134,4 +137,4 @@ require("packer").use({
       },
     })
   end,
-})
+}
