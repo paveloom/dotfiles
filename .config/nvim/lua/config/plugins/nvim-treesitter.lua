@@ -7,6 +7,11 @@ return {
       -- Setup the plugin
       require("nvim-treesitter.configs").setup({
         auto_install = true,
+        ensure_installed = {
+          "markdown_inline",
+          "regex",
+          "vim",
+        },
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
@@ -51,7 +56,7 @@ return {
         check_ts = true,
         fast_wrap = {
           map = "<M-e>",
-          chars = { '{', '[', '(', '"', "'" },
+          chars = { "{", "[", "(", "\"", "'" },
           pattern = [=[[%'%"%)%>%]%)%}%,]]=],
           end_key = "$",
           keys = "qwertyuiopzxcvbnmasdfghjkl",
@@ -61,5 +66,5 @@ return {
         },
       })
     end,
-  }
+  },
 }

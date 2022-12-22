@@ -68,7 +68,15 @@ o.iminsert = 0
 o.completeopt = { "menuone", "preview", "noinsert", "noselect" }
 
 -- Use more abbreviations in the command-line and truncate when necessary
-o.shortmess = { a = true, c = true, T = true, F = true }
+o.shortmess = {
+  F = true,
+  I = true,
+  T = true,
+  W = true,
+  a = true,
+  c = true,
+  s = true,
+}
 
 -- Set a delay for CursorHold events
 o.updatetime = 300

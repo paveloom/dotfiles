@@ -96,6 +96,28 @@ return {
         hl = "FelineGitDiffRemoved",
       },
       {
+        -- Show the number of selected lines or
+        -- a number of selected characters
+        provider = function()
+          local _, start_row, start_col, _ = unpack(vim.fn.getpos("v"))
+          local _, end_row, end_col, _ = unpack(vim.fn.getpos("."))
+          local mode = vim.api.nvim_get_mode().mode
+          if mode == "v" or mode == "V" then
+            if start_row == end_row then
+              return tostring(math.abs(end_col - start_col) + 1) .. "c"
+            else
+              return tostring(math.abs(end_row - start_row) + 1) .. "r"
+            end
+          else
+            return ""
+          end
+        end,
+      },
+      {
+        provider = "search_count",
+        left_sep = " ",
+      },
+      {
         provider = "position",
         left_sep = " ",
       },

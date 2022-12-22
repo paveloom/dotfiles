@@ -5,7 +5,6 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
-    "ray-x/lsp_signature.nvim",
     "simrat39/rust-tools.nvim",
   },
   ft = {
@@ -21,10 +20,6 @@ return {
     local name = "lspconfig"
     local lspconfig = require(name)
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    -- Change the border
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-    vim.lsp.handlers["textDocument/signatureHelp"] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup(name, { clear = false })
     -- Setup the LSP server
@@ -38,16 +33,6 @@ return {
         })
       end
 
-      -- Enhance the signature help
-      local signature_config = {
-        fix_pos = true,
-        floating_window = false,
-        floating_window_above_cur_line = true,
-        hint_enable = false,
-        select_signature_key = "<A-s>",
-        toggle_key = "<A-x>",
-      }
-      require("lsp_signature").on_attach(signature_config, bufnr)
       -- Setup keybindings
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
