@@ -1,77 +1,75 @@
-local o = vim.opt
-
 local utils = require("config.utils")
 
 -- Set the leader key
 vim.g.mapleader = " "
 
 -- Show line numbers
-o.number = true
+vim.opt.number = true
 
 -- Highlight the number of the current line
-o.cursorline = true
-o.cursorlineopt = "both"
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "both"
 
 -- Don't time out on key codes (leader, specifically)
-o.timeout = false
-o.ttimeout = false
+vim.opt.timeout = false
+vim.opt.ttimeout = false
 
 -- Define special characters for vertical separators
-o.fillchars:append({ fold = " ", foldopen = "▼", foldsep = "│", foldclose = "▸" })
+vim.opt.fillchars:append({ fold = " ", foldopen = "▼", foldsep = "│", foldclose = "▸" })
 
 -- Don't close folds by default
-o.foldlevel = 99
+vim.opt.foldlevel = 99
 
 -- Allow the cursor to move to the upper line when pressing Left
-o.whichwrap:append({ ["<"] = true, [">"] = true, ["["] = true, ["]"] = true })
+vim.opt.whichwrap:append({ ["<"] = true, [">"] = true, ["["] = true, ["]"] = true })
 
 -- Make some of the invisible characters visible
-o.list = true
-o.listchars:append({ tab = "▸ " })
+vim.opt.list = true
+vim.opt.listchars:append({ tab = "▸ " })
 
 -- Always expand tabs
-o.expandtab = true
+vim.opt.expandtab = true
 
 -- Set the default number of spaces inserting with a <Tab>
-o.shiftwidth = 2
+vim.opt.shiftwidth = 2
 
 -- Enable smart indentation
-o.cindent = true
+vim.opt.cindent = true
 
 -- Indent wrapped lines, too
-o.breakindent = true
+vim.opt.breakindent = true
 
 -- Allow the mouse usage
-o.mouse = "a"
+vim.opt.mouse = "a"
 
 -- Don't wrap the lines by default
-o.wrap = false
+vim.opt.wrap = false
 
 -- Wrap at a word boundary
-o.linebreak = true
+vim.opt.linebreak = true
 
 -- Keep undo history
-o.undofile = true
+vim.opt.undofile = true
 
 -- Always show the sign column
-o.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 
 -- Enable 24-bit RGB color in the TUI
-o.termguicolors = true
+vim.opt.termguicolors = true
 
 -- Enable spell checking
-o.spell = true
+vim.opt.spell = true
 utils.add_lang("ru")
 
 -- Set an alternative keyboard mapping to Russian
-o.keymap = "russian-jcukenwin"
-o.iminsert = 0
+vim.opt.keymap = "russian-jcukenwin"
+vim.opt.iminsert = 0
 
 -- Set completion options
-o.completeopt = { "menuone", "preview", "noinsert", "noselect" }
+vim.opt.completeopt = { "menuone", "preview", "noinsert", "noselect" }
 
 -- Use more abbreviations in the command-line and truncate when necessary
-o.shortmess = {
+vim.opt.shortmess = {
   F = true,
   I = true,
   T = true,
@@ -82,14 +80,14 @@ o.shortmess = {
 }
 
 -- Set a delay for CursorHold events
-o.updatetime = 300
+vim.opt.updatetime = 300
 
 -- Number of screen lines to keep above and below the cursor
-o.scrolloff = 8
+vim.opt.scrolloff = 8
 
 -- Make searching case insensitive
-o.ignorecase = true
-o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- Do all yank, delete, and put operations in system clipboard
-o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"

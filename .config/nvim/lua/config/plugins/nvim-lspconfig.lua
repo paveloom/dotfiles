@@ -2,6 +2,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "folke/neodev.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
@@ -17,11 +18,9 @@ return {
     "zig",
   },
   config = function()
-    local name = "lspconfig"
-    local lspconfig = require(name)
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- Prepare an autocommands group
-    local group = vim.api.nvim_create_augroup(name, { clear = false })
+    local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
     -- Setup the LSP server
     local function on_attach(_, bufnr)
       -- Map a keybinding in the normal mode
@@ -45,7 +44,12 @@ return {
 
     -- Setup Lua language server
     if require("config.utils").known({ "lua-language-server" }) then
-      lspconfig.sumneko_lua.setup({
+      -- Setup the LSP for Lua API of Neovim
+      --
+      -- It's important we setup this before requiring `lspconfig`
+      require("neodev").setup()
+      -- Setup the LSP for any other Lua
+      require("lspconfig").sumneko_lua.setup({
         single_file_support = false,
         capabilities = capabilities,
         on_attach = function(client, bufnr)
@@ -115,7 +119,7 @@ return {
     end
     -- Setup TypeScript language server
     if require("config.utils").known({ "typescript-language-server" }) then
-      lspconfig.tsserver.setup({
+      require("lspconfig").tsserver.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
           -- Attach the server
@@ -151,7 +155,7 @@ return {
     end
     -- Setup ESLint language server
     if require("config.utils").known({ "vscode-eslint-language-server" }) then
-      lspconfig.eslint.setup({
+      require("lspconfig").eslint.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
           -- Attach the server
@@ -169,14 +173,14 @@ return {
     end
     -- Setup Julia language server
     if require("config.utils").known({ "julia" }) then
-      lspconfig.julials.setup({
+      require("lspconfig").julials.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
     end
     -- Setup LanguageTool language server
     if require("config.utils").known({ "ltex-ls", "ltex-cli" }) then
-      lspconfig.ltex.setup({
+      require("lspconfig").ltex.setup({
         settings = {
           ltex = {
             enabled = {
@@ -192,7 +196,7 @@ return {
     end
     -- Setup LaTeX language server
     if require("config.utils").known({ "texlab", "tectonic" }) then
-      lspconfig.texlab.setup({
+      require("lspconfig").texlab.setup({
         settings = {
           texlab = {
             build = {
@@ -206,6 +210,7 @@ return {
     end
     -- Setup Zig language server
     if require("config.utils").known({ "zig", "zls" }) then
+      local lspconfig = require("lspconfig")
       lspconfig.zls.setup({
         capabilities = capabilities,
         on_attach = function(client, bufnr)
@@ -225,7 +230,7 @@ return {
       })
     end
     -- Setup the XML language server
-    lspconfig.lemminx.setup({
+    require("lspconfig").lemminx.setup({
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
