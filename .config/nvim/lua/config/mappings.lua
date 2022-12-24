@@ -59,3 +59,12 @@ nmap("<A-/>", ":%bd|:e#|:bd# <cr>")
 
 -- Map <C-Leftmouse> to <LeftMouse>
 nmap("<C-LeftMouse>", "<LeftMouse>")
+
+-- Move the lines in visual mode
+-- with automatic indentation
+vmap("<A-Down>", ":m '>+1<CR>gv=gv")
+vmap("<A-Up>", ":m '<-2<CR>gv=gv")
+
+-- Leave the cursor in the same place
+-- while appending lines
+nmap("J", "mzJ`z")
