@@ -14,7 +14,7 @@ return {
       local nmap = require("config.utils").nmap
 
       -- Setup keybindings
-      nmap("<leader>s", function()
+      nmap("<leader>m", function()
         require("mason.ui").open()
       end)
     end,
@@ -44,5 +44,5 @@ return {
         },
       })
     end,
-  }
+  },
 }

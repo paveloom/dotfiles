@@ -129,6 +129,9 @@ if utils.known({ "rg", "fd", "make" }) then
       nmap("<leader>p", function()
         require("telescope").extensions.project.project({ display_type = "full" })
       end)
+      nmap("za", function()
+        require("telescope.builtin").spell_suggest()
+      end)
     end,
   }
 else
