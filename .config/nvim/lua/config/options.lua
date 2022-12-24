@@ -38,6 +38,9 @@ o.shiftwidth = 2
 -- Enable smart indentation
 o.cindent = true
 
+-- Indent wrapped lines, too
+o.breakindent = true
+
 -- Allow the mouse usage
 o.mouse = "a"
 
