@@ -10,6 +10,7 @@ if utils.known({ "rg", "fd", "make" }) then
       "nvim-telescope/telescope-project.nvim",
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
+      "rktjmp/lush.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
@@ -21,6 +22,10 @@ if utils.known({ "rg", "fd", "make" }) then
           mappings = {
             i = {
               ["<Esc>"] = "close",
+              ["<C-u>"] = false,
+              ["<C-d>"] = false,
+              ["<C-w>"] = "preview_scrolling_up",
+              ["<C-s>"] = "preview_scrolling_down",
             },
           },
         }),

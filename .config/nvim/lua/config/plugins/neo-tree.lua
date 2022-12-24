@@ -5,6 +5,7 @@ return {
     "MunifTanjim/nui.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
+    "rktjmp/lush.nvim",
     {
       -- This plugins prompts the user to pick a window
       -- and returns the window id of the picked window
