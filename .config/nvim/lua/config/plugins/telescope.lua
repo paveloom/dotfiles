@@ -10,7 +10,6 @@ if utils.known({ "rg", "fd", "make" }) then
       "nvim-telescope/telescope-project.nvim",
       "nvim-tree/nvim-web-devicons",
       "nvim-treesitter/nvim-treesitter",
-      "rktjmp/lush.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
