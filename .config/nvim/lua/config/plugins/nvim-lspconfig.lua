@@ -4,6 +4,7 @@ return {
   dependencies = {
     "folke/neodev.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    "lsp_lines.nvim",
     "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
     "simrat39/rust-tools.nvim",

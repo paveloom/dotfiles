@@ -1,6 +1,7 @@
 -- Visual Git plugin for Neovim
 return {
   "tanvirtin/vgit.nvim",
+  lazy = true,
   dependencies = "nvim-lua/plenary.nvim",
   config = function()
     -- Setup the plugin

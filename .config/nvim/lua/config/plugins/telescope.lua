@@ -4,6 +4,7 @@ local utils = require("config.utils")
 if utils.known({ "rg", "fd", "make" }) then
   return {
     "nvim-telescope/telescope.nvim",
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",

@@ -1,6 +1,7 @@
 -- Renders diagnostics using virtual lines on top of the real line of code
 return {
   url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  lazy = true,
   config = function()
     local nmap = require("config.utils").nmap
     -- Setup the plugin

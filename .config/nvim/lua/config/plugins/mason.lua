@@ -2,6 +2,7 @@ return {
   {
     -- Portable package manager for Neovim
     "williamboman/mason.nvim",
+    lazy = true,
     config = function()
       -- Setup the plugin
       require("mason").setup({
