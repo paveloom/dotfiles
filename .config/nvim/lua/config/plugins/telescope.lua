@@ -50,6 +50,7 @@ if utils.known({ "rg", "fd", "make" }) then
         extensions = {
           file_browser = {
             dir_icon = "",
+            dir_icon_hl = "NeoTreeDirectoryIcon",
             display_stat = false,
             hijack_netrw = true,
             select_buffer = true,
