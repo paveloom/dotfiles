@@ -1,0 +1,25 @@
+-- Neovim plugin to improve the default `vim.ui` interfaces
+return {
+  "stevearc/dressing.nvim",
+  lazy = true,
+  dependencies = "nvim-telescope/telescope.nvim",
+  config = function()
+    require("dressing").setup({
+      select = {
+        telescope = require("telescope.themes").get_cursor(),
+      },
+    })
+  end,
+  init = function()
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.select = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.select(...)
+    end
+    ---@diagnostic disable-next-line: duplicate-set-field
+    vim.ui.input = function(...)
+      require("lazy").load({ plugins = { "dressing.nvim" } })
+      return vim.ui.input(...)
+    end
+  end,
+}
