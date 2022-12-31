@@ -112,6 +112,7 @@ return {
             return ""
           end
         end,
+        left_sep = " ",
       },
       {
         provider = "search_count",
