@@ -36,8 +36,8 @@ return {
           documentation = cmp.config.window.bordered(),
         },
         mapping = cmp.mapping.preset.insert({
-          ["<C-w>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-s>"] = cmp.mapping.scroll_docs(4),
+          ["<PageUp>"] = cmp.mapping.scroll_docs(-4),
+          ["<PageDown>"] = cmp.mapping.scroll_docs(4),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping(function(fallback)
