@@ -9,15 +9,6 @@ return {
     "mfussenegger/nvim-dap",
     "simrat39/rust-tools.nvim",
   },
-  ft = {
-    "javascript",
-    "julia",
-    "lua",
-    "rust",
-    "tex",
-    "typescript",
-    "zig",
-  },
   config = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- Prepare an autocommands group
@@ -188,13 +179,33 @@ return {
     -- Setup LanguageTool language server
     if require("config.utils").known({ "ltex-ls", "ltex-cli" }) then
       require("lspconfig").ltex.setup({
+        filetypes = {
+          "bib",
+          "gitcommit",
+          "html",
+          "javascript",
+          "julia",
+          "lua",
+          "markdown",
+          "org",
+          "plaintex",
+          "rnoweb",
+          "rst",
+          "rust",
+          "tex",
+          "typescript",
+          "zig",
+        },
         settings = {
           ltex = {
             enabled = {
+              "javascript",
               "julia",
               "latex",
+              "lua",
               "markdown",
               "rust",
+              "typescript",
             },
             additionalRules = { enablePickyRules = true },
           },
