@@ -14,6 +14,14 @@ return {
       presets = {
         lsp_doc_border = true,
       },
+      messages = {
+        view = "mini",
+        view_error = "mini",
+        view_warn = "mini",
+      },
+      notify = {
+        view = "mini",
+      },
       routes = {
         {
           filter = {
