@@ -194,7 +194,6 @@ return {
           "rust",
           "tex",
           "typescript",
-          "zig",
         },
         settings = {
           ltex = {
