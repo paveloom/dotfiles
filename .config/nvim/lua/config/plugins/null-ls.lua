@@ -22,9 +22,7 @@ if utils.known({ "shellcheck", "stylua" }) then
           diagnostics.shellcheck,
           diagnostics.yamllint,
           formatting.stylua,
-          formatting.yamlfmt.with({
-            args = { "-in" },
-          }),
+          formatting.yamlfmt,
         },
       })
       -- Prepare an autocommands group
