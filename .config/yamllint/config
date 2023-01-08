@@ -8,8 +8,11 @@ rules:
   document-start:
     present: false
     level: error
-  empty-values: enable
+  empty-lines: disable
+  empty-values: disable
+  line-length: disable
   quoted-strings:
     required: only-when-needed
   truthy:
     level: error
+    check-keys: false
