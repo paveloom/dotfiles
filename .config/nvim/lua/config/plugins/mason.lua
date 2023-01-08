@@ -29,6 +29,7 @@ return {
       require("mason-tool-installer").setup({
         auto_update = true,
         ensure_installed = {
+          "dockerfile-language-server",
           "eslint-lsp",
           "julia-lsp",
           "lemminx",

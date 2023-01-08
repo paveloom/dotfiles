@@ -263,6 +263,11 @@ return {
         },
       },
     })
+    -- Setup the Dockerfile language server
+    require("lspconfig").dockerls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
