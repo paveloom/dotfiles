@@ -1,6 +1,11 @@
 # Disable greeting
 set fish_greeting
 
+# Set up the SSH agent
+if [ ! -f /run/.toolboxenv ] && status --is-interactive
+  keychain --eval --quiet -Q id_rsa | source
+end
+
 # Key bindings
 
 ## Bind `Ctrl+Backspace` to delete a word behind the cursor
