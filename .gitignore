@@ -17,3 +17,6 @@
 # Lazygit's state files
 .config/lazygit/state.yml
 .config/lazygit/*.tar.gz
+
+# Hypr's extras
+.config/hypr/hyprlandd.conf
