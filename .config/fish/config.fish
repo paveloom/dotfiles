@@ -1,11 +1,6 @@
 # Disable greeting
 set fish_greeting
 
-# Set up the SSH agent
-if [ ! -f /run/.toolboxenv ] && status --is-interactive
-  keychain --eval --quiet -Q id_rsa | source
-end
-
 # Key bindings
 
 ## Bind `Ctrl+Backspace` to delete a word behind the cursor
@@ -24,6 +19,9 @@ set -gx fish_color_quote green
 
 ## Let the GPG program use the terminal connected to standard input
 set -x GPG_TTY (tty)
+
+# Set up the SSH agent (via `gnome-keyring`)
+set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 
 # Aliases
 alias ls=exa
