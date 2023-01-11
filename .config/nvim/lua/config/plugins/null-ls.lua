@@ -28,16 +28,6 @@ if utils.known({ "shellcheck", "stylua" }) then
       })
       -- Prepare an autocommands group
       local group = vim.api.nvim_create_augroup(name, { clear = false })
-      -- Treat `*.yuck` files as Fennel files
-      vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-        pattern = {
-          "*.yuck",
-        },
-        group = group,
-        callback = function()
-          vim.bo.filetype = "fennel"
-        end,
-      })
       -- Setup keybindings
       vim.api.nvim_create_autocmd("BufEnter", {
         pattern = {
@@ -58,7 +48,6 @@ if utils.known({ "shellcheck", "stylua" }) then
         pattern = {
           "*.yaml",
           "*.yml",
-          "*.yuck",
         },
         group = group,
         callback = function()
