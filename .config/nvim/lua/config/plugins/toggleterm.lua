@@ -22,7 +22,7 @@ return {
         end,
       },
       on_open = function(term)
-        vim.keymap.set("t", "<C-c>", "<cmd>close<CR>", {
+        vim.keymap.set("t", "<C-l>", "<cmd>close<CR>", {
           noremap = true,
           silent = true,
           buffer = term.bufnr,
