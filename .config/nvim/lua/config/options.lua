@@ -91,3 +91,6 @@ vim.opt.smartcase = true
 
 -- Do all yank, delete, and put operations in system clipboard
 vim.opt.clipboard = "unnamedplus"
+
+-- Don't resize windows after closing one
+vim.opt.equalalways = false
