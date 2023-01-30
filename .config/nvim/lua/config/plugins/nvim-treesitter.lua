@@ -4,7 +4,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      -- Setup the plugin
+      -- Set up the plugin
       require("nvim-treesitter.configs").setup({
         auto_install = true,
         ensure_installed = {
@@ -51,7 +51,7 @@ return {
     dependencies = "nvim-treesitter/nvim-treesitter",
     event = "InsertEnter",
     config = function()
-      -- Setup the plugin
+      -- Set up the plugin
       require("nvim-autopairs").setup({
         check_ts = true,
         fast_wrap = {

@@ -4,7 +4,7 @@ return {
   lazy = true,
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("bufferline").setup({
       options = {
         mode = "tabs",
@@ -27,7 +27,7 @@ return {
   init = function()
     local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
+    -- Set up keybindings
     nmap("<leader>.", function()
       require("bufferline")
       vim.cmd(":tabnew")

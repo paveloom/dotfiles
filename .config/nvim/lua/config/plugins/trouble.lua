@@ -5,7 +5,7 @@ return {
   lazy = true,
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("trouble").setup({
       action_keys = {
         close = { "q", "<esc>" },
@@ -16,7 +16,7 @@ return {
   init = function()
     local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
+    -- Set up keybindings
     nmap("<leader>t", function()
       require("trouble").toggle()
     end)

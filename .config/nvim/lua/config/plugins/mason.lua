@@ -4,7 +4,7 @@ return {
     "williamboman/mason.nvim",
     lazy = true,
     config = function()
-      -- Setup the plugin
+      -- Set up the plugin
       require("mason").setup({
         ui = {
           border = "single",
@@ -14,7 +14,7 @@ return {
     init = function()
       local nmap = require("config.utils").nmap
 
-      -- Setup keybindings
+      -- Set up keybindings
       nmap("<leader>m", function()
         require("mason.ui").open()
       end)
@@ -25,7 +25,7 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = "williamboman/mason.nvim",
     config = function()
-      -- Setup the plugin
+      -- Set up the plugin
       require("mason-tool-installer").setup({
         auto_update = true,
         ensure_installed = {

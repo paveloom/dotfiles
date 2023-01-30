@@ -36,7 +36,7 @@ return {
     local neo_tree = require("neo-tree")
     -- Remove the deprecated commands from v1.x
     vim.g.neo_tree_remove_legacy_commands = 1
-    -- Setup the plugin
+    -- Set up the plugin
     neo_tree.setup({
       use_default_mappings = false,
       close_if_last_window = true,
@@ -184,7 +184,7 @@ return {
   init = function()
     local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
+    -- Set up keybindings
     nmap("<leader>w", function()
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)

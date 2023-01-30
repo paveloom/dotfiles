@@ -13,7 +13,7 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
-    -- Setup the LSP server
+    -- Set up the LSP server
     local function on_attach(_, bufnr)
       -- Map a keybinding in the normal mode
       local function nmap(k, e)
@@ -24,7 +24,7 @@ return {
         })
       end
 
-      -- Setup keybindings
+      -- Set up keybindings
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
@@ -40,13 +40,13 @@ return {
       end)
     end
 
-    -- Setup Lua language server
+    -- Set up the Lua language server
     if require("config.utils").known({ "lua-language-server" }) then
-      -- Setup the LSP for Lua API of Neovim
+      -- Set up the LSP for Lua API of Neovim
       --
       -- It's important we setup this before requiring `lspconfig`
       require("neodev").setup()
-      -- Setup the LSP for any other Lua
+      -- Set up the LSP for any other Lua
       require("lspconfig").sumneko_lua.setup({
         single_file_support = false,
         capabilities = capabilities,
@@ -82,7 +82,7 @@ return {
         },
       })
     end
-    -- Setup Rust language server
+    -- Set up the Rust language server
     if require("config.utils").known({ "rust-analyzer" }) then
       require("rust-tools").setup({
         tools = {
@@ -115,7 +115,7 @@ return {
         },
       })
     end
-    -- Setup TypeScript language server
+    -- Set up the TypeScript language server
     if require("config.utils").known({ "typescript-language-server" }) then
       require("lspconfig").tsserver.setup({
         capabilities = capabilities,
@@ -151,7 +151,7 @@ return {
         },
       })
     end
-    -- Setup ESLint language server
+    -- Set up the ESLint language server
     if require("config.utils").known({ "vscode-eslint-language-server" }) then
       require("lspconfig").eslint.setup({
         capabilities = capabilities,
@@ -169,14 +169,14 @@ return {
         end,
       })
     end
-    -- Setup Julia language server
+    -- Set up the Julia language server
     if require("config.utils").known({ "julia" }) then
       require("lspconfig").julials.setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
     end
-    -- Setup LanguageTool language server
+    -- Set up the LanguageTool language server
     if require("config.utils").known({ "ltex-ls", "ltex-cli" }) then
       require("lspconfig").ltex.setup({
         filetypes = {
@@ -211,7 +211,7 @@ return {
         },
       })
     end
-    -- Setup LaTeX language server
+    -- Set up the LaTeX language server
     if require("config.utils").known({ "texlab", "tectonic" }) then
       require("lspconfig").texlab.setup({
         settings = {
@@ -225,7 +225,7 @@ return {
         },
       })
     end
-    -- Setup Zig language server
+    -- Set up the Zig language server
     if require("config.utils").known({ "zig", "zls" }) then
       local lspconfig = require("lspconfig")
       lspconfig.zls.setup({
@@ -246,7 +246,7 @@ return {
         },
       })
     end
-    -- Setup the XML language server
+    -- Set up the XML language server
     require("lspconfig").lemminx.setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -263,11 +263,25 @@ return {
         },
       },
     })
-    -- Setup the Dockerfile language server
+    -- Set up the Dockerfile language server
     require("lspconfig").dockerls.setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    -- Set up the Nix language server
+    if require("config.utils").known({ "alejandra", "nil" }) then
+      require("lspconfig").nil_ls.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = {
+          ["nil"] = {
+            formatting = {
+              command = { "alejandra" },
+            },
+          },
+        },
+      })
+    end
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
@@ -278,6 +292,7 @@ return {
         "*.tex",
         "*.xml",
         "*.xsd",
+        "*.nix",
         "*.xsl",
         "*.xslt",
         "*.zig",

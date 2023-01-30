@@ -4,7 +4,7 @@ return {
   lazy = true,
   config = function()
     local nmap = require("config.utils").nmap
-    -- Setup the plugin
+    -- Set up the plugin
     require("lsp_lines").setup()
     -- Switch between display modes based on the current value of `virtual_lines`
     local function configure(toggled)
@@ -22,7 +22,7 @@ return {
 
     -- Set the default configuration
     configure(true)
-    -- Setup the keybindings
+    -- Set up the keybindings
     nmap("<A-v>", function()
       configure(vim.diagnostic.config().virtual_lines)
     end)

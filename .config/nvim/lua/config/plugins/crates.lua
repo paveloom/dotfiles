@@ -7,7 +7,7 @@ return {
     "nvim-lua/plenary.nvim",
   },
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("crates").setup()
   end,
   init = function()

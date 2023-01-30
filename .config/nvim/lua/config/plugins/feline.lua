@@ -13,7 +13,7 @@ return {
     local c = theme.colors
     -- Don't show the mode the default way
     vim.o.showmode = false
-    -- Setup the plugin
+    -- Set up the plugin
     local vi_mode_colors = {
       NORMAL = c.rock_medium.hex,
       OP = c.rock_medium.hex,
@@ -145,7 +145,7 @@ return {
         right_sep = " ",
       },
     }
-    -- Setup the plugin
+    -- Set up the plugin
     feline.setup({
       theme = { bg = s.Normal.bg.hex, fg = s.Normal.fg.hex },
       default_bg = "bg",

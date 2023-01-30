@@ -6,7 +6,7 @@ return {
     "<leader>d",
   },
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("bufjump").setup({
       backward = "<leader>a",
       forward = "<leader>d",

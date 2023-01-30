@@ -2,7 +2,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("gitsigns").setup()
   end,
 }

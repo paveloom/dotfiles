@@ -13,7 +13,7 @@ if utils.known({ "shellcheck", "stylua" }) then
       local completion = builtins.completion
       local diagnostics = builtins.diagnostics
       local formatting = builtins.formatting
-      -- Setup the plugin
+      -- Set up the plugin
       null_ls.setup({
         sources = {
           code_actions.shellcheck,
@@ -38,7 +38,7 @@ if utils.known({ "shellcheck", "stylua" }) then
           vim.bo.filetype = "fennel"
         end,
       })
-      -- Setup keybindings
+      -- Set up keybindings
       vim.api.nvim_create_autocmd("BufEnter", {
         pattern = {
           "*.bash",
@@ -49,7 +49,7 @@ if utils.known({ "shellcheck", "stylua" }) then
         callback = function()
           local nmap = require("config.utils").nmap
 
-          -- Setup keybindings
+          -- Set up keybindings
           nmap("ga", vim.lsp.buf.code_action)
         end,
       })

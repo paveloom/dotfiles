@@ -4,12 +4,12 @@ return {
   config = function()
     local name = "sessions"
     local sessions = require(name)
-    -- Setup the plugin
+    -- Set up the plugin
     sessions.setup({
       events = { "BufEnter" },
       session_filepath = vim.fn.stdpath("data") .. "/session.vim",
     })
-    -- Setup autocommands
+    -- Set up autocommands
     local group = vim.api.nvim_create_augroup(name, { clear = true })
     -- Save the session before leaving Vim
     vim.api.nvim_create_autocmd("VimLeavePre", {

@@ -5,9 +5,9 @@ return {
   config = function()
     local name = "lsp-inlayhints"
     local lsp_inlayhints = require(name)
-    -- Setup the plugin
+    -- Set up the plugin
     lsp_inlayhints.setup()
-    -- Setup autocommands
+    -- Set up autocommands
     local group = vim.api.nvim_create_augroup(name, { clear = true })
     vim.api.nvim_create_autocmd("LspAttach", {
       group = group,

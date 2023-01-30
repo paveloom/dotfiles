@@ -35,7 +35,7 @@ return {
   init = function()
     local utils = require("config.utils")
 
-    -- Setup keybindings
+    -- Set up keybindings
     utils.nmap("gcc", function()
       require("Comment.api").toggle.linewise.current()
     end)

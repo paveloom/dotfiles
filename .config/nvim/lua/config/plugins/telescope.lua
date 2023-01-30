@@ -16,7 +16,7 @@ if utils.known({ "rg", "fd", "make" }) then
     config = function()
       local telescope = require("telescope")
       local themes = require("telescope.themes")
-      -- Setup the plugin
+      -- Set up the plugin
       telescope.setup({
         defaults = themes.get_ivy({
           mappings = {
@@ -108,7 +108,7 @@ if utils.known({ "rg", "fd", "make" }) then
     init = function()
       local nmap = require("config.utils").nmap
 
-      -- Setup keybindings
+      -- Set up keybindings
       nmap("<leader>b", function()
         require("telescope.builtin").buffers()
       end)

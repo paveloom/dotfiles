@@ -4,7 +4,7 @@ return {
   lazy = true,
   dependencies = "nvim-lua/plenary.nvim",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("spectre").setup({
       live_update = true,
       is_insert_mode = true,
@@ -13,7 +13,7 @@ return {
   init = function()
     local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
+    -- Set up keybindings
     nmap("<leader>r", function()
       require("spectre").open()
     end)

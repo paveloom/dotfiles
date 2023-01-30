@@ -4,7 +4,7 @@ return {
   lazy = true,
   dependencies = "nvim-lua/plenary.nvim",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("vgit").setup({
       settings = {
         git = {
@@ -34,7 +34,7 @@ return {
   init = function()
     local nmap = require("config.utils").nmap
 
-    -- Setup keybindings
+    -- Set up keybindings
     nmap("gD", function()
       require("vgit").buffer_diff_preview()
     end)

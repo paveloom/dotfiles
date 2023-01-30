@@ -79,7 +79,7 @@ function M.add_lang(id)
       -- Try to download the file
       print("Downloading `" .. file_name .. "`...")
       if not M.call({ "curl", "-sLo", file_path, file_link }) then
-        print("Couldn't download " .. file_name)
+        vim.notify("Couldn't download " .. file_name, vim.log.levels.WARN, nil)
         return false
       end
     end

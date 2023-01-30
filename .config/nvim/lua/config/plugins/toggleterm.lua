@@ -3,7 +3,7 @@ return {
   "akinsho/toggleterm.nvim",
   keys = "<leader>l",
   config = function()
-    -- Setup the plugin
+    -- Set up the plugin
     require("toggleterm").setup({
       shade_terminals = false,
     })
@@ -39,7 +39,7 @@ return {
 
     local nmap = require("config.utils").nmap
 
-    -- Setup the keybindings
+    -- Set up the keybindings
     nmap("<leader>l", lazygit_toggle)
   end,
 }
