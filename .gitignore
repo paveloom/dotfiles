@@ -1,22 +1,25 @@
-# Fish's extras
+# Nix
+result
+
+# Fish
 .config/fish/completions
 .config/fish/conf.d
 .config/fish/fish_variables
 .config/fish/functions/fish_user_key_bindings.fish
 .config/fish/functions/fzf_key_bindings.fish
 
-# Neovim compiled plugins
+# Neovim
 .config/nvim/plugin
 
-# Helix's runtime
+# Helix
 .config/helix/runtime
 
-# mpv's `watch_later` directory
+# mpv
 .config/mpv/watch_later
 
-# Lazygit's state files
+# Lazygit
 .config/lazygit/state.yml
 .config/lazygit/*.tar.gz
 
-# Hypr's extras
+# Hyprland
 .config/hypr/hyprlandd.conf
