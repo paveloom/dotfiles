@@ -27,6 +27,9 @@
     };
   };
 
+  # Enable SPICE integration for a QEMU guest system
+  services.spice-vdagentd.enable = true;
+
   swapDevices = [];
 
   networking.useDHCP = lib.mkDefault true;
