@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  home-manager,
   ...
 }: {
   # Set up bootloader
@@ -17,53 +18,8 @@
   # Select internationalisation properties
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Define users
-  users.users.paveloom = {
-    isNormalUser = true;
-    description = "paveloom";
-    extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs.gnomeExtensions; [
-      clipboard-history
-      dash-to-dock
-      gesture-improvements
-      hot-edge
-      just-perfection
-      media-controls
-      memento-mori
-      quick-settings-tweaker
-      tray-icons-reloaded
-    ];
-  };
-
-  # Define packages
+  # Define system packages
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = pkgs.lib.lists.flatten (
-    with pkgs; [
-      git
-      gparted
-      librewolf
-      libva-utils
-      qbittorrent
-      radeontop
-      tree
-      wezterm
-      wl-clipboard
-      (with gnome; [
-        baobab
-        cheese
-        dconf-editor
-        eog
-        gnome-characters
-        gnome-clocks
-        gnome-extension-manager
-        gnome-font-viewer
-        gnome-system-monitor
-        gnome-text-editor
-        gnome-tweaks
-        nautilus
-      ])
-    ]
-  );
 
   # Enable GPU acceleration
   hardware.opengl.enable = true;
