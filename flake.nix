@@ -6,11 +6,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    sops-nix,
   }: {
     nixosConfigurations = let
       nixosHost = host:
@@ -20,7 +25,9 @@
             [
               ./configuration.nix
               ./home.nix
+              ./secrets.nix
               home-manager.nixosModules.home-manager
+              sops-nix.nixosModules.sops
             ]
             ++ host;
         };

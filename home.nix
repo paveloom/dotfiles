@@ -5,9 +5,15 @@
 }: {
   # Define the user
   users.users.paveloom = {
-    isNormalUser = true;
+    name = "paveloom";
     description = "paveloom";
-    extraGroups = ["networkmanager" "wheel"];
+    home = "/home/paveloom";
+    isNormalUser = true;
+    extraGroups = [
+      "keys"
+      "networkmanager"
+      "wheel"
+    ];
     packages = pkgs.lib.lists.flatten (
       with pkgs; [
         baobab
@@ -22,6 +28,7 @@
         qbittorrent
         quodlibet
         radeontop
+        sops
         tree
         wezterm
         wl-clipboard
