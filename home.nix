@@ -66,7 +66,35 @@
     users.paveloom = {
       # Setup Gnome
       dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          enable-hot-corners = false;
+        };
+        "org/gnome/nautilus/preferences" = {
+          click-policy = "single";
+          show-create-link = true;
+          show-delete-permanently = true;
+        };
+        "org/gnome/desktop/peripherals/touchpad" = {
+          tap-to-click = true;
+        };
+        "org/gnome/desktop/session" = {
+          idle-delay = 0;
+        };
+        "org/gnome/settings-daemon/plugins/power" = {
+          idle-dim = false;
+        };
         "org/gnome/shell" = {
+          disable-user-extensions = false;
+          enabled-extensions = [
+            "clipboard-history@alexsaveau.dev"
+            "dash-to-dock@micxgx.gmail.com"
+            "gestureImprovements@gestures"
+            "just-perfection-desktop@just-perfection"
+            "mediacontrols@cliffniff.github.com"
+            "memento-mori@paveloom"
+            "quick-settings-tweaks@qwreey"
+            "trayIconsReloaded@selfmade.pl"
+          ];
           favorite-apps = [
             "librewolf.desktop"
             "org.gnome.Nautilus.desktop"
@@ -79,6 +107,73 @@
             "io.github.quodlibet.QuodLibet.desktop"
             "org.gnome.World.Secrets.desktop"
           ];
+        };
+        "org/gnome/shell/extensions/clipboard-history" = {
+          history-size = 100;
+          paste-on-selection = false;
+          window-width-percentage = 24;
+        };
+        "org/gnome/shell/extensions/dash-to-dock" = {
+          click-action = "focus-minimize-or-previews";
+          dash-max-icon-size = 56;
+          disable-overview-on-startup = true;
+          dock-fixed = false;
+          intellihide = false;
+          isolate-workspaces = true;
+          pressure-threshold = 0;
+          running-indicator-style = "DOTS";
+          scroll-action = "switch-workspace";
+          show-mounts = false;
+          show-trash = false;
+          transparency-mode = "DYNAMIC";
+        };
+        "org/gnome/shell/extensions/gestureImprovements" = {
+          default-overview-gesture-direction = false;
+          touchpad-speed-scale = 1.5;
+        };
+        "org/gnome/shell/extensions/hotedge" = {
+          pressure-threshold = 25;
+        };
+        "org/gnome/shell/extensions/just-perfection" = {
+          notification-banner-position = 2;
+          window-demands-attention-focus = true;
+          workspace-popup = false;
+          workspace-wrap-around = true;
+        };
+        "org/gnome/shell/extensions/mediacontrols" = {
+          extension-position = "right";
+          max-widget-width = 350;
+          show-control-icons = false;
+          show-player-icon = false;
+          show-seperators = false;
+          show-sources-menu = false;
+          mouse-actions = [
+            "toggle_play"
+            "toggle_menu"
+            "toggle_info"
+            "none"
+            "none"
+            "none"
+            "none"
+            "none"
+          ];
+          track-label = [
+            "artist"
+            "—"
+            "track"
+          ];
+        };
+        "org/gnome/shell/extensions/memento-mori" = {
+          birth-day = 9;
+          birth-month = 7;
+          birth-year = 1999;
+          extension-index = 1;
+          extension-position = "Center";
+          life-expectancy = 80;
+        };
+        "org/gnome/shell/extensions/quick-settings-tweaks" = {
+          media-control-enabled = false;
+          volume-mixer-enabled = false;
         };
       };
 
