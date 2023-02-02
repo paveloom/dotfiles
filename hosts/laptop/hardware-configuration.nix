@@ -6,28 +6,29 @@
   ...
 }: {
   imports = [
-    (modulesPath + "/profiles/qemu-guest.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   boot.initrd.availableKernelModules = [
-    "ahci"
+    "nvme"
     "xhci_pci"
-    "virtio_pci"
-    "sr_mod"
-    "virtio_blk"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+    "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
-  # Set up the file system
   fileSystems = {
     "/boot/efi" = {
-      device = "/dev/disk/by-partlabel/nixos-boot";
+      device = "/dev/disk/by-label/NIXOS-BOOT";
       fsType = "vfat";
     };
     "/" = {
-      device = "/dev/disk/by-partlabel/nixos-root";
+      device = "/dev/disk/by-label/nixos-root";
       fsType = "btrfs";
       options = [
         "compress-force=zstd"
@@ -35,9 +36,6 @@
       ];
     };
   };
-
-  # Enable SPICE integration for a QEMU guest system
-  services.spice-vdagentd.enable = true;
 
   swapDevices = [];
 

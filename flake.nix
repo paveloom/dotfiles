@@ -26,6 +26,7 @@
         };
     in {
       boxes = nixosHost [./hosts/boxes];
+      laptop = nixosHost [./hosts/laptop];
     };
   };
 }

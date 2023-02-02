@@ -3,11 +3,6 @@
   pkgs,
   ...
 }: {
-  # Keep an eye on insecure packages
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebkit-5.212.0-alpha4"
-  ];
-
   # Define the user
   users.users.paveloom = {
     isNormalUser = true;
@@ -25,7 +20,6 @@
         libva-utils
         nicotine-plus
         qbittorrent
-        quiterss
         quodlibet
         radeontop
         tree
@@ -74,7 +68,6 @@
             "org.wezfurlong.wezterm.desktop"
             "org.gnome.Evolution.desktop"
             "nicotine.desktop"
-            "quiterss.desktop"
             "org.qbittorrent.qBittorrent.desktop"
             "io.github.quodlibet.QuodLibet.desktop"
             "org.gnome.World.Secrets.desktop"
