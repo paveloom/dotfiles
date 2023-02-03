@@ -3,6 +3,48 @@
   pkgs,
   ...
 }: {
+  # Help when a command is not found
+  programs.command-not-found.enable = false;
+  programs.nix-index.enable = true;
+  programs.nix-index.enableFishIntegration = true;
+
+  # Use Fish as the default system shell
+  environment.shells = [pkgs.fish];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+
+  # Set up Mullvad VPN
+  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
+    55853
+    57236
+  ];
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
+  # Enable `fzf` features
+  programs.fzf.fuzzyCompletion = true;
+  programs.fzf.keybindings = true;
+
+  # Override the Zls package
+  nixpkgs.overlays = [
+    (self: super: {
+      zls =
+        (super.zls.override {
+          zig = super.zig;
+        })
+        .overrideAttrs (_: rec {
+          version = "0.10.0";
+          src = super.fetchFromGitHub {
+            owner = "zigtools";
+            repo = "zls";
+            rev = version;
+            sha256 = "1lsks7h3z2m4psyn9mwdylv1d6a9i3z54ssadiz76w0clbh8ch9k";
+            fetchSubmodules = true;
+          };
+        });
+    })
+  ];
+
   # Define the user
   users.users.paveloom = {
     name = "paveloom";
@@ -14,49 +56,82 @@
       "networkmanager"
       "wheel"
     ];
-    packages = pkgs.lib.lists.flatten (
-      with pkgs; [
-        baobab
-        evolution
-        git
-        gnome-extension-manager
-        gnome-secrets
-        gparted
-        librewolf
-        libva-utils
-        nicotine-plus
-        qbittorrent
-        quodlibet
-        radeontop
-        sops
-        tree
-        wezterm
-        wl-clipboard
-        (with gnome; [
-          cheese
-          dconf-editor
-          eog
-          gnome-characters
-          gnome-clocks
-          gnome-font-viewer
-          gnome-system-monitor
-          gnome-text-editor
-          gnome-tweaks
-          nautilus
-        ])
-        (with pkgs.gnomeExtensions; [
-          clipboard-history
-          dash-to-dock
-          gesture-improvements
-          hot-edge
-          just-perfection
-          media-controls
-          memento-mori
-          quick-settings-tweaker
-          tray-icons-reloaded
-        ])
-      ]
-    );
+    packages = pkgs.lib.lists.flatten (with pkgs; [
+      # Applications and tools
+      adw-gtk3
+      baobab
+      bat
+      evolution
+      exa
+      fd
+      fzf
+      glow
+      gnome-extension-manager
+      gnome-icon-theme
+      gnome-secrets
+      gparted
+      julia
+      lazygit
+      librewolf
+      libva-utils
+      mpv
+      nicotine-plus
+      nix-prefetch-scripts
+      qbittorrent
+      quodlibet-full
+      radeontop
+      ripgrep
+      sops
+      tree
+      unzip
+      wezterm
+      wget
+      wl-clipboard
+      zip
+      (with gnome; [
+        cheese
+        dconf-editor
+        eog
+        gnome-characters
+        gnome-clocks
+        gnome-font-viewer
+        gnome-system-monitor
+        gnome-text-editor
+        gnome-tweaks
+        nautilus
+        totem
+      ])
+      (with pkgs.gnomeExtensions; [
+        clipboard-history
+        dash-to-dock
+        gesture-improvements
+        hot-edge
+        just-perfection
+        media-controls
+        memento-mori
+        quick-settings-tweaker
+        tray-icons-reloaded
+      ])
+
+      # Development
+      (python311.withPackages (p: with p; [pip]))
+      alejandra
+      gcc
+      git
+      gnumake
+      go
+      meson
+      neovim
+      nil
+      nodejs
+      pkg-config
+      podman
+      podman-compose
+      rustup
+      shellcheck
+      zig
+      zls
+    ]);
   };
 
   # Setup home
@@ -64,10 +139,37 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.paveloom = {
+      config,
+      lib,
+      pkgs,
+      ...
+    }: {
+      # Set up configs
+      xdg.configFile = let
+        configPath = dir: (config.lib.file.mkOutOfStoreSymlink
+          "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
+      in {
+        "fish".source = configPath "fish";
+        "git".source = configPath "git";
+        "helix".source = configPath "helix";
+        "lazygit".source = configPath "lazygit";
+        "mpv".source = configPath "mpv";
+        "nvim".source = configPath "nvim";
+        "pdm".source = configPath "pdm";
+        "wezterm".source = configPath "wezterm";
+        "yamlfmt".source = configPath "yamlfmt";
+        "yamllint".source = configPath "yamllint";
+      };
+
       # Setup Gnome
       dconf.settings = {
         "org/gnome/desktop/interface" = {
+          clock-show-weekday = true;
           enable-hot-corners = false;
+          gtk-theme = "adw-gtk3";
+        };
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
         };
         "org/gnome/nautilus/preferences" = {
           click-policy = "single";
@@ -75,10 +177,20 @@
           show-delete-permanently = true;
         };
         "org/gnome/desktop/peripherals/touchpad" = {
+          disable-while-typing = false;
           tap-to-click = true;
         };
         "org/gnome/desktop/session" = {
           idle-delay = 0;
+        };
+        "org/gnome/desktop/input-sources" = {
+          show-all-sources = true;
+          sources = [
+            (config.lib.gvariant.mkTuple
+              ["xkb" "us"])
+            (config.lib.gvariant.mkTuple
+              ["xkb" "ru"])
+          ];
         };
         "org/gnome/settings-daemon/plugins/power" = {
           idle-dim = false;
@@ -102,7 +214,7 @@
             "org.gnome.TextEditor.desktop"
             "org.wezfurlong.wezterm.desktop"
             "org.gnome.Evolution.desktop"
-            "nicotine.desktop"
+            "org.nicotine_plus.Nicotine.desktop"
             "org.qbittorrent.qBittorrent.desktop"
             "io.github.quodlibet.QuodLibet.desktop"
             "org.gnome.World.Secrets.desktop"
@@ -120,7 +232,7 @@
           dock-fixed = false;
           intellihide = false;
           isolate-workspaces = true;
-          pressure-threshold = 0;
+          pressure-threshold = 0.0;
           running-indicator-style = "DOTS";
           scroll-action = "switch-workspace";
           show-mounts = false;

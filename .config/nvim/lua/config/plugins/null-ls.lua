@@ -4,7 +4,7 @@ if utils.known({ "shellcheck", "stylua" }) then
   -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
   return {
     "jose-elias-alvarez/null-ls.nvim",
-    dependecies = "lsp_lines.nvim",
+    dependencies = "lsp_lines.nvim",
     config = function()
       local name = "null-ls"
       local null_ls = require(name)

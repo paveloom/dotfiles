@@ -23,3 +23,6 @@ result
 
 # Hyprland
 .config/hypr/hyprlandd.conf
+
+# PDM
+.config/pdm/pep582

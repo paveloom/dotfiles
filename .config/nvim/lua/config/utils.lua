@@ -44,7 +44,7 @@ function M.known(cmds)
   -- Check each command
   for _, cmd in pairs(cmds) do
     -- If the command doesn't exist
-    if not M.call({ "command", "-v", cmd }) then
+    if not M.call({ "which", cmd }) then
       -- Notify about that
       vim.notify("Unknown command: `" .. cmd .. "`.", vim.log.levels.WARN, nil)
       return false

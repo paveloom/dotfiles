@@ -35,8 +35,8 @@
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
 
-  # Configure keymap in X11
-  services.xserver.layout = "us";
+  # Configure keymap layouts
+  services.xserver.layout = "us,ru";
 
   # Enable sound with Pipewire
   sound.enable = true;

@@ -1,0 +1,9 @@
+[install]
+cache = true
+
+[python]
+use_venv = false
+use_pyenv = false
+
+[strategy]
+save = "exact"

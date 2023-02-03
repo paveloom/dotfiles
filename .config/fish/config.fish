@@ -26,8 +26,13 @@ set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 # Aliases
 alias ls=exa
 alias cat=bat
-alias cfg="nano ~/.config/fish/config.fish"
 alias nvim="TERM=wezterm command nvim"
 
 # Load the completion scripts of Podman
 podman completion fish | source
+
+# Add local binaries to the `PATH`
+set -a PATH ~/.local/bin
+
+# Add Mason installed binaries to the `PATH`
+set -a PATH ~/.local/share/nvim/mason/bin
