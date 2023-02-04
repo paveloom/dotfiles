@@ -49,6 +49,33 @@
     pulse.enable = true;
   };
 
+  # Help when a command is not found
+  programs.command-not-found.enable = false;
+  programs.nix-index.enable = true;
+  programs.nix-index.enableFishIntegration = true;
+
+  # Use Fish as the default system shell
+  environment.shells = [pkgs.fish];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+
+  # Set up Mullvad VPN
+  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
+    55853
+    57236
+  ];
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
+  # Enable `fzf` features
+  programs.fzf.fuzzyCompletion = true;
+  programs.fzf.keybindings = true;
+
+  # Enable in-memory compression
+  zramSwap.enable = true;
+  zramSwap.algorithm = "zstd";
+  zramSwap.memoryPercent = 50;
+
   # Set up Nix
   nix.gc.automatic = true;
   nix.gc.dates = "14:00";

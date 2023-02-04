@@ -3,30 +3,9 @@
   pkgs,
   ...
 }: {
-  # Help when a command is not found
-  programs.command-not-found.enable = false;
-  programs.nix-index.enable = true;
-  programs.nix-index.enableFishIntegration = true;
-
-  # Use Fish as the default system shell
-  environment.shells = [pkgs.fish];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
-
-  # Set up Mullvad VPN
-  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
-    55853
-    57236
-  ];
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
-
-  # Enable `fzf` features
-  programs.fzf.fuzzyCompletion = true;
-  programs.fzf.keybindings = true;
-
-  # Override the Zls package
+  # Package overlays
   nixpkgs.overlays = [
+    # Override the Zls package
     (self: super: {
       zls =
         (super.zls.override {
@@ -42,6 +21,12 @@
             fetchSubmodules = true;
           };
         });
+    })
+    # Add scripts to `mpv`
+    (self: super: {
+      mpv = super.mpv.override {
+        scripts = [self.mpvScripts.thumbnail];
+      };
     })
   ];
 
@@ -61,27 +46,33 @@
       adw-gtk3
       baobab
       bat
+      compsize
       evolution
       exa
       fd
       fzf
+      gimp
       glow
       gnome-extension-manager
       gnome-icon-theme
       gnome-secrets
       gparted
+      jackett
       julia
       lazygit
       librewolf
       libva-utils
       mpv
+      newsflash
       nicotine-plus
       nix-prefetch-scripts
+      obs-studio
       qbittorrent
       quodlibet-full
       radeontop
       ripgrep
       sops
+      tdesktop
       tree
       unzip
       wezterm
@@ -168,6 +159,12 @@
           enable-hot-corners = false;
           gtk-theme = "adw-gtk3";
         };
+        "org/gnome/desktop/wm/keybindings" = {
+          switch-applications = [];
+          switch-applications-backward = [];
+          switch-windows = ["<Alt>Tab"];
+          switch-windows-backward = ["<Shift><Alt>Tab"];
+        };
         "org/gnome/desktop/wm/preferences" = {
           button-layout = "appmenu:minimize,maximize,close";
         };
@@ -176,12 +173,18 @@
           show-create-link = true;
           show-delete-permanently = true;
         };
+        "org/gnome/desktop/notifications/application/org-gnome-evolution" = {
+          enable-sound-alerts = false;
+        };
         "org/gnome/desktop/peripherals/touchpad" = {
           disable-while-typing = false;
           tap-to-click = true;
         };
         "org/gnome/desktop/session" = {
           idle-delay = 0;
+        };
+        "org/gnome/desktop/sound" = {
+          theme-name = "default";
         };
         "org/gnome/desktop/input-sources" = {
           show-all-sources = true;
@@ -214,6 +217,7 @@
             "org.gnome.TextEditor.desktop"
             "org.wezfurlong.wezterm.desktop"
             "org.gnome.Evolution.desktop"
+            "com.gitlab.newsflash.desktop"
             "org.nicotine_plus.Nicotine.desktop"
             "org.qbittorrent.qBittorrent.desktop"
             "io.github.quodlibet.QuodLibet.desktop"
@@ -222,7 +226,9 @@
         };
         "org/gnome/shell/extensions/clipboard-history" = {
           history-size = 100;
+          next-entry = ["<Control><Alt>n"];
           paste-on-selection = false;
+          prev-entry = ["<Control><Alt>b"];
           window-width-percentage = 24;
         };
         "org/gnome/shell/extensions/dash-to-dock" = {
@@ -286,6 +292,9 @@
         "org/gnome/shell/extensions/quick-settings-tweaks" = {
           media-control-enabled = false;
           volume-mixer-enabled = false;
+        };
+        "org/gnome/shell/extensions/trayIconsReloaded" = {
+          icon-size = 22;
         };
       };
 
