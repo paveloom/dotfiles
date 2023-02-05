@@ -50,6 +50,7 @@
       evolution
       exa
       fd
+      firefox
       fzf
       gimp
       glow
@@ -60,6 +61,7 @@
       jackett
       julia
       lazygit
+      libnotify
       librewolf
       libva-utils
       mpv
