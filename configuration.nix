@@ -73,6 +73,12 @@
 
   # Set up *Arrs
   services.prowlarr.enable = true;
+  services.radarr = {
+    dataDir = "/home/paveloom/.config/radarr";
+    enable = true;
+    group = "";
+    user = "paveloom";
+  };
   services.sonarr = {
     dataDir = "/home/paveloom/.config/sonarr";
     enable = true;
