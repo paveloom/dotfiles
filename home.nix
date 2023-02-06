@@ -48,9 +48,11 @@
       baobab
       bat
       compsize
+      evince
       evolution
       exa
       fd
+      ffmpeg_5-full
       firefox
       fzf
       gimp
@@ -70,6 +72,7 @@
       nicotine-plus
       nix-prefetch-scripts
       obs-studio
+      picard
       qbittorrent
       quodlibet-full
       radeontop
@@ -199,7 +202,7 @@
           tap-to-click = true;
         };
         "org/gnome/desktop/session" = {
-          idle-delay = 0;
+          idle-delay = config.lib.gvariant.mkUint32 0;
         };
         "org/gnome/desktop/sound" = {
           theme-name = "default";
@@ -215,6 +218,8 @@
         };
         "org/gnome/settings-daemon/plugins/power" = {
           idle-dim = false;
+          sleep-inactive-ac-type = "nothing";
+          sleep-inactive-battery-type = "nothing";
         };
         "org/gnome/shell" = {
           disable-user-extensions = false;
