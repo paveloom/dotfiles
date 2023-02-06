@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  spicetify-nix,
   ...
 }: {
   # Package overlays
@@ -136,7 +137,22 @@
       lib,
       pkgs,
       ...
-    }: {
+    }: let
+      spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
+    in {
+      # Import home manager modules
+      imports = [spicetify-nix.homeManagerModules.default];
+
+      # Set up Spicetify
+      programs.spicetify = {
+        enable = true;
+        theme = spicePkgs.themes.Default;
+        colorScheme = "default";
+        enabledExtensions = with spicePkgs.extensions; [
+          adblock
+        ];
+      };
+
       # Set up configs
       xdg.configFile = let
         configPath = dir: (config.lib.file.mkOutOfStoreSymlink
