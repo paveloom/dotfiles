@@ -23,6 +23,13 @@
           };
         });
     })
+    # Override the FFmpeg package
+    (self: super: {
+      ffmpeg-full = super.ffmpeg-full.override {
+        nonfreeLicensing = true;
+        fdkaacExtlib = true;
+      };
+    })
     # Add scripts to `mpv`
     (self: super: {
       mpv = super.mpv.override {
@@ -45,6 +52,7 @@
     packages = pkgs.lib.lists.flatten (with pkgs; [
       # Applications and tools
       adw-gtk3
+      appimage-run
       baobab
       bat
       compsize
