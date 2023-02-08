@@ -32,9 +32,6 @@ function fish_prompt --description 'Write out the prompt'
     set -l prefix_color
     set -l prefix_color $prefix_color_
 
-    # Toolbox
-    [ ! -f /run/.toolboxenv ] && echo -n (set_color $prefix_color)"● "(set_color normal)
-
     # PWD
     echo -n (set_color $prefix_color)"~> "(set_color -o cyan)(basename (prompt_pwd))(set_color normal)
     set_color normal
