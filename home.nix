@@ -71,6 +71,7 @@
       libnotify
       librewolf
       libva-utils
+      mousai
       mpv
       newsflash
       nicotine-plus
@@ -117,6 +118,7 @@
       # Development
       (python311.withPackages (p: with p; [pip]))
       alejandra
+      bun
       gcc
       git
       gnumake
