@@ -6,8 +6,8 @@
 }: {
   # Package overlays
   nixpkgs.overlays = [
-    # Override the Zls package
     (self: super: {
+      # Override the Zls package
       zls =
         (super.zls.override {
           zig = super.zig;
@@ -22,16 +22,12 @@
             fetchSubmodules = true;
           };
         });
-    })
-    # Override the FFmpeg package
-    (self: super: {
+      # Override the FFmpeg package
       ffmpeg-full = super.ffmpeg-full.override {
         nonfreeLicensing = true;
         fdkaacExtlib = true;
       };
-    })
-    # Add scripts to `mpv`
-    (self: super: {
+      # Add scripts to `mpv`
       mpv = super.mpv.override {
         scripts = [self.mpvScripts.thumbnail];
       };
