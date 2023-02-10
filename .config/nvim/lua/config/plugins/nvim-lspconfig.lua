@@ -269,14 +269,19 @@ return {
       on_attach = on_attach,
     })
     -- Set up the Nix language server
-    if require("config.utils").known({ "alejandra", "nil" }) then
+    if require("config.utils").known({
+      "alejandra",
+      "nil",
+      "nixpkgs-fmt",
+    }) then
       require("lspconfig").nil_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
         settings = {
           ["nil"] = {
             formatting = {
-              command = { "alejandra" },
+              -- command = { "alejandra" },
+              command = { "nixpkgs-fmt" },
             },
           },
         },

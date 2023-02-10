@@ -126,6 +126,7 @@
       meson
       neovim
       nil
+      nixpkgs-fmt
       nodejs
       pkg-config
       podman
