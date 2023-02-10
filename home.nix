@@ -127,6 +127,8 @@
       neovim
       nil
       nixpkgs-fmt
+      nixpkgs-hammering
+      nixpkgs-review
       nodejs
       pkg-config
       podman
