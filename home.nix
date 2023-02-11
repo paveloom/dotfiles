@@ -45,99 +45,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = pkgs.lib.lists.flatten (with pkgs; [
-      # Applications and tools
-      adw-gtk3
-      appimage-run
-      baobab
-      bat
-      compsize
-      evince
-      evolution
-      exa
-      fd
-      ffmpeg_5-full
-      firefox
-      fzf
-      gimp
-      glow
-      gnome-extension-manager
-      gnome-icon-theme
-      gnome-secrets
-      gparted
-      jackett
-      julia
-      lazygit
-      libnotify
-      librewolf
-      libva-utils
-      mousai
-      mpv
-      newsflash
-      nicotine-plus
-      nix-prefetch-scripts
-      obs-studio
-      picard
-      qbittorrent
-      quodlibet-full
-      radeontop
-      ripgrep
-      sops
-      tdesktop
-      tree
-      unzip
-      wezterm
-      wget
-      wl-clipboard
-      zip
-      (with gnome; [
-        cheese
-        dconf-editor
-        eog
-        gnome-characters
-        gnome-clocks
-        gnome-font-viewer
-        gnome-system-monitor
-        gnome-text-editor
-        gnome-tweaks
-        nautilus
-        totem
-      ])
-      (with pkgs.gnomeExtensions; [
-        clipboard-history
-        dash-to-dock
-        gesture-improvements
-        hot-edge
-        just-perfection
-        media-controls
-        memento-mori
-        quick-settings-tweaker
-        tray-icons-reloaded
-      ])
-
-      # Development
-      (python311.withPackages (p: with p; [pip]))
-      alejandra
-      bun
-      gcc
-      git
-      gnumake
-      go
-      meson
-      neovim
-      nil
-      nixpkgs-fmt
-      nixpkgs-hammering
-      nixpkgs-review
-      nodejs
-      pkg-config
-      podman
-      podman-compose
-      rustup
-      shellcheck
-      zig
-      zls
-    ]);
   };
 
   # Setup home
@@ -164,6 +71,104 @@
           adblock
         ];
       };
+
+      # Enable fontconfig configuration
+      fonts.fontconfig.enable = true;
+
+      # Install packages
+      home.packages = pkgs.lib.lists.flatten (with pkgs; [
+        adw-gtk3
+        appimage-run
+        baobab
+        bat
+        compsize
+        dejavu_fonts
+        evince
+        evolution
+        exa
+        fd
+        ffmpeg_5-full
+        firefox
+        fzf
+        gimp
+        glow
+        gnome-extension-manager
+        gnome-icon-theme
+        gnome-secrets
+        gparted
+        jackett
+        julia
+        lazygit
+        libnotify
+        librewolf
+        libva-utils
+        mousai
+        mpv
+        newsflash
+        nicotine-plus
+        nix-prefetch-scripts
+        obs-studio
+        picard
+        qbittorrent
+        quodlibet-full
+        radeontop
+        ripgrep
+        sops
+        tdesktop
+        tree
+        unzip
+        wezterm
+        wget
+        wl-clipboard
+        zip
+        (with gnome; [
+          cheese
+          dconf-editor
+          eog
+          gnome-characters
+          gnome-clocks
+          gnome-font-viewer
+          gnome-system-monitor
+          gnome-text-editor
+          gnome-tweaks
+          nautilus
+          totem
+        ])
+        (with pkgs.gnomeExtensions; [
+          clipboard-history
+          dash-to-dock
+          gesture-improvements
+          hot-edge
+          just-perfection
+          media-controls
+          memento-mori
+          quick-settings-tweaker
+          tray-icons-reloaded
+        ])
+
+        # Development
+        (python311.withPackages (p: with p; [pip]))
+        alejandra
+        bun
+        gcc
+        git
+        gnumake
+        go
+        meson
+        neovim
+        nil
+        nixpkgs-fmt
+        nixpkgs-hammering
+        nixpkgs-review
+        nodejs
+        pkg-config
+        podman
+        podman-compose
+        rustup
+        shellcheck
+        zig
+        zls
+      ]);
 
       # Set up configs
       xdg.configFile = let
