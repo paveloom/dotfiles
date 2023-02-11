@@ -155,6 +155,7 @@
         git
         gnumake
         go
+        jq
         meson
         neovim
         nil
