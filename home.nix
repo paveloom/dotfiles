@@ -83,6 +83,7 @@
         bat
         compsize
         dejavu_fonts
+        discord
         evince
         evolution
         exa
