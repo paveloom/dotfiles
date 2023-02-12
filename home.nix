@@ -79,23 +79,29 @@
       home.packages = pkgs.lib.lists.flatten (with pkgs; [
         adw-gtk3
         appimage-run
+        asciinema
+        # authenticator
         baobab
         bat
         compsize
         dejavu_fonts
         discord
+        element-desktop
         evince
         evolution
         exa
         fd
         ffmpeg_5-full
         firefox
+        foliate
+        # fractal-next
         fzf
         gimp
         glow
         gnome-extension-manager
         gnome-icon-theme
         gnome-secrets
+        google-chrome
         gparted
         jackett
         julia
@@ -103,6 +109,7 @@
         libnotify
         librewolf
         libva-utils
+        metadata-cleaner
         mousai
         mpv
         newsflash
@@ -113,16 +120,25 @@
         qbittorrent
         quodlibet-full
         radeontop
+        rclone
         ripgrep
+        skypeforlinux
         sops
         taskwarrior
         tdesktop
+        teams
+        tor-browser-bundle-bin
+        # radicle-cli
+        rnote
         tree
+        ungoogled-chromium
         unzip
         wezterm
         wget
         wl-clipboard
+        wxmaxima
         zip
+        zoom-us
         (with gnome; [
           cheese
           dconf-editor
@@ -157,6 +173,7 @@
         gnumake
         go
         jq
+        ltex-ls
         meson
         neovim
         nil
@@ -235,6 +252,11 @@
             (config.lib.gvariant.mkTuple
               ["xkb" "ru"])
           ];
+        };
+        "org/gnome/settings-daemon/plugins/color" = {
+          night-light-schedule-automatic = false;
+          night-light-schedule-from = 20;
+          night-light-temperature = config.lib.gvariant.mkUint32 4375;
         };
         "org/gnome/settings-daemon/plugins/power" = {
           idle-dim = false;
@@ -337,7 +359,7 @@
           volume-mixer-enabled = false;
         };
         "org/gnome/shell/extensions/trayIconsReloaded" = {
-          icon-size = 22;
+          icon-padding-horizontal = 6;
         };
       };
 

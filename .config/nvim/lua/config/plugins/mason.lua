@@ -33,7 +33,6 @@ return {
           "eslint-lsp",
           "julia-lsp",
           "lemminx",
-          "ltex-ls",
           "rust-analyzer",
           "shellcheck",
           "tectonic",
