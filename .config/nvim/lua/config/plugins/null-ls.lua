@@ -21,7 +21,17 @@ if utils.known({ "shellcheck", "stylua" }) then
           diagnostics.fish,
           diagnostics.shellcheck,
           diagnostics.yamllint,
+          formatting.alejandra.with({
+            runtime_condition = function(_)
+              return vim.loop.cwd():find("nixpkgs") == nil
+            end,
+          }),
           formatting.fnlfmt,
+          formatting.nixpkgs_fmt.with({
+            runtime_condition = function(_)
+              return vim.loop.cwd():find("nixpkgs") ~= nil
+            end,
+          }),
           formatting.stylua,
           formatting.yamlfmt,
         },

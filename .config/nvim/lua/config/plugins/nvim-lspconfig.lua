@@ -277,14 +277,6 @@ return {
       require("lspconfig").nil_ls.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-        settings = {
-          ["nil"] = {
-            formatting = {
-              -- command = { "alejandra" },
-              command = { "nixpkgs-fmt" },
-            },
-          },
-        },
       })
     end
     -- Format the code before writing
