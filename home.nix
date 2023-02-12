@@ -169,6 +169,8 @@
         podman-compose
         rustup
         shellcheck
+        stylua
+        sumneko-lua-language-server
         zig
         zls
       ]);
