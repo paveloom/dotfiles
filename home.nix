@@ -115,6 +115,7 @@
         radeontop
         ripgrep
         sops
+        taskwarrior
         tdesktop
         tree
         unzip
@@ -184,6 +185,7 @@
         "mpv".source = configPath "mpv";
         "nvim".source = configPath "nvim";
         "pdm".source = configPath "pdm";
+        "task".source = configPath "task";
         "wezterm".source = configPath "wezterm";
         "yamlfmt".source = configPath "yamlfmt";
         "yamllint".source = configPath "yamllint";
