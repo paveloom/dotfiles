@@ -4,33 +4,45 @@
   spicetify-nix,
   ...
 }: {
-  # Package overlays
+  # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
-      # Override the Zls package
-      zls =
-        (super.zls.override {
-          zig = super.zig;
-        })
-        .overrideAttrs (_: rec {
-          version = "0.10.0";
-          src = super.fetchFromGitHub {
-            owner = "zigtools";
-            repo = "zls";
-            rev = version;
-            sha256 = "1lsks7h3z2m4psyn9mwdylv1d6a9i3z54ssadiz76w0clbh8ch9k";
-            fetchSubmodules = true;
-          };
-        });
-      # Override the FFmpeg package
       ffmpeg-full = super.ffmpeg-full.override {
         nonfreeLicensing = true;
         fdkaacExtlib = true;
       };
-      # Add scripts to `mpv`
       mpv = super.mpv.override {
         scripts = [self.mpvScripts.thumbnail];
       };
+      wezterm = super.wezterm.overrideAttrs (previousAttrs: rec {
+        version = "a5c2b1f3adb06054bf522cb3d350697938d6f8e9";
+        src = super.fetchFromGitHub {
+          inherit (previousAttrs.src) owner repo fetchSubmodules;
+          rev = version;
+          sha256 = "05ndd6l0avs55rd82xwpir8v3zacz7i1j3an91rkn1q64jcvq0ld";
+        };
+        cargoDeps = previousAttrs.cargoDeps.overrideAttrs (super.lib.const {
+          inherit src;
+          name = "${previousAttrs.pname}-${version}-vendor.tar.gz";
+          outputHash = "sha256-lP93bXJ7/NZN/vfUfYf/DTS/wtxoWJtPQp1Qu7nah8Q=";
+        });
+        postPatch = ''
+          echo ${version} > .tag
+          rm -r wezterm-ssh/tests
+        '';
+      });
+      zls =
+        (super.zls.override {
+          zig = super.zig;
+        })
+        .overrideAttrs (previousAttrs: rec {
+          version = "0.10.0";
+          src = super.fetchFromGitHub {
+            inherit (previousAttrs.src) owner repo fetchSubmodules;
+            rev = version;
+            sha256 = "1lsks7h3z2m4psyn9mwdylv1d6a9i3z54ssadiz76w0clbh8ch9k";
+          };
+        });
     })
   ];
 
@@ -44,6 +56,9 @@
       "keys"
       "networkmanager"
       "wheel"
+    ];
+    packages = with pkgs; [
+      wezterm
     ];
   };
 
@@ -99,6 +114,7 @@
         fzf
         gimp
         glow
+        gnome-console
         gnome-extension-manager
         gnome-icon-theme
         gnome-secrets
@@ -141,7 +157,7 @@
         tree
         ungoogled-chromium
         unzip
-        wezterm
+        # wezterm
         wget
         wl-clipboard
         wxmaxima
