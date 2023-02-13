@@ -80,6 +80,7 @@
         adw-gtk3
         appimage-run
         asciinema
+        audacious
         # authenticator
         baobab
         bat
@@ -103,13 +104,18 @@
         gnome-secrets
         google-chrome
         gparted
+        icon-library
+        imhex
+        inkscape
         jackett
         julia
         lazygit
         libnotify
+        libreoffice
         librewolf
         libva-utils
         metadata-cleaner
+        monero-gui
         mousai
         mpv
         newsflash
@@ -127,9 +133,11 @@
         taskwarrior
         tdesktop
         teams
+        tenacity
         tor-browser-bundle-bin
         # radicle-cli
         rnote
+        tracy
         tree
         ungoogled-chromium
         unzip
@@ -139,10 +147,13 @@
         wxmaxima
         zip
         zoom-us
+        zulip
         (with gnome; [
           cheese
           dconf-editor
           eog
+          gnome-calculator
+          gnome-calendar
           gnome-characters
           gnome-clocks
           gnome-font-viewer
@@ -150,6 +161,7 @@
           gnome-text-editor
           gnome-tweaks
           nautilus
+          seahorse
           totem
         ])
         (with pkgs.gnomeExtensions; [
@@ -172,6 +184,7 @@
         git
         gnumake
         go
+        icoutils
         jq
         ltex-ls
         meson
