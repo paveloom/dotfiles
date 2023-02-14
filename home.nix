@@ -59,6 +59,7 @@
     ];
     packages = pkgs.lib.lists.flatten (with pkgs; [
       adw-gtk3
+      aegisub
       appimage-run
       asciinema
       audacious
@@ -96,6 +97,7 @@
       libreoffice
       librewolf
       libva-utils
+      mediainfo
       metadata-cleaner
       monero-gui
       mousai
@@ -122,6 +124,7 @@
       tree
       ungoogled-chromium
       unzip
+      vlc
       wezterm
       wget
       wl-clipboard
