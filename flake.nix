@@ -10,10 +10,6 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,7 +20,6 @@
     nixpkgs,
     home-manager,
     nix-index-database,
-    sops-nix,
     ...
   } @ inputs: {
     nixosConfigurations = let
@@ -36,10 +31,8 @@
             [
               ./configuration.nix
               ./home.nix
-              ./secrets.nix
               home-manager.nixosModules.home-manager
               nix-index-database.nixosModules.nix-index
-              sops-nix.nixosModules.sops
             ]
             ++ host;
         };

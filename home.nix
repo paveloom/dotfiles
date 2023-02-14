@@ -111,7 +111,6 @@
       rclone
       ripgrep
       skypeforlinux
-      sops
       taskwarrior
       tdesktop
       teams
