@@ -7,7 +7,7 @@
   # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
-      ffmpeg-full = super.ffmpeg-full.override {
+      ffmpeg_5-full = super.ffmpeg_5-full.override {
         nonfreeLicensing = true;
         fdkaacExtlib = true;
       };
