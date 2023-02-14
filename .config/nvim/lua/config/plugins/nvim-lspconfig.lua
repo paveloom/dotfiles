@@ -47,7 +47,7 @@ return {
       -- It's important we setup this before requiring `lspconfig`
       require("neodev").setup()
       -- Set up the LSP for any other Lua
-      require("lspconfig").sumneko_lua.setup({
+      require("lspconfig").lua_ls.setup({
         single_file_support = false,
         capabilities = capabilities,
         on_attach = function(client, bufnr)
