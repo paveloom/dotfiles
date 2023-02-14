@@ -57,9 +57,135 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
+    packages = pkgs.lib.lists.flatten (with pkgs; [
+      adw-gtk3
+      appimage-run
+      asciinema
+      audacious
+      # authenticator
+      baobab
+      bat
+      compsize
+      dejavu_fonts
+      discord
+      element-desktop
+      evince
+      evolution
+      exa
+      fd
+      ffmpeg_5-full
+      firefox
+      foliate
+      # fractal-next
+      fzf
+      gimp
+      glow
+      gnome-console
+      gnome-extension-manager
+      gnome-icon-theme
+      gnome-secrets
+      google-chrome
+      gparted
+      icon-library
+      imhex
+      inkscape
+      jackett
+      julia
+      lazygit
+      libnotify
+      libreoffice
+      librewolf
+      libva-utils
+      metadata-cleaner
+      monero-gui
+      mousai
+      mpv
+      newsflash
+      nicotine-plus
+      nix-prefetch-scripts
+      obs-studio
+      picard
+      qbittorrent
+      quodlibet-full
+      radeontop
+      rclone
+      ripgrep
+      skypeforlinux
+      sops
+      taskwarrior
+      tdesktop
+      teams
+      tenacity
+      tor-browser-bundle-bin
+      # radicle-cli
+      rnote
+      tracy
+      tree
+      ungoogled-chromium
+      unzip
       wezterm
-    ];
+      wget
+      wl-clipboard
+      wxmaxima
+      zip
+      zoom-us
+      zulip
+      (with gnome; [
+        cheese
+        dconf-editor
+        eog
+        gnome-calculator
+        gnome-calendar
+        gnome-characters
+        gnome-clocks
+        gnome-font-viewer
+        gnome-system-monitor
+        gnome-text-editor
+        gnome-tweaks
+        nautilus
+        seahorse
+        totem
+      ])
+      (with pkgs.gnomeExtensions; [
+        clipboard-history
+        dash-to-dock
+        gesture-improvements
+        hot-edge
+        just-perfection
+        media-controls
+        memento-mori
+        quick-settings-tweaker
+        tray-icons-reloaded
+      ])
+
+      # Development
+      (python311.withPackages (p: with p; [pip]))
+      alejandra
+      bun
+      gcc
+      git
+      gnumake
+      go
+      icoutils
+      jq
+      ltex-ls
+      meson
+      neovim
+      nil
+      nixpkgs-fmt
+      nixpkgs-hammering
+      nixpkgs-review
+      nodejs
+      pkg-config
+      podman
+      podman-compose
+      rustup
+      shellcheck
+      stylua
+      sumneko-lua-language-server
+      zig
+      zls
+    ]);
   };
 
   # Setup home
@@ -89,137 +215,6 @@
 
       # Enable fontconfig configuration
       fonts.fontconfig.enable = true;
-
-      # Install packages
-      home.packages = pkgs.lib.lists.flatten (with pkgs; [
-        adw-gtk3
-        appimage-run
-        asciinema
-        audacious
-        # authenticator
-        baobab
-        bat
-        compsize
-        dejavu_fonts
-        discord
-        element-desktop
-        evince
-        evolution
-        exa
-        fd
-        ffmpeg_5-full
-        firefox
-        foliate
-        # fractal-next
-        fzf
-        gimp
-        glow
-        gnome-console
-        gnome-extension-manager
-        gnome-icon-theme
-        gnome-secrets
-        google-chrome
-        gparted
-        icon-library
-        imhex
-        inkscape
-        jackett
-        julia
-        lazygit
-        libnotify
-        libreoffice
-        librewolf
-        libva-utils
-        metadata-cleaner
-        monero-gui
-        mousai
-        mpv
-        newsflash
-        nicotine-plus
-        nix-prefetch-scripts
-        obs-studio
-        picard
-        qbittorrent
-        quodlibet-full
-        radeontop
-        rclone
-        ripgrep
-        skypeforlinux
-        sops
-        taskwarrior
-        tdesktop
-        teams
-        tenacity
-        tor-browser-bundle-bin
-        # radicle-cli
-        rnote
-        tracy
-        tree
-        ungoogled-chromium
-        unzip
-        # wezterm
-        wget
-        wl-clipboard
-        wxmaxima
-        zip
-        zoom-us
-        zulip
-        (with gnome; [
-          cheese
-          dconf-editor
-          eog
-          gnome-calculator
-          gnome-calendar
-          gnome-characters
-          gnome-clocks
-          gnome-font-viewer
-          gnome-system-monitor
-          gnome-text-editor
-          gnome-tweaks
-          nautilus
-          seahorse
-          totem
-        ])
-        (with pkgs.gnomeExtensions; [
-          clipboard-history
-          dash-to-dock
-          gesture-improvements
-          hot-edge
-          just-perfection
-          media-controls
-          memento-mori
-          quick-settings-tweaker
-          tray-icons-reloaded
-        ])
-
-        # Development
-        (python311.withPackages (p: with p; [pip]))
-        alejandra
-        bun
-        gcc
-        git
-        gnumake
-        go
-        icoutils
-        jq
-        ltex-ls
-        meson
-        neovim
-        nil
-        nixpkgs-fmt
-        nixpkgs-hammering
-        nixpkgs-review
-        nodejs
-        pkg-config
-        podman
-        podman-compose
-        rustup
-        shellcheck
-        stylua
-        sumneko-lua-language-server
-        zig
-        zls
-      ]);
 
       # Set up configs
       xdg.configFile = let
