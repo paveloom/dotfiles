@@ -14,6 +14,11 @@
       mpv = super.mpv.override {
         scripts = [self.mpvScripts.thumbnail];
       };
+      vlc = super.vlc.override {
+        libbluray = super.libbluray.override {
+          withJava = true;
+        };
+      };
       wezterm = super.wezterm.overrideAttrs (previousAttrs: rec {
         version = "a5c2b1f3adb06054bf522cb3d350697938d6f8e9";
         src = super.fetchFromGitHub {
@@ -125,6 +130,7 @@
       ungoogled-chromium
       unzip
       vlc
+      webtorrent_desktop
       wezterm
       wget
       wl-clipboard
