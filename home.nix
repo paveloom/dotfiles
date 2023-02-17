@@ -7,9 +7,9 @@
   # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
-      ffmpeg_5-full = super.ffmpeg_5-full.override {
-        nonfreeLicensing = true;
-        fdkaacExtlib = true;
+      ffmpeg_5 = super.ffmpeg_5.override {
+        withUnfree = true;
+        withFdkAac = true;
       };
       mpv = super.mpv.override {
         scripts = [self.mpvScripts.thumbnail];
@@ -68,7 +68,7 @@
       appimage-run
       asciinema
       audacious
-      # authenticator
+      authenticator
       baobab
       bat
       compsize
@@ -79,10 +79,10 @@
       evolution
       exa
       fd
-      ffmpeg_5-full
+      ffmpeg_5
       firefox
       foliate
-      # fractal-next
+      fractal-next
       fzf
       gimp
       glow
@@ -123,7 +123,7 @@
       teams
       tenacity
       tor-browser-bundle-bin
-      # radicle-cli
+      radicle-cli
       rnote
       tracy
       tree
