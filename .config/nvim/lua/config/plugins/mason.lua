@@ -38,8 +38,6 @@ return {
           "tectonic",
           "texlab",
           "typescript-language-server",
-          "yamlfmt",
-          "yamllint",
         },
       })
     end,

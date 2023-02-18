@@ -167,7 +167,6 @@
       ])
 
       # Development
-      alejandra
       bun
       direnv
       gcc
@@ -176,12 +175,10 @@
       go
       icoutils
       jq
-      ltex-ls
       meson
       neovim
       nil
       nix-direnv
-      nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
       nodejs
@@ -189,9 +186,6 @@
       podman
       podman-compose
       rustup
-      shellcheck
-      stylua
-      sumneko-lua-language-server
       zig
       zls
     ]);

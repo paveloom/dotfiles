@@ -2,6 +2,7 @@
   description = "@paveloom's NixOS configuration";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,27 +19,39 @@
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     home-manager,
     nix-index-database,
     ...
-  } @ inputs: {
-    nixosConfigurations = let
-      nixosHost = host:
-        nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = inputs;
-          modules =
-            [
-              ./configuration.nix
-              ./home.nix
-              home-manager.nixosModules.home-manager
-              nix-index-database.nixosModules.nix-index
-            ]
-            ++ host;
-        };
+  } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
-      boxes = nixosHost [./hosts/boxes];
-      laptop = nixosHost [./hosts/laptop];
-    };
-  };
+      packages.nixosConfigurations = let
+        nixosHost = host:
+          nixpkgs.lib.nixosSystem {
+            inherit system;
+            specialArgs = inputs;
+            modules =
+              [
+                ./configuration.nix
+                ./home.nix
+                home-manager.nixosModules.home-manager
+                nix-index-database.nixosModules.nix-index
+              ]
+              ++ host;
+          };
+      in {
+        boxes = nixosHost [./hosts/boxes];
+        laptop = nixosHost [./hosts/laptop];
+      };
+      devShells.default = pkgs.mkShell {
+        packages = with pkgs; [
+          alejandra
+          ltex-ls
+          stylua
+          sumneko-lua-language-server
+        ];
+      };
+    });
 }
