@@ -11,6 +11,9 @@ bind \e\[3\;5~ kill-word
 
 # Variables
 
+## Set the cursor theme
+set -gx XCURSOR_THEME Adwaita
+
 ## Make `less` not open a window if text takes up less space
 set -gx LESS -FXRI
 
