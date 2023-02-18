@@ -1,0 +1,3 @@
+[global]
+disable_stdin = true
+warn_timeout = "100h"

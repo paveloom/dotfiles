@@ -21,7 +21,10 @@ set -gx LESS -FXRI
 set -gx fish_color_quote green
 
 ## Let the GPG program use the terminal connected to standard input
-set -x GPG_TTY (tty)
+set -gx GPG_TTY (tty)
+
+## Disable `direnv`'s output
+set -gx DIRENV_LOG_FORMAT ""
 
 # Set up the SSH agent (via `gnome-keyring`)
 set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh

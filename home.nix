@@ -167,9 +167,9 @@
       ])
 
       # Development
-      (python311.withPackages (p: with p; [pip]))
       alejandra
       bun
+      direnv
       gcc
       git
       gnumake
@@ -180,6 +180,7 @@
       meson
       neovim
       nil
+      nix-direnv
       nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
@@ -229,6 +230,7 @@
         configPath = dir: (config.lib.file.mkOutOfStoreSymlink
           "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
       in {
+        "direnv".source = configPath "direnv";
         "fish".source = configPath "fish";
         "git".source = configPath "git";
         "helix".source = configPath "helix";

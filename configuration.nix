@@ -92,6 +92,10 @@
   zramSwap.memoryPercent = 50;
 
   # Set up Nix
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
   nix.gc.automatic = true;
   nix.gc.dates = "14:00";
   nix.gc.options = "--delete-older-than 7d";
