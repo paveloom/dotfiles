@@ -36,6 +36,18 @@
           rm -r wezterm-ssh/tests
         '';
       });
+      zls =
+        (super.zls.override {
+          zig = super.zig;
+        })
+        .overrideAttrs (previousAttrs: rec {
+          version = "0.10.0";
+          src = super.fetchFromGitHub {
+            inherit (previousAttrs.src) owner repo fetchSubmodules;
+            rev = version;
+            sha256 = "1lsks7h3z2m4psyn9mwdylv1d6a9i3z54ssadiz76w0clbh8ch9k";
+          };
+        });
     })
   ];
 
@@ -178,6 +190,10 @@
       podman
       podman-compose
       rustup
+      yamlfmt
+      yamllint
+      zig
+      zls
     ]);
   };
 
