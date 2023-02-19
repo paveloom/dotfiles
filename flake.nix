@@ -24,9 +24,7 @@
     nix-index-database,
     ...
   } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    flake-utils.lib.eachDefaultSystem (system: {
       packages.nixosConfigurations = let
         nixosHost = host:
           nixpkgs.lib.nixosSystem {
@@ -44,14 +42,6 @@
       in {
         boxes = nixosHost [./hosts/boxes];
         laptop = nixosHost [./hosts/laptop];
-      };
-      devShells.default = pkgs.mkShell {
-        packages = with pkgs; [
-          alejandra
-          ltex-ls
-          stylua
-          sumneko-lua-language-server
-        ];
       };
     });
 }

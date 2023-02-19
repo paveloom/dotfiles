@@ -156,6 +156,7 @@
       ])
 
       # Development
+      alejandra
       bun
       direnv
       gcc
@@ -164,10 +165,12 @@
       go
       icoutils
       jq
+      ltex-ls
       meson
       neovim
       nil
       nix-direnv
+      nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
       nodejs
