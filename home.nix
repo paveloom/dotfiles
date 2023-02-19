@@ -115,16 +115,17 @@
       qbittorrent
       quodlibet-full
       radeontop
+      radicle-cli
       rclone
       ripgrep
+      rnote
       skypeforlinux
+      subtitleedit
       taskwarrior
       tdesktop
       teams
       tenacity
       tor-browser-bundle-bin
-      radicle-cli
-      rnote
       tracy
       tree
       ungoogled-chromium
