@@ -1,3 +1,5 @@
+check_update = false
+
 [install]
 cache = true
 
