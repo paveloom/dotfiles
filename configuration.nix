@@ -23,20 +23,6 @@
   # Enable GPU acceleration
   hardware.opengl.enable = true;
 
-  # Help when a command is not found
-  programs.command-not-found.enable = false;
-  programs.nix-index.enable = true;
-  programs.nix-index.enableFishIntegration = true;
-
-  # Enable `fzf` features
-  programs.fzf.fuzzyCompletion = true;
-  programs.fzf.keybindings = true;
-
-  # Use Fish as the default system shell
-  environment.shells = [pkgs.fish];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
-
   # Enable the GNOME Desktop Environment
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour
@@ -49,9 +35,6 @@
   services.xserver.enable = true;
   services.xserver.excludePackages = [pkgs.xterm];
 
-  # Configure keymap layouts
-  services.xserver.layout = "us,ru";
-
   # Enable sound with Pipewire
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -63,28 +46,8 @@
     pulse.enable = true;
   };
 
-  # Set up Mullvad VPN
-  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
-    55853
-    57236
-  ];
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
-
-  # Set up *Arrs
-  services.prowlarr.enable = true;
-  services.radarr = {
-    dataDir = "/home/paveloom/.config/radarr";
-    enable = true;
-    group = "";
-    user = "paveloom";
-  };
-  services.sonarr = {
-    dataDir = "/home/paveloom/.config/sonarr";
-    enable = true;
-    group = "";
-    user = "paveloom";
-  };
+  # Configure keymap layouts
+  services.xserver.layout = "us,ru";
 
   # Enable in-memory compression
   zramSwap.enable = true;

@@ -4,6 +4,46 @@
   spicetify-nix,
   ...
 }: {
+  # Help when a command is not found
+  programs.command-not-found.enable = false;
+  programs.nix-index.enable = true;
+  programs.nix-index.enableFishIntegration = true;
+
+  # Enable `fzf` features
+  programs.fzf.fuzzyCompletion = true;
+  programs.fzf.keybindings = true;
+
+  # Use Fish as the default system shell
+  environment.shells = [pkgs.fish];
+  users.defaultUserShell = pkgs.fish;
+  programs.fish.enable = true;
+
+  # Set up Mullvad VPN
+  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
+    55853
+    57236
+  ];
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
+  # Set up *Arrs
+  services.prowlarr.enable = true;
+  services.radarr = {
+    dataDir = "/home/paveloom/.config/radarr";
+    enable = true;
+    group = "";
+    user = "paveloom";
+  };
+  services.sonarr = {
+    dataDir = "/home/paveloom/.config/sonarr";
+    enable = true;
+    group = "";
+    user = "paveloom";
+  };
+
+  # Set up Steam
+  programs.steam.enable = true;
+
   # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
@@ -83,6 +123,7 @@
       nix-prefetch-scripts
       obs-studio
       picard
+      protonup-qt
       qbittorrent
       quodlibet-full
       radeontop
