@@ -113,6 +113,7 @@
       libreoffice
       librewolf
       libva-utils
+      lutris
       mediainfo
       metadata-cleaner
       monero-gui
@@ -159,6 +160,7 @@
         gnome-calendar
         gnome-characters
         gnome-clocks
+        gnome-disk-utility
         gnome-font-viewer
         gnome-system-monitor
         gnome-text-editor

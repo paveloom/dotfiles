@@ -22,6 +22,7 @@
 
   # Enable GPU acceleration
   hardware.opengl.enable = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Enable the GNOME Desktop Environment
   environment.gnome.excludePackages = with pkgs; [
