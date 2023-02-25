@@ -51,6 +51,7 @@ return {
           display_stat = false,
           hijack_netrw = true,
           select_buffer = true,
+          git_status = false,
           mappings = {
             ["i"] = {
               -- Trash files instead of deleting them

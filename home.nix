@@ -192,6 +192,7 @@
       icoutils
       jq
       ltex-ls
+      lua-language-server
       meson
       neovim
       nil
@@ -204,6 +205,7 @@
       podman
       podman-compose
       rustup
+      stylua
       yamlfmt
       yamllint
       zig
