@@ -44,6 +44,9 @@
   # Set up Steam
   programs.steam.enable = true;
 
+  # Set up Gamemode
+  programs.gamemode.enable = true;
+
   # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
