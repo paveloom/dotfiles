@@ -55,6 +55,9 @@
   zramSwap.algorithm = "zstd";
   zramSwap.memoryPercent = 50;
 
+  # Enable udev rules for ZSA keyboards
+  hardware.keyboard.zsa.enable = true;
+
   # Set up Nix
   nix.extraOptions = ''
     keep-outputs = true

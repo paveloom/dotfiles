@@ -147,6 +147,7 @@
       ungoogled-chromium
       unzip
       vlc
+      wally-cli
       webtorrent_desktop
       wezterm
       wget
