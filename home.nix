@@ -206,6 +206,7 @@
       podman-compose
       rustup
       stylua
+      valgrind
       yamlfmt
       yamllint
       zig
