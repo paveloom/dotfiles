@@ -1,7 +1,6 @@
 -- A snazzy bufferline for Neovim
 return {
   "akinsho/bufferline.nvim",
-  lazy = true,
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
     -- Set up the plugin
