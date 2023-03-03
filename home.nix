@@ -153,6 +153,7 @@
       wget
       wl-clipboard
       wxmaxima
+      yt-dlp
       zip
       zoom-us
       zulip
