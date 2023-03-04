@@ -47,6 +47,9 @@
   # Set up Gamemode
   programs.gamemode.enable = true;
 
+  # Set up the `libvirtd` daemon
+  virtualisation.libvirtd.enable = true;
+
   # Overlay some packages
   nixpkgs.overlays = [
     (self: super: {
@@ -73,6 +76,7 @@
     isNormalUser = true;
     extraGroups = [
       "keys"
+      "libvirtd"
       "networkmanager"
       "wheel"
     ];
@@ -146,6 +150,8 @@
       tree
       ungoogled-chromium
       unzip
+      virt-manager
+      virtiofsd
       vlc
       wally-cli
       webtorrent_desktop
