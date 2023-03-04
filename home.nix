@@ -212,6 +212,7 @@
       nixpkgs-hammering
       nixpkgs-review
       nodejs
+      nodePackages.npm-check-updates
       pkg-config
       podman
       podman-compose
