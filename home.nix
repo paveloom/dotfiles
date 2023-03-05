@@ -50,24 +50,6 @@
   # Set up the `libvirtd` daemon
   virtualisation.libvirtd.enable = true;
 
-  # Overlay some packages
-  nixpkgs.overlays = [
-    (self: super: {
-      ffmpeg_5 = super.ffmpeg_5.override {
-        withUnfree = true;
-        withFdkAac = true;
-      };
-      mpv = super.mpv.override {
-        scripts = [self.mpvScripts.thumbnail];
-      };
-      vlc = super.vlc.override {
-        libbluray = super.libbluray.override {
-          withJava = true;
-        };
-      };
-    })
-  ];
-
   # Define the user
   users.users.paveloom = {
     name = "paveloom";
@@ -97,7 +79,10 @@
       evolution
       exa
       fd
-      ffmpeg_5
+      (ffmpeg_5.override {
+        withUnfree = true;
+        withFdkAac = true;
+      })
       firefox
       foliate
       fractal-next
@@ -125,7 +110,9 @@
       metadata-cleaner
       monero-gui
       mousai
-      mpv
+      (mpv.override {
+        scripts = [mpvScripts.thumbnail];
+      })
       newsflash
       nicotine-plus
       nix-prefetch-scripts
@@ -152,7 +139,11 @@
       unzip
       virt-manager
       virtiofsd
-      vlc
+      (vlc.override {
+        libbluray = libbluray.override {
+          withJava = true;
+        };
+      })
       wally-cli
       webtorrent_desktop
       wezterm
