@@ -384,6 +384,9 @@
           show-player-icon = false;
           show-seperators = false;
           show-sources-menu = false;
+          backlist-apps = [
+            "librewolf"
+          ];
           mouse-actions = [
             "toggle_play"
             "toggle_menu"
