@@ -18,6 +18,9 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
+  # Set up Evince
+  programs.evince.enable = true;
+
   # Set up Mullvad VPN
   networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
     55853
@@ -75,7 +78,6 @@
       dejavu_fonts
       discord
       element-desktop
-      evince
       evolution
       exa
       fd
