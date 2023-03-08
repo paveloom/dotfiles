@@ -202,11 +202,12 @@
       nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
-      nodejs
       nodePackages.npm-check-updates
+      nodejs
       pkg-config
       podman
       podman-compose
+      rust-analyzer
       rustup
       stylua
       valgrind
