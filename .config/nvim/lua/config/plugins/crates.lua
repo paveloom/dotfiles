@@ -1,7 +1,7 @@
 -- A Neovim plugin that helps managing `crates.io` dependencies
 return {
   "Saecki/crates.nvim",
-  lazy = true,
+  event = { "BufRead Cargo.toml" },
   dependencies = {
     "hrsh7th/nvim-cmp",
     "nvim-lua/plenary.nvim",
