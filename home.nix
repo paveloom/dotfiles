@@ -121,6 +121,7 @@
       nicotine-plus
       nix-prefetch-scripts
       obs-studio
+      okular
       picard
       protonup-qt
       qbittorrent
