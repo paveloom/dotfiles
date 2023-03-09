@@ -58,6 +58,30 @@
   # Enable udev rules for ZSA keyboards
   hardware.keyboard.zsa.enable = true;
 
+  # Enable support for printers
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [
+    canon-cups-ufr2
+    carps-cups
+    cnijfilter2
+    cups-bjnp
+    gutenprint
+    gutenprintBin
+  ];
+  services.printing.logLevel = "debug";
+
+  # Enable support for scanners
+  hardware.sane.enable = true;
+  hardware.sane.extraBackends = with pkgs; [
+    sane-airscan
+  ];
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+  services.ipp-usb.enable = true;
+
   # Set up Nix
   nix.extraOptions = ''
     keep-outputs = true

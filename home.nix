@@ -62,7 +62,9 @@
     extraGroups = [
       "keys"
       "libvirtd"
+      "lp"
       "networkmanager"
+      "scanner"
       "wheel"
     ];
     packages = pkgs.lib.lists.flatten (with pkgs; [
@@ -128,6 +130,7 @@
       rclone
       ripgrep
       rnote
+      simple-scan
       skypeforlinux
       subtitleedit
       taskwarrior
@@ -209,6 +212,7 @@
       pkg-config
       podman
       podman-compose
+      rpm
       rust-analyzer
       rustup
       stylua
