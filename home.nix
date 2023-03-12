@@ -197,6 +197,7 @@
       git
       gnumake
       go
+      helix
       icoutils
       jq
       ltex-ls
@@ -217,6 +218,7 @@
       rust-analyzer
       rustup
       stylua
+      tmux
       valgrind
       yamlfmt
       yamllint
