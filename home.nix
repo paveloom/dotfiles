@@ -72,6 +72,9 @@
       aegisub
       appimage-run
       asciinema
+      aspell
+      aspellDicts.en
+      aspellDicts.ru
       audacious
       authenticator
       baobab
