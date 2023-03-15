@@ -97,6 +97,7 @@
       gnome-extension-manager
       gnome-icon-theme
       gnome-secrets
+      gnupg
       google-chrome
       gparted
       icon-library
