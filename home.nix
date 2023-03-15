@@ -103,6 +103,8 @@
       gnupg
       google-chrome
       gparted
+      hunspell
+      hunspellDicts.ru_RU
       icon-library
       imhex
       inkscape
