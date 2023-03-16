@@ -225,6 +225,7 @@
       pkg-config
       podman-compose
       rpm
+      runc
       rust-analyzer
       rustup
       stylua
