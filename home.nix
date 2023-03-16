@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   spicetify-nix,
   ...
@@ -49,6 +48,12 @@
 
   # Set up Gamemode
   programs.gamemode.enable = true;
+
+  # Set up Podman
+  virtualisation.podman = {
+    enable = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   # Set up the `libvirtd` daemon
   virtualisation.libvirtd.enable = true;
@@ -218,7 +223,6 @@
       nodePackages.npm-check-updates
       nodejs
       pkg-config
-      podman
       podman-compose
       rpm
       rust-analyzer
