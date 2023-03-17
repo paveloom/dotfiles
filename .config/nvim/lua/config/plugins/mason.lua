@@ -31,6 +31,7 @@ return {
         ensure_installed = {
           "dockerfile-language-server",
           "eslint-lsp",
+          "json-lsp",
           "julia-lsp",
           "lemminx",
           "shellcheck",

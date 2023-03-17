@@ -148,6 +148,11 @@ return {
         },
       },
     })
+    -- Set up JSON language server
+    require("lspconfig").jsonls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- Set up the ESLint language server
     require("lspconfig").eslint.setup({
       capabilities = capabilities,
@@ -264,13 +269,14 @@ return {
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
         "*.jl",
+        "*.json",
         "*.lua",
+        "*.nix",
         "*.rs",
         "*.svg",
         "*.tex",
         "*.xml",
         "*.xsd",
-        "*.nix",
         "*.xsl",
         "*.xslt",
         "*.zig",
