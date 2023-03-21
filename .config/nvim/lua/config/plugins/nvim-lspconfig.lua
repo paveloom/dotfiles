@@ -110,6 +110,9 @@ return {
             files = {
               excludeDirs = { ".flatpak-builder" },
             },
+            procMacro = {
+              enable = true,
+            },
           },
         },
       },
