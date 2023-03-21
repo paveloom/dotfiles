@@ -204,6 +204,7 @@
       alejandra
       bun
       direnv
+      dive
       gcc
       git
       gnumake
@@ -228,8 +229,10 @@
       runc
       rust-analyzer
       rustup
+      skopeo
       stylua
       tmux
+      umoci
       valgrind
       yamlfmt
       yamllint
