@@ -53,6 +53,7 @@
   virtualisation.podman = {
     enable = true;
     defaultNetwork.settings.dns_enabled = true;
+    dockerCompat = true;
   };
 
   # Set up the `libvirtd` daemon
