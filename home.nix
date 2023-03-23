@@ -104,6 +104,7 @@
       glow
       gnome-console
       gnome-extension-manager
+      gnome-frog
       gnome-icon-theme
       gnome-secrets
       gnupg
