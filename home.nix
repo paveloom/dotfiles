@@ -135,6 +135,7 @@
       nix-prefetch-scripts
       obs-studio
       okular
+      openai-whisper-cpp
       picard
       protonup-qt
       qbittorrent
