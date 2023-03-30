@@ -139,6 +139,8 @@
       hunspellDicts.ru_RU
       icon-library
       # identity
+      imagemagick
+      img2pdf
       imhex
       inkscape
       jackett
@@ -160,6 +162,7 @@
       nicotine-plus
       nix-prefetch-scripts
       obs-studio
+      ocrmypdf
       okular
       openai-whisper-cpp
       picard
