@@ -73,7 +73,7 @@
       "scanner"
       "wheel"
     ];
-    packages = pkgs.lib.lists.flatten (with pkgs; [
+    packages = with pkgs; [
       adw-gtk3
       aegisub
       appimage-run
@@ -96,6 +96,7 @@
         withUnfree = true;
         withFdkAac = true;
       })
+      # ffmpeg_6
       firefox
       foliate
       fractal-next
@@ -107,12 +108,37 @@
       gnome-frog
       gnome-icon-theme
       gnome-secrets
+      gnome-text-editor
+      gnome.cheese
+      gnome.dconf-editor
+      gnome.eog
+      gnome.gnome-calculator
+      gnome.gnome-calendar
+      gnome.gnome-characters
+      gnome.gnome-clocks
+      gnome.gnome-disk-utility
+      gnome.gnome-font-viewer
+      gnome.gnome-system-monitor
+      gnome.gnome-tweaks
+      gnome.nautilus
+      gnome.seahorse
+      gnome.totem
+      gnomeExtensions.clipboard-history
+      gnomeExtensions.dash-to-dock
+      gnomeExtensions.gesture-improvements
+      gnomeExtensions.hot-edge
+      gnomeExtensions.just-perfection
+      gnomeExtensions.media-controls
+      gnomeExtensions.memento-mori
+      gnomeExtensions.quick-settings-tweaker
+      gnomeExtensions.tray-icons-reloaded
       gnupg
       google-chrome
       gparted
       hunspell
       hunspellDicts.ru_RU
       icon-library
+      # identity
       imhex
       inkscape
       jackett
@@ -174,34 +200,6 @@
       zip
       zoom-us
       zulip
-      (with gnome; [
-        cheese
-        dconf-editor
-        eog
-        gnome-calculator
-        gnome-calendar
-        gnome-characters
-        gnome-clocks
-        gnome-disk-utility
-        gnome-font-viewer
-        gnome-system-monitor
-        gnome-text-editor
-        gnome-tweaks
-        nautilus
-        seahorse
-        totem
-      ])
-      (with pkgs.gnomeExtensions; [
-        clipboard-history
-        dash-to-dock
-        gesture-improvements
-        hot-edge
-        just-perfection
-        media-controls
-        memento-mori
-        quick-settings-tweaker
-        tray-icons-reloaded
-      ])
 
       # Development
       alejandra
@@ -240,8 +238,9 @@
       yamlfmt
       yamllint
       zig
+      # zigmod
       zls
-    ]);
+    ];
   };
 
   # Setup home
