@@ -165,6 +165,7 @@
       ocrmypdf
       okular
       openai-whisper-cpp
+      pdfgrep
       picard
       protonup-qt
       qbittorrent
