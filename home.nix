@@ -59,6 +59,9 @@
   # Set up the `libvirtd` daemon
   virtualisation.libvirtd.enable = true;
 
+  # Set up Flatpak
+  services.flatpak.enable = true;
+
   # Define the user
   users.users.paveloom = {
     name = "paveloom";
