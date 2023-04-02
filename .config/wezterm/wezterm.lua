@@ -34,6 +34,7 @@ return {
     top = 5,
     bottom = 5,
   },
+  scrollback_lines = 5000,
   -- Console's color palette: https://gitlab.gnome.org/GNOME/console/-/blob/8ae8ca86bce673295726d706f25fd515744771c1/src/kgx-terminal.c#L140
   colors = {
     -- The default text color
