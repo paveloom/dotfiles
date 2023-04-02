@@ -213,6 +213,7 @@
       bun
       direnv
       dive
+      file
       gcc
       git
       gnumake
