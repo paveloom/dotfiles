@@ -95,11 +95,10 @@
       evolution
       exa
       fd
-      (ffmpeg_5.override {
+      (ffmpeg_6.override {
         withUnfree = true;
         withFdkAac = true;
       })
-      # ffmpeg_6
       firefox
       foliate
       fractal-next
@@ -141,7 +140,7 @@
       hunspell
       hunspellDicts.ru_RU
       icon-library
-      # identity
+      identity
       imagemagick
       img2pdf
       imhex
