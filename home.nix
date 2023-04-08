@@ -120,6 +120,7 @@
       gnome.gnome-clocks
       gnome.gnome-disk-utility
       gnome.gnome-font-viewer
+      gnome.gnome-sound-recorder
       gnome.gnome-system-monitor
       gnome.gnome-tweaks
       gnome.nautilus
