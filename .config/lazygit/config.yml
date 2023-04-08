@@ -15,46 +15,46 @@ gui:
   showIcons: true
 git:
   merging:
-    args: '--no-ff'
+    args: --no-ff
   parseEmoji: true
 quitOnTopLevelReturn: true
-notARepository: 'skip'
+notARepository: skip
 promptToReturnFromSubprocess: false
 keybinding:
   stash:
-    popStash: 'p'
+    popStash: p
   files:
-    viewResetOptions: 'R'
+    viewResetOptions: R
   commits:
-    push: '<nop>'
+    push: <nop>
 customCommands:
-  - key: 'c'
-    description: 'commit changes'
-    context: 'files'
-    command: "git commit -v"
+  - key: c
+    description: commit changes
+    context: files
+    command: git commit -v
     subprocess: true
-  - key: 'D'
-    description: 'Commit all staged files and push right after'
-    context: 'global'
-    loadingText: 'Pushing...'
-    command: "git commit -v && git push -u {{.SelectedRemote.Name}} {{.SelectedLocalBranch.Name}}"
+  - key: D
+    description: Commit all staged files and push right after
+    context: global
+    loadingText: Pushing...
+    command: git commit -v && git push -u {{.SelectedRemote.Name}} {{.SelectedLocalBranch.Name}}
     subprocess: true
-  - key: 'E'
-    description: 'Add an empty commit'
-    context: 'commits'
-    loadingText: 'Committing empty commit...'
-    command: "git commit --allow-empty"
+  - key: E
+    description: Add an empty commit
+    context: commits
+    loadingText: Committing empty commit...
+    command: git commit --allow-empty
     subprocess: true
-  - key: 'P'
-    description: "push"
-    context: 'global'
-    loadingText: 'Pushing...'
-    command: "git {{index .PromptResponses 0}}"
+  - key: P
+    description: push
+    context: global
+    loadingText: Pushing...
+    command: git {{index .PromptResponses 0}}
     subprocess: true
     prompts:
-      - type: 'menu'
-        title: 'How to push?'
+      - type: menu
+        title: How to push?
         options:
-          - value: 'push'
-          - value: 'push --force-with-lease'
-          - value: 'push --force'
+          - value: push
+          - value: push --force-with-lease
+          - value: push --force
