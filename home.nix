@@ -168,6 +168,7 @@
       ocrmypdf
       okular
       openai-whisper-cpp
+      pdfarranger
       pdfgrep
       picard
       protonup-qt
