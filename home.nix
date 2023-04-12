@@ -62,6 +62,9 @@
   # Set up Flatpak
   services.flatpak.enable = true;
 
+  # Set up Teamviewer
+  services.teamviewer.enable = true;
+
   # Define the user
   users.users.paveloom = {
     name = "paveloom";
