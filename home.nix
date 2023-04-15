@@ -178,7 +178,7 @@
       qbittorrent
       quodlibet-full
       radeontop
-      radicle-cli
+      # radicle-cli
       rclone
       ripgrep
       rnote
