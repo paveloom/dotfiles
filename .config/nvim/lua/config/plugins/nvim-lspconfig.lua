@@ -229,6 +229,8 @@ return {
       on_attach = function(client, bufnr)
         -- Attach the server
         on_attach(client, bufnr)
+        -- Don't parse errors on format
+        vim.g.zig_fmt_parse_errors = 0
         -- Enable the inlay hints
         require("lsp-inlayhints").on_attach(client, bufnr, false)
       end,
