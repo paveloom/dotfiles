@@ -112,7 +112,6 @@
       gnome-extension-manager
       gnome-frog
       gnome-icon-theme
-      gnome-secrets
       gnome-text-editor
       gnome.cheese
       gnome.dconf-editor
@@ -151,6 +150,7 @@
       inkscape
       jackett
       julia
+      keepassxc
       lazygit
       libnotify
       libreoffice
@@ -379,7 +379,7 @@
             "org.nicotine_plus.Nicotine.desktop"
             "org.qbittorrent.qBittorrent.desktop"
             "io.github.quodlibet.QuodLibet.desktop"
-            "org.gnome.World.Secrets.desktop"
+            "org.keepassxc.KeePassXC.desktop"
           ];
         };
         "org/gnome/shell/extensions/clipboard-history" = {
