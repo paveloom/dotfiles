@@ -164,6 +164,7 @@
       (mpv.override {
         scripts = [mpvScripts.thumbnail];
       })
+      mullvad-browser
       newsflash
       nicotine-plus
       nix-prefetch-scripts
@@ -178,7 +179,7 @@
       qbittorrent
       quodlibet-full
       radeontop
-      # radicle-cli
+      radicle-cli
       rclone
       ripgrep
       rnote
