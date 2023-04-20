@@ -369,7 +369,7 @@
             "trayIconsReloaded@selfmade.pl"
           ];
           favorite-apps = [
-            "mullvadbrowser.desktop"
+            "librewolf.desktop"
             "org.gnome.Nautilus.desktop"
             "gnome-system-monitor.desktop"
             "org.gnome.TextEditor.desktop"
