@@ -281,6 +281,32 @@
         ];
       };
 
+      systemd.user = {
+        services = {
+          flatpak-update = {
+            Unit.Description = "Update Flatpak packages";
+            Service.ExecStart =
+              (pkgs.writeShellScript "update-flatpak" ''
+                ${pkgs.flatpak}/bin/flatpak update --user --noninteractive
+                ${pkgs.flatpak}/bin/flatpak uninstall --user --unused --noninteractive
+              '')
+              .outPath;
+          };
+        };
+        timers = {
+          flatpak-update = {
+            Unit = {
+              Description = "Update all Flatpak packages on a schedule";
+            };
+            Timer = {
+              OnCalendar = ["14:00"];
+              Persistent = true;
+            };
+            Install.WantedBy = ["timers.target"];
+          };
+        };
+      };
+
       # Enable fontconfig configuration
       fonts.fontconfig.enable = true;
 
