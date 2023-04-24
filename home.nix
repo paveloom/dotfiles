@@ -1,6 +1,6 @@
 {
   pkgs,
-  spicetify-nix,
+  config,
   ...
 }: {
   # Help when a command is not found
@@ -61,6 +61,23 @@
 
   # Set up Flatpak
   services.flatpak.enable = true;
+  system.fsPackages = [pkgs.bindfs];
+  fileSystems = let
+    mkRoSymBind = path: {
+      device = path;
+      fsType = "fuse.bindfs";
+      options = ["ro" "resolve-symlinks" "x-gvfs-hide"];
+    };
+    aggregatedFonts = pkgs.buildEnv {
+      name = "system-fonts";
+      paths = config.fonts.fonts;
+      pathsToLink = ["/share/fonts"];
+    };
+  in {
+    # Create an FHS mount to support flatpak host icons/fonts
+    "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
+    "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
+  };
 
   # Set up Teamviewer
   services.teamviewer.enable = true;
@@ -87,46 +104,45 @@
       aspell
       aspellDicts.en
       aspellDicts.ru
-      audacious
-      authenticator
+      ## audacious
       baobab
       bat
       compsize
       dejavu_fonts
-      discord
-      element-desktop
-      evolution
+      ## discord
+      ## element-desktop
+      ## evolution
       exa
       fd
       (ffmpeg_6.override {
         withUnfree = true;
         withFdkAac = true;
       })
-      firefox
-      foliate
-      fractal-next
+      ## firefox
+      ## foliate
+      ## fractal-next
       fzf
-      gimp
+      ## gimp
       glow
       gnome-console
-      gnome-extension-manager
-      gnome-frog
+      ## gnome-extension-manager
+      ## gnome-frog
       gnome-icon-theme
       gnome-text-editor
-      gnome.cheese
-      gnome.dconf-editor
-      gnome.eog
-      gnome.gnome-calculator
-      gnome.gnome-calendar
-      gnome.gnome-characters
-      gnome.gnome-clocks
+      ## gnome.cheese
+      ## gnome.dconf-editor
+      ## gnome.eog
+      ## gnome.gnome-calculator
+      ## gnome.gnome-calendar
+      ## gnome.gnome-characters
+      ## gnome.gnome-clocks
       gnome.gnome-disk-utility
-      gnome.gnome-font-viewer
-      gnome.gnome-sound-recorder
+      ## gnome.gnome-font-viewer
+      ## gnome.gnome-sound-recorder
       gnome.gnome-system-monitor
       gnome.gnome-tweaks
       gnome.nautilus
-      gnome.seahorse
+      ## gnome.seahorse
       gnome.totem
       gnomeExtensions.clipboard-history
       gnomeExtensions.dash-to-dock
@@ -138,80 +154,79 @@
       gnomeExtensions.quick-settings-tweaker
       gnomeExtensions.tray-icons-reloaded
       gnupg
-      google-chrome
+      ## google-chrome
       gparted
       hunspell
       hunspellDicts.ru_RU
-      icon-library
-      identity
+      ## icon-library
+      ## identity
       imagemagick
       img2pdf
-      imhex
-      inkscape
-      jackett
-      julia
-      keepassxc
+      ## imhex
+      ## inkscape
+      ## keepassxc
       lazygit
       libnotify
-      libreoffice
-      librewolf
+      ## libreoffice
+      ## librewolf
       libva-utils
-      lutris
-      mediainfo
-      metadata-cleaner
-      monero-gui
-      mousai
-      (mpv.override {
-        scripts = [mpvScripts.thumbnail];
-      })
-      mullvad-browser
-      newsflash
-      nicotine-plus
+      ## lutris
+      ## mediainfo-gui
+      ## metadata-cleaner
+      ## monero-gui
+      ## mousai
+      ## (mpv.override {
+      ##   scripts = [mpvScripts.thumbnail];
+      ## })
+      ## mullvad-browser
+      ## newsflash
+      ## nicotine-plus
       nix-prefetch-scripts
-      obs-studio
+      ## obs-studio
       ocrmypdf
-      okular
       openai-whisper-cpp
-      pdfarranger
+      ## pdfarranger
       pdfgrep
-      picard
-      protonup-qt
-      qbittorrent
-      quodlibet-full
+      ## picard
+      ## protonup-qt
+      ## qbittorrent
+      ## quodlibet-full
       radeontop
       radicle-cli
       rclone
       ripgrep
-      rnote
-      simple-scan
-      skypeforlinux
-      subtitleedit
+      ## rnote
+      ## simple-scan
+      ## skypeforlinux
+      spicetify-cli
+      ## spotify
+      ## subtitleedit
       taskwarrior
-      tdesktop
-      teams
-      tenacity
-      tor-browser-bundle-bin
-      tracy
+      ## tdesktop
+      ## teams
+      ## tenacity
+      ## tor-browser-bundle-bin
+      ## tracy
       tree
-      ungoogled-chromium
+      ## ungoogled-chromium
       unzip
       virt-manager
       virtiofsd
-      (vlc.override {
-        libbluray = libbluray.override {
-          withJava = true;
-        };
-      })
+      ## (vlc.override {
+      ##   libbluray = libbluray.override {
+      ##     withJava = true;
+      ##   };
+      ## })
       wally-cli
-      webtorrent_desktop
+      ## webtorrent_desktop
       wezterm
       wget
       wl-clipboard
       wxmaxima
       yt-dlp
       zip
-      zoom-us
-      zulip
+      ## zoom-us
+      ## zulip
 
       # Development
       alejandra
@@ -226,6 +241,7 @@
       helix
       icoutils
       jq
+      julia
       ltex-ls
       lua-language-server
       meson
@@ -265,22 +281,7 @@
       lib,
       pkgs,
       ...
-    }: let
-      spicePkgs = spicetify-nix.packages.${pkgs.system}.default;
-    in {
-      # Import home manager modules
-      imports = [spicetify-nix.homeManagerModules.default];
-
-      # Set up Spicetify
-      programs.spicetify = {
-        enable = true;
-        theme = spicePkgs.themes.Default;
-        colorScheme = "default";
-        enabledExtensions = with spicePkgs.extensions; [
-          adblock
-        ];
-      };
-
+    }: {
       systemd.user = {
         services = {
           flatpak-update = {
@@ -395,7 +396,7 @@
             "trayIconsReloaded@selfmade.pl"
           ];
           favorite-apps = [
-            "librewolf.desktop"
+            "io.gitlab.librewolf-community.desktop"
             "org.gnome.Nautilus.desktop"
             "gnome-system-monitor.desktop"
             "org.gnome.TextEditor.desktop"
