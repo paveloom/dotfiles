@@ -144,6 +144,7 @@
       gnome.nautilus
       ## gnome.seahorse
       gnome.totem
+      gnomeExtensions.appindicator
       gnomeExtensions.clipboard-history
       gnomeExtensions.dash-to-dock
       gnomeExtensions.gesture-improvements
@@ -152,7 +153,6 @@
       gnomeExtensions.media-controls
       gnomeExtensions.memento-mori
       gnomeExtensions.quick-settings-tweaker
-      gnomeExtensions.tray-icons-reloaded
       gnupg
       ## google-chrome
       gparted
@@ -386,6 +386,7 @@
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = [
+            "appindicatorsupport@rgcjonas.gmail.com"
             "clipboard-history@alexsaveau.dev"
             "dash-to-dock@micxgx.gmail.com"
             "gestureImprovements@gestures"
