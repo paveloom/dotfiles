@@ -482,9 +482,6 @@
           media-control-enabled = false;
           volume-mixer-enabled = false;
         };
-        "org/gnome/shell/extensions/trayIconsReloaded" = {
-          icon-padding-horizontal = 6;
-        };
       };
 
       # Home manager version for the stateful data
