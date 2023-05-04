@@ -107,6 +107,7 @@
       ## audacious
       baobab
       bat
+      ## bottles
       compsize
       dejavu_fonts
       ## discord
@@ -170,7 +171,6 @@
       ## libreoffice
       ## librewolf
       libva-utils
-      ## lutris
       ## mediainfo-gui
       ## metadata-cleaner
       ## monero-gui
