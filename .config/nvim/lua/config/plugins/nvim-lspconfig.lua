@@ -197,6 +197,8 @@ return {
       },
       settings = {
         ltex = {
+          additionalRules = { enablePickyRules = true },
+          checkFrequency = "save",
           enabled = {
             "javascript",
             "julia",
@@ -206,7 +208,6 @@ return {
             "rust",
             "typescript",
           },
-          additionalRules = { enablePickyRules = true },
         },
       },
     })
