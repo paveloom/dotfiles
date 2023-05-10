@@ -35,8 +35,6 @@ return {
           "julia-lsp",
           "lemminx",
           "shellcheck",
-          "tectonic",
-          "texlab",
           "typescript-language-server",
         },
       })

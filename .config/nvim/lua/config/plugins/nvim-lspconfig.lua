@@ -2,6 +2,7 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
+    "direnv/direnv.vim",
     "folke/neodev.nvim",
     "hrsh7th/cmp-nvim-lsp",
     "lsp_lines.nvim",
@@ -179,6 +180,8 @@ return {
     })
     -- Set up the LanguageTool language server
     require("lspconfig").ltex.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
       filetypes = {
         "bib",
         "gitcommit",
@@ -213,6 +216,8 @@ return {
     })
     -- Set up the LaTeX language server
     require("lspconfig").texlab.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
       settings = {
         texlab = {
           build = {
