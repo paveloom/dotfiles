@@ -3,6 +3,7 @@ return {
   "nvim-telescope/telescope.nvim",
   lazy = true,
   dependencies = {
+    "folke/trouble.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-project.nvim",
@@ -13,16 +14,18 @@ return {
   config = function()
     local telescope = require("telescope")
     local themes = require("telescope.themes")
+    local trouble = require("trouble.providers.telescope")
     -- Set up the plugin
     telescope.setup({
       defaults = themes.get_ivy({
         mappings = {
           i = {
-            ["<Esc>"] = "close",
-            ["<C-u>"] = false,
             ["<C-d>"] = false,
-            ["<PageUp>"] = "preview_scrolling_up",
+            ["<C-q>"] = trouble.open_with_trouble,
+            ["<C-u>"] = false,
+            ["<Esc>"] = "close",
             ["<PageDown>"] = "preview_scrolling_down",
+            ["<PageUp>"] = "preview_scrolling_up",
           },
         },
       }),
