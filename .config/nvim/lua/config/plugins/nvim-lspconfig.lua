@@ -276,9 +276,15 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    -- Set up the C language server
+    require("lspconfig").clangd.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
+        "*.c",
         "*.jl",
         "*.json",
         "*.lua",
