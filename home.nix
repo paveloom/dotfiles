@@ -20,13 +20,15 @@
   # Set up Evince
   programs.evince.enable = true;
 
-  # Set up Mullvad VPN
-  networking.firewall.interfaces.wg-mullvad.allowedTCPPorts = [
-    55853
-    57236
-  ];
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+  # Set up Wireguard
+  networking.firewall = {
+    allowedTCPPorts = [
+      38101
+      38102
+    ];
+  };
+  networking.firewall.checkReversePath = false;
+  networking.wireguard.enable = true;
 
   # Set up *Arrs
   services.prowlarr.enable = true;
