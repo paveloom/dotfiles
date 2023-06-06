@@ -290,8 +290,8 @@
             Unit.Description = "Update Flatpak packages";
             Service.ExecStart =
               (pkgs.writeShellScript "update-flatpak" ''
-                ${pkgs.flatpak}/bin/flatpak update --user --noninteractive
-                ${pkgs.flatpak}/bin/flatpak uninstall --user --unused --noninteractive
+                ${pkgs.flatpak}/bin/flatpak update --noninteractive
+                ${pkgs.flatpak}/bin/flatpak uninstall --unused --noninteractive
               '')
               .outPath;
           };
