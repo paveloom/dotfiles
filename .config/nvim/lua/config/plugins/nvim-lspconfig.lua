@@ -12,6 +12,7 @@ return {
   },
   config = function()
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    capabilities.offsetEncoding = { "utf-16" }
     -- Prepare an autocommands group
     local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
     -- Set up the LSP server
