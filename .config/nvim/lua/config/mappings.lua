@@ -6,13 +6,19 @@ local nmap = utils.nmap
 local vmap = utils.vmap
 local xmap = utils.xmap
 
+-- Move cursor up and down by display lines
+imap("<Down>", "<C-o>gj")
+imap("<Up>", "<C-o>gk")
+nmap("<Down>", "gj")
+nmap("<Up>", "gk")
+
 -- Jump by 4 lines when holding Ctrl and pressing Up/Down arrows
-imap("<C-Down>", "<C-o>5j")
-imap("<C-Up>", "<C-o>5k")
-nmap("<C-Down>", "5j")
-nmap("<C-Up>", "5k")
-vmap("<C-Down>", "5j")
-vmap("<C-Up>", "5k")
+imap("<C-Down>", "<C-o>5gj")
+imap("<C-Up>", "<C-o>5gk")
+nmap("<C-Down>", "5gj")
+nmap("<C-Up>", "5gk")
+vmap("<C-Down>", "5gj")
+vmap("<C-Up>", "5gk")
 
 -- Delete the previous word
 cmap("<C-h>", "<C-w><C-l>")
