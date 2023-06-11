@@ -2,7 +2,7 @@
   pkgs,
   config,
   ...
-}: {
+} @ inputs: {
   # Help when a command is not found
   programs.command-not-found.enable = false;
   programs.nix-index.enable = true;
@@ -19,6 +19,9 @@
 
   # Set up Evince
   programs.evince.enable = true;
+
+  # Set up Evolution
+  programs.evolution.enable = true;
 
   # Set up Wireguard
   networking.firewall = {
@@ -81,9 +84,6 @@
     "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
   };
 
-  # Set up Teamviewer
-  services.teamviewer.enable = true;
-
   # Define the user
   users.users.paveloom = {
     name = "paveloom";
@@ -106,46 +106,45 @@
       aspell
       aspellDicts.en
       aspellDicts.ru
-      ## audacious
+      audacious
       baobab
       bat
-      ## bottles
+      bottles
       compsize
       dejavu_fonts
-      ## discord
-      ## element-desktop
-      ## evolution
+      discord
+      element-desktop
       exa
       fd
       (ffmpeg_6.override {
         withUnfree = true;
         withFdkAac = true;
       })
-      ## firefox
-      ## foliate
-      ## fractal-next
+      firefox
+      foliate
+      fractal-next
       fzf
-      ## gimp
+      gimp
       glow
       gnome-console
-      ## gnome-extension-manager
-      ## gnome-frog
+      gnome-extension-manager
+      gnome-frog
       gnome-icon-theme
       gnome-text-editor
-      ## gnome.cheese
-      ## gnome.dconf-editor
-      ## gnome.eog
-      ## gnome.gnome-calculator
-      ## gnome.gnome-calendar
-      ## gnome.gnome-characters
-      ## gnome.gnome-clocks
+      gnome.cheese
+      gnome.dconf-editor
+      gnome.eog
+      gnome.gnome-calculator
+      gnome.gnome-calendar
+      gnome.gnome-characters
+      gnome.gnome-clocks
       gnome.gnome-disk-utility
-      ## gnome.gnome-font-viewer
-      ## gnome.gnome-sound-recorder
+      gnome.gnome-font-viewer
+      gnome.gnome-sound-recorder
       gnome.gnome-system-monitor
       gnome.gnome-tweaks
       gnome.nautilus
-      ## gnome.seahorse
+      gnome.seahorse
       gnome.totem
       gnomeExtensions.appindicator
       gnomeExtensions.clipboard-history
@@ -157,78 +156,77 @@
       gnomeExtensions.memento-mori
       gnomeExtensions.quick-settings-tweaker
       gnupg
-      ## google-chrome
+      google-chrome
       gparted
       hunspell
       hunspellDicts.ru_RU
-      ## icon-library
-      ## identity
+      icon-library
+      identity
       imagemagick
       img2pdf
-      ## imhex
-      ## inkscape
-      ## keepassxc
+      imhex
+      inkscape
+      keepassxc
       lazygit
       libnotify
-      ## libreoffice
-      ## librewolf
+      libreoffice
+      librewolf
       libva-utils
-      ## mediainfo-gui
-      ## metadata-cleaner
-      ## monero-gui
-      ## mousai
-      ## (mpv.override {
-      ##   scripts = [mpvScripts.thumbnail];
-      ## })
-      ## mullvad-browser
-      ## newsflash
-      ## nicotine-plus
+      mediainfo-gui
+      metadata-cleaner
+      monero-gui
+      mousai
+      (mpv.override {
+        scripts = [mpvScripts.thumbnail];
+      })
+      newsflash
+      nicotine-plus
       nix-prefetch-scripts
-      ## obs-studio
+      obs-studio
       ocrmypdf
       openai-whisper-cpp
-      ## pdfarranger
+      pdfarranger
       pdfgrep
-      ## picard
-      ## protonup-qt
-      ## qbittorrent
-      ## quodlibet-full
+      picard
+      protonup-qt
+      qbittorrent
+      quodlibet-full
       radeontop
       radicle-cli
       rclone
       ripgrep
-      ## rnote
-      ## simple-scan
-      ## skypeforlinux
-      spicetify-cli
-      ## spotify
-      ## subtitleedit
+      rnote
+      simple-scan
+      skypeforlinux
+      subtitleedit
       taskwarrior
-      ## tdesktop
-      ## teams
-      ## tenacity
-      ## tor-browser-bundle-bin
-      ## tracy
+      tdesktop
+      teams
+      tenacity
+      tor-browser-bundle-bin
+      tracy
       tree
-      ## ungoogled-chromium
+      ungoogled-chromium
       unzip
       virt-manager
       virtiofsd
-      ## (vlc.override {
-      ##   libbluray = libbluray.override {
-      ##     withJava = true;
-      ##   };
-      ## })
+      (vlc.override {
+        libbluray = libbluray.override {
+          withJava = true;
+        };
+      })
       wally-cli
-      ## webtorrent_desktop
+      webtorrent_desktop
       wezterm
       wget
       wl-clipboard
       wxmaxima
       yt-dlp
+      zeal
       zip
-      ## zoom-us
-      ## zulip
+      zoom-us
+      zotero
+      zulip
 
       # Development
       alejandra
@@ -284,6 +282,19 @@
       pkgs,
       ...
     }: {
+      imports = [inputs.spicetify-nix.homeManagerModules.default];
+
+      # Set up Spicetify
+      programs.spicetify = {
+        enable = true;
+        theme = pkgs.spicePkgs.themes.Default;
+        colorScheme = "default";
+        enabledExtensions = with pkgs.spicePkgs.extensions; [
+          adblock
+        ];
+      };
+
+      # Set up Flatpak updates
       systemd.user = {
         services = {
           flatpak-update = {
@@ -400,7 +411,7 @@
             "trayIconsReloaded@selfmade.pl"
           ];
           favorite-apps = [
-            "io.gitlab.librewolf-community.desktop"
+            "librewolf.desktop"
             "org.gnome.Nautilus.desktop"
             "gnome-system-monitor.desktop"
             "org.gnome.TextEditor.desktop"
