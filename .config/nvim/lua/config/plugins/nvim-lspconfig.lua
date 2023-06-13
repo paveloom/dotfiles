@@ -280,7 +280,12 @@ return {
     -- Set up the C language server
     require("lspconfig").clangd.setup({
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = function(client, bufnr)
+        -- Attach the server
+        on_attach(client, bufnr)
+        -- Enable the inlay hints
+        require("lsp-inlayhints").on_attach(client, bufnr, false)
+      end,
     })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
