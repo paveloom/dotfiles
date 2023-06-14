@@ -23,14 +23,17 @@
   # Set up Evolution
   programs.evolution.enable = true;
 
-  # Set up Wireguard
+  # Set up network
+  networking.firewall.checkReversePath = false;
   networking.firewall = {
     allowedTCPPorts = [
       38101
       38102
     ];
   };
-  networking.firewall.checkReversePath = false;
+  networking.networkmanager.enable = true;
+
+  # Set up Wireguard
   networking.wireguard.enable = true;
 
   # Set up *Arrs
