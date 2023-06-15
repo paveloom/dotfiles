@@ -110,6 +110,7 @@
       aspellDicts.en
       aspellDicts.ru
       audacious
+      authenticator
       baobab
       bat
       bottles
