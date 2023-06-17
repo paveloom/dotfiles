@@ -17,6 +17,9 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
+  # Set up GnuPG agent
+  programs.gnupg.agent.enable = true;
+
   # Set up Evince
   programs.evince.enable = true;
 
@@ -159,7 +162,6 @@
       gnomeExtensions.media-controls
       gnomeExtensions.memento-mori
       gnomeExtensions.quick-settings-tweaker
-      gnupg
       google-chrome
       gparted
       hunspell
