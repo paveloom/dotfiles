@@ -15,6 +15,12 @@ return {
       sources = {
         code_actions.shellcheck,
         completion.spell,
+        diagnostics.clang_check,
+        diagnostics.cppcheck,
+        diagnostics.cpplint.with({
+          extra_args = { "--verbose=0" },
+          extra_filetypes = { "h" },
+        }),
         diagnostics.fish,
         diagnostics.shellcheck,
         diagnostics.yamllint,
