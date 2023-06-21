@@ -161,7 +161,6 @@
       gnomeExtensions.just-perfection
       gnomeExtensions.media-controls
       gnomeExtensions.memento-mori
-      gnomeExtensions.quick-settings-tweaker
       google-chrome
       gparted
       hunspell
@@ -413,7 +412,6 @@
             "just-perfection-desktop@just-perfection"
             "mediacontrols@cliffniff.github.com"
             "memento-mori@paveloom"
-            "quick-settings-tweaks@qwreey"
             "trayIconsReloaded@selfmade.pl"
           ];
           favorite-apps = [
@@ -459,7 +457,6 @@
           pressure-threshold = 25;
         };
         "org/gnome/shell/extensions/just-perfection" = {
-          notification-banner-position = 2;
           window-demands-attention-focus = true;
           workspace-popup = false;
           workspace-wrap-around = true;
@@ -497,10 +494,6 @@
           extension-index = 1;
           extension-position = "Center";
           life-expectancy = 80;
-        };
-        "org/gnome/shell/extensions/quick-settings-tweaks" = {
-          media-control-enabled = false;
-          volume-mixer-enabled = false;
         };
       };
 
