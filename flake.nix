@@ -11,17 +11,12 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     nixpkgs,
     flake-utils,
     home-manager,
     nix-index-database,
-    spicetify-nix,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: {
@@ -30,11 +25,6 @@
           nixpkgs = {
             pkgs = import nixpkgs {
               inherit system;
-              overlays = [
-                (final: prev: {
-                  spicePkgs = spicetify-nix.packages.${system}.default;
-                })
-              ];
               config.allowUnfree = true;
             };
           };

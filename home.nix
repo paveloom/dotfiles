@@ -287,18 +287,6 @@
       pkgs,
       ...
     }: {
-      imports = [inputs.spicetify-nix.homeManagerModules.default];
-
-      # Set up Spicetify
-      programs.spicetify = {
-        enable = true;
-        theme = pkgs.spicePkgs.themes.Default;
-        colorScheme = "default";
-        enabledExtensions = with pkgs.spicePkgs.extensions; [
-          adblock
-        ];
-      };
-
       # Set up Flatpak updates
       systemd.user = {
         services = {
