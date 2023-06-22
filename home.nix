@@ -119,7 +119,6 @@
       bottles
       compsize
       dejavu_fonts
-      discord
       element-desktop
       exa
       fd
