@@ -2,7 +2,7 @@
   pkgs,
   config,
   ...
-} @ inputs: {
+}: {
   # Help when a command is not found
   programs.command-not-found.enable = false;
   programs.nix-index.enable = true;
@@ -234,9 +234,7 @@
 
       # Development
       alejandra
-      bun
       direnv
-      dive
       file
       gcc
       git
@@ -265,9 +263,7 @@
       rustup
       skopeo
       stylua
-      tmux
       umoci
-      valgrind
       yamlfmt
       yamllint
       zig
