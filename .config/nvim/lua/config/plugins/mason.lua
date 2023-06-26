@@ -34,7 +34,6 @@ return {
           "json-lsp",
           "julia-lsp",
           "lemminx",
-          "shellcheck",
           "typescript-language-server",
         },
       })
