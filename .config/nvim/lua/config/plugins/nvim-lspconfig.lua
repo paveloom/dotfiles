@@ -287,6 +287,11 @@ return {
         require("lsp-inlayhints").on_attach(client, bufnr, false)
       end,
     })
+    -- Set up the Blueprint language server
+    require("lspconfig").blueprint_ls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
