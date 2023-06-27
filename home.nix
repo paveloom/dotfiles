@@ -211,6 +211,7 @@
       tracy
       tree
       ungoogled-chromium
+      unrar
       unzip
       virt-manager
       virtiofsd
