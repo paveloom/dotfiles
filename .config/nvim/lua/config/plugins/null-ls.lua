@@ -1,7 +1,10 @@
 -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 return {
   "jose-elias-alvarez/null-ls.nvim",
-  dependencies = "lsp_lines.nvim",
+  dependencies = {
+    "direnv/direnv.vim",
+    "lsp_lines.nvim",
+  },
   config = function()
     local name = "null-ls"
     local null_ls = require(name)
@@ -10,33 +13,58 @@ return {
     local completion = builtins.completion
     local diagnostics = builtins.diagnostics
     local formatting = builtins.formatting
+
+    local function direnv_loaded()
+      return vim.b.direnv_loaded ~= nil
+    end
     -- Set up the plugin
     null_ls.setup({
       sources = {
-        code_actions.shellcheck,
-        completion.spell,
-        diagnostics.clang_check,
-        diagnostics.cppcheck,
+        code_actions.shellcheck.with({
+          runtime_condition = direnv_loaded,
+        }),
+        completion.spell.with({
+          runtime_condition = direnv_loaded,
+        }),
+        diagnostics.clang_check.with({
+          runtime_condition = direnv_loaded,
+        }),
+        diagnostics.cppcheck.with({
+          runtime_condition = direnv_loaded,
+        }),
         diagnostics.cpplint.with({
           extra_args = { "--verbose=0" },
           extra_filetypes = { "h" },
+          runtime_condition = direnv_loaded,
         }),
-        diagnostics.fish,
-        diagnostics.shellcheck,
-        diagnostics.yamllint,
+        diagnostics.fish.with({
+          runtime_condition = direnv_loaded,
+        }),
+        diagnostics.shellcheck.with({
+          runtime_condition = direnv_loaded,
+        }),
+        diagnostics.yamllint.with({
+          runtime_condition = direnv_loaded,
+        }),
         formatting.alejandra.with({
           runtime_condition = function(_)
-            return vim.loop.cwd():find("nixpkgs") == nil
+            return direnv_loaded() and vim.loop.cwd():find("nixpkgs") == nil
           end,
         }),
-        formatting.fnlfmt,
+        formatting.fnlfmt.with({
+          runtime_condition = direnv_loaded,
+        }),
         formatting.nixpkgs_fmt.with({
           runtime_condition = function(_)
-            return vim.loop.cwd():find("nixpkgs") ~= nil
+            return direnv_loaded() and vim.loop.cwd():find("nixpkgs") ~= nil
           end,
         }),
-        formatting.stylua,
-        formatting.yamlfmt,
+        formatting.stylua.with({
+          runtime_condition = direnv_loaded,
+        }),
+        formatting.yamlfmt.with({
+          runtime_condition = direnv_loaded,
+        }),
       },
     })
     -- Prepare an autocommands group

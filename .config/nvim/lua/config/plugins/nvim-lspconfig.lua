@@ -5,6 +5,7 @@ return {
     "direnv/direnv.vim",
     "folke/neodev.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    "jose-elias-alvarez/null-ls.nvim",
     "lsp_lines.nvim",
     "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
@@ -45,10 +46,14 @@ return {
     -- Set up the LSP for Lua API of Neovim
     --
     -- It's important we setup this before requiring `lspconfig`
-    require("neodev").setup()
+    require("neodev").setup({
+      autostart = false,
+      capabilities = capabilities,
+    })
 
     -- Set up the Lua language server
     require("lspconfig").lua_ls.setup({
+      autostart = false,
       single_file_support = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
@@ -97,6 +102,7 @@ return {
         },
       },
       server = {
+        autostart = false,
         capabilities = capabilities,
         on_attach = function(client, bufnr)
           -- Attach the server
@@ -121,6 +127,7 @@ return {
     })
     -- Set up the TypeScript language server
     require("lspconfig").tsserver.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
@@ -155,11 +162,13 @@ return {
     })
     -- Set up JSON language server
     require("lspconfig").jsonls.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the ESLint language server
     require("lspconfig").eslint.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
@@ -176,11 +185,13 @@ return {
     })
     -- Set up the Julia language server
     require("lspconfig").julials.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the LanguageTool language server
     require("lspconfig").ltex.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
       filetypes = {
@@ -217,6 +228,7 @@ return {
     })
     -- Set up the LaTeX language server
     require("lspconfig").texlab.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -232,6 +244,7 @@ return {
     -- Set up the Zig language server
     local lspconfig = require("lspconfig")
     lspconfig.zls.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
@@ -252,6 +265,7 @@ return {
     })
     -- Set up the XML language server
     require("lspconfig").lemminx.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -269,16 +283,19 @@ return {
     })
     -- Set up the Dockerfile language server
     require("lspconfig").dockerls.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the Nix language server
     require("lspconfig").nil_ls.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the C language server
     require("lspconfig").clangd.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
@@ -289,6 +306,7 @@ return {
     })
     -- Set up the Blueprint language server
     require("lspconfig").blueprint_ls.setup({
+      autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
