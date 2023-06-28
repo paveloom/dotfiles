@@ -37,6 +37,11 @@ nmap("<C-q>", ":quit <cr>")
 -- Search the word under the cursor
 nmap("<C-f>", "*")
 
+-- Unbind the `S` and `s` keys
+nmap("S", "<Nop>")
+nmap("s", "<Nop>")
+vmap("s", "<Nop>")
+
 -- Change indentation using Tab
 nmap("<S-Tab>", "<<")
 nmap("<Tab>", ">>")

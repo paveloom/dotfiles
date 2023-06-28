@@ -34,11 +34,11 @@ return {
       nmap("gh", vim.lsp.buf.hover)
       nmap("gs", vim.lsp.buf.signature_help)
       nmap("gw", vim.lsp.buf.workspace_symbol)
-      nmap("<leader>x", function()
-        require("telescope.builtin").lsp_dynamic_workspace_symbols()
-      end)
       nmap("<leader>s", function()
         require("telescope.builtin").lsp_document_symbols()
+      end)
+      nmap("<leader>S", function()
+        require("telescope.builtin").lsp_workspace_symbols()
       end)
     end
 
