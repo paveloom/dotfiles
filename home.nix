@@ -256,6 +256,7 @@
       nixpkgs-review
       nodePackages.npm-check-updates
       nodejs
+      nvd
       pkg-config
       podman-compose
       rpm
