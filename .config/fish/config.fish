@@ -30,8 +30,6 @@ set -gx DIRENV_LOG_FORMAT ""
 set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 
 # Aliases
-alias ls=exa
-alias cat=bat
 alias nvim="TERM=wezterm command nvim"
 
 # Load the completion scripts of Podman
