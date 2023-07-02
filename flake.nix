@@ -19,14 +19,25 @@
     nix-index-database,
     ...
   } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system: {
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+    in {
+      devShells.default = pkgs.stdenv.mkDerivation {
+        name = "site-shell";
+
+        nativeBuildInputs = [
+          pkgs.ltex-ls
+          pkgs.lua-language-server
+          pkgs.stylua
+        ];
+      };
       packages.nixosConfigurations = let
         global = {
           nixpkgs = {
-            pkgs = import nixpkgs {
-              inherit system;
-              config.allowUnfree = true;
-            };
+            inherit pkgs;
           };
         };
         nixosHost = host:
