@@ -17,6 +17,9 @@
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
 
+  # Set up Git
+  programs.git.enable = true;
+
   # Set up GnuPG agent
   programs.gnupg.agent.enable = true;
 
@@ -53,9 +56,6 @@
     group = "";
     user = "paveloom";
   };
-
-  # Set up Steam
-  programs.steam.enable = true;
 
   # Set up Gamemode
   programs.gamemode.enable = true;
@@ -160,7 +160,6 @@
       gnomeExtensions.just-perfection
       gnomeExtensions.media-controls
       gnomeExtensions.memento-mori
-      google-chrome
       gparted
       hunspell
       hunspellDicts.ru_RU
@@ -186,6 +185,7 @@
       newsflash
       nicotine-plus
       nix-prefetch-scripts
+      nvd
       obs-studio
       ocrmypdf
       openai-whisper-cpp
@@ -201,16 +201,13 @@
       ripgrep
       rnote
       simple-scan
-      skypeforlinux
       subtitleedit
       taskwarrior
       tdesktop
-      teams
       tenacity
       tor-browser-bundle-bin
       tracy
       tree
-      ungoogled-chromium
       unrar
       unzip
       virt-manager
@@ -229,7 +226,6 @@
       yt-dlp
       zeal
       zip
-      zoom-us
       zotero
       zulip
 
@@ -237,40 +233,15 @@
       alejandra
       direnv
       file
-      gcc
-      git
-      gnumake
-      go
-      helix
       icoutils
       jq
       julia
-      ltex-ls
-      lua-language-server
-      meson
       neovim
       nil
       nix-direnv
       nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
-      nodePackages.npm-check-updates
-      nodejs
-      nvd
-      pkg-config
-      podman-compose
-      rpm
-      runc
-      rust-analyzer
-      rustup
-      skopeo
-      stylua
-      umoci
-      yamlfmt
-      yamllint
-      zig
-      # zigmod
-      zls
     ];
   };
 
