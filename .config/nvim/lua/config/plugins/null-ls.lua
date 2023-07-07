@@ -100,6 +100,7 @@ return {
       pattern = {
         "*.yaml",
         "*.yml",
+        ".clang-format",
       },
       group = group,
       callback = function()
