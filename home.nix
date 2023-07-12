@@ -39,6 +39,12 @@
   };
   networking.networkmanager.enable = true;
 
+  # Set up iOS support
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
+
   # Set up Wireguard
   networking.wireguard.enable = true;
 
