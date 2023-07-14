@@ -127,6 +127,7 @@
       dejavu_fonts
       element-desktop
       exa
+      exiftool
       fd
       (ffmpeg_6.override {
         withUnfree = true;
@@ -136,6 +137,7 @@
       foliate
       fractal-next
       fzf
+      ghostscript
       gimp
       glow
       gnome-console
