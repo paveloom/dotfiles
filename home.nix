@@ -237,6 +237,11 @@
       zotero
       zulip
 
+      # Wireless tools
+      iw
+      linssid
+      wirelesstools
+
       # Development
       alejandra
       direnv
