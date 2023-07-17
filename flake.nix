@@ -29,8 +29,11 @@
         name = "site-shell";
 
         nativeBuildInputs = [
+          pkgs.alejandra
           pkgs.ltex-ls
           pkgs.lua-language-server
+          pkgs.nil
+          pkgs.nvd
           pkgs.stylua
         ];
       };

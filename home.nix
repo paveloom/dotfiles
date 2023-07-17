@@ -237,20 +237,13 @@
       wirelesstools
 
       # Development
-      alejandra
       direnv
       file
       icoutils
       jq
       julia
       neovim
-      nil
       nix-direnv
-      nix-prefetch-scripts
-      nixpkgs-fmt
-      nixpkgs-hammering
-      nixpkgs-review
-      nvd
     ];
   };
 
