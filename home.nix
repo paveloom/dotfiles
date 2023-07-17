@@ -192,11 +192,8 @@
       })
       newsflash
       nicotine-plus
-      nix-prefetch-scripts
-      nvd
       obs-studio
       ocrmypdf
-      openai-whisper-cpp
       pdfarranger
       pdfgrep
       picard
@@ -207,7 +204,6 @@
       radicle-cli
       rclone
       ripgrep
-      rnote
       simple-scan
       subtitleedit
       taskwarrior
@@ -230,11 +226,9 @@
       wezterm
       wget
       wl-clipboard
-      wxmaxima
       yt-dlp
       zeal
       zip
-      zotero
       zulip
 
       # Wireless tools
@@ -252,9 +246,11 @@
       neovim
       nil
       nix-direnv
+      nix-prefetch-scripts
       nixpkgs-fmt
       nixpkgs-hammering
       nixpkgs-review
+      nvd
     ];
   };
 
