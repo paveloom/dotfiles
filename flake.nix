@@ -1,7 +1,7 @@
 {
   description = "@paveloom's NixOS configuration";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:paveloom/nixpkgs/system";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
