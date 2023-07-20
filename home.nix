@@ -117,6 +117,7 @@
       "wheel"
     ];
     packages = with pkgs; [
+      acpi
       adw-gtk3
       aegisub
       appimage-run
