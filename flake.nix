@@ -24,42 +24,37 @@
         inherit system;
         config.allowUnfree = true;
       };
+
+      commonModules = [
+        ./configuration.nix
+        ./home.nix
+        home-manager.nixosModules.home-manager
+        nix-index-database.nixosModules.nix-index
+      ];
+
+      nixosConfiguration = hostModule:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {inherit pkgs;} // inputs;
+          modules = commonModules ++ [hostModule];
+        };
     in {
       devShells.default = pkgs.stdenv.mkDerivation {
-        name = "site-shell";
+        name = "dotfiles-shell";
 
-        nativeBuildInputs = [
-          pkgs.alejandra
-          pkgs.ltex-ls
-          pkgs.lua-language-server
-          pkgs.nil
-          pkgs.nvd
-          pkgs.stylua
+        nativeBuildInputs = with pkgs; [
+          alejandra
+          ltex-ls
+          lua-language-server
+          nil
+          nvd
+          stylua
         ];
       };
-      packages.nixosConfigurations = let
-        global = {
-          nixpkgs = {
-            inherit pkgs;
-          };
-        };
-        nixosHost = host:
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = inputs;
-            modules =
-              [
-                ./configuration.nix
-                ./home.nix
-                global
-                home-manager.nixosModules.home-manager
-                nix-index-database.nixosModules.nix-index
-              ]
-              ++ host;
-          };
-      in {
-        boxes = nixosHost [./hosts/boxes];
-        laptop = nixosHost [./hosts/laptop];
+
+      packages.nixosConfigurations = {
+        boxes = nixosConfiguration ./hosts/boxes;
+        laptop = nixosConfiguration ./hosts/laptop;
       };
     });
 }

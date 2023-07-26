@@ -61,10 +61,10 @@
     "nixpkgs": {
       "locked": {
         "lastModified": 1690129433,
-        "narHash": "sha256-8qV9X6rnPoa7cTj0akzHqxCg4Gp49s02fhYOGOlX5uU=",
+        "narHash": "sha256-VlvE2yuA08Sun3mBJ7LkoKihK4hfLa9acn//ZZi92Tw=",
         "owner": "paveloom",
         "repo": "nixpkgs",
-        "rev": "e20a8ed1dd767e2a3c02a8859b6b9dc64dbcfe67",
+        "rev": "274e4377c3d11897d6ad47a0e4f4dd1421c7a4bb",
         "type": "github"
       },
       "original": {
