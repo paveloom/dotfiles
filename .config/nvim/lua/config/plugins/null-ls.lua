@@ -63,6 +63,9 @@ return {
         formatting.stylua.with({
           runtime_condition = direnv_loaded,
         }),
+        formatting.xmllint.with({
+          runtime_condition = direnv_loaded,
+        }),
         formatting.yamlfmt.with({
           runtime_condition = direnv_loaded,
         }),
@@ -98,6 +101,9 @@ return {
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
+        "*.xml",
+        "*.xml.in",
+        "*.xml.in.in",
         "*.yaml",
         "*.yml",
         ".clang-format",

@@ -263,24 +263,6 @@ return {
         },
       },
     })
-    -- Set up the XML language server
-    require("lspconfig").lemminx.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = {
-        xml = {
-          format = {
-            enforceQuoteStyle = "preferred",
-            joinContentLines = true,
-            splitAttributes = true,
-          },
-          preferences = {
-            quoteStyle = "double",
-          },
-        },
-      },
-    })
     -- Set up the Dockerfile language server
     require("lspconfig").dockerls.setup({
       autostart = false,

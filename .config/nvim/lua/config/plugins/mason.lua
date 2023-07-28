@@ -33,7 +33,6 @@ return {
           "eslint-lsp",
           "json-lsp",
           "julia-lsp",
-          "lemminx",
           "typescript-language-server",
         },
       })
