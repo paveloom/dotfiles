@@ -208,7 +208,6 @@
       qbittorrent
       quodlibet-full
       radeontop
-      radicle-cli
       rclone
       ripgrep
       simple-scan
@@ -234,9 +233,11 @@
       wget
       wl-clipboard
       yt-dlp
-      zeal
       zip
       zulip
+
+      # Time tracking
+      furtherance
 
       # Wireless tools
       iw
@@ -251,6 +252,8 @@
       julia
       neovim
       nix-direnv
+      radicle-cli
+      zeal
     ];
   };
 
@@ -391,6 +394,7 @@
             "org.qbittorrent.qBittorrent.desktop"
             "io.github.quodlibet.QuodLibet.desktop"
             "org.keepassxc.KeePassXC.desktop"
+            "com.lakoliu.Furtherance.desktop"
           ];
         };
         "org/gnome/shell/extensions/clipboard-history" = {
