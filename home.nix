@@ -253,6 +253,7 @@
       neovim
       nix-direnv
       radicle-cli
+      sqlite-interactive
       zeal
     ];
   };
