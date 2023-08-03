@@ -42,8 +42,8 @@ vim.opt.breakindent = true
 -- Allow the mouse usage
 vim.opt.mouse = "a"
 
--- Don't wrap the lines by default
-vim.opt.wrap = false
+-- Wrap the lines by default
+vim.opt.wrap = true
 
 -- Wrap at a word boundary
 vim.opt.linebreak = true
