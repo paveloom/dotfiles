@@ -20,7 +20,7 @@ return {
   check_for_updates = false,
   font_size = 14.0,
   font = wezterm.font({
-    family = "JetBrains Mono",
+    family = "JetBrainsMono Nerd Font",
     -- Disable ligatures
     harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
   }),

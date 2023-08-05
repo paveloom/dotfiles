@@ -49,6 +49,8 @@
           nil
           nvd
           stylua
+          yamlfmt
+          yamllint
         ];
       };
 

@@ -79,6 +79,14 @@
     dockerCompat = true;
   };
 
+  # Set up fonts
+  fonts = {
+    fontconfig.enable = true;
+    packages = with pkgs; [
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    ];
+  };
+
   # Set up the `libvirtd` daemon
   virtualisation.libvirtd.enable = true;
 
@@ -130,7 +138,6 @@
       baobab
       bat
       compsize
-      dejavu_fonts
       element-desktop
       exa
       exiftool
@@ -298,9 +305,6 @@
           };
         };
       };
-
-      # Enable fontconfig configuration
-      fonts.fontconfig.enable = true;
 
       # Set up configs
       xdg.configFile = let

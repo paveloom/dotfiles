@@ -12,7 +12,7 @@ gui:
   showFileTree: false
   showBottomLine: false
   showCommandLog: false
-  showIcons: true
+  nerdFontsVersion: "3"
 git:
   merging:
     args: --no-ff
