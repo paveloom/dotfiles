@@ -262,7 +262,17 @@
       jq
       julia
       neovim
-      nix-direnv
+      (nix-direnv.overrideAttrs
+        (old: {
+          version = "unstable-2023-07-27";
+
+          src = fetchFromGitHub {
+            owner = "nix-community";
+            repo = "nix-direnv";
+            rev = "ed2cb75553b4864e3c931a48e3a2cd43b93152c5";
+            hash = "sha256-jCpEcbdgC1CnCFOXIUnNGgCTMCIHLnMR3oeFLf4FQLo=";
+          };
+        }))
       radicle-cli
       sqlite-interactive
       zeal
