@@ -3,6 +3,7 @@ return {
   "feline-nvim/feline.nvim",
   dependencies = {
     "lewis6991/gitsigns.nvim",
+    "nvim-tree/nvim-web-devicons",
     "rktjmp/lush.nvim",
   },
   config = function()
