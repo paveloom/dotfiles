@@ -129,7 +129,6 @@
       authenticator
       baobab
       bat
-      bottles
       compsize
       dejavu_fonts
       element-desktop
@@ -236,6 +235,11 @@
       zip
       zulip
 
+      # Games
+      bottles
+      goverlay
+      mangohud
+
       # Time tracking
       furtherance
 
@@ -303,6 +307,7 @@
         configPath = dir: (config.lib.file.mkOutOfStoreSymlink
           "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
       in {
+        "MangoHud".source = configPath "MangoHud";
         "ccache".source = configPath "ccache";
         "direnv".source = configPath "direnv";
         "fish".source = configPath "fish";
