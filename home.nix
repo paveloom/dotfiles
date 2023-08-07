@@ -273,6 +273,8 @@
             hash = "sha256-jCpEcbdgC1CnCFOXIUnNGgCTMCIHLnMR3oeFLf4FQLo=";
           };
         }))
+      nix-output-monitor
+      nix-tree
       radicle-cli
       sqlite-interactive
       zeal
