@@ -200,9 +200,7 @@
       metadata-cleaner
       monero-gui
       mousai
-      (mpv.override {
-        scripts = [mpvScripts.thumbnail];
-      })
+      mpv
       newsflash
       nicotine-plus
       obs-studio
