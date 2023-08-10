@@ -29,6 +29,12 @@
   # Set up Evolution
   programs.evolution.enable = true;
 
+  # Set up Wireshark
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
+  };
+
   # Set up network
   networking.firewall.checkReversePath = false;
   networking.firewall = {
@@ -234,13 +240,12 @@
       wally-cli
       webtorrent_desktop
       wezterm
-      wget
       wl-clipboard
       yt-dlp
       zip
       zulip
 
-      # Games
+      # Gaming
       bottles
       goverlay
       mangohud
@@ -248,9 +253,10 @@
       # Time tracking
       furtherance
 
-      # Wireless tools
+      # Network
       iw
       linssid
+      wget
       wirelesstools
 
       # Development
