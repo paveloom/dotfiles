@@ -129,6 +129,7 @@
       "networkmanager"
       "scanner"
       "wheel"
+      "wireshark"
     ];
     packages = with pkgs; [
       acpi
