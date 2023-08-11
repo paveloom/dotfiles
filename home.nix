@@ -323,6 +323,12 @@
         };
       };
 
+      # Manage XDG user directories
+      xdg.userDirs = {
+        createDirectories = true;
+        enable = true;
+      };
+
       # Set up configs
       xdg.configFile = let
         configPath = dir: (config.lib.file.mkOutOfStoreSymlink
