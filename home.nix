@@ -36,23 +36,23 @@
   };
 
   # Set up network
-  networking.firewall.checkReversePath = false;
-  networking.firewall = {
-    allowedTCPPorts = [
-      38101
-      38102
-    ];
+  networking = {
+    firewall = {
+      allowedTCPPorts = [38101 38102];
+      checkReversePath = false;
+    };
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+    wireguard.enable = true;
   };
-  networking.networkmanager.enable = true;
 
   # Set up iOS support
   services.usbmuxd = {
     enable = true;
     package = pkgs.usbmuxd2;
   };
-
-  # Set up Wireguard
-  networking.wireguard.enable = true;
 
   # Set up *Arrs
   services.prowlarr.enable = true;
