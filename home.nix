@@ -3,96 +3,8 @@
   config,
   ...
 }: {
-  # Help when a command is not found
-  programs.command-not-found.enable = false;
-  programs.nix-index.enable = true;
-  programs.nix-index.enableFishIntegration = true;
-
-  # Enable `fzf` features
-  programs.fzf.fuzzyCompletion = true;
-  programs.fzf.keybindings = true;
-
-  # Use Fish as the default system shell
   environment.shells = [pkgs.fish];
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
 
-  # Set up Git
-  programs.git.enable = true;
-
-  # Set up GnuPG agent
-  programs.gnupg.agent.enable = true;
-
-  # Set up Evince
-  programs.evince.enable = true;
-
-  # Set up Evolution
-  programs.evolution.enable = true;
-
-  # Set up Wireshark
-  programs.wireshark = {
-    enable = true;
-    package = pkgs.wireshark;
-  };
-
-  # Set up network
-  networking = {
-    firewall = {
-      allowedTCPPorts = [38101 38102];
-      checkReversePath = false;
-    };
-    networkmanager = {
-      enable = true;
-      wifi.powersave = false;
-    };
-    wireguard.enable = true;
-  };
-
-  # Set up iOS support
-  services.usbmuxd = {
-    enable = true;
-    package = pkgs.usbmuxd2;
-  };
-
-  # Set up *Arrs
-  services.prowlarr.enable = true;
-  services.radarr = {
-    dataDir = "/home/paveloom/.config/radarr";
-    enable = true;
-    group = "";
-    user = "paveloom";
-  };
-  services.sonarr = {
-    dataDir = "/home/paveloom/.config/sonarr";
-    enable = true;
-    group = "";
-    user = "paveloom";
-  };
-
-  # Set up Gamemode
-  programs.gamemode.enable = true;
-
-  # Set up Podman
-  virtualisation.podman = {
-    enable = true;
-    defaultNetwork.settings.dns_enabled = true;
-    dockerCompat = true;
-  };
-
-  # Set up fonts
-  fonts = {
-    fontconfig.enable = true;
-    packages = with pkgs; [
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
-    ];
-  };
-
-  # Set up the `libvirtd` daemon
-  virtualisation.libvirtd.enable = true;
-
-  # Set up Flatpak
-  services.flatpak.enable = true;
-  system.fsPackages = [pkgs.bindfs];
   fileSystems = let
     mkRoSymBind = path: {
       device = path;
@@ -105,182 +17,17 @@
       pathsToLink = ["/share/fonts"];
     };
   in {
-    # Create an FHS mount to support flatpak host icons/fonts
     "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
     "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
   };
 
-  # Define the user
-  users.users.paveloom = {
-    name = "paveloom";
-    description = "paveloom";
-    home = "/home/paveloom";
-    isNormalUser = true;
-    extraGroups = [
-      "keys"
-      "libvirtd"
-      "lp"
-      "networkmanager"
-      "scanner"
-      "wheel"
-      "wireshark"
-    ];
+  fonts = {
+    fontconfig.enable = true;
     packages = with pkgs; [
-      acpi
-      adw-gtk3
-      aegisub
-      appimage-run
-      asciinema
-      aspell
-      aspellDicts.en
-      aspellDicts.ru
-      audacious
-      authenticator
-      baobab
-      bat
-      compsize
-      element-desktop
-      exa
-      exiftool
-      fd
-      (ffmpeg_6.override {
-        withUnfree = true;
-        withFdkAac = true;
-      })
-      firefox
-      foliate
-      fractal-next
-      fzf
-      ghostscript
-      gimp
-      glow
-      gnome-console
-      gnome-extension-manager
-      gnome-frog
-      gnome-icon-theme
-      gnome-text-editor
-      gnome.cheese
-      gnome.dconf-editor
-      gnome.eog
-      gnome.gnome-calculator
-      gnome.gnome-calendar
-      gnome.gnome-characters
-      gnome.gnome-clocks
-      gnome.gnome-disk-utility
-      gnome.gnome-font-viewer
-      gnome.gnome-sound-recorder
-      gnome.gnome-system-monitor
-      gnome.gnome-tweaks
-      gnome.nautilus
-      gnome.seahorse
-      gnome.totem
-      gnomeExtensions.appindicator
-      gnomeExtensions.clipboard-history
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.gesture-improvements
-      gnomeExtensions.hot-edge
-      gnomeExtensions.just-perfection
-      gnomeExtensions.media-controls
-      gnomeExtensions.memento-mori
-      gparted
-      hunspell
-      hunspellDicts.ru_RU
-      icon-library
-      identity
-      imagemagick
-      img2pdf
-      imhex
-      inkscape
-      keepassxc
-      lazygit
-      libnotify
-      libreoffice
-      librewolf
-      libva-utils
-      mediainfo-gui
-      metadata-cleaner
-      monero-gui
-      mousai
-      mpv
-      newsflash
-      nicotine-plus
-      obs-studio
-      ocrmypdf
-      pdfarranger
-      pdfgrep
-      picard
-      protonup-qt
-      qbittorrent
-      quodlibet-full
-      radeontop
-      rclone
-      ripgrep
-      simple-scan
-      subtitleedit
-      taskwarrior
-      tdesktop
-      tenacity
-      tor-browser-bundle-bin
-      tracy
-      tree
-      unrar
-      unzip
-      virt-manager
-      virtiofsd
-      (vlc.override {
-        libbluray = libbluray.override {
-          withJava = true;
-        };
-      })
-      wally-cli
-      webtorrent_desktop
-      wezterm
-      wl-clipboard
-      yt-dlp
-      zip
-      zulip
-
-      # Gaming
-      bottles
-      goverlay
-      mangohud
-
-      # Time tracking
-      furtherance
-
-      # Network
-      iw
-      linssid
-      wget
-      wirelesstools
-
-      # Development
-      direnv
-      file
-      icoutils
-      jq
-      julia
-      neovim
-      (nix-direnv.overrideAttrs
-        (old: {
-          version = "unstable-2023-07-27";
-
-          src = fetchFromGitHub {
-            owner = "nix-community";
-            repo = "nix-direnv";
-            rev = "ed2cb75553b4864e3c931a48e3a2cd43b93152c5";
-            hash = "sha256-jCpEcbdgC1CnCFOXIUnNGgCTMCIHLnMR3oeFLf4FQLo=";
-          };
-        }))
-      nix-output-monitor
-      nix-tree
-      radicle-cli
-      sqlite-interactive
-      zeal
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
   };
 
-  # Setup home
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -290,61 +37,6 @@
       pkgs,
       ...
     }: {
-      # Set up Flatpak updates
-      systemd.user = {
-        services = {
-          flatpak-update = {
-            Unit.Description = "Update Flatpak packages";
-            Service.ExecStart =
-              (pkgs.writeShellScript "update-flatpak" ''
-                ${pkgs.flatpak}/bin/flatpak update --noninteractive
-                ${pkgs.flatpak}/bin/flatpak uninstall --unused --noninteractive
-              '')
-              .outPath;
-          };
-        };
-        timers = {
-          flatpak-update = {
-            Unit = {
-              Description = "Update all Flatpak packages on a schedule";
-            };
-            Timer = {
-              OnCalendar = ["14:00"];
-              Persistent = true;
-            };
-            Install.WantedBy = ["timers.target"];
-          };
-        };
-      };
-
-      # Manage XDG user directories
-      xdg.userDirs = {
-        createDirectories = true;
-        enable = true;
-      };
-
-      # Set up configs
-      xdg.configFile = let
-        configPath = dir: (config.lib.file.mkOutOfStoreSymlink
-          "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
-      in {
-        "MangoHud".source = configPath "MangoHud";
-        "ccache".source = configPath "ccache";
-        "direnv".source = configPath "direnv";
-        "fish".source = configPath "fish";
-        "git".source = configPath "git";
-        "helix".source = configPath "helix";
-        "lazygit".source = configPath "lazygit";
-        "mpv".source = configPath "mpv";
-        "nvim".source = configPath "nvim";
-        "pdm".source = configPath "pdm";
-        "task".source = configPath "task";
-        "wezterm".source = configPath "wezterm";
-        "yamlfmt".source = configPath "yamlfmt";
-        "yamllint".source = configPath "yamllint";
-      };
-
-      # Setup Gnome
       dconf.settings = {
         "org/gnome/desktop/interface" = {
           clock-show-weekday = true;
@@ -493,8 +185,287 @@
         };
       };
 
-      # Home manager version for the stateful data
       home.stateVersion = "22.11";
+
+      systemd.user = {
+        services = {
+          flatpak-update = {
+            Unit.Description = "Update Flatpak packages";
+            Service.ExecStart =
+              (pkgs.writeShellScript "update-flatpak" ''
+                ${pkgs.flatpak}/bin/flatpak update --noninteractive
+                ${pkgs.flatpak}/bin/flatpak uninstall --unused --noninteractive
+              '')
+              .outPath;
+          };
+        };
+        timers = {
+          flatpak-update = {
+            Unit = {
+              Description = "Update all Flatpak packages on a schedule";
+            };
+            Timer = {
+              OnCalendar = ["14:00"];
+              Persistent = true;
+            };
+            Install.WantedBy = ["timers.target"];
+          };
+        };
+      };
+
+      xdg = {
+        configFile = let
+          configPath = dir: (config.lib.file.mkOutOfStoreSymlink
+            "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
+        in {
+          "MangoHud".source = configPath "MangoHud";
+          "ccache".source = configPath "ccache";
+          "direnv".source = configPath "direnv";
+          "fish".source = configPath "fish";
+          "git".source = configPath "git";
+          "helix".source = configPath "helix";
+          "lazygit".source = configPath "lazygit";
+          "mpv".source = configPath "mpv";
+          "nvim".source = configPath "nvim";
+          "pdm".source = configPath "pdm";
+          "task".source = configPath "task";
+          "wezterm".source = configPath "wezterm";
+          "yamlfmt".source = configPath "yamlfmt";
+          "yamllint".source = configPath "yamllint";
+        };
+        userDirs = {
+          createDirectories = true;
+          enable = true;
+        };
+      };
+    };
+  };
+
+  networking = {
+    firewall = {
+      allowedTCPPorts = [38101 38102];
+      checkReversePath = false;
+    };
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+    wireguard.enable = true;
+  };
+
+  programs = {
+    command-not-found.enable = false;
+    evince.enable = true;
+    evolution.enable = true;
+    fish.enable = true;
+    fzf = {
+      fuzzyCompletion = true;
+      keybindings = true;
+    };
+    gamemode.enable = true;
+    git.enable = true;
+    gnupg.agent.enable = true;
+    nix-index = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+    wireshark = {
+      enable = true;
+      package = pkgs.wireshark;
+    };
+  };
+
+  services = {
+    flatpak.enable = true;
+    prowlarr.enable = true;
+    radarr = {
+      dataDir = "/home/paveloom/.config/radarr";
+      enable = true;
+      group = "";
+      user = "paveloom";
+    };
+    sonarr = {
+      dataDir = "/home/paveloom/.config/sonarr";
+      enable = true;
+      group = "";
+      user = "paveloom";
+    };
+    usbmuxd = {
+      enable = true;
+      package = pkgs.usbmuxd2;
+    };
+  };
+
+  system.fsPackages = [pkgs.bindfs];
+
+  users = {
+    defaultUserShell = pkgs.fish;
+    users.paveloom = {
+      name = "paveloom";
+      description = "paveloom";
+      home = "/home/paveloom";
+      isNormalUser = true;
+      extraGroups = [
+        "keys"
+        "libvirtd"
+        "lp"
+        "networkmanager"
+        "scanner"
+        "wheel"
+        "wireshark"
+      ];
+      packages = with pkgs; [
+        acpi
+        adw-gtk3
+        aegisub
+        appimage-run
+        asciinema
+        aspell
+        aspellDicts.en
+        aspellDicts.ru
+        audacious
+        authenticator
+        baobab
+        bat
+        bottles
+        compsize
+        direnv
+        element-desktop
+        exa
+        exiftool
+        fd
+        (ffmpeg_6.override {
+          withUnfree = true;
+          withFdkAac = true;
+        })
+        file
+        firefox
+        foliate
+        fractal-next
+        furtherance
+        fzf
+        ghostscript
+        gimp
+        glow
+        gnome-console
+        gnome-extension-manager
+        gnome-frog
+        gnome-icon-theme
+        gnome-text-editor
+        gnome.cheese
+        gnome.dconf-editor
+        gnome.eog
+        gnome.gnome-calculator
+        gnome.gnome-calendar
+        gnome.gnome-characters
+        gnome.gnome-clocks
+        gnome.gnome-disk-utility
+        gnome.gnome-font-viewer
+        gnome.gnome-sound-recorder
+        gnome.gnome-system-monitor
+        gnome.gnome-tweaks
+        gnome.nautilus
+        gnome.seahorse
+        gnome.totem
+        gnomeExtensions.appindicator
+        gnomeExtensions.clipboard-history
+        gnomeExtensions.dash-to-dock
+        gnomeExtensions.gesture-improvements
+        gnomeExtensions.hot-edge
+        gnomeExtensions.just-perfection
+        gnomeExtensions.media-controls
+        gnomeExtensions.memento-mori
+        goverlay
+        gparted
+        hunspell
+        hunspellDicts.ru_RU
+        icon-library
+        icoutils
+        identity
+        imagemagick
+        img2pdf
+        imhex
+        inkscape
+        iw
+        jq
+        julia
+        keepassxc
+        lazygit
+        libnotify
+        libreoffice
+        librewolf
+        libva-utils
+        linssid
+        mangohud
+        mediainfo-gui
+        metadata-cleaner
+        monero-gui
+        mousai
+        mpv
+        neovim
+        newsflash
+        nicotine-plus
+        (nix-direnv.overrideAttrs (old: {
+          version = "unstable-2023-07-27";
+          src = fetchFromGitHub {
+            owner = "nix-community";
+            repo = "nix-direnv";
+            rev = "ed2cb75553b4864e3c931a48e3a2cd43b93152c5";
+            hash = "sha256-jCpEcbdgC1CnCFOXIUnNGgCTMCIHLnMR3oeFLf4FQLo=";
+          };
+        }))
+        nix-output-monitor
+        nix-tree
+        obs-studio
+        ocrmypdf
+        pdfarranger
+        pdfgrep
+        picard
+        protonup-qt
+        qbittorrent
+        quodlibet-full
+        radeontop
+        radicle-cli
+        rclone
+        ripgrep
+        simple-scan
+        sqlite-interactive
+        subtitleedit
+        taskwarrior
+        tdesktop
+        tenacity
+        tor-browser-bundle-bin
+        tracy
+        tree
+        unrar
+        unzip
+        virt-manager
+        virtiofsd
+        (vlc.override {
+          libbluray = libbluray.override {
+            withJava = true;
+          };
+        })
+        wally-cli
+        webtorrent_desktop
+        wezterm
+        wget
+        wirelesstools
+        wl-clipboard
+        yt-dlp
+        zeal
+        zip
+        zulip
+      ];
+    };
+  };
+
+  virtualisation = {
+    libvirtd.enable = true;
+    podman = {
+      enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+      dockerCompat = true;
     };
   };
 }
