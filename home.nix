@@ -68,12 +68,6 @@
     group = "";
     user = "paveloom";
   };
-  services.whisparr = {
-    dataDir = "/home/paveloom/.config/whisparr";
-    enable = true;
-    group = "";
-    user = "paveloom";
-  };
 
   # Set up Gamemode
   programs.gamemode.enable = true;
