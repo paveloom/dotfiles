@@ -1,25 +1,23 @@
-{
-  config,
-  lib,
-  modulesPath,
-  ...
-}: {
+{modulesPath, ...}: {
   imports = [
     (modulesPath + "/profiles/qemu-guest.nix")
   ];
 
-  boot.initrd.availableKernelModules = [
-    "ahci"
-    "xhci_pci"
-    "virtio_pci"
-    "sr_mod"
-    "virtio_blk"
-  ];
-  boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-amd"];
-  boot.extraModulePackages = [];
+  boot = {
+    extraModulePackages = [];
+    initrd = {
+      availableKernelModules = [
+        "ahci"
+        "sr_mod"
+        "virtio_blk"
+        "virtio_pci"
+        "xhci_pci"
+      ];
+      kernelModules = [];
+    };
+    kernelModules = ["kvm-amd"];
+  };
 
-  # Set up the file system
   fileSystems = {
     "/boot/efi" = {
       device = "/dev/disk/by-partlabel/nixos-boot";
@@ -35,13 +33,11 @@
     };
   };
 
-  # Enable SPICE integration for a QEMU guest system
+  hardware.cpu.amd.updateMicrocode = false;
+
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   services.spice-vdagentd.enable = true;
 
   swapDevices = [];
-
-  networking.useDHCP = lib.mkDefault true;
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -1,7 +1,7 @@
 {
   description = "@paveloom's NixOS configuration";
+
   inputs = {
-    nixpkgs.url = "github:paveloom/nixpkgs/system";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -11,12 +11,14 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs.url = "github:paveloom/nixpkgs/system";
   };
+
   outputs = {
-    nixpkgs,
     flake-utils,
     home-manager,
     nix-index-database,
+    nixpkgs,
     ...
   } @ inputs:
     flake-utils.lib.eachDefaultSystem (system: let
@@ -27,7 +29,6 @@
 
       commonModules = [
         ./configuration.nix
-        ./home.nix
         home-manager.nixosModules.home-manager
         nix-index-database.nixosModules.nix-index
       ];
