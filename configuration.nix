@@ -124,6 +124,12 @@
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style = "adwaita";
+  };
+
   security.rtkit.enable = true;
 
   services = {
