@@ -27,3 +27,8 @@ result
 
 # PDM
 .config/pdm/pep582
+
+# mozc
+.config/mozc/*
+!.config/mozc/config1.db
+!.config/mozc/ibus_config.textproto

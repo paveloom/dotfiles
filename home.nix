@@ -4,6 +4,9 @@
   ...
 }: {
   dconf.settings = {
+    "desktop/ibus/general" = {
+      preload-engines = ["mozc-jp"];
+    };
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       enable-hot-corners = false;
@@ -39,9 +42,9 @@
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;
       sources = [
-        (config.lib.gvariant.mkTuple ["ibus" "anthy"])
-        (config.lib.gvariant.mkTuple ["xkb" "ru"])
         (config.lib.gvariant.mkTuple ["xkb" "us"])
+        (config.lib.gvariant.mkTuple ["xkb" "ru"])
+        (config.lib.gvariant.mkTuple ["ibus" "mozc-jp"])
       ];
     };
     "org/gnome/settings-daemon/plugins/color" = {
@@ -189,8 +192,8 @@
       "fish".source = configPath "fish";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
-      "ibus-anthy".source = configPath "ibus-anthy";
       "lazygit".source = configPath "lazygit";
+      "mozc".source = configPath "mozc";
       "mpv".source = configPath "mpv";
       "nvim".source = configPath "nvim";
       "pdm".source = configPath "pdm";
