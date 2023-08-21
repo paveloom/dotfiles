@@ -39,8 +39,9 @@
     "org/gnome/desktop/input-sources" = {
       show-all-sources = true;
       sources = [
-        (config.lib.gvariant.mkTuple ["xkb" "us"])
+        (config.lib.gvariant.mkTuple ["ibus" "anthy"])
         (config.lib.gvariant.mkTuple ["xkb" "ru"])
+        (config.lib.gvariant.mkTuple ["xkb" "us"])
       ];
     };
     "org/gnome/settings-daemon/plugins/color" = {
@@ -188,6 +189,7 @@
       "fish".source = configPath "fish";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
+      "ibus-anthy".source = configPath "ibus-anthy";
       "lazygit".source = configPath "lazygit";
       "mpv".source = configPath "mpv";
       "nvim".source = configPath "nvim";

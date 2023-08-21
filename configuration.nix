@@ -66,7 +66,13 @@
     users.paveloom = import ./home.nix;
   };
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enabled = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [anthy];
+    };
+  };
 
   networking = {
     firewall = {
