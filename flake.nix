@@ -2,7 +2,6 @@
   description = "@paveloom's NixOS configuration";
 
   inputs = {
-    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,50 +14,49 @@
   };
 
   outputs = {
-    flake-utils,
     home-manager,
     nix-index-database,
     nixpkgs,
     ...
-  } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-      };
+  } @ inputs: let
+    system = "x86_64-linux";
 
-      commonModules = [
-        ./configuration.nix
-        home-manager.nixosModules.home-manager
-        nix-index-database.nixosModules.nix-index
+    pkgs = import nixpkgs {
+      inherit system;
+    };
+
+    commonModules = [
+      ./configuration.nix
+      home-manager.nixosModules.home-manager
+      nix-index-database.nixosModules.nix-index
+    ];
+
+    nixosConfiguration = hostModule:
+      nixpkgs.lib.nixosSystem {
+        system = system;
+        specialArgs = inputs;
+        modules = commonModules ++ [hostModule];
+      };
+  in {
+    devShells.${system}.default = pkgs.mkShell {
+      name = "dotfiles-shell";
+
+      packages = with pkgs; [
+        alejandra
+        libxml2
+        ltex-ls
+        lua-language-server
+        nil
+        nvd
+        stylua
+        yamlfmt
+        yamllint
       ];
+    };
 
-      nixosConfiguration = hostModule:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {inherit pkgs;} // inputs;
-          modules = commonModules ++ [hostModule];
-        };
-    in {
-      devShells.default = pkgs.stdenv.mkDerivation {
-        name = "dotfiles-shell";
-
-        nativeBuildInputs = with pkgs; [
-          alejandra
-          libxml2
-          ltex-ls
-          lua-language-server
-          nil
-          nvd
-          stylua
-          yamlfmt
-          yamllint
-        ];
-      };
-
-      packages.nixosConfigurations = {
-        boxes = nixosConfiguration ./hosts/boxes;
-        laptop = nixosConfiguration ./hosts/laptop;
-      };
-    });
+    nixosConfigurations = {
+      boxes = nixosConfiguration ./hosts/boxes;
+      laptop = nixosConfiguration ./hosts/laptop;
+    };
+  };
 }
