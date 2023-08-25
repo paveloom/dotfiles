@@ -222,6 +222,7 @@
         acpi
         adw-gtk3
         aegisub
+        anki
         appimage-run
         asciinema
         aspell
