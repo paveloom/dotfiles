@@ -203,12 +203,8 @@
   time.timeZone = "Europe/Moscow";
 
   users = {
-    defaultUserShell = pkgs.fish;
     users.paveloom = {
-      name = "paveloom";
       description = "paveloom";
-      home = "/home/paveloom";
-      isNormalUser = true;
       extraGroups = [
         "keys"
         "libvirtd"
@@ -218,6 +214,9 @@
         "wheel"
         "wireshark"
       ];
+      home = "/home/paveloom";
+      isNormalUser = true;
+      name = "paveloom";
       packages = with pkgs; [
         acpi
         adw-gtk3
@@ -362,6 +361,7 @@
         zip
         zulip
       ];
+      shell = pkgs.fish;
     };
   };
 
