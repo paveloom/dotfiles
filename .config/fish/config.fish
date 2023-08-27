@@ -37,6 +37,3 @@ podman completion fish | source
 
 # Add local binaries to the `PATH`
 set -a PATH ~/.local/bin
-
-# Add Mason installed binaries to the `PATH`
-set -a PATH ~/.local/share/nvim/mason/bin
