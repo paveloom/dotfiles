@@ -34,6 +34,3 @@ alias nvim="TERM=wezterm command nvim"
 
 # Load the completion scripts of Podman
 podman completion fish | source
-
-# Add local binaries to the `PATH`
-set -a PATH ~/.local/bin
