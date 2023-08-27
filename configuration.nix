@@ -204,7 +204,6 @@
 
   users = {
     users.paveloom = {
-      description = "paveloom";
       extraGroups = [
         "keys"
         "libvirtd"
@@ -214,7 +213,6 @@
         "wheel"
         "wireshark"
       ];
-      home = "/home/paveloom";
       isNormalUser = true;
       name = "paveloom";
       packages = with pkgs; [
