@@ -20,10 +20,6 @@ return {
           enable = true,
           enable_autocmd = false,
         },
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-        },
         autopairs = {
           enable = true,
         },
@@ -41,8 +37,8 @@ return {
     lazy = true,
   },
   {
-    -- Rainbow parentheses for Neovim using Treesitter
-    "p00f/nvim-ts-rainbow",
+    -- Rainbow delimiters for Neovim with Tree-sitter
+    "HiPhish/rainbow-delimiters.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
   {
