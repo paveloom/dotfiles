@@ -76,7 +76,7 @@
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "org.gnome.Evolution.desktop"
-        "com.gitlab.newsflash.desktop"
+        "io.gitlab.news_flash.NewsFlash.desktop"
         "org.nicotine_plus.Nicotine.desktop"
         "org.qbittorrent.qBittorrent.desktop"
         "io.github.quodlibet.QuodLibet.desktop"
