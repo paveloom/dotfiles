@@ -81,7 +81,6 @@
         "org.qbittorrent.qBittorrent.desktop"
         "io.github.quodlibet.QuodLibet.desktop"
         "org.keepassxc.KeePassXC.desktop"
-        "com.lakoliu.Furtherance.desktop"
       ];
     };
     "org/gnome/shell/extensions/clipboard-history" = {

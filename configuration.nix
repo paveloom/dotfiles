@@ -244,7 +244,6 @@
         firefox
         foliate
         fractal-next
-        furtherance
         fzf
         ghostscript
         gimp
