@@ -7,7 +7,7 @@ punctuation = "timberwolf"
 operator = { fg = "french_pink", modifiers = ["bold"] }
 special = "timberwolf"
 variable.other.member = "blue_jeans"
-variable = "mellow_apricot"
+# variable = "mellow_apricot"
 # variable = "almond" # TODO: metavariables only
 "variable.parameter" = "mellow_apricot"
 "variable.builtin" = { fg = "orange_crayola", modifiers = ["italic"] }
