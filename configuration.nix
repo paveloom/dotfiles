@@ -243,6 +243,7 @@
         bottles
         compsize
         direnv
+        doomrunner
         element-desktop
         exa
         exiftool
@@ -289,6 +290,7 @@
         gnomeExtensions.memento-mori
         goverlay
         gparted
+        gzdoom
         hunspell
         hunspellDicts.ru_RU
         icon-library
