@@ -245,7 +245,6 @@
         direnv
         doomrunner
         element-desktop
-        exa
         exiftool
         fd
         (ffmpeg_6.override {
