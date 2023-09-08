@@ -256,6 +256,7 @@
         foliate
         # fractal-next
         fzf
+        gamescope
         ghostscript
         gimp
         glow
