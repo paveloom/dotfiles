@@ -254,7 +254,7 @@
         file
         firefox
         foliate
-        fractal-next
+        # fractal-next
         fzf
         ghostscript
         gimp
