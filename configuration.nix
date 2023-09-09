@@ -120,6 +120,7 @@
       enable = true;
       enableFishIntegration = true;
     };
+    steam.enable = true;
     wireshark = {
       enable = true;
       package = pkgs.wireshark;
