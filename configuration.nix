@@ -255,6 +255,7 @@
         file
         firefox
         foliate
+        fopnu
         # fractal-next
         fzf
         gamescope
