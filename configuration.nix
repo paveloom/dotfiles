@@ -77,6 +77,7 @@
   networking = {
     firewall = {
       allowedTCPPorts = [38101 38102];
+      allowedUDPPorts = [22174];
       checkReversePath = false;
     };
     networkmanager = {
