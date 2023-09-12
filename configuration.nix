@@ -243,6 +243,7 @@
         baobab
         bat
         bottles
+        chatall
         compsize
         direnv
         doomrunner
