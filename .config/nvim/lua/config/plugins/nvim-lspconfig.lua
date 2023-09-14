@@ -297,6 +297,7 @@ return {
       pattern = {
         "*.c",
         "*.cjs",
+        "*.h",
         "*.jl",
         "*.json",
         "*.lua",
