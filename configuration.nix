@@ -292,6 +292,7 @@
         gnomeExtensions.just-perfection
         gnomeExtensions.media-controls
         gnomeExtensions.memento-mori
+        gnomeExtensions.resource-monitor
         goverlay
         gparted
         gzdoom

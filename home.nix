@@ -4,6 +4,18 @@
   ...
 }: {
   dconf.settings = {
+    "com/github/Ory0n/Resource_Monitor" = {
+      diskspacestatus = false;
+      diskstatsstatus = false;
+      extensionposition = "left";
+      iconsposition = "left";
+      netethstatus = false;
+      netwlanstatus = false;
+      rammonitor = "free";
+      rightclickstatus = false;
+      swapmonitor = "free";
+      swapstatus = true;
+    };
     "desktop/ibus/general" = {
       preload-engines = ["mozc-jp"];
     };
@@ -68,6 +80,7 @@
         "mediacontrols@cliffniff.github.com"
         "memento-mori@paveloom"
         "trayIconsReloaded@selfmade.pl"
+        "Resource_Monitor@Ory0n"
       ];
       favorite-apps = [
         "librewolf.desktop"
