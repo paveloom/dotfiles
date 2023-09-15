@@ -232,7 +232,9 @@
         acpi
         adw-gtk3
         aegisub
+        amdgpu_top
         anki
+        apitrace
         appimage-run
         asciinema
         aspell
@@ -264,6 +266,7 @@
         ghostscript
         gimp
         glow
+        glxinfo
         gnome-console
         gnome-extension-manager
         gnome-frog
@@ -305,6 +308,7 @@
         img2pdf
         imhex
         inkscape
+        inxi
         iw
         jq
         julia
@@ -315,6 +319,7 @@
         librewolf
         libva-utils
         linssid
+        lshw
         mangohud
         mediainfo-gui
         metadata-cleaner
@@ -365,6 +370,7 @@
             withJava = true;
           };
         })
+        vulkan-tools
         wally-cli
         webtorrent_desktop
         wezterm
