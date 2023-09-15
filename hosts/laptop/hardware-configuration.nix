@@ -15,7 +15,9 @@
         "usbhid"
         "xhci_pci"
       ];
-      kernelModules = [];
+      kernelModules = [
+        "amdgpu"
+      ];
     };
     kernelModules = ["kvm-amd"];
   };
@@ -38,6 +40,8 @@
   hardware.cpu.amd.updateMicrocode = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
+
+  services.xserver.videoDrivers = ["amdgpu"];
 
   swapDevices = [];
 }
