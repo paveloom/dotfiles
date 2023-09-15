@@ -4,18 +4,6 @@
   ...
 }: {
   dconf.settings = {
-    "com/github/Ory0n/Resource_Monitor" = {
-      diskspacestatus = false;
-      diskstatsstatus = false;
-      extensionposition = "left";
-      iconsposition = "left";
-      netethstatus = false;
-      netwlanstatus = false;
-      rammonitor = "free";
-      rightclickstatus = false;
-      swapmonitor = "free";
-      swapstatus = true;
-    };
     "desktop/ibus/general" = {
       preload-engines = ["mozc-jp"];
     };
@@ -80,7 +68,7 @@
         "mediacontrols@cliffniff.github.com"
         "memento-mori@paveloom"
         "trayIconsReloaded@selfmade.pl"
-        "Resource_Monitor@Ory0n"
+        "Vitals@CoreCoding.com"
       ];
       favorite-apps = [
         "librewolf.desktop"
@@ -162,6 +150,21 @@
       extension-index = 1;
       extension-position = "Center";
       life-expectancy = 80;
+    };
+    "org/gnome/shell/extensions/vitals" = {
+      fixed-widths = false;
+      hot-sensors = [
+        "_processor_usage_"
+        "_memory_usage_"
+        "_system_load_1m_"
+        "_network-rx_wlo1_rx_"
+        "_network-tx_wlo1_tx_"
+        "_storage_free_"
+      ];
+      network-speed-format = 1;
+      position-in-panel = 0;
+      update-time = 1;
+      use-higher-precision = true;
     };
   };
 
