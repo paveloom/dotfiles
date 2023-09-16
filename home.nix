@@ -156,7 +156,6 @@
       hot-sensors = [
         "_processor_usage_"
         "_memory_usage_"
-        "_system_load_1m_"
         "_network-rx_wlo1_rx_"
         "_network-tx_wlo1_tx_"
         "_storage_free_"
