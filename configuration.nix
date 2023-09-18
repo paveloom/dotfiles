@@ -142,6 +142,7 @@
       nssmdns = true;
       openFirewall = true;
     };
+    btrfs.autoScrub.enable = true;
     flatpak.enable = true;
     gnome.core-utilities.enable = false;
     ipp-usb.enable = true;
