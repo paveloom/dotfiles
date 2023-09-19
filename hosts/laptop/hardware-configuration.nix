@@ -19,6 +19,9 @@
         "amdgpu"
       ];
     };
+    kernel.sysctl = {
+      "kernel.perf_event_paranoid" = 1;
+    };
     kernelModules = ["kvm-amd"];
   };
 
