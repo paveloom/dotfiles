@@ -355,6 +355,7 @@
         ripgrep
         simple-scan
         sqlite-interactive
+        substudy
         subtitleedit
         taskwarrior
         tdesktop
