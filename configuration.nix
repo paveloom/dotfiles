@@ -146,6 +146,7 @@
     flatpak.enable = true;
     gnome.core-utilities.enable = false;
     ipp-usb.enable = true;
+    nixseparatedebuginfod.enable = true;
     pipewire = {
       enable = true;
       alsa.enable = true;

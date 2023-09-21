@@ -10,12 +10,17 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixseparatedebuginfod = {
+      url = "github:symphorien/nixseparatedebuginfod";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:paveloom/nixpkgs/system";
   };
 
   outputs = {
     home-manager,
     nix-index-database,
+    nixseparatedebuginfod,
     nixpkgs,
     ...
   } @ inputs: let
@@ -29,6 +34,7 @@
       ./configuration.nix
       home-manager.nixosModules.home-manager
       nix-index-database.nixosModules.nix-index
+      nixseparatedebuginfod.nixosModules.default
     ];
 
     nixosConfiguration = hostModule:
