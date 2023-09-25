@@ -344,6 +344,7 @@
         nix-tree
         obs-studio
         ocrmypdf
+        pciutils
         pdfarranger
         pdfgrep
         picard
