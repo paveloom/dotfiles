@@ -374,6 +374,7 @@
             withJava = true;
           };
         })
+        vocabsieve
         vulkan-tools
         wally-cli
         webtorrent_desktop
