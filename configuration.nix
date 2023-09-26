@@ -346,6 +346,7 @@
         nix-tree
         obs-studio
         ocrmypdf
+        patchelf
         pciutils
         pdfarranger
         pdfgrep
