@@ -352,6 +352,7 @@
         picard
         protonup-qt
         qbittorrent
+        qolibri
         quodlibet-full
         radeontop
         radicle-cli
