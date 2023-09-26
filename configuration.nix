@@ -323,6 +323,7 @@
         linssid
         lshw
         mangohud
+        mecab
         mediainfo-gui
         metadata-cleaner
         monero-gui
