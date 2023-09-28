@@ -256,8 +256,9 @@
         exiftool
         fd
         (ffmpeg_6.override {
-          withUnfree = true;
           withFdkAac = true;
+          withUnfree = true;
+          withWebp = true;
         })
         file
         firefox
