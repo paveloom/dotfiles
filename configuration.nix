@@ -389,6 +389,7 @@
         wget
         wirelesstools
         wl-clipboard
+        xclip
         yt-dlp
         zeal
         zip
