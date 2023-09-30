@@ -41,8 +41,10 @@
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
+      corefonts
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       noto-fonts-cjk-sans
+      wqy_zenhei
     ];
   };
 
