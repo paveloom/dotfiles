@@ -384,6 +384,7 @@
           };
         })
         vocabsieve
+        vtfedit
         vulkan-tools
         wally-cli
         webtorrent_desktop
