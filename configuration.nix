@@ -120,6 +120,7 @@
     gamemode.enable = true;
     git.enable = true;
     gnupg.agent.enable = true;
+    nano.syntaxHighlight = true;
     nix-index = {
       enable = true;
       enableFishIntegration = true;
