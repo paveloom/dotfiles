@@ -266,6 +266,7 @@
         file
         firefox
         foliate
+        fontforge-gtk
         fopnu
         # fractal-next
         fzf
@@ -291,6 +292,7 @@
         gnome.gnome-sound-recorder
         gnome.gnome-system-monitor
         gnome.gnome-tweaks
+        gnome.gucharmap
         gnome.nautilus
         gnome.seahorse
         gnome.totem
