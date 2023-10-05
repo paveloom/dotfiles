@@ -377,6 +377,7 @@
         tree
         unrar
         unzip
+        upscayl
         virt-manager
         virtiofsd
         (vlc.override {
