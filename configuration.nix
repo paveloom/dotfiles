@@ -44,7 +44,8 @@
       corefonts
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
       noto-fonts-cjk-sans
-      wqy_zenhei
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
     ];
   };
 
