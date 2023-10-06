@@ -329,6 +329,7 @@
         libva-utils
         linssid
         lshw
+        lsof
         mangohud
         mecab
         mediainfo-gui
