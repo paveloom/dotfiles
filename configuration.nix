@@ -337,9 +337,7 @@
         metadata-cleaner
         monero-gui
         mousai
-        (mpv.override {
-          scripts = [mpvScripts.mpvacious];
-        })
+        mpv
         neovim
         newsflash
         nicotine-plus
