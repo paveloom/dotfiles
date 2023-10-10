@@ -111,6 +111,7 @@
 
   programs = {
     command-not-found.enable = false;
+    direnv.enable = true;
     evince.enable = true;
     evolution.enable = true;
     fish.enable = true;
@@ -254,7 +255,6 @@
         bottles
         chatall
         compsize
-        direnv
         doomrunner
         element-desktop
         exiftool
@@ -341,15 +341,6 @@
         neovim
         newsflash
         nicotine-plus
-        (nix-direnv.overrideAttrs (old: {
-          version = "unstable-2023-07-27";
-          src = fetchFromGitHub {
-            owner = "nix-community";
-            repo = "nix-direnv";
-            rev = "ed2cb75553b4864e3c931a48e3a2cd43b93152c5";
-            hash = "sha256-jCpEcbdgC1CnCFOXIUnNGgCTMCIHLnMR3oeFLf4FQLo=";
-          };
-        }))
         nix-output-monitor
         nix-tree
         obs-studio
