@@ -204,6 +204,7 @@
       "ccache".source = configPath "ccache";
       "direnv".source = configPath "direnv";
       "fish".source = configPath "fish";
+      "gdb".source = configPath "gdb";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
       "lazygit".source = configPath "lazygit";
