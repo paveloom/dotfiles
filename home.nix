@@ -4,9 +4,6 @@
   ...
 }: {
   dconf.settings = {
-    "desktop/ibus/general" = {
-      preload-engines = ["mozc-jp"];
-    };
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       enable-hot-corners = false;
@@ -44,7 +41,6 @@
       sources = [
         (config.lib.gvariant.mkTuple ["xkb" "us"])
         (config.lib.gvariant.mkTuple ["xkb" "ru"])
-        (config.lib.gvariant.mkTuple ["ibus" "mozc-jp"])
       ];
     };
     "org/gnome/settings-daemon/plugins/color" = {

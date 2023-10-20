@@ -70,13 +70,7 @@
     users.paveloom = import ./home.nix;
   };
 
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      enabled = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [mozc];
-    };
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
 
   networking = {
     firewall = {
