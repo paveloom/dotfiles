@@ -249,7 +249,6 @@
         bottles
         chatall
         compsize
-        doomrunner
         element-desktop
         exiftool
         fd
@@ -302,7 +301,6 @@
         gnomeExtensions.vitals
         goverlay
         gparted
-        gzdoom
         hunspell
         hunspellDicts.ru_RU
         icon-library
