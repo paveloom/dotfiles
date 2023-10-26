@@ -29,10 +29,6 @@ return {
         diagnostics.clang_check.with({
           runtime_condition = direnv_loaded,
         }),
-        diagnostics.cppcheck.with({
-          extra_args = { "--library=gtk" },
-          runtime_condition = direnv_loaded,
-        }),
         diagnostics.cpplint.with({
           extra_args = { "--verbose=0" },
           extra_filetypes = { "h" },
