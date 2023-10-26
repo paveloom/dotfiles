@@ -74,8 +74,15 @@
 
   networking = {
     firewall = {
-      allowedTCPPorts = [38101 38102];
-      allowedUDPPorts = [22174];
+      allowedTCPPorts = with config.services; [
+        38101
+        38102
+        i2pd.port
+      ];
+      allowedUDPPorts = with config.services; [
+        22174
+        i2pd.port
+      ];
       checkReversePath = false;
     };
     networkmanager = {
@@ -145,6 +152,16 @@
     btrfs.autoScrub.enable = true;
     flatpak.enable = true;
     gnome.core-utilities.enable = false;
+    i2pd = {
+      bandwidth = 4096;
+      enable = true;
+      port = 22113;
+      proto = {
+        http.enable = true;
+        sam.enable = true;
+        socksProxy.enable = true;
+      };
+    };
     ipp-usb.enable = true;
     nixseparatedebuginfod.enable = true;
     pipewire = {
