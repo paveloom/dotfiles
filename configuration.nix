@@ -266,6 +266,7 @@
         bottles
         chatall
         compsize
+        d-spy
         element-desktop
         exiftool
         fd
