@@ -232,6 +232,10 @@
     stateVersion = "22.11";
   };
 
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=15s
+  '';
+
   time.timeZone = "Europe/Moscow";
 
   users = {
