@@ -12,6 +12,10 @@
       };
       systemd-boot.enable = true;
     };
+    tmp = {
+      cleanOnBoot = true;
+      useTmpfs = true;
+    };
   };
 
   environment = {
