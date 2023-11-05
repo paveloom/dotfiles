@@ -19,8 +19,17 @@
 
   environment = {
     gnome.excludePackages = with pkgs; [
+      gnome-photos
       gnome-tour
+      gnome.epiphany
+      gnome.geary
+      gnome.gnome-contacts
+      gnome.gnome-maps
+      gnome.gnome-music
       gnome.gnome-shell-extensions
+      gnome.gnome-software
+      gnome.gnome-weather
+      gnome.yelp
     ];
     shells = [pkgs.fish];
     systemPackages = with pkgs; [
@@ -119,7 +128,6 @@
   programs = {
     command-not-found.enable = false;
     direnv.enable = true;
-    evince.enable = true;
     evolution.enable = true;
     fish.enable = true;
     fzf = {
@@ -157,7 +165,6 @@
     };
     btrfs.autoScrub.enable = true;
     flatpak.enable = true;
-    gnome.core-utilities.enable = false;
     i2pd = {
       bandwidth = 4096;
       enable = true;
@@ -271,7 +278,6 @@
         aspellDicts.ru
         audacious
         authenticator
-        baobab
         bat
         bottles
         chatall
@@ -297,27 +303,13 @@
         gimp
         glow
         glxinfo
-        gnome-console
         gnome-extension-manager
         gnome-frog
         gnome-icon-theme
-        gnome-text-editor
-        gnome.cheese
         gnome.dconf-editor
-        gnome.eog
-        gnome.gnome-calculator
-        gnome.gnome-calendar
-        gnome.gnome-characters
-        gnome.gnome-clocks
-        gnome.gnome-disk-utility
-        gnome.gnome-font-viewer
         gnome.gnome-sound-recorder
-        gnome.gnome-system-monitor
         gnome.gnome-tweaks
         gnome.gucharmap
-        gnome.nautilus
-        gnome.seahorse
-        gnome.totem
         gnomeExtensions.appindicator
         gnomeExtensions.clipboard-history
         gnomeExtensions.dash-to-dock
@@ -378,7 +370,6 @@
         radicle-cli
         rclone
         ripgrep
-        simple-scan
         sqlite-interactive
         substudy
         subtitleedit
