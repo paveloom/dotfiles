@@ -23,6 +23,9 @@
       gnome.gnome-shell-extensions
     ];
     shells = [pkgs.fish];
+    systemPackages = with pkgs; [
+      gnome.nautilus-python
+    ];
   };
 
   fileSystems = let
