@@ -10,7 +10,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   max_width = max_width
   return {
     { Attribute = { Italic = true } },
-    { Background = { Color = "#0e0b13" } },
+    { Background = { Color = "#000000" } },
     { Foreground = { Color = tab.is_active and "#e3dfec" or "#847e91" } },
     { Text = " " .. tab.active_pane.title .. " " },
   }
@@ -28,6 +28,7 @@ return {
   use_fancy_tab_bar = false,
   tab_max_width = 40,
   force_reverse_video_cursor = true,
+  window_decorations = "RESIZE",
   window_padding = {
     left = 5,
     right = 5,
@@ -40,7 +41,7 @@ return {
     -- The default text color
     foreground = "#ffffff",
     -- The default background color
-    background = "#0e0b13",
+    background = "#000000",
     -- The foreground color of selected text
     selection_fg = "#0e0b13",
     -- The background color of selected text
@@ -70,7 +71,7 @@ return {
       "#f6f5f4", -- Bright White
     },
     tab_bar = {
-      background = "#0e0b13",
+      background = "#000000",
     },
   },
   tab_bar_style = {

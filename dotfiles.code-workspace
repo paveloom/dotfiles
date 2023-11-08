@@ -1,10 +1,6 @@
 {
   "extensions": {
-    "recommendations": [
-      "jnoortheen.nix-ide",
-      "mkhl.direnv",
-      "sumneko.lua"
-    ]
+    "recommendations": ["jnoortheen.nix-ide", "mkhl.direnv", "sumneko.lua"]
   },
   "folders": [
     {
@@ -12,9 +8,11 @@
     }
   ],
   "settings": {
-    "Lua.diagnostics.globals": [
-      "vim"
-    ],
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "Lua.diagnostics.globals": ["vim"],
+    "Lua.format.enable": false,
     "Lua.misc.executablePath": "lua-language-server",
     "Lua.runtime.version": "LuaJIT",
     "nix.enableLanguageServer": true,
@@ -22,9 +20,7 @@
     "nix.serverSettings": {
       "nil": {
         "formatting": {
-          "command": [
-            "alejandra"
-          ]
+          "command": ["alejandra"]
         }
       }
     }
