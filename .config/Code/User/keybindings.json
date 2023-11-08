@@ -1,0 +1,96 @@
+[
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.moveEditorLeftInGroup"
+  },
+  {
+    "key": "ctrl+shift+pageup",
+    "command": "-workbench.action.moveEditorLeftInGroup"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.moveEditorRightInGroup"
+  },
+  {
+    "key": "ctrl+shift+pagedown",
+    "command": "-workbench.action.moveEditorRightInGroup"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quit"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "editor.action.clipboardPasteAction"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "explorer.newFile"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "explorer.newFolder"
+  },
+  {
+    "key": "space w",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "sideBarFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+w right",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+w left",
+    "command": "workbench.action.focusSideBar",
+    "when": "!sideBarFocus"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+w up",
+    "command": "workbench.files.action.focusOpenEditorsView",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+w down",
+    "command": "workbench.explorer.fileView.focus",
+    "when": "openEditorsFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  }
+]

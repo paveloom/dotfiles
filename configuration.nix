@@ -390,6 +390,7 @@
           };
         })
         vocabsieve
+        vscode
         vtfedit
         vulkan-tools
         wally-cli

@@ -1,0 +1,32 @@
+{
+  "extensions": {
+    "recommendations": [
+      "jnoortheen.nix-ide",
+      "mkhl.direnv",
+      "sumneko.lua"
+    ]
+  },
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "Lua.diagnostics.globals": [
+      "vim"
+    ],
+    "Lua.misc.executablePath": "lua-language-server",
+    "Lua.runtime.version": "LuaJIT",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nil",
+    "nix.serverSettings": {
+      "nil": {
+        "formatting": {
+          "command": [
+            "alejandra"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  // Built-in
+  "diffEditor.renderSideBySide": false,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "files.associations": { "flake.lock": "json" },
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "git.allowForcePush": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.useForcePushIfIncludes": false,
+  "git.useForcePushWithLease": false,
+  "update.mode": "none",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Noctis High Contrast",
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  // Extensions
+  "direnv.restart.automatic": true,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "Lua.hint.enable": true,
+  "stylua.disableVersionCheck": true,
+  "vim.handleKeys": {
+    "<C-b>": false,
+    "<C-c>": false,
+    "<C-f>": false,
+    "<C-h>": false,
+    "<C-k>": false,
+    "<C-o>": false,
+    "<C-p>": false
+  },
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "v"],
+      "commands": [":vsplit"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": [":split"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "f"],
+      "commands": ["workbench.action.quickOpen"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.explorer.fileView.focus"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "Left"],
+      "commands": ["workbench.action.focusLeftGroup"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "Down"],
+      "commands": ["workbench.action.focusBelowGroup"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "Up"],
+      "commands": ["workbench.action.focusAboveGroup"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "Right"],
+      "commands": ["workbench.action.focusRightGroup"],
+      "silent": true
+    },
+    {
+      "before": ["<Down>"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["<Up>"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<C-Down>"],
+      "after": ["5", "g", "j"]
+    },
+    {
+      "before": ["<C-Up>"],
+      "after": ["5", "g", "k"]
+    },
+    {
+      "before": ["J"],
+      "after": ["m", "z", "J", "`", "z"]
+    },
+    {
+      "before": ["S-Tab"],
+      "after": ["<", "<"]
+    },
+    {
+      "before": ["Tab"],
+      "after": [">", ">"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "_", "C"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "_", "D"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-Down>"],
+      "after": ["5", "g", "j"]
+    },
+    {
+      "before": ["<C-Up>"],
+      "after": ["5", "g", "k"]
+    },
+    {
+      "before": ["S-Tab"],
+      "after": ["<", "g", "v"]
+    },
+    {
+      "before": ["Tab"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "_", "c"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "_", "d"]
+    },
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true
+}

@@ -72,6 +72,7 @@
         "gnome-system-monitor.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
+        "code.desktop"
         "org.gnome.Evolution.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.nicotine_plus.Nicotine.desktop"
@@ -196,6 +197,7 @@
       configPath = dir: (config.lib.file.mkOutOfStoreSymlink
         "${config.home.homeDirectory}/Repositories/paveloom/dotfiles/.config/${dir}");
     in {
+      "Code".source = configPath "Code";
       "MangoHud".source = configPath "MangoHud";
       "ccache".source = configPath "ccache";
       "direnv".source = configPath "direnv";

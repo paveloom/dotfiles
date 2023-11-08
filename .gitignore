@@ -32,3 +32,10 @@ result
 .config/mozc/*
 !.config/mozc/config1.db
 !.config/mozc/ibus_config.textproto
+
+# Code
+.config/Code/*
+!.config/Code/User
+.config/Code/User/*
+!.config/Code/User/settings.json
+!.config/Code/User/keybindings.json
