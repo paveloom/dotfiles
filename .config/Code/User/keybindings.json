@@ -92,5 +92,26 @@
   {
     "key": "ctrl+w",
     "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+k ctrl+s",
+    "command": "-workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenPreviousEditor"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen"
   }
 ]
