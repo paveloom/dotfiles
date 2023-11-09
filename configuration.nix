@@ -165,6 +165,23 @@
     };
     btrfs.autoScrub.enable = true;
     flatpak.enable = true;
+    gitea-actions-runner = {
+      package = pkgs.forgejo-actions-runner;
+      instances = {
+        nixos = {
+          enable = true;
+          labels = ["ubuntu-latest:docker://node:18-bullseye"];
+          name = "NixOS";
+          settings = {
+            container = {
+              network = "host";
+            };
+          };
+          tokenFile = config.users.users.paveloom.home + "/.config/forgejo-runner/nixos.env";
+          url = "https://codeberg.org";
+        };
+      };
+    };
     i2pd = {
       bandwidth = 4096;
       enable = true;
@@ -197,7 +214,7 @@
     };
     prowlarr.enable = true;
     radarr = {
-      dataDir = "/home/paveloom/.config/radarr";
+      dataDir = config.users.users.paveloom.home + "/.config/radarr";
       enable = true;
       group = "";
       user = "paveloom";
@@ -214,7 +231,7 @@
       };
     };
     sonarr = {
-      dataDir = "/home/paveloom/.config/sonarr";
+      dataDir = config.users.users.paveloom.home + "/.config/sonarr";
       enable = true;
       group = "";
       user = "paveloom";
@@ -224,7 +241,7 @@
       package = pkgs.usbmuxd2;
     };
     whisparr = {
-      dataDir = "/home/paveloom/.config/whisparr";
+      dataDir = config.users.users.paveloom.home + "/.config/whisparr";
       enable = true;
       group = "";
       user = "paveloom";
@@ -253,6 +270,7 @@
 
   users = {
     users.paveloom = {
+      createHome = true;
       extraGroups = [
         "keys"
         "libvirtd"
@@ -262,6 +280,7 @@
         "wheel"
         "wireshark"
       ];
+      home = "/home/paveloom";
       isNormalUser = true;
       name = "paveloom";
       packages = with pkgs; [
