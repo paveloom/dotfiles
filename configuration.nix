@@ -341,6 +341,7 @@
         goverlay
         gparted
         hunspell
+        hunspellDicts.en_US
         hunspellDicts.ru_RU
         icon-library
         icoutils
