@@ -13,6 +13,11 @@
   "git.useForcePushIfIncludes": false,
   "git.useForcePushWithLease": false,
   "scm.countBadge": "focused",
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.commandsToSkipShell": [
+    "workbench.action.moveEditorLeftInGroup",
+    "workbench.action.moveEditorRightInGroup"
+  ],
   "update.mode": "none",
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 2,
@@ -29,8 +34,10 @@
   "direnv.restart.automatic": true,
   "extensions.experimental.affinity": { "vscodevim.vim": 1 },
   "gitlens.rebaseEditor.ordering": "asc",
+  "gitlens.telemetry.enabled": false,
   "gitlens.views.formats.commits.label": "${message}",
   "Lua.hint.enable": true,
+  "redhat.telemetry.enabled": false,
   "stylua.disableVersionCheck": true,
   "vim.handleKeys": {
     "<C-a>": true,
