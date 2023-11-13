@@ -303,6 +303,7 @@
         compsize
         d-spy
         element-desktop
+        enca
         exiftool
         fd
         (ffmpeg_6.override {
