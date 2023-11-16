@@ -3,7 +3,9 @@
   "diffEditor.renderSideBySide": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.formatOnSave": true,
-  "editor.renderWhitespace": "all",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.renderFinalNewline": "off",
+  "editor.renderWhitespace": "none",
   "files.associations": { "flake.lock": "json" },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -19,15 +21,26 @@
     "workbench.action.moveEditorRightInGroup"
   ],
   "update.mode": "none",
+  "window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${appName}",
   "window.titleBarStyle": "custom",
   "window.zoomLevel": 2,
   "workbench.colorTheme": "Noctis High Contrast",
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.focusRecentEditorAfterClose": false,
   // Extensions
+  "cmake.configureOnOpen": false,
+  "cmake.showOptionsMovedNotification": false,
   "cSpell.languageSettings": [
     {
+      "languageId": "c",
+      "includeRegExpList": ["CStyleComment"]
+    },
+    {
       "languageId": "jsonc",
+      "includeRegExpList": ["CStyleComment"]
+    },
+    {
+      "languageId": "yaml",
       "includeRegExpList": ["CStyleComment"]
     }
   ],
@@ -37,6 +50,7 @@
   "gitlens.telemetry.enabled": false,
   "gitlens.views.formats.commits.label": "${message}",
   "Lua.hint.enable": true,
+  "mesonbuild.configureOnOpen": false,
   "redhat.telemetry.enabled": false,
   "stylua.disableVersionCheck": true,
   "vim.handleKeys": {
