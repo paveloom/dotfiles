@@ -1,5 +1,6 @@
 {
   // Built-in
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   "editor.formatOnSave": true,
@@ -57,6 +58,7 @@
     "<C-a>": true,
     "<C-d>": false,
     "<C-v>": true,
+    "<C-x>": true,
     "<C-z>": true
   },
   "vim.leader": "<space>",
