@@ -50,13 +50,10 @@
       packages = with pkgs; [
         alejandra
         libxml2
-        ltex-ls
         lua-language-server
         nil
         nvd
         stylua
-        yamlfmt
-        yamllint
       ];
     };
 
