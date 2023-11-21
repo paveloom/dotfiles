@@ -115,6 +115,7 @@
       workspace-wrap-around = true;
     };
     "org/gnome/shell/extensions/mediacontrols" = {
+      extension-index = 1;
       extension-position = "right";
       max-widget-width = 350;
       show-control-icons = false;
