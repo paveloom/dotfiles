@@ -7,6 +7,7 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.renderFinalNewline": "off",
   "editor.renderWhitespace": "none",
+  "explorer.confirmDragAndDrop": false,
   "files.associations": { "flake.lock": "json" },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
