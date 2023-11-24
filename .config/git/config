@@ -1,25 +1,25 @@
+[alias]
+    new = "!f() {\n    if [ ! -z \"${1}\" ]; then\n        git checkout -b ${1}\n        git push -u origin ${1}\n    fi};\nf;\nunset f"
+    done = "!f() {\n    git add -A\n    if git commit -ve; then\n        git push -u origin `git branch --show-current`\n    fi\n};\nf;\nunset f"
+[commit]
+    gpgsign = true
+[core]
+    editor = nano
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
+[gpg]
+    format = ssh
+[init]
+    defaultBranch = main
+[pull]
+    rebase = false
+[push]
+    default = upstream
+[submodule]
+    recurse = true
+[tag]
+    gpgsign = true
 [user]
     name = Pavel Sobolev
     email = paveloom@riseup.net
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWlaMAtvJwE59xZTQ/jprXIVKg/ZHiqkeH1lQE7+aLj paveloom@riseup.net
-[push]
-    default = upstream
-[pull]
-    rebase = false
-[submodule]
-    recurse = true
-[commit]
-    gpgsign = true
-[gpg]
-    format = ssh
-[core]
-    editor = nano
-[init]
-    defaultBranch = main
-[alias]
-    new = "!f() {\n    if [ ! -z \"${1}\" ]; then\n        git checkout -b ${1}\n        git push -u origin ${1}\n    fi};\nf;\nunset f"
-    done = "!f() {\n    git add -A\n    if git commit -ve; then\n        git push -u origin `git branch --show-current`\n    fi\n};\nf;\nunset f"
-[tag]
-    gpgsign = true
-[gpg "ssh"]
-    allowedSignersFile = ~/.config/git/allowed_signers
