@@ -3,7 +3,7 @@
     email = paveloom@riseup.net
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWlaMAtvJwE59xZTQ/jprXIVKg/ZHiqkeH1lQE7+aLj paveloom@riseup.net
 [push]
-    default = matching
+    default = upstream
 [pull]
     rebase = false
 [submodule]
