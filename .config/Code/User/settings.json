@@ -9,7 +9,9 @@
   "editor.renderWhitespace": "none",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "files.associations": { "flake.lock": "json" },
+  "files.associations": {
+    "flake.lock": "json"
+  },
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "git.allowForcePush": true,
@@ -48,7 +50,9 @@
     }
   ],
   "direnv.restart.automatic": true,
-  "extensions.experimental.affinity": { "vscodevim.vim": 1 },
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
   "githubPullRequests.pullBranch": "never",
   "gitlens.rebaseEditor.ordering": "asc",
   "gitlens.telemetry.enabled": false,
