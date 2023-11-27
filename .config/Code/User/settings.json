@@ -121,6 +121,34 @@
       "silent": true
     },
     {
+      "before": ["<C-Up>"],
+      "commands": [
+        {
+          "command": "cursorMove",
+          "args": {
+            "to": "up",
+            "by": "line",
+            "value": 5
+          }
+        }
+      ],
+      "silent": true
+    },
+    {
+      "before": ["<C-Down>"],
+      "commands": [
+        {
+          "command": "cursorMove",
+          "args": {
+            "to": "down",
+            "by": "line",
+            "value": 5
+          }
+        }
+      ],
+      "silent": true
+    },
+    {
       "before": ["U"],
       "after": ["<C-r>"]
     },
