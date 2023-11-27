@@ -125,22 +125,6 @@
       "after": ["<C-r>"]
     },
     {
-      "before": ["<Down>"],
-      "after": ["g", "j"]
-    },
-    {
-      "before": ["<Up>"],
-      "after": ["g", "k"]
-    },
-    {
-      "before": ["<C-Down>"],
-      "after": ["5", "g", "j"]
-    },
-    {
-      "before": ["<C-Up>"],
-      "after": ["5", "g", "k"]
-    },
-    {
       "before": ["J"],
       "after": ["m", "z", "J", "`", "z"]
     },
