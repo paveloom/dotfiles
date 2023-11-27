@@ -143,7 +143,7 @@
       birth-month = 7;
       birth-year = 1999;
       extension-index = 1;
-      extension-position = "Center";
+      extension-position = "center";
       life-expectancy = 80;
     };
     "org/gnome/shell/extensions/vitals" = {
