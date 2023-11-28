@@ -49,6 +49,7 @@
 
       packages = with pkgs; [
         alejandra
+        bashInteractive
         libxml2
         lua-language-server
         nil
