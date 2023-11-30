@@ -374,6 +374,7 @@
         radicle-cli
         rclone
         ripgrep
+        ryujinx
         sqlite-interactive
         substudy
         subtitleedit
@@ -404,6 +405,7 @@
         wl-clipboard
         xclip
         yt-dlp
+        yuzu-early-access
         zeal
         zip
         zulip
