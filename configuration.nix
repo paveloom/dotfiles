@@ -217,12 +217,6 @@
       enable = true;
       package = pkgs.usbmuxd2;
     };
-    whisparr = {
-      dataDir = config.users.users.paveloom.home + "/.config/whisparr";
-      enable = true;
-      group = "";
-      user = "paveloom";
-    };
     xserver = {
       desktopManager.gnome.enable = true;
       displayManager.gdm.enable = true;
