@@ -362,6 +362,7 @@
         radicle-cli
         rclone
         ripgrep
+        rmg
         ryujinx
         sqlite-interactive
         substudy
