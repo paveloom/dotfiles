@@ -111,6 +111,16 @@
       "silent": true
     },
     {
+      "before": ["leader", "a"],
+      "commands": ["workbench.action.navigateBack"],
+      "silent": true
+    },
+    {
+      "before": ["leader", "d"],
+      "commands": ["workbench.action.navigateForward"],
+      "silent": true
+    },
+    {
       "before": ["g", "a"],
       "commands": ["editor.action.quickFix"],
       "silent": true
