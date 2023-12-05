@@ -115,13 +115,8 @@
       workspace-wrap-around = true;
     };
     "org/gnome/shell/extensions/mediacontrols" = {
-      extension-index = 1;
       extension-position = "right";
       max-widget-width = 350;
-      show-control-icons = false;
-      show-player-icon = false;
-      show-seperators = false;
-      show-sources-menu = false;
       mouse-actions = [
         "toggle_play"
         "toggle_menu"
@@ -132,6 +127,11 @@
         "none"
         "none"
       ];
+      scroll-track-label = true;
+      show-control-icons = false;
+      show-player-icon = false;
+      show-seperators = false;
+      show-sources-menu = false;
       track-label = [
         "artist"
         "—"
