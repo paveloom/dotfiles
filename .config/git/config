@@ -14,6 +14,7 @@
 [pull]
     rebase = false
 [push]
+    autoSetupRemote = true
     default = upstream
 [submodule]
     recurse = true
