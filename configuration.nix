@@ -369,6 +369,7 @@
         rclone
         ripgrep
         rmg
+        rnote
         ryujinx
         sqlite-interactive
         substudy
