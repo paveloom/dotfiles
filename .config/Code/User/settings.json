@@ -21,6 +21,7 @@
   "git.useForcePushIfIncludes": false,
   "git.useForcePushWithLease": false,
   "scm.countBadge": "focused",
+  "security.workspace.trust.untrustedFiles": "open",
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.moveEditorLeftInGroup",
