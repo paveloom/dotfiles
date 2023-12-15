@@ -385,6 +385,10 @@
         upscayl
         virt-manager
         virtiofsd
+        (vivaldi.override {
+          enableWidevine = true;
+          proprietaryCodecs = true;
+        })
         (vlc.override {
           libbluray = libbluray.override {
             withJava = true;
