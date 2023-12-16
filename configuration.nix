@@ -316,6 +316,7 @@
         gnomeExtensions.media-controls
         gnomeExtensions.memento-mori
         gnomeExtensions.vitals
+        google-chrome
         goverlay
         gparted
         hunspell
