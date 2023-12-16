@@ -404,6 +404,7 @@
         wirelesstools
         wl-clipboard
         xclip
+        yandex-browser
         yt-dlp
         yuzu-early-access
         zeal
