@@ -67,7 +67,7 @@
         "Vitals@CoreCoding.com"
       ];
       favorite-apps = [
-        "librewolf.desktop"
+        "google-chrome.desktop"
         "org.gnome.Nautilus.desktop"
         "gnome-system-monitor.desktop"
         "org.gnome.TextEditor.desktop"
