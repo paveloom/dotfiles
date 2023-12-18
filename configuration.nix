@@ -346,6 +346,7 @@
         mecab
         mediainfo-gui
         metadata-cleaner
+        microsoft-edge
         monero-gui
         mousai
         mpv
