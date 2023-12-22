@@ -22,5 +22,5 @@
     gpgsign = true
 [user]
     name = Pavel Sobolev
-    email = paveloom@riseup.net
+    email = paveloomm@gmail.com
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKWlaMAtvJwE59xZTQ/jprXIVKg/ZHiqkeH1lQE7+aLj paveloom@riseup.net
