@@ -35,6 +35,7 @@
   "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.focusRecentEditorAfterClose": false,
   // Extensions
+  "clangd.arguments": ["--function-arg-placeholders=0"],
   "cmake.configureOnOpen": false,
   "cmake.showOptionsMovedNotification": false,
   "cSpell.languageSettings": [
