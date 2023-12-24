@@ -13,7 +13,7 @@
     ".clang-tidy": "yaml",
     "flake.lock": "json"
   },
-  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "git.allowForcePush": true,
   "git.confirmSync": false,
