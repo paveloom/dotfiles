@@ -23,9 +23,6 @@
       show-create-link = true;
       show-delete-permanently = true;
     };
-    "org/gnome/desktop/notifications/application/org-gnome-evolution" = {
-      enable-sound-alerts = false;
-    };
     "org/gnome/desktop/peripherals/touchpad" = {
       disable-while-typing = false;
       tap-to-click = true;
@@ -73,7 +70,6 @@
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "code.desktop"
-        "org.gnome.Evolution.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.nicotine_plus.Nicotine.desktop"
         "org.qbittorrent.qBittorrent.desktop"

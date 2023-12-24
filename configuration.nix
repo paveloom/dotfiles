@@ -121,7 +121,6 @@
   programs = {
     command-not-found.enable = false;
     direnv.enable = true;
-    evolution.enable = true;
     fish.enable = true;
     fzf = {
       fuzzyCompletion = true;
