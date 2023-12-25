@@ -150,6 +150,10 @@
       openFirewall = true;
     };
     btrfs.autoScrub.enable = true;
+    emacs = {
+      enable = true;
+      package = pkgs.emacs29-pgtk;
+    };
     flatpak.enable = true;
     gitea-actions-runner = {
       package = pkgs.forgejo-actions-runner;
