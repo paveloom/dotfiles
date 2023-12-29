@@ -89,7 +89,7 @@
 
   networking = {
     firewall = {
-      allowedTCPPorts = [38101 38102];
+      allowedTCPPorts = [21044 38101 38102];
       allowedUDPPorts = [22174];
       checkReversePath = false;
     };
@@ -155,6 +155,12 @@
       package = pkgs.emacs29-pgtk;
     };
     flatpak.enable = true;
+    freshrss = {
+      baseUrl = "http://localhost";
+      database.type = "sqlite";
+      enable = true;
+      passwordFile = "/run/secrets/freshrss";
+    };
     gitea-actions-runner = {
       package = pkgs.forgejo-actions-runner;
       instances = {
@@ -173,6 +179,12 @@
       };
     };
     ipp-usb.enable = true;
+    nginx.virtualHosts.freshrss.listen = [
+      {
+        addr = "0.0.0.0";
+        port = 21044;
+      }
+    ];
     nixseparatedebuginfod.enable = true;
     pipewire = {
       enable = true;
