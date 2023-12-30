@@ -29,7 +29,6 @@
       gnome.gnome-shell-extensions
       gnome.gnome-software
       gnome.gnome-weather
-      gnome.yelp
     ];
     shells = [pkgs.fish];
     systemPackages = with pkgs; [
