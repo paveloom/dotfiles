@@ -332,6 +332,7 @@
         gnomeExtensions.media-controls
         gnomeExtensions.memento-mori
         gnomeExtensions.vitals
+        gnucash
         google-chrome
         goverlay
         gparted
