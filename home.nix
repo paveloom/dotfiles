@@ -75,6 +75,7 @@
         "org.qbittorrent.qBittorrent.desktop"
         "io.github.quodlibet.QuodLibet.desktop"
         "org.keepassxc.KeePassXC.desktop"
+        "gnucash.desktop"
       ];
     };
     "org/gnome/shell/extensions/clipboard-history" = {
