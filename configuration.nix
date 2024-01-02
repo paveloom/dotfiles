@@ -292,7 +292,6 @@
         chatall
         compsize
         d-spy
-        denaro
         element-desktop
         enca
         exiftool
