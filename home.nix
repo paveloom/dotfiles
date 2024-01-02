@@ -7,7 +7,6 @@
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       enable-hot-corners = false;
-      gtk-theme = "adw-gtk3";
     };
     "org/gnome/desktop/wm/keybindings" = {
       switch-applications = [];

@@ -276,7 +276,6 @@
       name = "paveloom";
       packages = with pkgs; [
         acpi
-        adw-gtk3
         aegisub
         amdgpu_top
         anki
