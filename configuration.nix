@@ -406,6 +406,7 @@
         rmg
         rnote
         ryujinx
+        spotify
         sqlite-interactive
         substudy
         subtitleedit
