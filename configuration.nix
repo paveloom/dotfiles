@@ -1,5 +1,6 @@
 {
   config,
+  nixpkgs,
   pkgs,
   ...
 }: {
@@ -108,6 +109,14 @@
       automatic = true;
       dates = "14:00";
       options = "--delete-older-than 7d";
+    };
+    nixPath = ["nixpkgs=${nixpkgs}"];
+    registry.nixpkgs = {
+      flake = nixpkgs;
+      from = {
+        id = "nixpkgs";
+        type = "indirect";
+      };
     };
     settings = {
       auto-optimise-store = true;
