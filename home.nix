@@ -69,7 +69,7 @@
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "code.desktop"
-        "emacsclient.desktop"
+        "emacs.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.nicotine_plus.Nicotine.desktop"
         "org.qbittorrent.qBittorrent.desktop"

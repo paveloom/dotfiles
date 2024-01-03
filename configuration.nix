@@ -160,7 +160,17 @@
     btrfs.autoScrub.enable = true;
     emacs = {
       enable = true;
-      package = pkgs.emacs29-pgtk;
+      package =
+        (pkgs.emacs.override {
+          withPgtk = true;
+        })
+        .overrideAttrs (attrs: {
+          postInstall =
+            (attrs.postInstall or "")
+            + ''
+              mv $out/share/applications/{emacsclient.desktop,emacs.desktop}
+            '';
+        });
     };
     flatpak.enable = true;
     freshrss = {
