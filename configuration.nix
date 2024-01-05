@@ -158,20 +158,6 @@
       openFirewall = true;
     };
     btrfs.autoScrub.enable = true;
-    emacs = {
-      enable = true;
-      package =
-        (pkgs.emacs.override {
-          withPgtk = true;
-        })
-        .overrideAttrs (attrs: {
-          postInstall =
-            (attrs.postInstall or "")
-            + ''
-              mv $out/share/applications/{emacsclient.desktop,emacs.desktop}
-            '';
-        });
-    };
     flatpak.enable = true;
     freshrss = {
       baseUrl = "http://localhost";
@@ -312,6 +298,9 @@
         compsize
         d-spy
         element-desktop
+        (emacs.override {
+          withPgtk = true;
+        })
         enca
         exiftool
         fd
