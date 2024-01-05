@@ -39,3 +39,7 @@ result
 .config/Code/User/*
 !.config/Code/User/settings.json
 !.config/Code/User/keybindings.json
+
+# Emacs
+.config/emacs/*
+!.config/emacs/*.el

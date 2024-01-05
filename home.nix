@@ -196,6 +196,7 @@
       "MangoHud".source = configPath "MangoHud";
       "ccache".source = configPath "ccache";
       "direnv".source = configPath "direnv";
+      "emacs".source = configPath "emacs";
       "fish".source = configPath "fish";
       "gdb".source = configPath "gdb";
       "git".source = configPath "git";
