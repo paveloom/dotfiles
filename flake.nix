@@ -10,18 +10,18 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs.url = "github:paveloom/nixpkgs/system";
     nixseparatedebuginfod = {
       url = "github:symphorien/nixseparatedebuginfod";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:paveloom/nixpkgs/system";
   };
 
   outputs = {
     home-manager,
     nix-index-database,
-    nixseparatedebuginfod,
     nixpkgs,
+    nixseparatedebuginfod,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -30,18 +30,11 @@
       inherit system;
     };
 
-    commonModules = [
-      ./configuration.nix
-      home-manager.nixosModules.home-manager
-      nix-index-database.nixosModules.nix-index
-      nixseparatedebuginfod.nixosModules.default
-    ];
-
     nixosConfiguration = hostModule:
       nixpkgs.lib.nixosSystem {
         system = system;
-        specialArgs = inputs;
-        modules = commonModules ++ [hostModule];
+        specialArgs = {inherit inputs;};
+        modules = [hostModule];
       };
   in {
     devShells.${system}.default = pkgs.mkShell {

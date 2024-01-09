@@ -1,6 +1,6 @@
 {
   config,
-  nixpkgs,
+  inputs,
   pkgs,
   ...
 }: {
@@ -87,6 +87,12 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nix-index-database.nixosModules.nix-index
+    inputs.nixseparatedebuginfod.nixosModules.default
+  ];
+
   networking = {
     firewall = {
       allowedTCPPorts = [21044 38101 38102];
@@ -110,9 +116,9 @@
       dates = "14:00";
       options = "--delete-older-than 7d";
     };
-    nixPath = ["nixpkgs=${nixpkgs}"];
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     registry.nixpkgs = {
-      flake = nixpkgs;
+      flake = inputs.nixpkgs;
       from = {
         id = "nixpkgs";
         type = "indirect";
