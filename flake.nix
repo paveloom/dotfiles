@@ -52,8 +52,8 @@
     };
 
     nixosConfigurations = {
-      boxes = nixosConfiguration ./hosts/boxes;
       nixos = nixosConfiguration ./hosts/nixos;
+      vm = nixosConfiguration ./hosts/vm;
     };
   };
 }

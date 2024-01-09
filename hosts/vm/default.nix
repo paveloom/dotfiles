@@ -3,5 +3,5 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "boxes";
+  networking.hostName = "vm";
 }
