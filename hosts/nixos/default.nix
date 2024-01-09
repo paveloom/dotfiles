@@ -4,5 +4,5 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "laptop";
+  networking.hostName = "nixos";
 }

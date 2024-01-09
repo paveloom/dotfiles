@@ -53,7 +53,7 @@
 
     nixosConfigurations = {
       boxes = nixosConfiguration ./hosts/boxes;
-      laptop = nixosConfiguration ./hosts/laptop;
+      nixos = nixosConfiguration ./hosts/nixos;
     };
   };
 }
