@@ -87,10 +87,10 @@
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-    inputs.nix-index-database.nixosModules.nix-index
-    inputs.nixseparatedebuginfod.nixosModules.default
+  imports = with inputs; [
+    home-manager.nixosModules.home-manager
+    nix-index-database.nixosModules.nix-index
+    nixseparatedebuginfod.nixosModules.default
   ];
 
   networking = {

@@ -10,11 +10,16 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixoswsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs.url = "github:paveloom/nixpkgs/system";
     nixseparatedebuginfod = {
       url = "github:symphorien/nixseparatedebuginfod";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
   outputs = {
@@ -54,6 +59,7 @@
     nixosConfigurations = {
       nixos = nixosConfiguration ./hosts/nixos;
       vm = nixosConfiguration ./hosts/vm;
+      wsl = nixosConfiguration ./hosts/wsl;
     };
   };
 }
