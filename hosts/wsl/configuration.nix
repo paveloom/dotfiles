@@ -18,6 +18,32 @@
     vscode-server.nixosModules.default
   ];
 
+  nix = {
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    '';
+    gc = {
+      automatic = true;
+      dates = "14:00";
+      options = "--delete-older-than 7d";
+    };
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    registry.nixpkgs = {
+      flake = inputs.nixpkgs;
+      from = {
+        id = "nixpkgs";
+        type = "indirect";
+      };
+    };
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+    };
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
   programs = {
     command-not-found.enable = false;
     direnv.enable = true;
