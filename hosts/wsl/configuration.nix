@@ -69,7 +69,13 @@
   users.users.paveloom = {
     home = "/home/paveloom";
     packages = with pkgs; [
+      (ffmpeg_6.override {
+        withFdkAac = true;
+        withUnfree = true;
+        withWebp = true;
+      })
       lazygit
+      nvd
       wget
     ];
     shell = pkgs.fish;
