@@ -1,6 +1,15 @@
 {config, ...}: {
   home.stateVersion = "23.11";
 
+  services = {
+    gnome-keyring = {
+      components = ["ssh"];
+      enable = true;
+    };
+  };
+
+  systemd.user.services.gnome-keyring.Install.WantedBy = ["default.target"];
+
   xdg = {
     configFile = let
       configPath = dir: (config.lib.file.mkOutOfStoreSymlink

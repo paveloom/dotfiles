@@ -27,9 +27,7 @@ set -gx GPG_TTY (tty)
 set -gx DIRENV_LOG_FORMAT ""
 
 # Set up the SSH agent (via `gnome-keyring`)
-if not grep -iq Microsoft /proc/version
-    set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
-end
+set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 
 # Aliases
 alias nvim="TERM=wezterm command nvim"

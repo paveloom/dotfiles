@@ -29,10 +29,10 @@
       enableFishIntegration = true;
     };
     nix-ld.enable = true;
-    ssh.startAgent = true;
   };
 
   services = {
+    gnome.gnome-keyring.enable = true;
     vscode-server.enable = true;
   };
 
