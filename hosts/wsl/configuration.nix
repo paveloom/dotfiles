@@ -76,6 +76,7 @@
       })
       lazygit
       nvd
+      speedtest-cli
       wget
     ];
     shell = pkgs.fish;
