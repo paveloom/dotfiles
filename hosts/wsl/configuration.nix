@@ -82,6 +82,7 @@
       nvd
       ripgrep
       speedtest-cli
+      streamrip
       tree
       wget
     ];
