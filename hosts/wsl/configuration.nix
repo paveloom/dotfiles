@@ -80,7 +80,9 @@
       })
       lazygit
       nvd
+      ripgrep
       speedtest-cli
+      tree
       wget
     ];
     shell = pkgs.fish;
