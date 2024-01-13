@@ -48,6 +48,10 @@
     command-not-found.enable = false;
     direnv.enable = true;
     fish.enable = true;
+    fzf = {
+      fuzzyCompletion = true;
+      keybindings = true;
+    };
     git.enable = true;
     gnupg.agent.enable = true;
     nix-index = {
