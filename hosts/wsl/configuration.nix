@@ -73,12 +73,14 @@
   users.users.paveloom = {
     home = "/home/paveloom";
     packages = with pkgs; [
+      fd
       (ffmpeg_6.override {
         withFdkAac = true;
         withUnfree = true;
         withWebp = true;
       })
       lazygit
+      lsof
       nvd
       ripgrep
       speedtest-cli
