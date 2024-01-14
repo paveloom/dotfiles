@@ -22,7 +22,6 @@
   "git.useForcePushWithLease": false,
   "scm.countBadge": "focused",
   "security.workspace.trust.untrustedFiles": "open",
-  "telemetry.telemetryLevel": "off",
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.moveEditorLeftInGroup",
     "workbench.action.moveEditorRightInGroup"
@@ -58,11 +57,9 @@
   },
   "githubPullRequests.pullBranch": "never",
   "gitlens.rebaseEditor.ordering": "asc",
-  "gitlens.telemetry.enabled": false,
   "gitlens.views.formats.commits.label": "${message}",
   "Lua.hint.enable": true,
   "mesonbuild.configureOnOpen": false,
-  "redhat.telemetry.enabled": false,
   "stylua.disableVersionCheck": true,
   "vim.handleKeys": {
     "<C-a>": true,
