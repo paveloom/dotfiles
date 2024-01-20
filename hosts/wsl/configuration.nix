@@ -79,6 +79,7 @@
         withUnfree = true;
         withWebp = true;
       })
+      julia
       lazygit
       lsof
       nvd
