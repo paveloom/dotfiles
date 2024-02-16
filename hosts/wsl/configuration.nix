@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -62,6 +63,23 @@
   };
 
   services = {
+    gitea-actions-runner = {
+      package = pkgs.forgejo-actions-runner;
+      instances = {
+        nixos = {
+          enable = true;
+          labels = ["ubuntu-latest:docker://node:18-bullseye"];
+          name = "NixOS";
+          settings = {
+            container = {
+              network = "host";
+            };
+          };
+          tokenFile = config.users.users.paveloom.home + "/.config/forgejo-runner/nixos.env";
+          url = "https://codeberg.org";
+        };
+      };
+    };
     gnome.gnome-keyring.enable = true;
     vscode-server.enable = true;
   };
