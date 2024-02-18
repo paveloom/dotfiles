@@ -1,0 +1,47 @@
+" Number of screen lines to keep above and below the cursor
+set scrolloff=8
+
+" Do incremental searching.
+set incsearch
+
+" Enable smart joins
+set ideajoin
+
+" Make the status icon gray
+set ideastatusicon=gray
+
+" Do all yank, delete, and put operations in system clipboard
+set clipboard+=unnamedplus
+
+" Use the (non-functional) visual bell to silence "beep" sounds
+set visualbell
+
+" Enable Vim plugins
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+" Jump by 4 lines when holding Ctrl and pressing Up/Down arrows
+inoremap <C-Down> <C-o>5gj
+inoremap <C-Up> <C-o>5gk
+nnoremap <C-Down> 5gj
+nnoremap <C-Up> 5gk
+vnoremap <C-Down> 5gj
+vnoremap <C-Up> 5gk
+
+" Insert from the system clipboard
+inoremap <C-v> <C-r>+
+
+" Change indentation using Tab
+nnoremap <S-Tab> <<
+nnoremap <Tab> >>
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >gv
+
+" Change and delete into the black hole register
+nnoremap c "_c
+nnoremap C "_C
+nnoremap d "_d
+nnoremap D "_D
+xnoremap c "_c
+xnoremap d "_d
+xnoremap p pgvy

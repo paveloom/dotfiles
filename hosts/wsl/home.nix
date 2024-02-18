@@ -24,6 +24,7 @@
       "gdb".source = configPath "gdb";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
+      "ideavim".source = configPath "ideavim";
       "lazygit".source = configPath "lazygit";
       "mozc".source = configPath "mozc";
       "mpv".source = configPath "mpv";
