@@ -91,6 +91,7 @@
   users.users.paveloom = {
     home = "/home/paveloom";
     packages = with pkgs; [
+      dnsutils
       fd
       (ffmpeg_6.override {
         withFdkAac = true;
