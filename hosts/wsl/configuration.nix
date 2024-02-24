@@ -98,6 +98,7 @@
         withUnfree = true;
         withWebp = true;
       })
+      inetutils
       julia
       lazygit
       lsof
