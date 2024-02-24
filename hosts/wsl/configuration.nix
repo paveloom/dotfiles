@@ -101,6 +101,7 @@
       inetutils
       julia
       lazygit
+      lftp
       lsof
       nvd
       ripgrep
