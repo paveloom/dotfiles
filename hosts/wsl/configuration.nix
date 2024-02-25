@@ -91,6 +91,7 @@
   users.users.paveloom = {
     home = "/home/paveloom";
     packages = with pkgs; [
+      bat
       dnsutils
       fd
       (ffmpeg_6.override {
