@@ -104,6 +104,7 @@
       lftp
       lsof
       nvd
+      openssl
       ripgrep
       speedtest-cli
       streamrip
