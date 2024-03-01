@@ -109,6 +109,7 @@
       ripgrep
       speedtest-cli
       streamrip
+      swaks
       tree
       wget
     ];
