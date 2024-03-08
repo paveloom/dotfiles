@@ -28,9 +28,6 @@ nnoremap <C-Up> 5gk
 vnoremap <C-Down> 5gj
 vnoremap <C-Up> 5gk
 
-" Insert from the system clipboard
-inoremap <C-v> <C-r>+
-
 " Change indentation using Tab
 nnoremap <S-Tab> <<
 nnoremap <Tab> >>
