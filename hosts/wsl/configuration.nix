@@ -92,6 +92,7 @@
     home = "/home/paveloom";
     packages = with pkgs; [
       bat
+      btop
       dnsutils
       fd
       (ffmpeg_6.override {
