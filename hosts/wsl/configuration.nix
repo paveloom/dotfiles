@@ -105,6 +105,7 @@
       lazygit
       lftp
       lsof
+      neovim
       nvd
       openssl
       ripgrep
