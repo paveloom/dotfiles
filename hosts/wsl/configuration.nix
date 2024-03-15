@@ -114,6 +114,7 @@
       swaks
       tree
       wget
+      wl-clipboard
     ];
     shell = pkgs.fish;
   };
