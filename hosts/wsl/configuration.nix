@@ -106,6 +106,7 @@
       lftp
       lsof
       neovim
+      nix-tree
       nvd
       openssl
       ripgrep
