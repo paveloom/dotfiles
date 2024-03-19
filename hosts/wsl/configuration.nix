@@ -110,6 +110,7 @@
         withWebp = true;
       })
       inetutils
+      jetbrains-toolbox
       julia
       lazygit
       lftp
