@@ -147,5 +147,6 @@
       {src = "${coreutils}/bin/dirname";}
       {src = "${coreutils}/bin/readlink";}
     ];
+    useWindowsDriver = true;
   };
 }
