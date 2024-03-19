@@ -81,12 +81,21 @@
       };
     };
     gnome.gnome-keyring.enable = true;
+    nginx = {
+      appendHttpConfig = ''
+        include /etc/nginx/sites-enabled/*.conf;
+      '';
+      enable = true;
+      user = "paveloom";
+    };
     vscode-server.enable = true;
   };
 
   system = {
     stateVersion = "23.11";
   };
+
+  systemd.services.nginx.serviceConfig.ProtectHome = false;
 
   users.users.paveloom = {
     home = "/home/paveloom";
