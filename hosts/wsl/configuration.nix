@@ -123,6 +123,7 @@
       streamrip
       swaks
       tree
+      unzip
       wget
       wl-clipboard
     ];
