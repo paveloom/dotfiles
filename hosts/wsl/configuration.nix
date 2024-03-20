@@ -110,7 +110,8 @@
         withWebp = true;
       })
       inetutils
-      jetbrains-toolbox
+      jetbrains.phpstorm
+      jetbrains.webstorm
       julia
       lazygit
       lftp
