@@ -1,18 +1,14 @@
 gui:
+  enlargedSideViewLocation: "top"
+  filterMode: 'fuzzy'
+  nerdFontsVersion: "3"
   scrollHeight: 3
   scrollPastBottom: false
   theme:
-    inactiveBorderColor:
-      - white
-      - bold
     selectedLineBgColor:
-      - default
-    selectedRangeBgColor:
-      - default
-  showFileTree: false
+      - "#303030"
   showBottomLine: false
   showCommandLog: false
-  nerdFontsVersion: "3"
 git:
   merging:
     args: --no-ff
@@ -24,9 +20,8 @@ keybinding:
   stash:
     popStash: p
   files:
+    toggleTreeView: t
     viewResetOptions: R
-  commits:
-    push: <nop>
 customCommands:
   - key: c
     description: commit changes
