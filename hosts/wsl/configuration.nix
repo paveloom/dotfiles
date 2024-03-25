@@ -97,6 +97,8 @@
 
   systemd.services.nginx.serviceConfig.ProtectHome = false;
 
+  time.timeZone = "Europe/Moscow";
+
   users.users.paveloom = {
     home = "/home/paveloom";
     packages = with pkgs; [
