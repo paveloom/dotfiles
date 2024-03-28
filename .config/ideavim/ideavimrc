@@ -42,3 +42,7 @@ nnoremap D "_D
 xnoremap c "_c
 xnoremap d "_d
 xnoremap p pgvy
+
+" Map IDE actions
+nmap ga <Action>(ShowIntentionActions)
+nmap gh <Action>(ShowHoverInfo)
