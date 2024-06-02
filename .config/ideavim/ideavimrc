@@ -45,7 +45,7 @@ nnoremap d "_d
 nnoremap D "_D
 xnoremap c "_c
 xnoremap d "_d
-xnoremap p pgvy
+xnoremap p P
 
 " Map IDE actions
 nmap ga <Action>(ShowIntentionActions)
