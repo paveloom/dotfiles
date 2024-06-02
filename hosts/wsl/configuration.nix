@@ -62,18 +62,6 @@
     nix-ld.enable = true;
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "contact@paveloom.dev";
-    certs = {
-      "lan.paveloom.dev" = {
-        dnsProvider = "manual";
-        extraDomainNames = ["*.lan.paveloom.dev"];
-        group = "nginx";
-      };
-    };
-  };
-
   services = {
     gitea-actions-runner = {
       package = pkgs.forgejo-actions-runner;
@@ -128,6 +116,7 @@
       jetbrains.webstorm
       julia
       lazygit
+      lego
       lftp
       lsof
       neovim
