@@ -122,6 +122,7 @@
       })
       inetutils
       jetbrains.phpstorm
+      jetbrains.pycharm-professional
       jetbrains.webstorm
       julia
       lazygit
