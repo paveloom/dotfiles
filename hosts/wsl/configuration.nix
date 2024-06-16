@@ -115,7 +115,7 @@
       btop
       dnsutils
       fd
-      (ffmpeg_6.override {
+      (ffmpeg_7.override {
         withFdkAac = true;
         withUnfree = true;
         withWebp = true;
