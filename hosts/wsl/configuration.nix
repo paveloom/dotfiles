@@ -130,6 +130,7 @@
       lftp
       lsof
       neovim
+      nix-output-monitor
       nix-tree
       nvd
       openssl
