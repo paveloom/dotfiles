@@ -114,6 +114,7 @@
       bat
       btop
       dnsutils
+      dua
       fd
       (ffmpeg_7.override {
         withFdkAac = true;
