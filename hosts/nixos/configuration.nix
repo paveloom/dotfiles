@@ -9,7 +9,7 @@
     loader = {
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
+        efiSysMountPoint = "/boot";
       };
       systemd-boot.enable = true;
     };
@@ -90,7 +90,6 @@
   imports = with inputs; [
     home-manager.nixosModules.home-manager
     nix-index-database.nixosModules.nix-index
-    nixseparatedebuginfod.nixosModules.default
   ];
 
   networking = {
@@ -158,12 +157,6 @@
   security.rtkit.enable = true;
 
   services = {
-    avahi = {
-      enable = true;
-      nssmdns = true;
-      openFirewall = true;
-    };
-    btrfs.autoScrub.enable = true;
     flatpak.enable = true;
     freshrss = {
       baseUrl = "http://localhost";
@@ -253,15 +246,13 @@
       displayManager.gdm.enable = true;
       enable = true;
       excludePackages = [pkgs.xterm];
-      layout = "us,ru";
+      xkb = {layout = "us,ru";};
     };
   };
 
-  sound.enable = true;
-
   system = {
     fsPackages = [pkgs.bindfs];
-    stateVersion = "22.11";
+    stateVersion = "24.05";
   };
 
   systemd.extraConfig = ''
@@ -300,7 +291,6 @@
         authenticator
         bat
         bottles
-        chatall
         compsize
         d-spy
         element-desktop
@@ -395,7 +385,6 @@
         qolibri
         quodlibet-full
         radeontop
-        radicle-cli
         rclone
         ripgrep
         rmg
@@ -403,7 +392,6 @@
         ryujinx
         spotify
         sqlite-interactive
-        substudy
         subtitleedit
         taskwarrior
         tdesktop
@@ -435,9 +423,7 @@
         wirelesstools
         wl-clipboard
         xclip
-        yandex-browser
         yt-dlp
-        yuzu-early-access
         zeal
         zip
         zulip

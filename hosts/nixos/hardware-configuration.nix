@@ -24,17 +24,17 @@
   };
 
   fileSystems = {
-    "/boot/efi" = {
+    "/boot" = {
       device = "/dev/disk/by-label/NIXOS-BOOT";
       fsType = "vfat";
+      options = [
+         "fmask=0022"
+         "dmask=0022"
+      ];
     };
     "/" = {
-      device = "/dev/disk/by-label/nixos-root";
-      fsType = "btrfs";
-      options = [
-        "compress-force=zstd"
-        "subvol=@"
-      ];
+      device = "/dev/disk/by-label/NIXOS-ROOT";
+      fsType = "ext4";
     };
   };
 

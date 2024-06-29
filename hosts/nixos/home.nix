@@ -112,28 +112,13 @@
       workspace-wrap-around = true;
     };
     "org/gnome/shell/extensions/mediacontrols" = {
-      extension-position = "right";
-      max-widget-width = 350;
-      mouse-actions = [
-        "toggle_play"
-        "toggle_menu"
-        "toggle_info"
-        "none"
-        "none"
-        "none"
-        "none"
-        "none"
-      ];
-      scroll-track-label = true;
+      extension-position = "Right";
+      label-width = config.lib.gvariant.mkUint32 0;
+      labels-order = ["ARTIST" "—" "TITLE"];
+      mouse-action-left = "PLAY_PAUSE";
+      mouse-action-right = "SHOW_POPUP_MENU";
       show-control-icons = false;
       show-player-icon = false;
-      show-seperators = false;
-      show-sources-menu = false;
-      track-label = [
-        "artist"
-        "—"
-        "track"
-      ];
     };
     "org/gnome/shell/extensions/memento-mori" = {
       birth-day = 9;

@@ -15,10 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:paveloom/nixpkgs/system";
-    nixseparatedebuginfod = {
-      url = "github:symphorien/nixseparatedebuginfod";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
@@ -26,7 +22,6 @@
     home-manager,
     nix-index-database,
     nixpkgs,
-    nixseparatedebuginfod,
     ...
   } @ inputs: let
     system = "x86_64-linux";
