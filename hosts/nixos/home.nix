@@ -64,6 +64,7 @@
       ];
       favorite-apps = [
         "google-chrome.desktop"
+        "org.gnome.Evolution.desktop"
         "org.gnome.Nautilus.desktop"
         "gnome-system-monitor.desktop"
         "org.gnome.TextEditor.desktop"
