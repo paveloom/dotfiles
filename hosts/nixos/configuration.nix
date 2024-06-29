@@ -183,6 +183,7 @@
       };
     };
     ipp-usb.enable = true;
+    logind.lidSwitch = "ignore";
     nginx.virtualHosts.freshrss.listen = [
       {
         addr = "0.0.0.0";
