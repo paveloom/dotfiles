@@ -66,7 +66,7 @@
         "vivaldi-stable.desktop"
         "org.gnome.Evolution.desktop"
         "org.gnome.Nautilus.desktop"
-        "gnome-system-monitor.desktop"
+        "org.gnome.SystemMonitor.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "code.desktop"
