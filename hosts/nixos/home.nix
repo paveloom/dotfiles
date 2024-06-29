@@ -63,7 +63,7 @@
         "Vitals@CoreCoding.com"
       ];
       favorite-apps = [
-        "google-chrome.desktop"
+        "vivaldi-stable.desktop"
         "org.gnome.Evolution.desktop"
         "org.gnome.Nautilus.desktop"
         "gnome-system-monitor.desktop"
