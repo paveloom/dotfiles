@@ -294,6 +294,7 @@
         bottles
         compsize
         d-spy
+        dua
         element-desktop
         (emacs.override {
           withPgtk = true;
