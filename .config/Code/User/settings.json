@@ -20,6 +20,7 @@
   "git.enableSmartCommit": true,
   "git.useForcePushIfIncludes": false,
   "git.useForcePushWithLease": false,
+  "remote.autoForwardPortsSource": "hybrid",
   "scm.countBadge": "focused",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.commandsToSkipShell": [
@@ -60,6 +61,7 @@
   "gitlens.views.formats.commits.label": "${message}",
   "Lua.hint.enable": true,
   "mesonbuild.configureOnOpen": false,
+  "mesonbuild.downloadLanguageServer": false,
   "stylua.disableVersionCheck": true,
   "vim.handleKeys": {
     "<C-a>": true,
