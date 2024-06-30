@@ -191,6 +191,12 @@
       }
     ];
     nixseparatedebuginfod.enable = true;
+    openvpn.servers = {
+      vpn = {
+        config = ''config /root/nixos/openvpn/vpn.ovpn '';
+        updateResolvConf = true;
+      };
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
