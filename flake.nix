@@ -15,6 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:paveloom/nixpkgs/system";
+    nur.url = "github:nix-community/NUR";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
