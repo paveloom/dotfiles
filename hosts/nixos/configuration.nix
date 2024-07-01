@@ -185,12 +185,18 @@
     };
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
-    nginx.virtualHosts.freshrss.listen = [
-      {
-        addr = "0.0.0.0";
-        port = 21044;
-      }
-    ];
+    nginx = {
+      appendHttpConfig = ''
+        include /etc/nginx/sites-enabled/*.conf;
+      '';
+      user = "paveloom";
+      virtualHosts.freshrss.listen = [
+        {
+          addr = "0.0.0.0";
+          port = 21044;
+        }
+      ];
+    };
     nixseparatedebuginfod.enable = true;
     openvpn.servers = {
       vpn = {
@@ -268,15 +274,18 @@
     extraConfig = ''
       DefaultTimeoutStopSec=15s
     '';
-    services.flaresolverr = {
-      after = ["network.target"];
-      serviceConfig = {
-        Type = "simple";
-        Restart = "always";
-        RestartSec = 5;
-        ExecStart = "${config.nur.repos.xddxdd.flaresolverr}/bin/flaresolverr";
+    services = {
+      flaresolverr = {
+        after = ["network.target"];
+        serviceConfig = {
+          Type = "simple";
+          Restart = "always";
+          RestartSec = 5;
+          ExecStart = "${config.nur.repos.xddxdd.flaresolverr}/bin/flaresolverr";
+        };
+        wantedBy = ["multi-user.target"];
       };
-      wantedBy = ["multi-user.target"];
+      nginx.serviceConfig.ProtectHome = false;
     };
   };
 
