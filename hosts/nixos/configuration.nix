@@ -189,7 +189,6 @@
       appendHttpConfig = ''
         include /etc/nginx/sites-enabled/*.conf;
       '';
-      user = "paveloom";
       virtualHosts.freshrss.listen = [
         {
           addr = "0.0.0.0";
@@ -285,7 +284,6 @@
         };
         wantedBy = ["multi-user.target"];
       };
-      nginx.serviceConfig.ProtectHome = false;
     };
   };
 
