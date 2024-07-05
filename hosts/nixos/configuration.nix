@@ -406,6 +406,7 @@
         ryujinx
         spotify
         sqlite-interactive
+        streamrip
         subtitleedit
         taskwarrior
         tdesktop
