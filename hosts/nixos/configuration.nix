@@ -90,7 +90,6 @@
   imports = with inputs; [
     home-manager.nixosModules.home-manager
     nix-index-database.nixosModules.nix-index
-    nur.nixosModules.nur
   ];
 
   networking = {
@@ -269,23 +268,9 @@
     stateVersion = "24.05";
   };
 
-  systemd = {
-    extraConfig = ''
-      DefaultTimeoutStopSec=15s
-    '';
-    services = {
-      flaresolverr = {
-        after = ["network.target"];
-        serviceConfig = {
-          Type = "simple";
-          Restart = "always";
-          RestartSec = 5;
-          ExecStart = "${config.nur.repos.xddxdd.flaresolverr}/bin/flaresolverr";
-        };
-        wantedBy = ["multi-user.target"];
-      };
-    };
-  };
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=15s
+  '';
 
   time.timeZone = "Europe/Moscow";
 
