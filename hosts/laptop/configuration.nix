@@ -322,6 +322,9 @@
         hunspellDicts.en_US
         hunspellDicts.ru_RU
         inkscape
+        jetbrains.phpstorm
+        jetbrains.pycharm-professional
+        jetbrains.webstorm
         julia
         keepassxc
         lazygit
