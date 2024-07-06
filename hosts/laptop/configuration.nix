@@ -159,6 +159,7 @@
 
   services = {
     flatpak.enable = true;
+    flaresolverr.enable = true;
     freshrss = {
       baseUrl = "http://localhost";
       database.type = "sqlite";
