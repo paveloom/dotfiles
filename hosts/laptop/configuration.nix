@@ -36,22 +36,6 @@
     ];
   };
 
-  fileSystems = let
-    mkRoSymBind = path: {
-      device = path;
-      fsType = "fuse.bindfs";
-      options = ["ro" "resolve-symlinks" "x-gvfs-hide"];
-    };
-    aggregatedFonts = pkgs.buildEnv {
-      name = "system-fonts";
-      paths = config.fonts.fonts;
-      pathsToLink = ["/share/fonts"];
-    };
-  in {
-    "/usr/share/icons" = mkRoSymBind (config.system.path + "/share/icons");
-    "/usr/share/fonts" = mkRoSymBind (aggregatedFonts + "/share/fonts");
-  };
-
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
@@ -101,7 +85,6 @@
       enable = true;
       wifi.powersave = false;
     };
-    wireguard.enable = true;
   };
 
   nix = {
@@ -155,10 +138,7 @@
     };
   };
 
-  security.rtkit.enable = true;
-
   services = {
-    flatpak.enable = true;
     flaresolverr.enable = true;
     freshrss = {
       baseUrl = "http://localhost";
@@ -178,7 +158,7 @@
               network = "host";
             };
           };
-          tokenFile = config.users.users.paveloom.home + "/.config/forgejo-runner/nixos.env";
+          tokenFile = "/root/nixos/forgejo-runner/token.env";
           url = "https://codeberg.org";
         };
       };
@@ -292,10 +272,7 @@
       name = "paveloom";
       packages = with pkgs; [
         acpi
-        aegisub
         amdgpu_top
-        anki
-        apitrace
         appimage-run
         asciinema
         aspell
@@ -305,18 +282,11 @@
         authenticator
         bat
         bottles
-        compsize
         d-spy
         dconf-editor
         dua
-        element-desktop
-        (emacs.override {
-          withPgtk = true;
-        })
-        enca
-        exiftool
         fd
-        (ffmpeg_6.override {
+        (ffmpeg_7.override {
           withFdkAac = true;
           withUnfree = true;
           withWebp = true;
@@ -326,13 +296,9 @@
         foliate
         fontforge-gtk
         fopnu
-        # fractal-next
         fzf
         gamescope
-        ghostscript
         gimp
-        glow
-        glxinfo
         gnome-extension-manager
         gnome-frog
         gnome-icon-theme
@@ -355,93 +321,46 @@
         hunspell
         hunspellDicts.en_US
         hunspellDicts.ru_RU
-        icon-library
-        icoutils
-        identity
-        imagemagick
-        img2pdf
-        imhex
         inkscape
-        inxi
-        iw
-        jq
         julia
         keepassxc
         lazygit
         libnotify
         libreoffice
-        librewolf
         libva-utils
-        linssid
-        lshw
-        lsof
         mangohud
-        mecab
-        mediainfo-gui
-        metadata-cleaner
-        microsoft-edge
         monero-gui
-        mousai
         mpv
         neovim
         newsflash
-        nicotine-plus
         nix-output-monitor
         nix-tree
         obs-studio
-        ocrmypdf
         patchelf
-        pciutils
-        pdfarranger
-        pdfgrep
         picard
         protonup-qt
         qbittorrent
-        qolibri
         quodlibet-full
-        radeontop
-        rclone
         ripgrep
-        rmg
-        rnote
-        ryujinx
-        spotify
-        sqlite-interactive
         streamrip
         subtitleedit
-        taskwarrior
         tdesktop
-        tenacity
-        tor-browser-bundle-bin
-        tracy
         tree
         unrar
         unzip
-        upscayl
         virt-manager
         virtiofsd
         (vivaldi.override {
           enableWidevine = true;
           proprietaryCodecs = true;
         })
-        (vlc.override {
-          libbluray = libbluray.override {
-            withJava = true;
-          };
-        })
         vscode
-        vtfedit
-        vulkan-tools
         wally-cli
         wezterm
         wget
-        wirelesstools
         wl-clipboard
         xclip
-        yt-dlp
-        zeal
         zip
-        zulip
       ];
       shell = pkgs.fish;
     };

@@ -84,7 +84,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-w8tHs3gKm6e/49s2/npHJdviMxX9Bd49Dap7IbN29PE=",
+        "narHash": "sha256-s44IMm/64gxxRGtECRTVZL39WT7hKm6BHWTFjKto0Eg=",
         "path": "./hosts/laptop",
         "type": "path"
       },

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
@@ -65,16 +61,14 @@
       favorite-apps = [
         "vivaldi-stable.desktop"
         "org.gnome.Evolution.desktop"
+        "io.github.quodlibet.QuodLibet.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.SystemMonitor.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "code.desktop"
-        "emacs.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
-        "org.nicotine_plus.Nicotine.desktop"
         "org.qbittorrent.qBittorrent.desktop"
-        "io.github.quodlibet.QuodLibet.desktop"
         "org.keepassxc.KeePassXC.desktop"
         "gnucash.desktop"
       ];
@@ -145,33 +139,7 @@
     };
   };
 
-  home.stateVersion = "22.11";
-
-  systemd.user = {
-    services = {
-      flatpak-update = {
-        Unit.Description = "Update Flatpak packages";
-        Service.ExecStart =
-          (pkgs.writeShellScript "update-flatpak" ''
-            ${pkgs.flatpak}/bin/flatpak update --noninteractive
-            ${pkgs.flatpak}/bin/flatpak uninstall --unused --noninteractive
-          '')
-          .outPath;
-      };
-    };
-    timers = {
-      flatpak-update = {
-        Unit = {
-          Description = "Update all Flatpak packages on a schedule";
-        };
-        Timer = {
-          OnCalendar = ["14:00"];
-          Persistent = true;
-        };
-        Install.WantedBy = ["timers.target"];
-      };
-    };
-  };
+  home.stateVersion = "24.05";
 
   xdg = {
     configFile = let
