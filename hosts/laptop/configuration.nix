@@ -131,6 +131,7 @@
       enable = true;
       enableFishIntegration = true;
     };
+    nix-ld.enable = true;
     steam.enable = true;
     wireshark = {
       enable = true;
