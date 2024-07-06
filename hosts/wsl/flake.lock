@@ -37,7 +37,6 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "laptop",
           "nixpkgs"
         ]
       },
@@ -53,71 +52,11 @@
         "owner": "nix-community",
         "repo": "home-manager",
         "type": "github"
-      }
-    },
-    "home-manager_2": {
-      "inputs": {
-        "nixpkgs": [
-          "wsl",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1720188602,
-        "narHash": "sha256-lC3byBmhVZFzWl/dCic8+cKUEEAXAswWOYjq4paFmbo=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "e3582e5151498bc4d757e8361431ace8529e7bb7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "laptop": {
-      "inputs": {
-        "home-manager": "home-manager",
-        "nix-index-database": "nix-index-database",
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-w8tHs3gKm6e/49s2/npHJdviMxX9Bd49Dap7IbN29PE=",
-        "path": "./hosts/laptop",
-        "type": "path"
-      },
-      "original": {
-        "path": "./hosts/laptop",
-        "type": "path"
       }
     },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
-          "laptop",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1719832725,
-        "narHash": "sha256-dr8DkeS74KVNTgi8BE0BiUKALb+EKlMIV86G2xPYO64=",
-        "owner": "Mic92",
-        "repo": "nix-index-database",
-        "rev": "2917972ed34ce292309b3a4976286f8b5c08db27",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "nix-index-database",
-        "type": "github"
-      }
-    },
-    "nix-index-database_2": {
-      "inputs": {
-        "nixpkgs": [
-          "wsl",
           "nixpkgs"
         ]
       },
@@ -140,7 +79,6 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "nixpkgs": [
-          "wsl",
           "nixpkgs"
         ]
       },
@@ -174,43 +112,13 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1720213807,
-        "narHash": "sha256-RY/YxKBdQ/2M57jQBSSBFd6IXgR/xH1YYu/5zcFu9YI=",
-        "owner": "paveloom",
-        "repo": "nixpkgs",
-        "rev": "3533a7ea01724642b2f2c28fef08d2432c5cd2a7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "paveloom",
-        "ref": "system",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1720213807,
-        "narHash": "sha256-RY/YxKBdQ/2M57jQBSSBFd6IXgR/xH1YYu/5zcFu9YI=",
-        "owner": "paveloom",
-        "repo": "nixpkgs",
-        "rev": "3533a7ea01724642b2f2c28fef08d2432c5cd2a7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "paveloom",
-        "ref": "system",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "laptop": "laptop",
-        "nixpkgs": "nixpkgs_2",
-        "wsl": "wsl"
+        "home-manager": "home-manager",
+        "nix-index-database": "nix-index-database",
+        "nixoswsl": "nixoswsl",
+        "nixpkgs": "nixpkgs",
+        "vscode-server": "vscode-server"
       }
     },
     "systems": {
@@ -231,12 +139,10 @@
     "vscode-server": {
       "inputs": {
         "flake-utils": [
-          "wsl",
           "nixoswsl",
           "flake-utils"
         ],
         "nixpkgs": [
-          "wsl",
           "nixpkgs"
         ]
       },
@@ -252,25 +158,6 @@
         "owner": "nix-community",
         "repo": "nixos-vscode-server",
         "type": "github"
-      }
-    },
-    "wsl": {
-      "inputs": {
-        "home-manager": "home-manager_2",
-        "nix-index-database": "nix-index-database_2",
-        "nixoswsl": "nixoswsl",
-        "nixpkgs": "nixpkgs_3",
-        "vscode-server": "vscode-server"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-nQXO4M/fV9zdrEy4rz4G/rTXtcrr8g412iYdHGkvkmA=",
-        "path": "./hosts/wsl",
-        "type": "path"
-      },
-      "original": {
-        "path": "./hosts/wsl",
-        "type": "path"
       }
     }
   },

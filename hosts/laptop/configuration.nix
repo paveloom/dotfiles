@@ -20,10 +20,9 @@
 
   environment = {
     gnome.excludePackages = with pkgs; [
+      epiphany
       gnome-photos
       gnome-tour
-      gnome.epiphany
-      gnome.geary
       gnome.gnome-contacts
       gnome.gnome-maps
       gnome.gnome-music
@@ -33,7 +32,7 @@
     ];
     shells = [pkgs.fish];
     systemPackages = with pkgs; [
-      gnome.nautilus-python
+      nautilus-python
     ];
   };
 
@@ -65,11 +64,11 @@
   };
 
   hardware = {
-    keyboard.zsa.enable = true;
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
+    keyboard.zsa.enable = true;
     pulseaudio.enable = false;
     sane = {
       enable = true;
@@ -141,6 +140,7 @@
       keybindings = true;
     };
     gamemode.enable = true;
+    geary.enable = false;
     git.enable = true;
     gnupg.agent.enable = true;
     nano.syntaxHighlight = true;
@@ -306,6 +306,7 @@
         bottles
         compsize
         d-spy
+        dconf-editor
         dua
         element-desktop
         (emacs.override {
@@ -334,10 +335,8 @@
         gnome-extension-manager
         gnome-frog
         gnome-icon-theme
-        gnome.dconf-editor
+        gnome-tweaks
         gnome.gnome-sound-recorder
-        gnome.gnome-tweaks
-        gnome.gucharmap
         gnomeExtensions.appindicator
         gnomeExtensions.clipboard-history
         gnomeExtensions.dash-to-dock
@@ -351,6 +350,7 @@
         google-chrome
         goverlay
         gparted
+        gucharmap
         hunspell
         hunspellDicts.en_US
         hunspellDicts.ru_RU
@@ -428,7 +428,6 @@
             withJava = true;
           };
         })
-        vocabsieve
         vscode
         vtfedit
         vulkan-tools
