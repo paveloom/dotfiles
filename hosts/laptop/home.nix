@@ -35,6 +35,9 @@
         (config.lib.gvariant.mkTuple ["xkb" "ru"])
       ];
     };
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+    };
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-schedule-automatic = false;
       night-light-schedule-from = 20;
