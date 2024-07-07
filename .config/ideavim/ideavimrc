@@ -1,3 +1,6 @@
+" Set the leader key
+let mapleader=" "
+
 " Number of screen lines to keep above and below the cursor
 set scrolloff=8
 
@@ -50,3 +53,5 @@ xnoremap p P
 " Map IDE actions
 nmap ga <Action>(ShowIntentionActions)
 nmap gh <Action>(ShowHoverInfo)
+nmap <leader>a <Action>(Back)
+nmap <leader>d <Action>(Forward)
