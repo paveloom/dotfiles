@@ -8,8 +8,8 @@ return {
   config = function()
     -- Set up the plugin
     require("bufjump").setup({
-      backward = "<leader>a",
-      forward = "<leader>d",
+      backward_key = "<leader>a",
+      forward_key = "<leader>d",
       on_success = function()
         vim.cmd([[execute "normal! g`\"zz"]])
       end,
