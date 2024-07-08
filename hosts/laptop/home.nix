@@ -155,6 +155,7 @@
       "direnv".source = configPath "direnv";
       "emacs".source = configPath "emacs";
       "fish".source = configPath "fish";
+      "foot".source = configPath "foot";
       "gdb".source = configPath "gdb";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
