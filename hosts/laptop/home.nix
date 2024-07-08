@@ -165,6 +165,7 @@
       "nvim".source = configPath "nvim";
       "pdm".source = configPath "pdm";
       "sway".source = configPath "sway";
+      "swaylock".source = configPath "swaylock";
       "task".source = configPath "task";
       "wezterm".source = configPath "wezterm";
       "yamlfmt".source = configPath "yamlfmt";
