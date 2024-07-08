@@ -9,7 +9,7 @@ local lush = require("lush")
 local hsl = lush.hsl
 
 local colors = {
-  rock_dark = hsl(263, 25, 6),
+  rock_dark = hsl(0, 0, 0),
   rock = hsl(263, 25, 10),
   rock_medium = hsl(262, 10, 22),
   gray_dark = hsl(261, 10, 34),
