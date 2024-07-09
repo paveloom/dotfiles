@@ -337,7 +337,6 @@
         mpv
         neovim
         newsflash
-        nix-output-monitor
         nix-tree
         obs-studio
         patchelf
