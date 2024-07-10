@@ -147,23 +147,6 @@
       enable = true;
       passwordFile = "/run/secrets/freshrss";
     };
-    gitea-actions-runner = {
-      package = pkgs.forgejo-actions-runner;
-      instances = {
-        nixos = {
-          enable = true;
-          labels = ["ubuntu-latest:docker://node:18-bullseye"];
-          name = "NixOS";
-          settings = {
-            container = {
-              network = "host";
-            };
-          };
-          tokenFile = "/root/nixos/forgejo-runner/token.env";
-          url = "https://codeberg.org";
-        };
-      };
-    };
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
     nginx = {
