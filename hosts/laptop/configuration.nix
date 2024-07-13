@@ -20,7 +20,6 @@
 
   environment = {
     gnome.excludePackages = with pkgs; [
-      epiphany
       gnome-photos
       gnome-tour
       gnome.gnome-contacts
