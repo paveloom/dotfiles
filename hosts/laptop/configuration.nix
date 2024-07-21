@@ -5,7 +5,7 @@
   ...
 }: {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages-rt_latest;
     loader = {
       efi = {
         canTouchEfiVariables = true;
