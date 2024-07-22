@@ -320,6 +320,11 @@
         protonup-qt
         qbittorrent
         quodlibet-full
+        (retroarch.override {
+          cores = with libretro; [
+            mesen
+          ];
+        })
         ripgrep
         streamrip
         subtitleedit
