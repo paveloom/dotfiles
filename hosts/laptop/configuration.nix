@@ -167,6 +167,38 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+      extraConfig = let
+        rate = 48000;
+        quantum = 32;
+        req = "${toString quantum}/${toString rate}";
+      in {
+        pipewire."92-low-latency" = {
+          context.properties = {
+            default.clock.rate = rate;
+            default.clock.quantum = quantum;
+            default.clock.min-quantum = quantum;
+            default.clock.max-quantum = quantum;
+          };
+        };
+        pipewire-pulse."92-low-latency" = {
+          context.modules = [
+            {
+              name = "libpipewire-module-protocol-pulse";
+              args = {
+                pulse.min.req = req;
+                pulse.default.req = req;
+                pulse.max.req = req;
+                pulse.min.quantum = req;
+                pulse.max.quantum = req;
+              };
+            }
+          ];
+          stream.properties = {
+            node.latency = req;
+            resample.quality = 1;
+          };
+        };
+      };
     };
     printing = {
       drivers = with pkgs; [
