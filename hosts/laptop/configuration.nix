@@ -138,6 +138,8 @@
     };
   };
 
+  security.rtkit.enable = true;
+
   services = {
     flaresolverr.enable = true;
     freshrss = {
