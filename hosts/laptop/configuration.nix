@@ -141,7 +141,7 @@
   security.rtkit.enable = true;
 
   services = {
-    flaresolverr.enable = true;
+    # flaresolverr.enable = true;
     freshrss = {
       baseUrl = "http://localhost";
       database.type = "sqlite";
