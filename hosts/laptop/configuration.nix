@@ -93,7 +93,7 @@
     '';
     gc = {
       automatic = true;
-      dates = "14:00";
+      dates = "weekly";
       options = "--delete-older-than 7d";
     };
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
