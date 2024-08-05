@@ -296,6 +296,7 @@
         d-spy
         dconf-editor
         dua
+        eddie
         fd
         (ffmpeg_7.override {
           withFdkAac = true;
