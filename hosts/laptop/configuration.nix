@@ -357,6 +357,7 @@
         quodlibet-full
         (retroarch.override {
           cores = with libretro; [
+            bsnes
             mesen
           ];
         })
