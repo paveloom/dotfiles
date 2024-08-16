@@ -76,7 +76,7 @@
 
   networking = {
     firewall = {
-      allowedTCPPorts = [8081 8082 9000 21044 38101 38102];
+      allowedTCPPorts = [8081 8082 9000 21044 38101];
       allowedUDPPorts = [22174];
       checkReversePath = false;
     };
