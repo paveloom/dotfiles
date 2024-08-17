@@ -8,7 +8,6 @@
     initrd = {
       availableKernelModules = [
         "ahci"
-        "amdgpu"
         "nvme"
         "rtsx_pci_sdmmc"
         "sd_mod"
@@ -41,8 +40,6 @@
   hardware.cpu.amd.updateMicrocode = true;
 
   nixpkgs.hostPlatform = "x86_64-linux";
-
-  services.xserver.videoDrivers = ["amdgpu"];
 
   swapDevices = [];
 }
