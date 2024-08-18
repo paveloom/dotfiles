@@ -284,7 +284,6 @@
       packages = with pkgs; [
         acpi
         amdgpu_top
-        anytype
         appimage-run
         asciinema
         aspell
