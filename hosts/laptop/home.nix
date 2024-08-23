@@ -69,7 +69,6 @@
         "org.gnome.SystemMonitor.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
-        "org.gnome.Console.desktop"
         "code.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.qbittorrent.qBittorrent.desktop"
