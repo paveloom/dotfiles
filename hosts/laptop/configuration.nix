@@ -181,21 +181,13 @@
           };
         };
         pipewire-pulse."92-low-latency" = {
-          context.modules = [
-            {
-              name = "libpipewire-module-protocol-pulse";
-              args = {
-                pulse.min.req = req;
-                pulse.default.req = req;
-                pulse.max.req = req;
-                pulse.min.quantum = req;
-                pulse.max.quantum = req;
-              };
-            }
-          ];
+          pulse.properties = {
+            pulse.min.frag = req;
+            pulse.min.quantum = req;
+            pulse.min.req = req;
+          };
           stream.properties = {
             node.latency = req;
-            resample.quality = 1;
           };
         };
       };
