@@ -351,6 +351,7 @@
           cores = with libretro; [
             bsnes
             mesen
+            sameboy
           ];
         })
         ripgrep
