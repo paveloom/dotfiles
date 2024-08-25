@@ -45,6 +45,8 @@ return {
       end)
     end
 
+    local lspconfig = require("lspconfig")
+
     -- Set up the LSP for Lua API of Neovim
     --
     -- It's important we setup this before requiring `lspconfig`
@@ -54,7 +56,7 @@ return {
     })
 
     -- Set up the Lua language server
-    require("lspconfig").lua_ls.setup({
+    lspconfig.lua_ls.setup({
       autostart = false,
       single_file_support = false,
       capabilities = capabilities,
@@ -121,7 +123,7 @@ return {
       },
     })
     -- Set up the TypeScript language server
-    require("lspconfig").tsserver.setup({
+    lspconfig.tsserver.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
@@ -151,13 +153,13 @@ return {
       },
     })
     -- Set up JSON language server
-    require("lspconfig").jsonls.setup({
+    lspconfig.jsonls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the ESLint language server
-    require("lspconfig").eslint.setup({
+    lspconfig.eslint.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = function(client, bufnr)
@@ -174,13 +176,13 @@ return {
       end,
     })
     -- Set up the Julia language server
-    require("lspconfig").julials.setup({
+    lspconfig.julials.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the LanguageTool language server
-    require("lspconfig").ltex.setup({
+    lspconfig.ltex.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
@@ -217,7 +219,7 @@ return {
       },
     })
     -- Set up the LaTeX language server
-    require("lspconfig").texlab.setup({
+    lspconfig.texlab.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
@@ -232,7 +234,6 @@ return {
       },
     })
     -- Set up the Zig language server
-    local lspconfig = require("lspconfig")
     lspconfig.zls.setup({
       autostart = false,
       capabilities = capabilities,
@@ -252,31 +253,31 @@ return {
       },
     })
     -- Set up the Dockerfile language server
-    require("lspconfig").dockerls.setup({
+    lspconfig.dockerls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the Nix language server
-    require("lspconfig").nil_ls.setup({
+    lspconfig.nil_ls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the C language server
-    require("lspconfig").clangd.setup({
+    lspconfig.clangd.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the Blueprint language server
-    require("lspconfig").blueprint_ls.setup({
+    lspconfig.blueprint_ls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
     -- Set up the Go language server
-    require("lspconfig").gopls.setup({
+    lspconfig.gopls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
