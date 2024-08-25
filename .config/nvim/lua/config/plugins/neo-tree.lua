@@ -136,7 +136,9 @@ return {
           hide_gitignored = true,
           hide_hidden = true,
         },
-        follow_current_file = true,
+        follow_current_file = {
+          enabled = true,
+        },
         group_empty_dirs = false,
         hijack_netrw_behavior = "disabled",
         use_libuv_file_watcher = true,
@@ -155,7 +157,9 @@ return {
         },
       },
       buffers = {
-        follow_current_file = true,
+        follow_current_file = {
+          enabled = true,
+        },
         group_empty_dirs = true,
         show_unloaded = true,
         window = {
