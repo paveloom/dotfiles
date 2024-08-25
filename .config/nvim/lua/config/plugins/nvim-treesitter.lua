@@ -30,13 +30,6 @@ return {
     end,
   },
   {
-    -- Neovim Treesitter plugin for setting the `commentstring`
-    -- based on the cursor location in a file
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    lazy = true,
-  },
-  {
     -- Rainbow delimiters for Neovim with Tree-sitter
     "HiPhish/rainbow-delimiters.nvim",
     dependencies = "nvim-treesitter/nvim-treesitter",
