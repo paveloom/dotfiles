@@ -27,12 +27,6 @@ vim.opt.whichwrap:append({ ["<"] = true, [">"] = true, ["["] = true, ["]"] = tru
 vim.opt.list = true
 vim.opt.listchars:append({ tab = "▸ " })
 
--- Always expand tabs
-vim.opt.expandtab = true
-
--- Set the default number of spaces inserting with a <Tab>
-vim.opt.shiftwidth = 2
-
 -- Enable smart indentation
 vim.opt.cindent = true
 
