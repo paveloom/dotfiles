@@ -326,6 +326,7 @@
         hunspellDicts.en_US
         hunspellDicts.ru_RU
         inkscape
+        jetbrains.goland
         jetbrains.phpstorm
         jetbrains.pycharm-professional
         jetbrains.webstorm
