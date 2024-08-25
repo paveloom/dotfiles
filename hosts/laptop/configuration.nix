@@ -329,7 +329,7 @@
         jetbrains.phpstorm
         jetbrains.pycharm-professional
         jetbrains.webstorm
-        # julia
+        julia
         keepassxc
         lazygit
         libnotify
