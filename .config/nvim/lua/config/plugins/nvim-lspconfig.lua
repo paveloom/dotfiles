@@ -62,17 +62,11 @@ return {
         client.server_capabilities.document_formatting = false
         -- Attach the server
         on_attach(client, bufnr)
-        -- Enable the inlay hints
-        require("lsp-inlayhints").on_attach(client, bufnr, false)
       end,
       settings = {
         Lua = {
           format = {
             enable = false,
-          },
-          hint = {
-            enable = true,
-            setType = true,
           },
           runtime = {
             version = "LuaJIT",
