@@ -47,6 +47,13 @@ return {
 
     local lspconfig = require("lspconfig")
 
+    -- Don't start the server if the executable doesn't exist
+    lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup, function(config)
+      if vim.fn.executable(config.cmd[1]) == 0 then
+        config.enabled = false
+      end
+    end)
+
     -- Set up the LSP for Lua API of Neovim
     --
     -- It's important we setup this before requiring `lspconfig`
