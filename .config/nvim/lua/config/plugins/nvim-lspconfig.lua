@@ -7,7 +7,6 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "jose-elias-alvarez/null-ls.nvim",
     "lsp_lines.nvim",
-    "lvimuser/lsp-inlayhints.nvim",
     "mfussenegger/nvim-dap",
     "simrat39/rust-tools.nvim",
   },
@@ -68,6 +67,10 @@ return {
           format = {
             enable = false,
           },
+          hint = {
+            enable = true,
+            setType = true,
+          },
           runtime = {
             version = "LuaJIT",
           },
@@ -98,12 +101,7 @@ return {
       server = {
         autostart = false,
         capabilities = capabilities,
-        on_attach = function(client, bufnr)
-          -- Attach the server
-          on_attach(client, bufnr)
-          -- Enable the inlay hints
-          require("lsp-inlayhints").on_attach(client, bufnr, false)
-        end,
+        on_attach = on_attach,
         settings = {
           ["rust-analyzer"] = {
             checkOnSave = {
@@ -123,12 +121,7 @@ return {
     require("lspconfig").tsserver.setup({
       autostart = false,
       capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        -- Attach the server
-        on_attach(client, bufnr)
-        -- Enable the inlay hints
-        require("lsp-inlayhints").on_attach(client, bufnr, false)
-      end,
+      on_attach = on_attach,
       settings = {
         typescript = {
           inlayHints = {
@@ -245,8 +238,6 @@ return {
         on_attach(client, bufnr)
         -- Don't parse errors on format
         vim.g.zig_fmt_parse_errors = 0
-        -- Enable the inlay hints
-        require("lsp-inlayhints").on_attach(client, bufnr, false)
       end,
       root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
       settings = {
@@ -273,12 +264,7 @@ return {
     require("lspconfig").clangd.setup({
       autostart = false,
       capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        -- Attach the server
-        on_attach(client, bufnr)
-        -- Enable the inlay hints
-        require("lsp-inlayhints").on_attach(client, bufnr, false)
-      end,
+      on_attach = on_attach,
     })
     -- Set up the Blueprint language server
     require("lspconfig").blueprint_ls.setup({
@@ -291,6 +277,19 @@ return {
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        gopls = {
+          hints = {
+            assignVariableTypes = true,
+            compositeLiteralFields = true,
+            compositeLiteralTypes = true,
+            constantValues = true,
+            functionTypeParameters = true,
+            parameterNames = true,
+            rangeVariableTypes = true,
+          },
+        },
+      },
     })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
