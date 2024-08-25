@@ -21,7 +21,7 @@ return {
         mappings = {
           i = {
             ["<C-d>"] = false,
-            ["<C-q>"] = trouble.open_with_trouble,
+            ["<C-q>"] = require("trouble.sources.telescope").open,
             ["<C-u>"] = false,
             ["<Esc>"] = "close",
             ["<PageDown>"] = "preview_scrolling_down",
