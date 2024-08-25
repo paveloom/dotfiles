@@ -21,7 +21,7 @@ return {
       require("trouble").toggle()
     end)
     nmap("ge", function()
-      require("trouble").toggle("workspace_diagnostics")
+      require("trouble").toggle("diagnostics")
     end)
     nmap("gi", function()
       require("trouble").toggle("lsp_implementations")
