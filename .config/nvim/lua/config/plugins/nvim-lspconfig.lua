@@ -292,12 +292,19 @@ return {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    -- Set up the Go language server
+    require("lspconfig").gopls.setup({
+      autostart = false,
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
         "*.c",
         "*.cjs",
         "*.cpp",
+        "*.go",
         "*.h",
         "*.jl",
         "*.json",
