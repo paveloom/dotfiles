@@ -21,8 +21,8 @@ vmap("<C-Down>", "5gj")
 vmap("<C-Up>", "5gk")
 
 -- Delete the previous word
-cmap("<C-BS>", "<C-w><C-l>")
-imap("<C-BS>", "<C-w>")
+cmap("<C-H>", "<C-w><C-l>")
+imap("<C-H>", "<C-w>")
 
 -- Insert from the system clipboard
 imap("<C-v>", "<C-r><C-p>+")
