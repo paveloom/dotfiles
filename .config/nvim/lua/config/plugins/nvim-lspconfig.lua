@@ -40,6 +40,9 @@ return {
       nmap("<leader>S", function()
         require("telescope.builtin").lsp_workspace_symbols()
       end)
+      nmap("<A-c>", function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end)
     end
 
     -- Set up the LSP for Lua API of Neovim
