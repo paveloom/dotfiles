@@ -17,7 +17,10 @@ return {
           for _, config in pairs(require("lspconfig.configs")) do
             for _, filetype_match in ipairs(config.filetypes or {}) do
               if buffer_filetype == filetype_match then
-                config.launch()
+                -- Launch the server if the executable exists
+                if vim.fn.executable(config.cmd[1]) ~= 0 then
+                  config.launch()
+                end
               end
             end
           end
