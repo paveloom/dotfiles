@@ -29,5 +29,8 @@ set -gx DIRENV_LOG_FORMAT ""
 # Set up the SSH agent (via `gnome-keyring`)
 set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 
+# Store Go data files in an appropriate location
+set -gx GOPATH ~/.local/share/go
+
 # Load the completion scripts of Podman
 podman completion fish | source
