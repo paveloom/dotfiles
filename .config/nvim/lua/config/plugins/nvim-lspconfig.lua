@@ -5,9 +5,9 @@ return {
     "direnv/direnv.vim",
     "folke/neodev.nvim",
     "hrsh7th/cmp-nvim-lsp",
-    "jose-elias-alvarez/null-ls.nvim",
     "lsp_lines.nvim",
     "mfussenegger/nvim-dap",
+    "nvimtools/none-ls.nvim",
     "paveloom/nlsp-settings.nvim",
     "simrat39/rust-tools.nvim",
   },
@@ -62,7 +62,7 @@ return {
       single_file_support = false,
       on_attach = function(client, bufnr)
         -- Disable the formatting since `stylua`
-        -- from `null-ls` handles that
+        -- from `none-ls` handles that
         client.server_capabilities.document_formatting = false
         -- Attach the server
         on_attach(client, bufnr)

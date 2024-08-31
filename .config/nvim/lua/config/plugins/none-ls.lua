@@ -1,6 +1,6 @@
 -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 return {
-  "jose-elias-alvarez/null-ls.nvim",
+  "nvimtools/none-ls.nvim",
   dependencies = {
     "direnv/direnv.vim",
     "lsp_lines.nvim",
