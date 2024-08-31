@@ -46,20 +46,21 @@ return {
     end
 
     local lspconfig = require("lspconfig")
+    local lsp_default_config = {
+      autostart = false,
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+    lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_default_config)
 
     -- Set up the LSP for Lua API of Neovim
     --
     -- It's important we setup this before requiring `lspconfig`
-    require("neodev").setup({
-      autostart = false,
-      capabilities = capabilities,
-    })
+    require("neodev").setup()
 
     -- Set up the Lua language server
     lspconfig.lua_ls.setup({
-      autostart = false,
       single_file_support = false,
-      capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Disable the formatting since `stylua`
         -- from `null-ls` handles that
@@ -92,6 +93,7 @@ return {
         },
       },
     })
+
     -- Set up the Rust language server
     require("rust-tools").setup({
       tools = {
@@ -104,9 +106,6 @@ return {
         },
       },
       server = {
-        autostart = false,
-        capabilities = capabilities,
-        on_attach = on_attach,
         settings = {
           ["rust-analyzer"] = {
             checkOnSave = {
@@ -122,11 +121,9 @@ return {
         },
       },
     })
+
     -- Set up the TypeScript language server
     lspconfig.tsserver.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
       settings = {
         typescript = {
           inlayHints = {
@@ -152,16 +149,12 @@ return {
         },
       },
     })
+
     -- Set up JSON language server
-    lspconfig.jsonls.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.jsonls.setup({})
+
     -- Set up the ESLint language server
     lspconfig.eslint.setup({
-      autostart = false,
-      capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
         on_attach(client, bufnr)
@@ -175,17 +168,12 @@ return {
         })
       end,
     })
+
     -- Set up the Julia language server
-    lspconfig.julials.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.julials.setup({})
+
     -- Set up the LanguageTool language server
     lspconfig.ltex.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
       filetypes = {
         "bib",
         "gitcommit",
@@ -218,11 +206,9 @@ return {
         },
       },
     })
+
     -- Set up the LaTeX language server
     lspconfig.texlab.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
       settings = {
         texlab = {
           build = {
@@ -233,10 +219,9 @@ return {
         },
       },
     })
+
     -- Set up the Zig language server
     lspconfig.zls.setup({
-      autostart = false,
-      capabilities = capabilities,
       on_attach = function(client, bufnr)
         -- Attach the server
         on_attach(client, bufnr)
@@ -252,35 +237,25 @@ return {
         },
       },
     })
+
     -- Set up the Dockerfile language server
     lspconfig.dockerls.setup({
       autostart = false,
       capabilities = capabilities,
       on_attach = on_attach,
     })
+
     -- Set up the Nix language server
-    lspconfig.nil_ls.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.nil_ls.setup({})
+
     -- Set up the C language server
-    lspconfig.clangd.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.clangd.setup({})
+
     -- Set up the Blueprint language server
-    lspconfig.blueprint_ls.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.blueprint_ls.setup({})
+
     -- Set up the Go language server
     lspconfig.gopls.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
       settings = {
         gopls = {
           hints = {
@@ -295,6 +270,7 @@ return {
         },
       },
     })
+
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
