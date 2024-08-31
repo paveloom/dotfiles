@@ -22,14 +22,6 @@ return {
         completion.spell.with({
           runtime_condition = direnv_loaded,
         }),
-        diagnostics.clang_check.with({
-          runtime_condition = direnv_loaded,
-        }),
-        diagnostics.cpplint.with({
-          extra_args = { "--verbose=0" },
-          extra_filetypes = { "h" },
-          runtime_condition = direnv_loaded,
-        }),
         diagnostics.fish.with({
           runtime_condition = direnv_loaded,
         }),
