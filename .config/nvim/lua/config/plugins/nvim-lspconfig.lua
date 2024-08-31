@@ -8,6 +8,7 @@ return {
     "jose-elias-alvarez/null-ls.nvim",
     "lsp_lines.nvim",
     "mfussenegger/nvim-dap",
+    "paveloom/nlsp-settings.nvim",
     "simrat39/rust-tools.nvim",
   },
   config = function()
