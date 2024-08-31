@@ -276,6 +276,7 @@ return {
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
+        "*.bash",
         "*.c",
         "*.cjs",
         "*.cpp",
