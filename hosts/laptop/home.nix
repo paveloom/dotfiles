@@ -66,7 +66,7 @@
         "org.gnome.Evolution.desktop"
         "io.github.quodlibet.QuodLibet.desktop"
         "org.gnome.Nautilus.desktop"
-        "org.gnome.SystemMonitor.desktop"
+        "net.nokyan.Resources.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
         "code.desktop"
