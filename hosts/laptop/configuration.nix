@@ -20,14 +20,14 @@
 
   environment = {
     gnome.excludePackages = with pkgs; [
+      gnome-contacts
+      gnome-maps
+      gnome-music
       gnome-photos
+      gnome-shell-extensions
+      gnome-software
       gnome-tour
-      gnome.gnome-contacts
-      gnome.gnome-maps
-      gnome.gnome-music
-      gnome.gnome-shell-extensions
-      gnome.gnome-software
-      gnome.gnome-weather
+      gnome-weather
     ];
     shells = [pkgs.fish];
     systemPackages = with pkgs; [
@@ -306,8 +306,8 @@
         gnome-extension-manager
         gnome-frog
         gnome-icon-theme
+        gnome-sound-recorder
         gnome-tweaks
-        gnome.gnome-sound-recorder
         gnomeExtensions.appindicator
         gnomeExtensions.clipboard-history
         gnomeExtensions.dash-to-dock
