@@ -11,13 +11,13 @@ return {
     "simrat39/rust-tools.nvim",
   },
   config = function()
+    local lspconfig = require("lspconfig")
+    local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
+
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.offsetEncoding = { "utf-16" }
-    -- Prepare an autocommands group
-    local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
-    -- Set up the LSP server
+
     local function on_attach(_, bufnr)
-      -- Map a keybinding in the normal mode
       local function nmap(k, e)
         vim.keymap.set("n", k, e, {
           noremap = true,
@@ -26,7 +26,6 @@ return {
         })
       end
 
-      -- Set up keybindings
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
@@ -45,7 +44,6 @@ return {
       end)
     end
 
-    local lspconfig = require("lspconfig")
     local lsp_default_config = {
       autostart = false,
       capabilities = capabilities,
