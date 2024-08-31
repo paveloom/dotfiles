@@ -43,18 +43,8 @@ return {
         diagnostics.yamllint.with({
           runtime_condition = direnv_loaded,
         }),
-        formatting.alejandra.with({
-          runtime_condition = function(_)
-            return direnv_loaded() and vim.loop.cwd():find("nixpkgs") == nil
-          end,
-        }),
         formatting.fnlfmt.with({
           runtime_condition = direnv_loaded,
-        }),
-        formatting.nixpkgs_fmt.with({
-          runtime_condition = function(_)
-            return direnv_loaded() and vim.loop.cwd():find("nixpkgs") ~= nil
-          end,
         }),
         formatting.stylua.with({
           runtime_condition = direnv_loaded,
