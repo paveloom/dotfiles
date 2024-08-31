@@ -9,7 +9,6 @@ return {
     local name = "null-ls"
     local null_ls = require(name)
     local builtins = null_ls.builtins
-    local code_actions = builtins.code_actions
     local completion = builtins.completion
     local diagnostics = builtins.diagnostics
     local formatting = builtins.formatting
@@ -20,9 +19,6 @@ return {
     -- Set up the plugin
     null_ls.setup({
       sources = {
-        code_actions.shellcheck.with({
-          runtime_condition = direnv_loaded,
-        }),
         completion.spell.with({
           runtime_condition = direnv_loaded,
         }),
@@ -35,9 +31,6 @@ return {
           runtime_condition = direnv_loaded,
         }),
         diagnostics.fish.with({
-          runtime_condition = direnv_loaded,
-        }),
-        diagnostics.shellcheck.with({
           runtime_condition = direnv_loaded,
         }),
         diagnostics.yamllint.with({
