@@ -21,6 +21,7 @@
         nil
         nvd
         stylua
+        vscode-langservers-extracted
       ];
     };
   };
