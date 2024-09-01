@@ -211,17 +211,6 @@
       group = "";
       user = "paveloom";
     };
-    samba = {
-      enable = true;
-      openFirewall = true;
-      shares = {
-        public = {
-          path = "%H/Public/Samba";
-          "vfs objects" = "fruit streams_xattr";
-          writeable = "yes";
-        };
-      };
-    };
     sonarr = {
       dataDir = config.users.users.paveloom.home + "/.config/sonarr";
       enable = true;
