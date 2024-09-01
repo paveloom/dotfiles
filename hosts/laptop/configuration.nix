@@ -76,7 +76,7 @@
 
   networking = {
     firewall = {
-      allowedTCPPorts = [8081 8082 9000 21044 38101];
+      allowedTCPPorts = [8081 8082 9000 21044 38101 43695];
       allowedUDPPorts = [22174];
       checkReversePath = false;
     };
@@ -231,6 +231,33 @@
     usbmuxd = {
       enable = true;
       package = pkgs.usbmuxd2;
+    };
+    webdav-server-rs = {
+      enable = true;
+      settings = {
+        server.listen = ["0.0.0.0:43695" "[::]:43695"];
+        accounts = {
+          auth-type = "htpasswd.default";
+          acct-type = "unix";
+        };
+        htpasswd.default = {
+          htpasswd = pkgs.writeText "htpasswd" ''
+            paveloom:$2y$05$lz3OON32dnM4KesHRuktz.grFpwe6fD2.v.JmafrQATdd.PvZ9VwK
+          '';
+        };
+        location = [
+          {
+            route = ["/*path"];
+            directory = "~/Public/WebDAV";
+            handler = "filesystem";
+            methods = ["webdav-rw"];
+            autoindex = true;
+            auth = "true";
+            setuid = true;
+            hide-symlinks = false;
+          }
+        ];
+      };
     };
     whisparr = {
       dataDir = config.users.users.paveloom.home + "/.config/whisparr";
