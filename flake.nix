@@ -22,6 +22,8 @@
         nvd
         stylua
         vscode-langservers-extracted
+        yamlfmt
+        yamllint
       ];
     };
   };
