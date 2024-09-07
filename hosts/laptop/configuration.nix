@@ -29,6 +29,10 @@
       gnome-tour
       gnome-weather
     ];
+    sessionVariables = {
+      FONTCONFIG_PATH = "${pkgs.fontconfig}/etc/fonts";
+      FONTCONFIG_FILE = "${pkgs.fontconfig}/etc/fonts/fonts.conf";
+    };
     shells = [pkgs.fish];
     systemPackages = with pkgs; [
       nautilus-python
