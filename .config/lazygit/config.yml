@@ -1,6 +1,6 @@
 gui:
-  enlargedSideViewLocation: "top"
-  filterMode: 'fuzzy'
+  enlargedSideViewLocation: top
+  filterMode: fuzzy
   nerdFontsVersion: "3"
   scrollHeight: 3
   scrollPastBottom: false
