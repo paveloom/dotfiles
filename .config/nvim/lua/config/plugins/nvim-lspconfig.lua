@@ -273,6 +273,9 @@ return {
     -- Set up the Bash language server
     lspconfig.bashls.setup({})
 
+    -- Set up the HTML language server
+    lspconfig.html.setup({})
+
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
@@ -282,6 +285,7 @@ return {
         "*.cpp",
         "*.go",
         "*.h",
+        "*.html",
         "*.jl",
         "*.json",
         "*.lua",
