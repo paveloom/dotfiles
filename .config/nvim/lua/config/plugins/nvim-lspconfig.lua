@@ -276,6 +276,9 @@ return {
     -- Set up the HTML language server
     lspconfig.html.setup({})
 
+    -- Set up the CSS language server
+    lspconfig.cssls.setup({})
+
     -- Format the code before writing
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = {
@@ -283,6 +286,7 @@ return {
         "*.c",
         "*.cjs",
         "*.cpp",
+        "*.css",
         "*.go",
         "*.h",
         "*.html",
