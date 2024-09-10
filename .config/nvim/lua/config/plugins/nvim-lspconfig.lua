@@ -27,6 +27,10 @@ return {
         })
       end
 
+      nmap("<C-S-s>", function()
+        vim.lsp.buf.format({ timeout_ms = 2000 })
+        vim.cmd(":silent write")
+      end)
       nmap("gR", vim.lsp.buf.rename)
       nmap("gS", vim.lsp.buf.document_symbol)
       nmap("ga", vim.lsp.buf.code_action)
@@ -278,35 +282,5 @@ return {
 
     -- Set up the CSS language server
     lspconfig.cssls.setup({})
-
-    -- Format the code before writing
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = {
-        "*.bash",
-        "*.c",
-        "*.cjs",
-        "*.cpp",
-        "*.css",
-        "*.go",
-        "*.h",
-        "*.html",
-        "*.jl",
-        "*.json",
-        "*.lua",
-        "*.nix",
-        "*.rs",
-        "*.svg",
-        "*.tex",
-        "*.xml",
-        "*.xsd",
-        "*.xsl",
-        "*.xslt",
-        "*.zig",
-      },
-      group = group,
-      callback = function()
-        vim.lsp.buf.format({ timeout_ms = 2000 })
-      end,
-    })
   end,
 }
