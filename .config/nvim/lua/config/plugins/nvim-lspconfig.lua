@@ -38,7 +38,7 @@ return {
         require("telescope.builtin").lsp_document_symbols()
       end)
       nmap("<leader>S", function()
-        require("telescope.builtin").lsp_workspace_symbols()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols()
       end)
       nmap("<A-c>", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
