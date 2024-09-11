@@ -373,6 +373,7 @@
           cores = with libretro; [
             bsnes
             mesen
+            mupen64plus
             sameboy
           ];
         })
