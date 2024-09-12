@@ -273,9 +273,18 @@
     stateVersion = "24.05";
   };
 
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=15s
-  '';
+  systemd = {
+    extraConfig = ''
+      DefaultTimeoutStopSec=15s
+    '';
+    packages = with pkgs; [
+      amneziawg-tools
+    ];
+    services."awg-quick@awg0" = {
+      overrideStrategy = "asDropin";
+      wantedBy = ["machines.target"];
+    };
+  };
 
   time.timeZone = "Europe/Moscow";
 
@@ -297,6 +306,7 @@
       packages = with pkgs; [
         acpi
         amdgpu_top
+        amneziawg-tools
         appimage-run
         asciinema
         aspell
