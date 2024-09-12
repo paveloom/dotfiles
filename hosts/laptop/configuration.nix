@@ -215,6 +215,7 @@
       group = "";
       user = "paveloom";
     };
+    resolved.enable = true;
     sonarr = {
       dataDir = config.users.users.paveloom.home + "/.config/sonarr";
       enable = true;
