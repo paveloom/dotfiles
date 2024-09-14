@@ -4,6 +4,7 @@ return {
   lazy = true,
   dependencies = {
     "folke/trouble.nvim",
+    "natecraddock/workspaces.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -102,6 +103,7 @@ return {
 
     telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
+    telescope.load_extension("workspaces")
   end,
   init = function()
     local nmap = require("config.utils").nmap

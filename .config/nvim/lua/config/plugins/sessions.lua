@@ -6,8 +6,9 @@ return {
     local sessions = require(name)
     -- Set up the plugin
     sessions.setup({
+      absolute = true,
       events = { "BufEnter" },
-      session_filepath = vim.fn.stdpath("data") .. "/session.vim",
+      session_filepath = vim.fn.stdpath("data") .. "/sessions",
     })
     -- Set up autocommands
     local group = vim.api.nvim_create_augroup(name, { clear = true })
@@ -27,15 +28,6 @@ return {
         end
         -- Save the session
         sessions.save(nil, { autosave = false, silent = true })
-      end,
-    })
-    -- Restore the session when entering Vim
-    vim.api.nvim_create_autocmd("VimEnter", {
-      group = group,
-      nested = true,
-      callback = function()
-        -- Try to restore the last session
-        sessions.load(nil, { autosave = true, silent = true })
       end,
     })
   end,

@@ -7,6 +7,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "lsp_lines.nvim",
     "mfussenegger/nvim-dap",
+    "natecraddock/workspaces.nvim",
     "nvimtools/none-ls.nvim",
     "paveloom/nlsp-settings.nvim",
     "simrat39/rust-tools.nvim",
@@ -206,7 +207,6 @@ return {
         -- Don't parse errors on format
         vim.g.zig_fmt_parse_errors = 0
       end,
-      root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
       settings = {
         zls = {
           enable_inlay_hints = true,
