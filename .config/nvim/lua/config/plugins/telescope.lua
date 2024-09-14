@@ -6,7 +6,6 @@ return {
     "folke/trouble.nvim",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
-    "nvim-telescope/telescope-project.nvim",
     "nvim-tree/nvim-web-devicons",
     "nvim-treesitter/nvim-treesitter",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -14,7 +13,6 @@ return {
   config = function()
     local telescope = require("telescope")
     local themes = require("telescope.themes")
-    local trouble = require("trouble.providers.telescope")
     -- Set up the plugin
     telescope.setup({
       defaults = themes.get_ivy({
@@ -104,7 +102,6 @@ return {
 
     telescope.load_extension("fzf")
     telescope.load_extension("file_browser")
-    telescope.load_extension("project")
   end,
   init = function()
     local nmap = require("config.utils").nmap
@@ -127,9 +124,6 @@ return {
     end)
     nmap("<leader>n", function()
       require("telescope").extensions.file_browser.file_browser()
-    end)
-    nmap("<leader>p", function()
-      require("telescope").extensions.project.project({ display_type = "full" })
     end)
     nmap("z=", function()
       require("telescope.builtin").spell_suggest()
