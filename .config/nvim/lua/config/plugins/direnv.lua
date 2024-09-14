@@ -1,9 +1,6 @@
 -- Vim plugin for `direnv` support
 return {
   "direnv/direnv.vim",
-  dependencies = {
-    "notjedi/nvim-rooter.lua",
-  },
   config = function()
     vim.g.direnv_silent_load = 1
     -- Start LSP clients when a Direnv environment is loaded for the first time

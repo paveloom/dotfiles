@@ -4,7 +4,6 @@ return {
   lazy = true,
   dependencies = {
     "folke/trouble.nvim",
-    "notjedi/nvim-rooter.lua",
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-project.nvim",
@@ -115,10 +114,10 @@ return {
       require("telescope.builtin").buffers()
     end)
     nmap("<leader>f", function()
-      require("telescope.builtin").find_files({ cwd = require("nvim-rooter").get_root() })
+      require("telescope.builtin").find_files()
     end)
     nmap("<leader>g", function()
-      require("telescope.builtin").live_grep({ cwd = require("nvim-rooter").get_root() })
+      require("telescope.builtin").live_grep()
     end)
     nmap("<leader>h", function()
       require("telescope.builtin").help_tags()
