@@ -8,6 +8,8 @@ return {
       require("nvim-treesitter.configs").setup({
         auto_install = true,
         ensure_installed = {
+          "diff",
+          "git_rebase",
           "markdown_inline",
           "regex",
           "vim",
