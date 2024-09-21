@@ -7,7 +7,7 @@ return {
     -- Set up the plugin
     sessions.setup({
       absolute = true,
-      events = { "BufEnter" },
+      events = { "BufDelete", "BufEnter" },
       session_filepath = vim.fn.stdpath("data") .. "/sessions",
     })
     -- Set up autocommands
