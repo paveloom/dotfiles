@@ -14,7 +14,6 @@ return {
   },
   config = function()
     local lspconfig = require("lspconfig")
-    local group = vim.api.nvim_create_augroup("lspconfig", { clear = false })
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.offsetEncoding = { "utf-16" }
@@ -133,20 +132,7 @@ return {
     lspconfig.jsonls.setup({})
 
     -- Set up the ESLint language server
-    lspconfig.eslint.setup({
-      on_attach = function(client, bufnr)
-        -- Attach the server
-        on_attach(client, bufnr)
-        -- Fix all errors on write
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          group = group,
-          callback = function()
-            vim.cmd("EslintFixAll")
-          end,
-        })
-      end,
-    })
+    lspconfig.eslint.setup({})
 
     -- Set up the Julia language server
     lspconfig.julials.setup({})
