@@ -1,6 +1,9 @@
 -- A simple session manager plugin
 return {
   "natecraddock/sessions.nvim",
+  dependencies = {
+    "natecraddock/workspaces.nvim",
+  },
   config = function()
     local name = "sessions"
     local sessions = require(name)
@@ -27,7 +30,9 @@ return {
           end
         end
         -- Save the session
-        sessions.save(nil, { autosave = false, silent = true })
+        if require("workspaces").name() ~= nil then
+          sessions.save(nil, { autosave = false, silent = true })
+        end
       end,
     })
   end,
