@@ -126,7 +126,22 @@ return {
     })
 
     -- Set up the TypeScript language server
-    lspconfig.ts_ls.setup({})
+    lspconfig.ts_ls.setup({
+      init_options = {
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = "node_modules/@vue/typescript-plugin",
+            languages = { "javascript", "typescript", "vue" },
+          },
+        },
+      },
+      filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+      },
+    })
 
     -- Set up JSON language server
     lspconfig.jsonls.setup({})
@@ -243,5 +258,8 @@ return {
 
     -- Set up the CSS language server
     lspconfig.cssls.setup({})
+
+    -- Set up the Vue language server
+    lspconfig.volar.setup({})
   end,
 }
