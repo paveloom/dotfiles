@@ -3,7 +3,6 @@ return {
   "natecraddock/workspaces.nvim",
   config = function()
     require("workspaces").setup({
-      auto_open = true,
       hooks = {
         add = function()
           require("sessions").start_autosave()
