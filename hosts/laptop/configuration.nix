@@ -125,6 +125,7 @@
     geary.enable = false;
     git.enable = true;
     gnupg.agent.enable = true;
+    mosh.enable = true;
     nano.syntaxHighlight = true;
     nix-index = {
       enable = true;
