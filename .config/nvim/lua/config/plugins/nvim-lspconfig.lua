@@ -261,5 +261,8 @@ return {
 
     -- Set up the Vue language server
     lspconfig.volar.setup({})
+
+    -- Set up the Earthly language server
+    lspconfig.earthlyls.setup({})
   end,
 }
