@@ -411,11 +411,17 @@
   };
 
   virtualisation = {
+    docker = {
+      enable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
+    };
     libvirtd.enable = true;
     podman = {
       enable = true;
       defaultNetwork.settings.dns_enabled = true;
-      dockerCompat = true;
     };
   };
 
