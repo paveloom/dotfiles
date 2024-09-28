@@ -17,6 +17,9 @@ set -gx XCURSOR_THEME Adwaita
 ## Make `less` not open a window if text takes up less space
 set -gx LESS -FXRI
 
+## Set the quotes' color to green
+set -gx fish_color_quote green
+
 ## Let the GPG program use the terminal connected to standard input
 set -gx GPG_TTY (tty)
 
