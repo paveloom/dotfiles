@@ -20,6 +20,7 @@ return {
     end
 
     null_ls.setup({
+      on_attach = mappings.on_lsp_attach,
       sources = {
         completion.spell.with({
           runtime_condition = direnv_loaded,

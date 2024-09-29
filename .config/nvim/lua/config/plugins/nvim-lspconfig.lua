@@ -20,41 +20,10 @@ return {
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.offsetEncoding = { "utf-16" }
 
-    local function on_attach(_, bufnr)
-      local function nmap(k, e)
-        vim.keymap.set("n", k, e, {
-          noremap = true,
-          silent = true,
-          buffer = bufnr,
-        })
-      end
-
-      nmap("<C-S-s>", function()
-        vim.lsp.buf.format({ timeout_ms = 2000 })
-        vim.cmd(":silent write")
-      end)
-      nmap("gR", vim.lsp.buf.rename)
-      nmap("gS", vim.lsp.buf.document_symbol)
-      nmap("ga", vim.lsp.buf.code_action)
-      nmap("gd", vim.lsp.buf.definition)
-      nmap("gh", vim.lsp.buf.hover)
-      nmap("gs", vim.lsp.buf.signature_help)
-      nmap("gw", vim.lsp.buf.workspace_symbol)
-      nmap("<leader>s", function()
-        require("telescope.builtin").lsp_document_symbols()
-      end)
-      nmap("<leader>S", function()
-        require("telescope.builtin").lsp_dynamic_workspace_symbols()
-      end)
-      nmap("<A-c>", function()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-      end)
-    end
-
     local lsp_default_config = {
       autostart = false,
       capabilities = capabilities,
-      on_attach = on_attach,
+      on_attach = mappings.on_lsp_attach,
     }
     lspconfig.util.default_config = vim.tbl_deep_extend("force", lspconfig.util.default_config, lsp_default_config)
 

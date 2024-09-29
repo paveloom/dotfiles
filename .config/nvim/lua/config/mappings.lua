@@ -74,3 +74,32 @@ utils.map("v", "<A-Up>", ":m '<-2<CR>gv=gv")
 -- Leave the cursor in the same place
 -- while appending lines
 utils.map("n", "J", "mzJ`z")
+
+local M = {}
+
+M.on_lsp_attach = function(_, bufnr)
+  local bmap = utils.bmap(bufnr)
+
+  bmap("n", "<C-S-s>", function()
+    vim.lsp.buf.format({ timeout_ms = 2000 })
+    vim.cmd(":silent write")
+  end)
+  bmap("n", "gR", vim.lsp.buf.rename)
+  bmap("n", "gS", vim.lsp.buf.document_symbol)
+  bmap("n", "ga", vim.lsp.buf.code_action)
+  bmap("n", "gd", vim.lsp.buf.definition)
+  bmap("n", "gh", vim.lsp.buf.hover)
+  bmap("n", "gs", vim.lsp.buf.signature_help)
+  bmap("n", "gw", vim.lsp.buf.workspace_symbol)
+  bmap("n", "<leader>s", function()
+    require("telescope.builtin").lsp_document_symbols()
+  end)
+  bmap("n", "<leader>S", function()
+    require("telescope.builtin").lsp_dynamic_workspace_symbols()
+  end)
+  bmap("n", "<A-c>", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end)
+end
+
+return M
