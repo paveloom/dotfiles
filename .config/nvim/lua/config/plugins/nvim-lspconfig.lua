@@ -218,11 +218,7 @@ return {
     })
 
     -- Set up the Dockerfile language server
-    lspconfig.dockerls.setup({
-      autostart = false,
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
+    lspconfig.dockerls.setup({})
 
     -- Set up the Nix language server
     lspconfig.nil_ls.setup({})
