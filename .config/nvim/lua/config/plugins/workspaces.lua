@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- A simple plugin to manage workspace directories in NeoVim
 return {
   "natecraddock/workspaces.nvim",
@@ -21,9 +23,7 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    nmap("<leader>p", function()
+    utils.map("n", "<leader>p", function()
       require("telescope").extensions.workspaces.workspaces()
     end)
   end,

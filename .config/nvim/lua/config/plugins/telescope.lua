@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- A highly extendable fuzzy finder over lists
 return {
   "nvim-telescope/telescope.nvim",
@@ -106,28 +108,25 @@ return {
     telescope.load_extension("workspaces")
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("<leader>b", function()
+    utils.map("n", "<leader>b", function()
       require("telescope.builtin").buffers()
     end)
-    nmap("<leader>f", function()
+    utils.map("n", "<leader>f", function()
       require("telescope.builtin").find_files()
     end)
-    nmap("<leader>g", function()
+    utils.map("n", "<leader>g", function()
       require("telescope.builtin").live_grep()
     end)
-    nmap("<leader>h", function()
+    utils.map("n", "<leader>h", function()
       require("telescope.builtin").help_tags()
     end)
-    nmap("<leader>o", function()
+    utils.map("n", "<leader>o", function()
       require("telescope.builtin").oldfiles()
     end)
-    nmap("<leader>n", function()
+    utils.map("n", "<leader>n", function()
       require("telescope").extensions.file_browser.file_browser()
     end)
-    nmap("z=", function()
+    utils.map("n", "z=", function()
       require("telescope.builtin").spell_suggest()
     end)
   end,

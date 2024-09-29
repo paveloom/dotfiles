@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- A pretty diagnostics, references, telescope results, quickfix and
 -- location list to help you solve all the trouble your code is causing
 return {
@@ -14,22 +16,19 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("<leader>t", function()
+    utils.map("n", "<leader>t", function()
       require("trouble").toggle()
     end)
-    nmap("ge", function()
+    utils.map("n", "ge", function()
       require("trouble").toggle("diagnostics")
     end)
-    nmap("gi", function()
+    utils.map("n", "gi", function()
       require("trouble").toggle("lsp_implementations")
     end)
-    nmap("gr", function()
+    utils.map("n", "gr", function()
       require("trouble").toggle("lsp_references")
     end)
-    nmap("gt", function()
+    utils.map("n", "gt", function()
       require("trouble").toggle("lsp_type_definitions")
     end)
   end,

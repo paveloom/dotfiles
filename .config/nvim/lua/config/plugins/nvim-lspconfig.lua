@@ -1,3 +1,5 @@
+local mappings = require("config.mappings")
+
 -- Quickstart configs for Nvim LSP
 return {
   "neovim/nvim-lspconfig",
@@ -69,7 +71,7 @@ return {
         -- from `none-ls` handles that
         client.server_capabilities.document_formatting = false
         -- Attach the server
-        on_attach(client, bufnr)
+        mappings.on_lsp_attach(client, bufnr)
       end,
       settings = {
         Lua = {

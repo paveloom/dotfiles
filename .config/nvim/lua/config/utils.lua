@@ -4,33 +4,22 @@ local fn = vim.fn
 local o = vim.opt
 
 -- Map a keybinding
-local function map(m, k, e)
-  vim.keymap.set(m, k, e, { silent = true })
+function M.map(m, k, e, _options)
+  local options = { silent = true }
+  if _options then
+    options = vim.tbl_extend("force", options, _options)
+  end
+  vim.keymap.set(m, k, e, options)
 end
 
--- Map a keybinding in the command mode
-function M.cmap(k, e)
-  map("c", k, e)
-end
-
--- Map a keybinding in the insert mode
-function M.imap(k, e)
-  map("i", k, e)
-end
-
--- Map a keybinding in the normal mode
-function M.nmap(k, e)
-  map("n", k, e)
-end
-
--- Map a keybinding in the visual mode
-function M.vmap(k, e)
-  map("v", k, e)
-end
-
--- Map a keybinding in the visual and select modes
-function M.xmap(k, e)
-  map("x", k, e)
+-- Map a buffer keybinding
+function M.bmap(bufnr)
+  return function(m, k, e)
+    M.map(m, k, e, {
+      noremap = true,
+      buffer = bufnr,
+    })
+  end
 end
 
 -- Do a system call and check the status code

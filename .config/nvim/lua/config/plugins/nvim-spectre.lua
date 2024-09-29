@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- Find the enemy and replace them with dark power
 return {
   "nvim-pack/nvim-spectre",
@@ -11,10 +13,7 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("<leader>r", function()
+    utils.map("n", "<leader>r", function()
       require("spectre").open()
     end)
   end,

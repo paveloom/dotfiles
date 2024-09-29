@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- A snazzy bufferline for Neovim
 return {
   "akinsho/bufferline.nvim",
@@ -24,20 +26,17 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("<leader>.", function()
+    utils.map("n", "<leader>.", function()
       require("bufferline")
       vim.cmd(":tabnew")
     end)
-    nmap("<leader>k", function()
+    utils.map("n", "<leader>k", function()
       require("bufferline").cycle(-1)
     end)
-    nmap("<leader>;", function()
+    utils.map("n", "<leader>;", function()
       require("bufferline").cycle(1)
     end)
-    nmap("<leader>,", function()
+    utils.map("n", "<leader>,", function()
       local tabs = vim.api.nvim_list_tabpages()
       -- If there is an available tab on the right
       if tabs[vim.api.nvim_tabpage_get_number(0)] ~= tabs[1] then
@@ -45,7 +44,7 @@ return {
         vim.cmd(":-tabmove")
       end
     end)
-    nmap("<leader>/", function()
+    utils.map("n", "<leader>/", function()
       local tabs = vim.api.nvim_list_tabpages()
       -- If there is an available tab on the right
       ---@diagnostic disable-next-line: param-type-mismatch

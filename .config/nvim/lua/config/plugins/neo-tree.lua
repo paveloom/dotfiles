@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- Neovim plugin to manage the file system and other tree like structures
 return {
   "nvim-neo-tree/neo-tree.nvim",
@@ -186,10 +188,7 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("<leader>w", function()
+    utils.map("n", "<leader>w", function()
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)
   end,

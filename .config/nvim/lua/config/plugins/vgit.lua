@@ -1,3 +1,5 @@
+local utils = require("config.utils")
+
 -- Visual Git plugin for Neovim
 return {
   "tanvirtin/vgit.nvim",
@@ -32,16 +34,13 @@ return {
     })
   end,
   init = function()
-    local nmap = require("config.utils").nmap
-
-    -- Set up keybindings
-    nmap("gD", function()
+    utils.map("n", "gD", function()
       require("vgit").buffer_diff_preview()
     end)
-    nmap("gk", function()
+    utils.map("n", "gk", function()
       require("vgit").hunk_up()
     end)
-    nmap("gl", function()
+    utils.map("n", "gl", function()
       require("vgit").hunk_down()
     end)
   end,

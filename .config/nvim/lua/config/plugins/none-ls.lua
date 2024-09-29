@@ -1,3 +1,5 @@
+local mappings = require("config.mappings")
+
 -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 return {
   "nvimtools/none-ls.nvim",
@@ -16,7 +18,7 @@ return {
     local function direnv_loaded()
       return vim.b.direnv_loaded ~= nil
     end
-    -- Set up the plugin
+
     null_ls.setup({
       sources = {
         completion.spell.with({
@@ -41,48 +43,6 @@ return {
           runtime_condition = direnv_loaded,
         }),
       },
-    })
-    -- Prepare an autocommands group
-    local group = vim.api.nvim_create_augroup(name, { clear = false })
-    -- Treat `*.yuck` files as Fennel files
-    vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
-      pattern = {
-        "*.yuck",
-      },
-      group = group,
-      callback = function()
-        vim.bo.filetype = "fennel"
-      end,
-    })
-    -- Set up keybindings
-    vim.api.nvim_create_autocmd("BufEnter", {
-      pattern = {
-        "*.bash",
-        "*.md",
-        "*.sh",
-      },
-      group = group,
-      callback = function()
-        local nmap = require("config.utils").nmap
-
-        -- Set up keybindings
-        nmap("ga", vim.lsp.buf.code_action)
-      end,
-    })
-    -- Format the code before writing
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = {
-        "*.xml",
-        "*.xml.in",
-        "*.xml.in.in",
-        "*.yaml",
-        "*.yml",
-        ".clang-format",
-      },
-      group = group,
-      callback = function()
-        vim.lsp.buf.format({ timeout_ms = 2000 })
-      end,
     })
   end,
 }
