@@ -175,7 +175,7 @@ return {
     lspconfig.zls.setup({
       on_attach = function(client, bufnr)
         -- Attach the server
-        on_attach(client, bufnr)
+        mappings.on_lsp_attach(client, bufnr)
         -- Don't parse errors on format
         vim.g.zig_fmt_parse_errors = 0
       end,
