@@ -31,9 +31,6 @@ return {
         diagnostics.yamllint.with({
           runtime_condition = direnv_loaded,
         }),
-        formatting.fnlfmt.with({
-          runtime_condition = direnv_loaded,
-        }),
         formatting.stylua.with({
           runtime_condition = direnv_loaded,
         }),
