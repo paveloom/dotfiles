@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- A pretty diagnostics, references, telescope results, quickfix and
 -- location list to help you solve all the trouble your code is causing
@@ -16,19 +16,19 @@ return {
     })
   end,
   init = function()
-    utils.map("n", "<leader>t", function()
+    mappings.map("n", "<leader>t", function()
       require("trouble").toggle()
     end)
-    utils.map("n", "ge", function()
+    mappings.map("n", "ge", function()
       require("trouble").toggle("diagnostics")
     end)
-    utils.map("n", "gi", function()
+    mappings.map("n", "gi", function()
       require("trouble").toggle("lsp_implementations")
     end)
-    utils.map("n", "gr", function()
+    mappings.map("n", "gr", function()
       require("trouble").toggle("lsp_references")
     end)
-    utils.map("n", "gt", function()
+    mappings.map("n", "gt", function()
       require("trouble").toggle("lsp_type_definitions")
     end)
   end,

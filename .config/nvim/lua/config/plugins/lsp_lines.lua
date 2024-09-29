@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- Renders diagnostics using virtual lines on top of the real line of code
 return {
@@ -13,10 +13,10 @@ return {
         virtual_text = toggled,
         virtual_lines = not toggled,
       })
-      utils.map("n", "g,", function()
+      mappings.map("n", "g,", function()
         vim.diagnostic.goto_prev({ float = toggled })
       end)
-      utils.map("n", "g.", function()
+      mappings.map("n", "g.", function()
         vim.diagnostic.goto_next({ float = toggled })
       end)
     end
@@ -24,7 +24,7 @@ return {
     -- Set the default configuration
     configure(true)
 
-    utils.map("n", "<A-v>", function()
+    mappings.map("n", "<A-v>", function()
       configure(vim.diagnostic.config().virtual_lines)
     end)
   end,

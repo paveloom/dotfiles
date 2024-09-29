@@ -3,25 +3,6 @@ local M = {}
 local fn = vim.fn
 local o = vim.opt
 
--- Map a keybinding
-function M.map(m, k, e, _options)
-  local options = { silent = true }
-  if _options then
-    options = vim.tbl_extend("force", options, _options)
-  end
-  vim.keymap.set(m, k, e, options)
-end
-
--- Map a buffer keybinding
-function M.bmap(bufnr)
-  return function(m, k, e)
-    M.map(m, k, e, {
-      noremap = true,
-      buffer = bufnr,
-    })
-  end
-end
-
 -- Do a system call and check the status code
 function M.call(cmd)
   fn.system(cmd)

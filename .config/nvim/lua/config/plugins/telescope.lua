@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- A highly extendable fuzzy finder over lists
 return {
@@ -108,25 +108,25 @@ return {
     telescope.load_extension("workspaces")
   end,
   init = function()
-    utils.map("n", "<leader>b", function()
+    mappings.map("n", "<leader>b", function()
       require("telescope.builtin").buffers()
     end)
-    utils.map("n", "<leader>f", function()
+    mappings.map("n", "<leader>f", function()
       require("telescope.builtin").find_files()
     end)
-    utils.map("n", "<leader>g", function()
+    mappings.map("n", "<leader>g", function()
       require("telescope.builtin").live_grep()
     end)
-    utils.map("n", "<leader>h", function()
+    mappings.map("n", "<leader>h", function()
       require("telescope.builtin").help_tags()
     end)
-    utils.map("n", "<leader>o", function()
+    mappings.map("n", "<leader>o", function()
       require("telescope.builtin").oldfiles()
     end)
-    utils.map("n", "<leader>n", function()
+    mappings.map("n", "<leader>n", function()
       require("telescope").extensions.file_browser.file_browser()
     end)
-    utils.map("n", "z=", function()
+    mappings.map("n", "z=", function()
       require("telescope.builtin").spell_suggest()
     end)
   end,

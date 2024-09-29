@@ -20,6 +20,7 @@ return {
       sources = {
         completion.spell,
         diagnostics.fish,
+        diagnostics.hadolint,
         diagnostics.yamllint,
         formatting.stylua,
         formatting.xmllint,

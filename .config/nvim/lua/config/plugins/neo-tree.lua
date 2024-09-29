@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- Neovim plugin to manage the file system and other tree like structures
 return {
@@ -188,7 +188,7 @@ return {
     })
   end,
   init = function()
-    utils.map("n", "<leader>w", function()
+    mappings.map("n", "<leader>w", function()
       require("neo-tree.command").execute({ toggle = true, reveal = true })
     end)
   end,

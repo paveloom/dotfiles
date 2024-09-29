@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- A simple plugin to manage workspace directories in NeoVim
 return {
@@ -23,7 +23,7 @@ return {
     })
   end,
   init = function()
-    utils.map("n", "<leader>p", function()
+    mappings.map("n", "<leader>p", function()
       require("telescope").extensions.workspaces.workspaces()
     end)
   end,

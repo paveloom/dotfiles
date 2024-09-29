@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- Find the enemy and replace them with dark power
 return {
@@ -13,7 +13,7 @@ return {
     })
   end,
   init = function()
-    utils.map("n", "<leader>r", function()
+    mappings.map("n", "<leader>r", function()
       require("spectre").open()
     end)
   end,

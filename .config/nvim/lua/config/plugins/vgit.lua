@@ -1,4 +1,4 @@
-local utils = require("config.utils")
+local mappings = require("config.mappings")
 
 -- Visual Git plugin for Neovim
 return {
@@ -34,13 +34,13 @@ return {
     })
   end,
   init = function()
-    utils.map("n", "gD", function()
+    mappings.map("n", "gD", function()
       require("vgit").buffer_diff_preview()
     end)
-    utils.map("n", "gk", function()
+    mappings.map("n", "gk", function()
       require("vgit").hunk_up()
     end)
-    utils.map("n", "gl", function()
+    mappings.map("n", "gl", function()
       require("vgit").hunk_down()
     end)
   end,
