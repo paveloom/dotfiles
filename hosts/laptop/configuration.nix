@@ -391,6 +391,7 @@
         streamrip
         subtitleedit
         tdesktop
+        trash-cli
         tree
         unrar
         unzip
