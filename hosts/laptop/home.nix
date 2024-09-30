@@ -159,6 +159,7 @@
       "git".source = configPath "git";
       "helix".source = configPath "helix";
       "ideavim".source = configPath "ideavim";
+      "lazydocker".source = configPath "lazydocker";
       "lazygit".source = configPath "lazygit";
       "mozc".source = configPath "mozc";
       "mpv".source = configPath "mpv";

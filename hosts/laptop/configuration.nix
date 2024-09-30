@@ -360,6 +360,7 @@
         jetbrains.webstorm
         julia
         keepassxc
+        lazydocker
         lazygit
         libnotify
         libreoffice
