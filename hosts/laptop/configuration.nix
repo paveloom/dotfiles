@@ -415,6 +415,9 @@
     docker = {
       enable = true;
       rootless = {
+        daemon.settings = {
+          dns = ["8.8.8.8"];
+        };
         enable = true;
         setSocketVariable = true;
       };
