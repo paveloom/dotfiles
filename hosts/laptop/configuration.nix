@@ -315,6 +315,7 @@
         bottles
         d-spy
         dconf-editor
+        dive
         dua
         eddie
         fd
