@@ -69,7 +69,6 @@
         "net.nokyan.Resources.desktop"
         "org.gnome.TextEditor.desktop"
         "org.wezfurlong.wezterm.desktop"
-        "code.desktop"
         "io.gitlab.news_flash.NewsFlash.desktop"
         "org.qbittorrent.qBittorrent.desktop"
         "org.keepassxc.KeePassXC.desktop"
