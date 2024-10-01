@@ -316,6 +316,7 @@
         d-spy
         dconf-editor
         dive
+        docker-credential-helpers
         dua
         eddie
         fd
