@@ -418,7 +418,7 @@
       enable = true;
       rootless = {
         daemon.settings = {
-          dns = ["8.8.8.8"];
+          dns = ["1.1.1.1" "1.0.0.1"];
         };
         enable = true;
         setSocketVariable = true;
