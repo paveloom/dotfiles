@@ -3,8 +3,6 @@
 return {
   "echasnovski/mini.nvim",
   config = function()
-    -- Extend and create `a`/`i` textobjects
-    require("mini.ai").setup()
     -- Fast and feature-rich surround actions
     require("mini.surround").setup()
   end,
