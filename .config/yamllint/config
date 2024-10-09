@@ -5,9 +5,7 @@ rules:
     level: error
   comments-indentation:
     level: error
-  document-start:
-    present: false
-    level: error
+  document-start: disable
   empty-lines: disable
   empty-values: disable
   line-length: disable
