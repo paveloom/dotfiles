@@ -289,6 +289,7 @@
     users.paveloom = {
       createHome = true;
       extraGroups = [
+        "docker"
         "keys"
         "libvirtd"
         "lp"
@@ -417,12 +418,8 @@
   virtualisation = {
     docker = {
       enable = true;
-      rootless = {
-        daemon.settings = {
-          dns = ["1.1.1.1" "1.0.0.1"];
-        };
-        enable = true;
-        setSocketVariable = true;
+      daemon.settings = {
+        dns = ["1.1.1.1" "1.0.0.1"];
       };
     };
     libvirtd.enable = true;
