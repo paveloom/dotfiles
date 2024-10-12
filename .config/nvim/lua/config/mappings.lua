@@ -92,6 +92,9 @@ map("v", "<A-Up>", ":m '<-2<CR>gv=gv")
 -- while appending lines
 map("n", "J", "mzJ`z")
 
+-- Disable the U binding (undo all changes on the line)
+map("n", "U", "<nop>")
+
 local M = {}
 
 M.map = map
