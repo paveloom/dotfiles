@@ -380,7 +380,6 @@
         protonup-qt
         qbittorrent
         quodlibet-full
-        resources
         (retroarch.override {
           cores = with libretro; [
             bsnes
