@@ -231,5 +231,8 @@ return {
 
     -- Set up the Earthly language server
     lspconfig.earthlyls.setup({})
+
+    -- Set up the Nginx language server
+    lspconfig.nginx_language_server.setup({})
   end,
 }
