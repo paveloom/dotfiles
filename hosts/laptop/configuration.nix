@@ -152,9 +152,6 @@
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
     nginx = {
-      appendHttpConfig = ''
-        include /etc/nginx/sites-enabled/*.conf;
-      '';
       virtualHosts.freshrss.listen = [
         {
           addr = "0.0.0.0";
