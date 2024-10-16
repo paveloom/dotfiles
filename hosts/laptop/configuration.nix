@@ -143,22 +143,8 @@
 
   services = {
     # flaresolverr.enable = true;
-    freshrss = {
-      baseUrl = "http://localhost";
-      database.type = "sqlite";
-      enable = true;
-      passwordFile = "/run/secrets/freshrss";
-    };
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
-    nginx = {
-      virtualHosts.freshrss.listen = [
-        {
-          addr = "0.0.0.0";
-          port = 21044;
-        }
-      ];
-    };
     nixseparatedebuginfod.enable = true;
     pipewire = {
       enable = true;
