@@ -142,7 +142,6 @@
   security.rtkit.enable = true;
 
   services = {
-    # flaresolverr.enable = true;
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
     nixseparatedebuginfod.enable = true;
