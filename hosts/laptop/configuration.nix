@@ -1,5 +1,4 @@
 {
-  config,
   inputs,
   pkgs,
   ...
@@ -187,20 +186,7 @@
       enable = true;
       logLevel = "debug";
     };
-    prowlarr.enable = true;
-    radarr = {
-      dataDir = config.users.users.paveloom.home + "/.config/radarr";
-      enable = true;
-      group = "";
-      user = "paveloom";
-    };
     resolved.enable = true;
-    sonarr = {
-      dataDir = config.users.users.paveloom.home + "/.config/sonarr";
-      enable = true;
-      group = "";
-      user = "paveloom";
-    };
     usbmuxd = {
       enable = true;
       package = pkgs.usbmuxd2;
@@ -231,12 +217,6 @@
           }
         ];
       };
-    };
-    whisparr = {
-      dataDir = config.users.users.paveloom.home + "/.config/whisparr";
-      enable = true;
-      group = "";
-      user = "paveloom";
     };
     xserver = {
       desktopManager.gnome.enable = true;
