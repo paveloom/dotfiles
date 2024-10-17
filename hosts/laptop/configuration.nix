@@ -340,7 +340,6 @@
         patchelf
         picard
         protonup-qt
-        qbittorrent
         quodlibet-full
         (retroarch.override {
           cores = with libretro; [
