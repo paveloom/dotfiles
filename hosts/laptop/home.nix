@@ -171,6 +171,7 @@
       "wezterm".source = configPath "wezterm";
       "yamlfmt".source = configPath "yamlfmt";
       "yamllint".source = configPath "yamllint";
+      "zed".source = configPath "zed";
     };
     userDirs = {
       createDirectories = true;

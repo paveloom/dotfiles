@@ -1,0 +1,29 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space a": "pane::GoBack",
+      "space d": "pane::GoForward",
+      "space w": "project_panel::ToggleFocus",
+      "space e": "outline_panel::ToggleFocus",
+      "ctrl-up": ["editor::MoveUpByLines", { "lines": 5 }],
+      "ctrl-down": ["editor::MoveDownByLines", { "lines": 5 }],
+      "ctrl-q": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }],
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent"
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-shift-tab": "pane::ActivatePrevItem",
+      "ctrl-tab": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "escape": "workspace::ToggleLeftDock"
+    }
+  }
+]
