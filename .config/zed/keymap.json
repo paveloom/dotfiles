@@ -6,11 +6,16 @@
       "space d": "pane::GoForward",
       "space w": "project_panel::ToggleFocus",
       "space e": "outline_panel::ToggleFocus",
-      "ctrl-up": ["editor::MoveUpByLines", { "lines": 5 }],
-      "ctrl-down": ["editor::MoveDownByLines", { "lines": 5 }],
       "ctrl-q": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }],
       "tab": "editor::Indent",
       "shift-tab": "editor::Outdent"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == insert)",
+    "bindings": {
+      "ctrl-up": ["editor::MoveUpByLines", { "lines": 5 }],
+      "ctrl-down": ["editor::MoveDownByLines", { "lines": 5 }]
     }
   },
   {
