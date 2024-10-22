@@ -369,6 +369,7 @@
         wget
         wl-clipboard
         xclip
+        zed-editor
         zip
       ];
       shell = pkgs.fish;
