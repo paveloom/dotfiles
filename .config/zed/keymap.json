@@ -19,6 +19,13 @@
     }
   },
   {
+    "context": "Editor && (vim_mode == visual)",
+    "bindings": {
+      "ctrl-up": ["workspace::SendKeystrokes", "5 g k"],
+      "ctrl-down": ["workspace::SendKeystrokes", "5 g j"]
+    }
+  },
+  {
     "context": "Pane",
     "bindings": {
       "ctrl-shift-tab": "pane::ActivatePrevItem",
