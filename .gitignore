@@ -1,6 +1,7 @@
 # Editor configurations
 /*.code-workspace
 /.nlsp-settings
+/.zed
 
 # Nix
 .direnv
