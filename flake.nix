@@ -18,7 +18,7 @@
         bashInteractive
         libxml2
         lua-language-server
-        nil
+        nixd
         nvd
         stylua
         vscode-langservers-extracted
