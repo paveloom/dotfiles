@@ -373,12 +373,7 @@
   };
 
   virtualisation = {
-    docker = {
-      enable = true;
-      daemon.settings = {
-        dns = ["1.1.1.1" "1.0.0.1"];
-      };
-    };
+    docker.enable = true;
     libvirtd.enable = true;
     podman = {
       enable = true;
