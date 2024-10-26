@@ -1,16 +1,9 @@
-{
-  config,
-  modulesPath,
-  ...
-}: {
+{modulesPath, ...}: {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   boot = {
-    extraModulePackages = [
-      config.boot.kernelPackages.amneziawg
-    ];
     initrd = {
       availableKernelModules = [
         "ahci"
