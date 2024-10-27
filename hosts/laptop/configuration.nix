@@ -74,11 +74,7 @@
   ];
 
   networking = {
-    firewall = {
-      allowedTCPPorts = [38101 43695 60553];
-      allowedUDPPorts = [22174];
-      checkReversePath = pkgs.lib.mkForce false;
-    };
+    firewall.checkReversePath = pkgs.lib.mkForce false;
     networkmanager = {
       enable = true;
       wifi.powersave = false;
