@@ -54,7 +54,6 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "clipboard-history@alexsaveau.dev"
         "dash-to-dock@micxgx.gmail.com"
-        "gestureImprovements@gestures"
         "just-perfection-desktop@just-perfection"
         "mediacontrols@cliffniff.github.com"
         "memento-mori@paveloom"
@@ -96,10 +95,6 @@
       show-mounts = false;
       show-trash = false;
       transparency-mode = "DYNAMIC";
-    };
-    "org/gnome/shell/extensions/gestureImprovements" = {
-      default-overview-gesture-direction = false;
-      touchpad-speed-scale = 1.5;
     };
     "org/gnome/shell/extensions/hotedge" = {
       pressure-threshold = 25;

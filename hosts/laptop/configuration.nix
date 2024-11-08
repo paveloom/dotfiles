@@ -316,7 +316,6 @@
         gnomeExtensions.appindicator
         gnomeExtensions.clipboard-history
         gnomeExtensions.dash-to-dock
-        gnomeExtensions.gesture-improvements
         gnomeExtensions.hot-edge
         gnomeExtensions.just-perfection
         gnomeExtensions.media-controls
