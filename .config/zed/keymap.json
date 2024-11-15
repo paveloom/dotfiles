@@ -1,12 +1,21 @@
 [
   {
-    "context": "Editor && vim_mode == normal",
+    "context": "Editor && (vim_mode == normal)",
     "bindings": {
       "space a": "pane::GoBack",
       "space d": "pane::GoForward",
       "space w": "project_panel::ToggleFocus",
       "space e": "outline_panel::ToggleFocus",
       "ctrl-q": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }]
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == visual)",
+    "bindings": {
+      "ctrl-left": ["workspace::SendKeystrokes", "5 h"],
+      "ctrl-right": ["workspace::SendKeystrokes", "5 l"],
+      "ctrl-up": ["workspace::SendKeystrokes", "5 g k"],
+      "ctrl-down": ["workspace::SendKeystrokes", "5 g j"]
     }
   },
   {
@@ -21,15 +30,6 @@
     "bindings": {
       "tab": "editor::Indent",
       "shift-tab": "editor::Outdent"
-    }
-  },
-  {
-    "context": "Editor && (vim_mode == visual)",
-    "bindings": {
-      "ctrl-left": ["workspace::SendKeystrokes", "5 h"],
-      "ctrl-right": ["workspace::SendKeystrokes", "5 l"],
-      "ctrl-up": ["workspace::SendKeystrokes", "5 g k"],
-      "ctrl-down": ["workspace::SendKeystrokes", "5 g j"]
     }
   },
   {
