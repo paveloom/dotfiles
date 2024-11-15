@@ -15,7 +15,8 @@
       "ctrl-left": ["workspace::SendKeystrokes", "5 h"],
       "ctrl-right": ["workspace::SendKeystrokes", "5 l"],
       "ctrl-up": ["workspace::SendKeystrokes", "5 g k"],
-      "ctrl-down": ["workspace::SendKeystrokes", "5 g j"]
+      "ctrl-down": ["workspace::SendKeystrokes", "5 g j"],
+      "x": "editor::Cut"
     }
   },
   {
