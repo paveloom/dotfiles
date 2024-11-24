@@ -10,6 +10,12 @@
     }
   },
   {
+    "context": "Editor && (vim_mode == insert)",
+    "bindings": {
+      "ctrl-v": "editor::Paste"
+    }
+  },
+  {
     "context": "Editor && (vim_mode == visual)",
     "bindings": {
       "ctrl-left": ["workspace::SendKeystrokes", "5 h"],
