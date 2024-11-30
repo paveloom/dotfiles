@@ -1,5 +1,11 @@
 [
   {
+    "context": "Editor",
+    "bindings": {
+      "alt-z": "editor::ToggleSoftWrap"
+    }
+  },
+  {
     "context": "Editor && (vim_mode == normal)",
     "bindings": {
       "space a": "pane::GoBack",
