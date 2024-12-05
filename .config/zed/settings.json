@@ -16,6 +16,9 @@
       "enabled": false
     }
   },
+  "project_panel": {
+    "folder_icons": false
+  },
   "tabs": {
     "activate_on_close": "neighbour",
     "file_icons": true,
