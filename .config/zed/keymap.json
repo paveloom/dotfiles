@@ -6,6 +6,12 @@
     }
   },
   {
+    "context": "Editor && mode == full && inline_completion",
+    "bindings": {
+      "ctrl-right": "editor::AcceptPartialInlineCompletion"
+    }
+  },
+  {
     "context": "Editor && (vim_mode == normal)",
     "bindings": {
       "space a": "pane::GoBack",
