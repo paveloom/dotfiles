@@ -38,7 +38,7 @@
     fontconfig.enable = true;
     packages = with pkgs; [
       corefonts
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      nerd-fonts.jetbrains-mono
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
@@ -293,7 +293,6 @@
         dive
         docker-credential-helpers
         dua
-        eddie
         fd
         (ffmpeg_7.override {
           withFdkAac = true;
@@ -353,14 +352,13 @@
         picard
         protonup-qt
         quodlibet-full
-        (retroarch.override {
-          cores = with libretro; [
+        (retroarch.withCores (cores:
+          with cores; [
             bsnes
             mesen
             mupen64plus
             sameboy
-          ];
-        })
+          ]))
         ripgrep
         streamrip
         subtitleedit
