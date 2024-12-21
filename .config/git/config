@@ -13,6 +13,8 @@
 [push]
     autoSetupRemote = true
     default = upstream
+[rebase]
+	updateRefs = true
 [submodule]
     recurse = true
 [tag]
