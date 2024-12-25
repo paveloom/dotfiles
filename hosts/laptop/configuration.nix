@@ -158,10 +158,6 @@
   services = {
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.mullvad-vpn;
-    };
     nixseparatedebuginfod.enable = true;
     pipewire = {
       enable = true;
