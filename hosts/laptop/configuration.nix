@@ -340,6 +340,7 @@
         mangohud
         monero-gui
         mpv
+        nekoray
         neovim
         newsflash
         nix-tree
