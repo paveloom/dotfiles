@@ -193,8 +193,6 @@
       drivers = with pkgs; [
         canon-cups-ufr2
         carps-cups
-        cnijfilter2
-        cups-bjnp
         gutenprint
         gutenprintBin
       ];
