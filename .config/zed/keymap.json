@@ -6,6 +6,12 @@
     }
   },
   {
+    "context": "Editor && !inline_completion",
+    "bindings": {
+      "ctrl-/": "editor::ShowInlineCompletion"
+    }
+  },
+  {
     "context": "Editor && mode == full && inline_completion",
     "bindings": {
       "ctrl-right": "editor::AcceptPartialInlineCompletion"
