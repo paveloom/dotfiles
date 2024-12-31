@@ -350,6 +350,7 @@
         (retroarch.withCores (cores:
           with cores; [
             bsnes
+            melonds
             mesen
             mgba
             mupen64plus
