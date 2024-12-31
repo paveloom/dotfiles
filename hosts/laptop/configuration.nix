@@ -351,6 +351,7 @@
           with cores; [
             bsnes
             mesen
+            mgba
             mupen64plus
             sameboy
           ]))
