@@ -58,6 +58,13 @@
     }
   },
   {
+    "context": "Editor && (vim_mode == normal || vim_mode == insert || vim_mode == visual)",
+    "bindings": {
+      "left": "vim::Backspace",
+      "right": "vim::Space"
+    }
+  },
+  {
     "context": "Pane",
     "bindings": {
       "ctrl-shift-tab": "pane::ActivatePrevItem",
