@@ -152,6 +152,7 @@
       "fish".source = configPath "fish";
       "foot".source = configPath "foot";
       "gdb".source = configPath "gdb";
+      "ghostty".source = configPath "ghostty";
       "git".source = configPath "git";
       "helix".source = configPath "helix";
       "ideavim".source = configPath "ideavim";
