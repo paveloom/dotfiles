@@ -1,0 +1,6 @@
+background = "#000000"
+font-feature = "-calt"
+font-size = 14
+keybind = alt+left=move_tab:-1
+keybind = alt+right=move_tab:+1
+resize-overlay = "never"
