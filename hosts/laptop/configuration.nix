@@ -357,6 +357,7 @@
             sameboy
           ]))
         ripgrep
+        shortwave
         streamrip
         subtitleedit
         tdesktop
