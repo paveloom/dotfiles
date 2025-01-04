@@ -11,18 +11,7 @@ hidden = false
 V = "extend_line"
 p = "paste_before"
 P = "paste_after"
-C-s = [
-    "save_selection",
-    "select_all",
-    # Delete trailing whitespace from end of each line
-    ":pipe sed 's/[ \t]*$//'",
-    # Delete trailing blank lines (including whitespace) at end of the buffer
-    ":pipe awk '/^\\s*$/ {b=b $0 \"\\n\"; next;} {printf \"%s\",b; b=\"\"; print;}'",
-    "collapse_selection",
-    "jump_backward",
-    "commit_undo_checkpoint",
-    ":write",
-]
+C-s = ":write"
 C-p = ":open ~/.config/helix/config.toml"
 S-left = "extend_char_left"
 S-right = "extend_char_right"
