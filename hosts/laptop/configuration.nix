@@ -350,6 +350,7 @@
         (retroarch.withCores (cores:
           with cores; [
             bsnes
+            dolphin
             melonds
             mesen
             mgba
