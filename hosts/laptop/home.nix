@@ -65,6 +65,7 @@
         "vivaldi-stable.desktop"
         "org.gnome.Evolution.desktop"
         "io.github.quodlibet.QuodLibet.desktop"
+        "de.haeckerfelix.Shortwave.desktop"
         "org.gnome.Nautilus.desktop"
         "org.gnome.SystemMonitor.desktop"
         "org.gnome.TextEditor.desktop"
