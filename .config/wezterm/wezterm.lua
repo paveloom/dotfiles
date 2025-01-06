@@ -28,7 +28,7 @@ return {
   use_fancy_tab_bar = false,
   tab_max_width = 40,
   force_reverse_video_cursor = true,
-  window_decorations = "RESIZE",
+  window_decorations = "NONE",
   window_padding = {
     left = 5,
     right = 5,
