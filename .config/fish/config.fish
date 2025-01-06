@@ -32,5 +32,8 @@ set -gx SSH_AUTH_SOCK /run/user/1000/keyring/ssh
 # Store Go data files in an appropriate location
 set -gx GOPATH ~/.local/share/go
 
+# Use WezTerm's `terminfo`
+set -gx TERM wezterm
+
 # Add installed Go binaries to the path
 fish_add_path $GOPATH/bin
