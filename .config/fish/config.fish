@@ -34,6 +34,3 @@ set -gx GOPATH ~/.local/share/go
 
 # Add installed Go binaries to the path
 fish_add_path $GOPATH/bin
-
-# Load the completion scripts of Podman
-podman completion fish | source
