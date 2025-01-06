@@ -74,26 +74,7 @@
   ];
 
   networking = {
-    firewall = {
-      allowedTCPPorts = [43695];
-      extraCommands = let
-        rules = pkgs.writeText "tailscale.rules" ''
-          table inet tailscale {
-            chain prerouting {
-                type filter hook prerouting priority -100; policy accept;
-                ip saddr 100.64.0.0/10 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
-            }
-            chain outgoing {
-                type route hook output priority -100; policy accept;
-                meta mark 0x80000 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
-                ip daddr 100.64.0.0/10 ct mark set 0x00000f41 meta mark set 0x6d6f6c65;
-            }
-          }
-        '';
-      in ''
-        ${pkgs.nftables}/bin/nft -f ${rules}
-      '';
-    };
+    firewall.allowedTCPPorts = [43695];
     networkmanager = {
       enable = true;
       wifi.powersave = false;
