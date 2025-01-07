@@ -181,7 +181,6 @@
       logLevel = "debug";
     };
     resolved.enable = true;
-    tailscale.enable = true;
     usbmuxd = {
       enable = true;
       package = pkgs.usbmuxd2;
@@ -302,7 +301,6 @@
         gnomeExtensions.just-perfection
         gnomeExtensions.media-controls
         gnomeExtensions.memento-mori
-        gnomeExtensions.tailscale-qs
         gnomeExtensions.vitals
         gnucash
         google-chrome

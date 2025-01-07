@@ -57,7 +57,6 @@
         "just-perfection-desktop@just-perfection"
         "mediacontrols@cliffniff.github.com"
         "memento-mori@paveloom"
-        "tailscale@joaophi.github.com"
         "trayIconsReloaded@selfmade.pl"
         "Vitals@CoreCoding.com"
       ];
