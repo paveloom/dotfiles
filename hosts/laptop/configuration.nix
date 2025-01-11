@@ -51,7 +51,6 @@
       enable32Bit = true;
     };
     keyboard.zsa.enable = true;
-    pulseaudio.enable = false;
     sane = {
       enable = true;
       extraBackends = with pkgs; [
