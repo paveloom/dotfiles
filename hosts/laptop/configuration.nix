@@ -136,6 +136,7 @@
   security.rtkit.enable = true;
 
   services = {
+    envfs.enable = true;
     ipp-usb.enable = true;
     logind.lidSwitch = "ignore";
     nixseparatedebuginfod.enable = true;
