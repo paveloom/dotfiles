@@ -139,6 +139,12 @@
 
   home.stateVersion = "24.05";
 
+  nix.gc = {
+    automatic = true;
+    frequency = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   xdg = {
     configFile = let
       configPath = dir: (config.lib.file.mkOutOfStoreSymlink
