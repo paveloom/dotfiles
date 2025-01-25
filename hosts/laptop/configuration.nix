@@ -181,10 +181,6 @@
       logLevel = "debug";
     };
     resolved.enable = true;
-    usbmuxd = {
-      enable = true;
-      package = pkgs.usbmuxd2;
-    };
     webdav-server-rs = {
       enable = true;
       settings = {
