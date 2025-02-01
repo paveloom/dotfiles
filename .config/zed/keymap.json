@@ -23,8 +23,7 @@
       "space a": "pane::GoBack",
       "space d": "pane::GoForward",
       "space w": "project_panel::ToggleFocus",
-      "space e": "outline_panel::ToggleFocus",
-      "ctrl-q": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }]
+      "space e": "outline_panel::ToggleFocus"
     }
   },
   {
@@ -75,6 +74,12 @@
     "context": "ProjectPanel",
     "bindings": {
       "escape": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-w": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }]
     }
   }
 ]
