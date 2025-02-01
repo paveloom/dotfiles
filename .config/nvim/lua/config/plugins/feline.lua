@@ -1,6 +1,6 @@
 -- A minimal, stylish and customizable statusline for Neovim written in Lua
 return {
-  "freddiehaddad/feline.nvim",
+  "famiu/feline.nvim",
   dependencies = {
     "lewis6991/gitsigns.nvim",
     "nvim-tree/nvim-web-devicons",
