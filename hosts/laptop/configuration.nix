@@ -348,6 +348,7 @@
         streamrip
         subtitleedit
         tdesktop
+        tor-browser
         trash-cli
         tree
         unrar
