@@ -337,6 +337,7 @@
           with cores; [
             bsnes
             dolphin
+            gpsp
             melonds
             mesen
             mgba
