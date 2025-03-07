@@ -67,7 +67,7 @@
   {
     "context": "VimControl && !menu",
     "bindings": {
-      "ctrl-w": ["pane::CloseActiveItem", { "saveIntent": "saveAll" }]
+      "ctrl-w": ["pane::CloseActiveItem", { "save_intent": "save_all" }]
     }
   }
 ]
