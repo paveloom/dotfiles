@@ -9,7 +9,7 @@
   "buffer_font_family": "JetBrainsMonoNL Nerd Font",
   "buffer_font_size": 19,
   "features": {
-    "inline_completion_provider": "supermaven"
+    "edit_prediction_provider": "supermaven"
   },
   "git": {
     "inline_blame": {
@@ -39,7 +39,7 @@
   "search": {
     "regex": true
   },
-  "show_inline_completions": false,
+  "show_edit_predictions": false,
   "show_user_picture": false,
   "show_whitespaces": "boundary",
   "ui_font_size": 19,
