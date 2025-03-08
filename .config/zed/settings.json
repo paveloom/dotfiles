@@ -42,7 +42,8 @@
   "show_edit_predictions": false,
   "show_user_picture": false,
   "show_whitespaces": "boundary",
-  "ui_font_size": 19,
+  "ui_font_family": "Cantarell",
+  "ui_font_size": 21,
   "vim": {
     "use_system_clipboard": "on_yank"
   },
