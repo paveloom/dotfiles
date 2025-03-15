@@ -10,8 +10,9 @@
     "bindings": {
       "space a": "pane::GoBack",
       "space d": "pane::GoForward",
-      "space w": "project_panel::ToggleFocus",
-      "space e": "outline_panel::ToggleFocus"
+      "space e": "outline_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
+      "space w": "project_panel::ToggleFocus"
     }
   },
   {
