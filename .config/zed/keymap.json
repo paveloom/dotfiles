@@ -48,8 +48,8 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
-      "left": "vim::Backspace",
-      "right": "vim::Space"
+      "left": "vim::WrappingLeft",
+      "right": "vim::WrappingRight"
     }
   },
   {
