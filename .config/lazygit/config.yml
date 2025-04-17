@@ -6,7 +6,7 @@ gui:
   scrollPastBottom: false
   theme:
     selectedLineBgColor:
-      - "#303030"
+      - "#e0e0e0"
   showBottomLine: false
   showCommandLog: false
 git:
