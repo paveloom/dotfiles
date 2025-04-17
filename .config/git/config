@@ -1,7 +1,7 @@
 [commit]
     gpgsign = true
 [core]
-    editor = nvim +startinsert
+    editor = vim +startinsert
 [gpg "ssh"]
     allowedSignersFile = ~/.config/git/allowed_signers
 [gpg]
