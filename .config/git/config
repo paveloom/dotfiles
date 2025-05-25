@@ -14,7 +14,7 @@
     default = upstream
     recurseSubmodules = on-demand
 [rebase]
-	updateRefs = true
+    updateRefs = true
 [status]
     submodulesummary = true
 [submodule]
