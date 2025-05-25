@@ -10,6 +10,7 @@
     ff = only
     rebase = merges
 [push]
+    gpgSign = if-asked
     autoSetupRemote = true
     default = upstream
     recurseSubmodules = on-demand
