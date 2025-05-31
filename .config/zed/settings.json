@@ -11,9 +11,6 @@
   "features": {
     "edit_prediction_provider": "supermaven"
   },
-  "file_types": {
-    "Shell Script": ["ebuild"]
-  },
   "git": {
     "inline_blame": {
       "enabled": false
