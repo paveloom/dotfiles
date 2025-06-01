@@ -10,6 +10,7 @@ gui:
   showBottomLine: false
   showCommandLog: false
 git:
+  autoForwardBranches: none
   merging:
     args: --no-ff
   parseEmoji: true
